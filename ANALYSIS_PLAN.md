@@ -220,6 +220,14 @@ documentation is read in full, and is exploratory.
   a gap between the parties is larger than ordinary variation among candidates, and are labeled that
   way. This changes the first rule of section 10, which required an interval on every result.
 
+**Amendment 5, 2026-10-07, made before any further analysis.** The study covers Democratic and
+Republican candidates only. Independent and third-party candidates are dropped from every analysis and
+from every table and figure, and the collection tools may still gather them without any effect on the
+results. This replaces the sentence in section 5 that described independents and third parties as
+described and never tested. Coverage figures are for Democratic and Republican candidate-years: 3,712 on
+general-election ballots, 3,616 with a website address, 2,541 with some saved text, 2,401 analyzed. The
+claim of what is new no longer includes independents and third parties.
+
 **Amendment 4, 2026-10-07, made before any collection with a different window.** The window of dates from
 which a site's text is taken is not fixed at 60 days.
 

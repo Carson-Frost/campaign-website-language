@@ -70,7 +70,14 @@ def main():
              for r in rows("term_shares_panel.csv") if r["party_group"] in ("Democratic", "Republican")]
     gaps = [dict(t=r["term"], y=int(r["year"]), d=float(r["gap_dem_minus_rep"]), lo=float(r["gap_low"]), hi=float(r["gap_high"]),
                  q=float(r["q_benjamini_hochberg"])) for r in rows("term_gaps.csv")]
-    excluded = len(rows("excluded_sites.csv"))
+    major = ("Democratic", "Republican")
+    cov = [c for c in cov if c["g"] in major]
+    cross = [c for c in cross if c["g"] in major]
+    shares = [x for x in shares if x["g"] in major]
+    ex = [x for x in ex if x["party_group"] in major]
+    sel = [x for x in sel if x["g"] in major]
+    live = [x for x in live if x["g"] in major]
+    excluded = sum(r["party_group"] in major for r in rows("excluded_sites.csv"))
     data = dict(findings=[dict(term=t, text=x) for t, x in FINDINGS], shares=shares, dist=dist, cov=cov, ex=ex, live=live,
                 stats=stats, sel=sel, prec=prec, cross=cross, panel=panel, gaps=gaps, excluded=excluded, built=date.today().isoformat())
     html = TEMPLATE.replace("/*DATA*/null", json.dumps(data, ensure_ascii=False, separators=(",", ":")))
@@ -140,7 +147,7 @@ svg text { fill: var(--muted); font-size: 12px; }
 .tip .row { display: flex; justify-content: space-between; gap: 12px; }
 .tip .sw { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
 .note { font-size: 13px; color: var(--muted); }
-.examples { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+.examples { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
 .examples .col h3 { display: flex; align-items: center; gap: 6px; }
 .ex { overflow-wrap: anywhere; font-size: 13.5px; line-height: 1.45; padding: 8px 0; border-top: 1px solid var(--grid); }
 .ex .who { color: var(--muted); font-size: 12px; margin-top: 2px; }
@@ -201,7 +208,7 @@ ul.method li { margin-bottom: 8px; }
     least once. These findings are exploratory: they were picked after looking at all 57 terms, so they point to
     patterns worth testing rather than settled results. Every share in the term table below has a 95% range, and
     every Democratic minus Republican gap has a range and an adjusted p-value. Those ranges describe chance variation
-    among the candidates analyzed, and they do not cover the 44% of candidate-years that could not be analyzed.
+    among the candidates analyzed, and they do not cover the candidates whose sites could not be analyzed.
     Select a finding to open its term below.</p>
     <ol class="findings" id="findings"></ol>
   </section>
@@ -285,8 +292,7 @@ const D = /*DATA*/null;
 const YEARS = [2020, 2022, 2024, 2026];
 const PARTIES = [
   {g: "Democratic", c: "var(--dem)", s: "circle"},
-  {g: "Republican", c: "var(--rep)", s: "square"},
-  {g: "Independent", c: "var(--ind)", s: "triangle"}];
+  {g: "Republican", c: "var(--rep)", s: "square"}];
 const SMALL_N = 15;
 const fmt = v => (v * 100).toFixed(v < 0.1 ? 1 : 0) + "%";
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
@@ -369,7 +375,7 @@ function wilson(u, n) {
 
 function mainTable(term, office) {
   let h = `<div class="scroll"><table class="numbers"><tr><th>Party</th>${YEARS.map(y => `<th>${y}</th>`).join("")}</tr>`;
-  for (const g of ["Democratic", "Republican", "Independent", "Third party"]) {
+  for (const g of ["Democratic", "Republican"]) {
     h += `<tr><td>${g}</td>` + YEARS.map(y => { const r = get(term, y, office, g);
       if (!r || !r.n) return "<td>–</td>";
       const [lo, hi] = wilson(r.u, r.n);
@@ -456,7 +462,7 @@ function distinctive() {
 }
 
 function coverage() {
-  const groups = ["Democratic", "Republican", "Independent", "Third party"];
+  const groups = ["Democratic", "Republican"];
   let h = `<table><tr><th>Year</th>${groups.map(g => `<th>${g}</th>`).join("")}<th>All</th></tr>`;
   for (const y of YEARS) {
     const cells = groups.map(g => D.cov.filter(c => c.y === y && c.g === g));
@@ -491,24 +497,24 @@ function findings() {
 
 function tiles() {
   const c = D.cov.reduce((a, x) => a + x.c, 0), w = D.cov.reduce((a, x) => a + x.w, 0), a = D.cov.reduce((a2, x) => a2 + x.a, 0);
-  const t = [[c.toLocaleString(), "candidacies on general-election ballots"], [w.toLocaleString(), "with a known campaign website"],
-    [a.toLocaleString(), "sites analyzed (100+ words)"], [D.stats.median_words.toLocaleString(), "median words per analyzed site"]];
+  const t = [[c.toLocaleString(), "Democratic and Republican candidacies on general-election ballots"], [w.toLocaleString(), "with a known campaign website"],
+    [a.toLocaleString(), "sites analyzed (100+ words)"], [Math.round(100 * a / c) + "%", "of those candidacies analyzed"]];
   document.getElementById("tiles").innerHTML = t.map(([v, l]) => `<div class="card tile"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
 }
 
 function method() {
   const pct = v => v == null ? "–" : Math.round(v * 100) + "%";
   const items = [
-    "Candidates: every U.S. House and Senate candidate on a November general-election ballot, taken from Ballotpedia's candidate lists for all four years, with FEC candidate IDs attached by state, district and name. Write-in candidates are excluded. Louisiana's November all-party primary counts as its general election, including its 2026 House races, which went back to that system after the Supreme Court's Louisiana v. Callais ruling canceled the state's new party primaries. The FEC's own general-election lists for 2020–2024 agree with Ballotpedia's within five major-party candidates a year; Ballotpedia lists more minor-party candidates in 2024.",
-    "Party groups: Democratic and Republican include fusion lines such as Working Families or Conservative. Independent covers independent, unaffiliated and no-party labels. Third party covers every other party (Libertarian, Green, Constitution and others) and is shown in tables only because it mixes left and right.",
+    "Candidates: every Democratic and Republican U.S. House and Senate candidate on a November general-election ballot (independent and third-party candidates are outside the study), taken from Ballotpedia's candidate lists for all four years, with FEC candidate IDs attached by state, district and name. Write-in candidates are excluded. Louisiana's November all-party primary counts as its general election, including its 2026 House races, which went back to that system after the Supreme Court's Louisiana v. Callais ruling canceled the state's new party primaries. The FEC's own general-election lists for 2020–2024 agree with Ballotpedia's within five major-party candidates a year.",
+    "Parties: the study covers Democratic and Republican candidates. Both include fusion lines such as Working Families or Conservative. Independent and third-party candidates are outside the study.",
     "Websites: the site listed on the campaign committee's FEC Statement of Organization in force at that election. When none was listed, the campaign site Ballotpedia quoted for that election is used, then the one currently on the candidate's Ballotpedia page. Social media, donation pages and official House or Senate sites are never used.",
     "Text: archived captures from the 60 days before each election day, the same way for all four years. Nearly all come from Common Crawl's public crawls (late September and October 2020, late September 2022, September through early November 2024, mid-September 2026), and the Wayback Machine fills in two sites that Common Crawl missed. Each site contributes its homepage and up to three linked pages, preferring issue and biography pages and skipping donation, volunteer, contact, store and event pages. Text was extracted with trafilatura, and repeated paragraphs were removed. 2022 has a single Common Crawl crawl in the window, so fewer 2022 sites were recovered.",
     `Screening: paragraphs of page code, placeholder text (lorem ipsum), gambling spam and Spanish are removed before counting, because the English term list cannot read them or they are not the campaign's words. A site then needs at least 100 words. ${D.excluded} candidate-years were excluded as not campaign content, each checked by hand: lapsed or hijacked domains serving gambling or other spam, hosting-error pages, unfinished templates, sites holding only page titles and Spanish-only sites.`,
     "Measure: a candidate uses a term when it appears at least once in that candidate's collected text. Shares are the percentage of analyzed candidates in a party who used the term. Counting candidates rather than words keeps long sites from dominating.",
     "Terms: the list was fixed before any results were examined. Afterward, 20 randomly chosen users of each term named in the findings were checked by hand at one random match each. Six patterns were then narrowed to drop matches that are not the term's sense, such as the Inflation Reduction Act, the House Freedom Caucus, “business climate” and biographies that mention corporations, and each narrowed pattern was checked again on a fresh sample, which alone gives its precision. Every term in the findings matched its intended sense in at least 18 of 20 checked matches except “freedom” (17 of 20), whose remaining misses are award and endorser names. Matching still counts a word's appearance, not its stance: “abortion” counts both supporters and opponents of abortion rights.",
     "Who was analyzed: in every year, analyzed candidates are more often incumbents and more often won than candidates who were not analyzed, and analyzed Democrats more often ran in close races. By the presidential vote in each seat, which does not depend on the candidates, analyzed candidates of both parties more often ran in closely divided seats in 2022 and 2026, the years with complete seat data. Established campaigns' sites are probably archived more often. The results therefore lean toward incumbents and winning campaigns (table below).",
-    `Returning candidates: ${D.stats.panel_candidates} candidates were analyzed in two or more years. Among them the Republican shifts hold, but several 2026 Democratic shifts are much smaller, so those come mostly from new candidates rather than returning ones changing their words.`,
-    "Limits: these results describe what candidates' websites said, not what candidates believe, what voters heard or why language changed. Sites that were never archived, or archived without their issue pages, are missing; this is more common among minor-party and low-budget candidates, as the coverage table shows. Independent candidates are few in any year, so their shares move a lot with small changes.",
+    `Returning candidates: some candidates were analyzed in two or more years. Among them the Republican shifts hold, but several 2026 Democratic shifts are much smaller, so those come mostly from new candidates rather than returning ones changing their words.`,
+    "Limits: these results describe what candidates' websites said, not what candidates believe, what voters heard or why language changed. Sites that were never archived, or archived without their issue pages, are missing; this is more common among low-budget candidates, as the coverage table shows.",
   ];
   document.getElementById("method").innerHTML = items.map(i => `<li>${esc(i)}</li>`).join("");
 
@@ -537,7 +543,7 @@ function method() {
   for (const r of [...D.prec].sort((a, b) => a.k / a.n - b.k / b.n)) h += `<tr><td>${esc(r.t)}${r.fresh ? " *" : ""}</td><td>${Math.round(100 * r.k / r.n)}%</td><td>${Math.round(100 * r.lo)}–${Math.round(100 * r.hi)}%</td></tr>`;
   document.getElementById("precision").innerHTML = h + `</table><p class="note">${counts} randomly chosen matches were checked by hand for each term. Misses were mostly names of laws, awards and endorsing groups, and biographies. Terms marked * were narrowed after the first check, so their figures come only from a fresh sample drawn after narrowing.</p>`;
 
-  const groups = ["Democratic", "Republican", "Independent", "Third party"];
+  const groups = ["Democratic", "Republican"];
   h = `<table><tr><th>Year</th>${groups.map(g => `<th>${g}</th>`).join("")}</tr>`;
   for (const y of YEARS) h += `<tr><td>${y}</td>` + groups.map(g => { const r = D.cross.find(c => c.y === y && c.g === g);
     return `<td>${r.bp}${r.fec != null ? ` <span class="pct">(FEC ${r.fec})</span>` : ""}</td>`; }).join("") + "</tr>";

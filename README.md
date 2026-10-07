@@ -1,26 +1,28 @@
 # Campaign website language
 
 A study of which words and phrases, such as "working people", U.S. House and Senate general-election
-candidates used on their campaign websites in 2020, 2022, 2024 and 2026. It compares Democratic,
-Republican, independent and third-party candidates by year. The main measure is term usage: the
+candidates used on their campaign websites in 2020, 2022, 2024 and 2026. It compares Democratic and
+Republican candidates by year. Independent and third-party candidates are outside the study, although the
+collection tools still gather them. The main measure is term usage: the
 share of a party's candidates whose site uses a term at least once. Tone measures are built but not
 yet validated, and no tone result is reported.
 
 The unit is the candidate-year. The candidate list is every candidate on a November general-election
 ballot, House and Senate, excluding write-ins, taken from Ballotpedia for all four years.
 General-election candidates were chosen over primary candidates because their sites are archived far
-more completely, because 2026 sites are still live before election day, and because independents
-mostly appear only on general ballots.
+more completely and because 2026 sites are still live before election day.
 
-The text comes from one source, Common Crawl, for every year (two of the 2,753 analyzed sites come from the
+The text comes from one source, Common Crawl, for every year (a few analyzed sites come from the
 Wayback Machine). The study therefore covers the campaign websites that Common Crawl saved within the 60
 days before each election, and its coverage of the ballot is reported below by year and party.
 
 ## Data and coverage
 
-Of 4,889 general-election candidate-years, 4,344 have a usable campaign website and 2,753 yielded at
-least 100 words of campaign text from the 60 days before election day. 23 further candidate-years
-were excluded as not campaign content. The presidential vote by seat covers 3,436 of the 4,900 rows of
+Of 3,712 Democratic and Republican general-election candidate-years, 3,616 have a usable campaign
+website, 2,541 yielded some saved text, and 2,401 yielded at least 100 words of campaign text from the 60
+days before election day. 22 further candidate-years were excluded as not campaign content. The 1,075
+candidate-years with a website and no saved text are the largest gap: no archive in this source saved a
+usable copy of the site inside the window. The presidential vote by seat covers 3,436 of the 4,900 rows of
 `seat_pres.csv`, including every 2022 and 2026 candidate-year.
 
 The 2026 text is a mid-campaign snapshot. The window for 2026 runs through election day, November 3,
@@ -28,14 +30,12 @@ The 2026 text is a mid-campaign snapshot. The window for 2026 runs through elect
 
 Coverage of analyzed candidates (share of those on the ballot):
 
-| Year | Democratic | Republican | Independent | Third party |
-| --- | --- | --- | --- | --- |
-| 2020 | 344 of 482 (71%) | 319 of 462 (69%) | 29 of 72 | 83 of 238 |
-| 2022 | 286 of 454 (63%) | 290 of 462 (63%) | 23 of 75 | 49 of 190 |
-| 2024 | 292 of 453 (64%) | 297 of 458 (65%) | 18 of 53 | 61 of 210 |
-| 2026 | 322 of 476 (68%) | 251 of 465 (54%) | 41 of 138 | 48 of 201 |
-
-Independent candidates are too few in any year for firm conclusions.
+| Year | Democratic | Republican |
+| --- | --- | --- |
+| 2020 | 344 of 482 (71%) | 319 of 462 (69%) |
+| 2022 | 286 of 454 (63%) | 290 of 462 (63%) |
+| 2024 | 292 of 453 (64%) | 297 of 458 (65%) |
+| 2026 | 322 of 476 (68%) | 251 of 465 (54%) |
 
 Mike Johnson's 2022 candidate-year is not included because his race was not printed on the November
 ballot. Page text extraction is serial, because trafilatura shares one parser across threads, and
@@ -268,7 +268,7 @@ exploratory. Shares are of each party's analyzed candidates.
   "border", "health care", "housing", "Trump" and "reproductive freedom / rights". Of the 20
   that are not consistently split, 9 move, including "inflation", "abortion" and "freedom". Only 28
   of the 228 within-party changes have an adjusted p-value below 0.05.
-- Worst-case ranges (`results/term_bounds.csv`): because 44% of candidate-years are not analyzed, the
+- Worst-case ranges (`results/term_bounds.csv`): because about 35% of Democratic and Republican candidacies are not analyzed, the
   share of all candidates on the ballot who used a term can lie anywhere from the share of the whole
   ballot that analyzed candidates account for to that plus the unanalyzed fraction. For Republican
   "inflation" in 2022, 39% of analyzed candidates used it, and the range for candidates with a known
@@ -349,7 +349,6 @@ sentence-level coding and must be rewritten for site-level coding first.
 - 1,075 of the 3,616 major-party candidates with known websites (30%) yielded no archived text from
   the window. The Wayback Machine could fill some of these, but only as a slow multi-day trickle at
   its current limits.
-- Independent and third-party coverage is low because many have no FEC committee or website.
 - Ballotpedia's quoted website text is collected in `bp_profiles.jsonl` but not analyzed.
 - The presidential seat measure is missing for 2020 House seats (1,080 candidate-years) and for 2024
   House seats in the nine states that redrew for 2026 (384 candidate-years).
