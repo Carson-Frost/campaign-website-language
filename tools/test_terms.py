@@ -7,9 +7,9 @@ import re
 import unittest
 
 from common import ROOT
-from terms import TERMS
+from terms import ADDED_TERMS, TERMS
 
-PATTERNS = {label: re.compile(rx, re.I) for _, label, rx in TERMS}
+PATTERNS = {label: re.compile(rx, re.I) for _, label, rx in TERMS + ADDED_TERMS}
 
 
 def matches(label, text):
@@ -25,6 +25,33 @@ class TermListTest(unittest.TestCase):
         for theme, label, rx in TERMS:
             self.assertTrue(theme, label)
             re.compile(rx, re.I)
+
+
+class AddedWordingTest(unittest.TestCase):
+    def test_added_terms_do_not_repeat_the_original_labels(self):
+        self.assertEqual(len(ADDED_TERMS), 8)
+        self.assertFalse({label for _, label, _ in ADDED_TERMS} & {label for _, label, _ in TERMS})
+
+    def test_each_added_wording_matches_its_own_variants(self):
+        cases = {
+            "pro-choice": ["I am pro-choice", "prochoice voters"],
+            "a woman's right to choose": ["a woman's right to choose", "women's freedom to choose"],
+            "bodily autonomy": ["bodily autonomy", "bodily integrity"],
+            "Roe v. Wade / Dobbs": ["overturned Roe v. Wade", "after Dobbs"],
+            "abortion ban": ["a national abortion ban", "abortion bans"],
+            "pro-abortion": ["pro-abortion extremists", "proabortion"],
+            "partial-birth / late-term abortion": ["partial-birth abortion", "late term abortions"],
+            "right to life / sanctity of life": ["the right to life", "the sanctity of human life"],
+        }
+        for label, texts in cases.items():
+            for t in texts:
+                self.assertTrue(matches(label, t), (label, t))
+
+    def test_added_wordings_skip_unrelated_uses(self):
+        self.assertEqual(matches("a woman's right to choose", "the right to choose their own doctor"), [])
+        self.assertEqual(matches("bodily autonomy", "a bodily injury claim"), [])
+        self.assertEqual(matches("abortion ban", "the abortion rate fell"), [])
+        self.assertEqual(matches("Roe v. Wade / Dobbs", "Mr. Dobson spoke"), [])
 
 
 class CodedSampleTest(unittest.TestCase):

@@ -14,7 +14,8 @@ term_matches_sample.csv (20 random users per term, for hand-coding match precisi
 (analyzed against unanalyzed candidates; needs artifacts/data/results.csv from vote_results.py and
 artifacts/data/seat_pres.csv from seat_pres.py) and
 term_shares_panel.csv (candidates analyzed in two or more years),
-term_shares_min_words.csv (shares at 50, 100 and 200 words) and site_length.csv (words by party and year).
+term_shares_min_words.csv (shares at 50, 100 and 200 words), site_length.csv (words by party and year) and
+term_shares_added.csv (shares for the added abortion wordings in terms.ADDED_TERMS).
 """
 import csv
 import json
@@ -27,7 +28,7 @@ import numpy as np
 from common import ROOT, DATA
 from match_fec import toks
 from sites import MAX_PAGES, main_host, norm_site
-from terms import TERMS
+from terms import ADDED_TERMS, TERMS
 
 MIN_WORDS = 100
 GROUPS = ("Democratic", "Republican", "Independent", "Third party")
@@ -428,6 +429,12 @@ def main():
         w = csv.writer(f)
         w.writerow(SHARE_HEADER)
         w.writerows(share_rows(analyzed, meta, pats))
+
+    added = [(th, lab, re.compile(rx, re.I)) for th, lab, rx in ADDED_TERMS]
+    with open(RESULTS / "term_shares_added.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(SHARE_HEADER)
+        w.writerows(share_rows(analyzed, meta, added))
 
     with open(RESULTS / "distinctive_terms.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)

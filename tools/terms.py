@@ -79,3 +79,18 @@ TERMS = [
     ("Programs and policy", "artificial intelligence",
      r"\bartificial intelligence\b(?! \(ai\) technology)(?<!degree in artificial intelligence)|(?-i:\bAI\b)(?!\) technology)"),
 ]
+
+
+# Wordings for the abortion topic other than the word "abortion" and the terms above. Fixed in
+# ANALYSIS_PLAN.md before any of them was counted, so they are kept apart from TERMS, and they are first
+# candidates: each needs a precision check by two coders before a result is reported.
+ADDED_TERMS = [
+    ("Abortion wordings", "pro-choice", r"\bpro-?choice\b"),
+    ("Abortion wordings", "a woman's right to choose", r"\bwom[ae]n'?s? (?:right|freedom) to choose\b"),
+    ("Abortion wordings", "bodily autonomy", r"\bbodily (?:autonomy|integrity)\b"),
+    ("Abortion wordings", "Roe v. Wade / Dobbs", r"\broe v\.? wade\b|\bdobbs\b"),
+    ("Abortion wordings", "abortion ban", r"\babortion bans?\b"),
+    ("Abortion wordings", "pro-abortion", r"\bpro-?abortion\b"),
+    ("Abortion wordings", "partial-birth / late-term abortion", r"\b(?:partial[- ]birth|late[- ]term) abortions?\b"),
+    ("Abortion wordings", "right to life / sanctity of life", r"\bright to life\b|\bsanctity of (?:human )?life\b"),
+]
