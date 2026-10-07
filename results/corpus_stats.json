@@ -1,0 +1,16 @@
+{
+ "live_2026_analyzed": 1025,
+ "candidate_years_in_list": 4889,
+ "with_text": 2929,
+ "min_words_met": 2776,
+ "excluded_not_campaign": 23,
+ "analyzed": 2753,
+ "panel_candidates": 504,
+ "panel_candidate_years": 1375,
+ "min_words": 100,
+ "source_counts": {
+  "cc": 2751,
+  "archived": 2
+ },
+ "median_words": 1150
+}

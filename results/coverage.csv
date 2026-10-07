@@ -1,0 +1,33 @@
+year,office,party_group,candidates,website_known,any_text,min_words_met,excluded,analyzed
+2020,House,Democratic,439,430,326,314,5,309
+2020,House,Independent,46,32,20,17,0,17
+2020,House,Republican,421,410,295,283,0,283
+2020,House,Third party,197,117,65,62,0,62
+2020,Senate,Democratic,43,42,37,35,0,35
+2020,Senate,Independent,26,20,13,12,0,12
+2020,Senate,Republican,41,41,36,36,0,36
+2020,Senate,Third party,41,31,21,21,0,21
+2022,House,Democratic,419,399,280,264,3,261
+2022,House,Independent,57,34,20,17,0,17
+2022,House,Republican,426,413,286,266,2,264
+2022,House,Third party,149,79,35,33,0,33
+2022,Senate,Democratic,35,34,26,25,0,25
+2022,Senate,Independent,18,12,6,6,0,6
+2022,Senate,Republican,36,36,29,26,0,26
+2022,Senate,Third party,41,26,17,16,0,16
+2024,House,Democratic,423,408,273,265,2,263
+2024,House,Independent,43,28,14,13,0,13
+2024,House,Republican,425,414,292,281,3,278
+2024,House,Third party,169,90,49,43,0,43
+2024,Senate,Democratic,30,30,29,29,0,29
+2024,Senate,Independent,10,8,5,5,0,5
+2024,Senate,Republican,33,33,19,19,0,19
+2024,Senate,Third party,41,34,21,19,1,18
+2026,House,Democratic,445,442,317,303,3,300
+2026,House,Independent,112,78,39,33,0,33
+2026,House,Republican,428,417,249,231,4,227
+2026,House,Third party,167,98,41,35,0,35
+2026,Senate,Democratic,31,31,23,22,0,22
+2026,Senate,Independent,26,19,8,8,0,8
+2026,Senate,Republican,37,36,24,24,0,24
+2026,Senate,Third party,34,22,14,13,0,13

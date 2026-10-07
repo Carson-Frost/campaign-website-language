@@ -1,0 +1,10 @@
+requests
+beautifulsoup4
+lxml
+trafilatura==2.3.0
+openpyxl
+pillow
+playwright
+numpy
+pysbd==0.3.4
+langid==1.1.6

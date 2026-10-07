@@ -1,0 +1,913 @@
+theme,term,year,office,party_group,candidates_using,candidates_analyzed,share
+Economy and class,working people,2020,All,Democratic,19,148,0.1284
+Economy and class,working people,2020,All,Independent,0,3,0.0
+Economy and class,working people,2020,All,Republican,8,162,0.0494
+Economy and class,working people,2020,All,Third party,1,13,0.0769
+Economy and class,working people,2022,All,Democratic,23,182,0.1264
+Economy and class,working people,2022,All,Independent,0,2,0.0
+Economy and class,working people,2022,All,Republican,8,186,0.043
+Economy and class,working people,2022,All,Third party,0,11,0.0
+Economy and class,working people,2024,All,Democratic,24,183,0.1311
+Economy and class,working people,2024,All,Independent,0,2,0.0
+Economy and class,working people,2024,All,Republican,6,185,0.0324
+Economy and class,working people,2024,All,Third party,0,14,0.0
+Economy and class,working people,2026,All,Democratic,24,143,0.1678
+Economy and class,working people,2026,All,Independent,1,4,0.25
+Economy and class,working people,2026,All,Republican,3,124,0.0242
+Economy and class,working people,2026,All,Third party,2,13,0.1538
+Economy and class,working families,2020,All,Democratic,53,148,0.3581
+Economy and class,working families,2020,All,Independent,0,3,0.0
+Economy and class,working families,2020,All,Republican,17,162,0.1049
+Economy and class,working families,2020,All,Third party,1,13,0.0769
+Economy and class,working families,2022,All,Democratic,68,182,0.3736
+Economy and class,working families,2022,All,Independent,0,2,0.0
+Economy and class,working families,2022,All,Republican,18,186,0.0968
+Economy and class,working families,2022,All,Third party,0,11,0.0
+Economy and class,working families,2024,All,Democratic,75,183,0.4098
+Economy and class,working families,2024,All,Independent,0,2,0.0
+Economy and class,working families,2024,All,Republican,21,185,0.1135
+Economy and class,working families,2024,All,Third party,1,14,0.0714
+Economy and class,working families,2026,All,Democratic,55,143,0.3846
+Economy and class,working families,2026,All,Independent,2,4,0.5
+Economy and class,working families,2026,All,Republican,26,124,0.2097
+Economy and class,working families,2026,All,Third party,2,13,0.1538
+Economy and class,working class,2020,All,Democratic,13,148,0.0878
+Economy and class,working class,2020,All,Independent,0,3,0.0
+Economy and class,working class,2020,All,Republican,7,162,0.0432
+Economy and class,working class,2020,All,Third party,1,13,0.0769
+Economy and class,working class,2022,All,Democratic,22,182,0.1209
+Economy and class,working class,2022,All,Independent,0,2,0.0
+Economy and class,working class,2022,All,Republican,11,186,0.0591
+Economy and class,working class,2022,All,Third party,0,11,0.0
+Economy and class,working class,2024,All,Democratic,23,183,0.1257
+Economy and class,working class,2024,All,Independent,0,2,0.0
+Economy and class,working class,2024,All,Republican,9,185,0.0486
+Economy and class,working class,2024,All,Third party,2,14,0.1429
+Economy and class,working class,2026,All,Democratic,24,143,0.1678
+Economy and class,working class,2026,All,Independent,0,4,0.0
+Economy and class,working class,2026,All,Republican,6,124,0.0484
+Economy and class,working class,2026,All,Third party,3,13,0.2308
+Economy and class,middle class,2020,All,Democratic,40,148,0.2703
+Economy and class,middle class,2020,All,Independent,0,3,0.0
+Economy and class,middle class,2020,All,Republican,30,162,0.1852
+Economy and class,middle class,2020,All,Third party,1,13,0.0769
+Economy and class,middle class,2022,All,Democratic,44,182,0.2418
+Economy and class,middle class,2022,All,Independent,0,2,0.0
+Economy and class,middle class,2022,All,Republican,27,186,0.1452
+Economy and class,middle class,2022,All,Third party,0,11,0.0
+Economy and class,middle class,2024,All,Democratic,47,183,0.2568
+Economy and class,middle class,2024,All,Independent,1,2,0.5
+Economy and class,middle class,2024,All,Republican,24,185,0.1297
+Economy and class,middle class,2024,All,Third party,1,14,0.0714
+Economy and class,middle class,2026,All,Democratic,33,143,0.2308
+Economy and class,middle class,2026,All,Independent,1,4,0.25
+Economy and class,middle class,2026,All,Republican,11,124,0.0887
+Economy and class,middle class,2026,All,Third party,2,13,0.1538
+Economy and class,hardworking,2020,All,Democratic,30,148,0.2027
+Economy and class,hardworking,2020,All,Independent,0,3,0.0
+Economy and class,hardworking,2020,All,Republican,42,162,0.2593
+Economy and class,hardworking,2020,All,Third party,0,13,0.0
+Economy and class,hardworking,2022,All,Democratic,32,182,0.1758
+Economy and class,hardworking,2022,All,Independent,0,2,0.0
+Economy and class,hardworking,2022,All,Republican,42,186,0.2258
+Economy and class,hardworking,2022,All,Third party,1,11,0.0909
+Economy and class,hardworking,2024,All,Democratic,39,183,0.2131
+Economy and class,hardworking,2024,All,Independent,0,2,0.0
+Economy and class,hardworking,2024,All,Republican,51,185,0.2757
+Economy and class,hardworking,2024,All,Third party,1,14,0.0714
+Economy and class,hardworking,2026,All,Democratic,28,143,0.1958
+Economy and class,hardworking,2026,All,Independent,2,4,0.5
+Economy and class,hardworking,2026,All,Republican,30,124,0.2419
+Economy and class,hardworking,2026,All,Third party,0,13,0.0
+Economy and class,small business,2020,All,Democratic,67,148,0.4527
+Economy and class,small business,2020,All,Independent,1,3,0.3333
+Economy and class,small business,2020,All,Republican,90,162,0.5556
+Economy and class,small business,2020,All,Third party,4,13,0.3077
+Economy and class,small business,2022,All,Democratic,81,182,0.4451
+Economy and class,small business,2022,All,Independent,1,2,0.5
+Economy and class,small business,2022,All,Republican,90,186,0.4839
+Economy and class,small business,2022,All,Third party,4,11,0.3636
+Economy and class,small business,2024,All,Democratic,77,183,0.4208
+Economy and class,small business,2024,All,Independent,1,2,0.5
+Economy and class,small business,2024,All,Republican,89,185,0.4811
+Economy and class,small business,2024,All,Third party,3,14,0.2143
+Economy and class,small business,2026,All,Democratic,60,143,0.4196
+Economy and class,small business,2026,All,Independent,1,4,0.25
+Economy and class,small business,2026,All,Republican,55,124,0.4435
+Economy and class,small business,2026,All,Third party,0,13,0.0
+Economy and class,inflation,2020,All,Democratic,3,148,0.0203
+Economy and class,inflation,2020,All,Independent,0,3,0.0
+Economy and class,inflation,2020,All,Republican,2,162,0.0123
+Economy and class,inflation,2020,All,Third party,2,13,0.1538
+Economy and class,inflation,2022,All,Democratic,25,182,0.1374
+Economy and class,inflation,2022,All,Independent,0,2,0.0
+Economy and class,inflation,2022,All,Republican,62,186,0.3333
+Economy and class,inflation,2022,All,Third party,1,11,0.0909
+Economy and class,inflation,2024,All,Democratic,20,183,0.1093
+Economy and class,inflation,2024,All,Independent,1,2,0.5
+Economy and class,inflation,2024,All,Republican,70,185,0.3784
+Economy and class,inflation,2024,All,Third party,2,14,0.1429
+Economy and class,inflation,2026,All,Democratic,14,143,0.0979
+Economy and class,inflation,2026,All,Independent,1,4,0.25
+Economy and class,inflation,2026,All,Republican,33,124,0.2661
+Economy and class,inflation,2026,All,Third party,3,13,0.2308
+Economy and class,cost of living,2020,All,Democratic,9,148,0.0608
+Economy and class,cost of living,2020,All,Independent,0,3,0.0
+Economy and class,cost of living,2020,All,Republican,2,162,0.0123
+Economy and class,cost of living,2020,All,Third party,0,13,0.0
+Economy and class,cost of living,2022,All,Democratic,17,182,0.0934
+Economy and class,cost of living,2022,All,Independent,0,2,0.0
+Economy and class,cost of living,2022,All,Republican,9,186,0.0484
+Economy and class,cost of living,2022,All,Third party,0,11,0.0
+Economy and class,cost of living,2024,All,Democratic,20,183,0.1093
+Economy and class,cost of living,2024,All,Independent,0,2,0.0
+Economy and class,cost of living,2024,All,Republican,11,185,0.0595
+Economy and class,cost of living,2024,All,Third party,2,14,0.1429
+Economy and class,cost of living,2026,All,Democratic,17,143,0.1189
+Economy and class,cost of living,2026,All,Independent,1,4,0.25
+Economy and class,cost of living,2026,All,Republican,14,124,0.1129
+Economy and class,cost of living,2026,All,Third party,0,13,0.0
+Economy and class,affordable / affordability,2020,All,Democratic,95,148,0.6419
+Economy and class,affordable / affordability,2020,All,Independent,0,3,0.0
+Economy and class,affordable / affordability,2020,All,Republican,48,162,0.2963
+Economy and class,affordable / affordability,2020,All,Third party,7,13,0.5385
+Economy and class,affordable / affordability,2022,All,Democratic,124,182,0.6813
+Economy and class,affordable / affordability,2022,All,Independent,1,2,0.5
+Economy and class,affordable / affordability,2022,All,Republican,36,186,0.1935
+Economy and class,affordable / affordability,2022,All,Third party,3,11,0.2727
+Economy and class,affordable / affordability,2024,All,Democratic,121,183,0.6612
+Economy and class,affordable / affordability,2024,All,Independent,1,2,0.5
+Economy and class,affordable / affordability,2024,All,Republican,50,185,0.2703
+Economy and class,affordable / affordability,2024,All,Third party,3,14,0.2143
+Economy and class,affordable / affordability,2026,All,Democratic,94,143,0.6573
+Economy and class,affordable / affordability,2026,All,Independent,3,4,0.75
+Economy and class,affordable / affordability,2026,All,Republican,31,124,0.25
+Economy and class,affordable / affordability,2026,All,Third party,4,13,0.3077
+Economy and class,unions,2020,All,Democratic,53,148,0.3581
+Economy and class,unions,2020,All,Independent,0,3,0.0
+Economy and class,unions,2020,All,Republican,40,162,0.2469
+Economy and class,unions,2020,All,Third party,2,13,0.1538
+Economy and class,unions,2022,All,Democratic,59,182,0.3242
+Economy and class,unions,2022,All,Independent,0,2,0.0
+Economy and class,unions,2022,All,Republican,35,186,0.1882
+Economy and class,unions,2022,All,Third party,2,11,0.1818
+Economy and class,unions,2024,All,Democratic,79,183,0.4317
+Economy and class,unions,2024,All,Independent,1,2,0.5
+Economy and class,unions,2024,All,Republican,40,185,0.2162
+Economy and class,unions,2024,All,Third party,3,14,0.2143
+Economy and class,unions,2026,All,Democratic,61,143,0.4266
+Economy and class,unions,2026,All,Independent,1,4,0.25
+Economy and class,unions,2026,All,Republican,25,124,0.2016
+Economy and class,unions,2026,All,Third party,3,13,0.2308
+Economy and class,billionaires,2020,All,Democratic,7,148,0.0473
+Economy and class,billionaires,2020,All,Independent,0,3,0.0
+Economy and class,billionaires,2020,All,Republican,1,162,0.0062
+Economy and class,billionaires,2020,All,Third party,0,13,0.0
+Economy and class,billionaires,2022,All,Democratic,9,182,0.0495
+Economy and class,billionaires,2022,All,Independent,1,2,0.5
+Economy and class,billionaires,2022,All,Republican,0,186,0.0
+Economy and class,billionaires,2022,All,Third party,0,11,0.0
+Economy and class,billionaires,2024,All,Democratic,10,183,0.0546
+Economy and class,billionaires,2024,All,Independent,0,2,0.0
+Economy and class,billionaires,2024,All,Republican,2,185,0.0108
+Economy and class,billionaires,2024,All,Third party,1,14,0.0714
+Economy and class,billionaires,2026,All,Democratic,18,143,0.1259
+Economy and class,billionaires,2026,All,Independent,0,4,0.0
+Economy and class,billionaires,2026,All,Republican,1,124,0.0081
+Economy and class,billionaires,2026,All,Third party,2,13,0.1538
+Economy and class,corporations / corporate,2020,All,Democratic,37,148,0.25
+Economy and class,corporations / corporate,2020,All,Independent,1,3,0.3333
+Economy and class,corporations / corporate,2020,All,Republican,11,162,0.0679
+Economy and class,corporations / corporate,2020,All,Third party,4,13,0.3077
+Economy and class,corporations / corporate,2022,All,Democratic,53,182,0.2912
+Economy and class,corporations / corporate,2022,All,Independent,0,2,0.0
+Economy and class,corporations / corporate,2022,All,Republican,11,186,0.0591
+Economy and class,corporations / corporate,2022,All,Third party,0,11,0.0
+Economy and class,corporations / corporate,2024,All,Democratic,56,183,0.306
+Economy and class,corporations / corporate,2024,All,Independent,1,2,0.5
+Economy and class,corporations / corporate,2024,All,Republican,16,185,0.0865
+Economy and class,corporations / corporate,2024,All,Third party,5,14,0.3571
+Economy and class,corporations / corporate,2026,All,Democratic,45,143,0.3147
+Economy and class,corporations / corporate,2026,All,Independent,3,4,0.75
+Economy and class,corporations / corporate,2026,All,Republican,9,124,0.0726
+Economy and class,corporations / corporate,2026,All,Third party,5,13,0.3846
+Economy and class,Big Pharma,2020,All,Democratic,4,148,0.027
+Economy and class,Big Pharma,2020,All,Independent,0,3,0.0
+Economy and class,Big Pharma,2020,All,Republican,2,162,0.0123
+Economy and class,Big Pharma,2020,All,Third party,1,13,0.0769
+Economy and class,Big Pharma,2022,All,Democratic,16,182,0.0879
+Economy and class,Big Pharma,2022,All,Independent,0,2,0.0
+Economy and class,Big Pharma,2022,All,Republican,2,186,0.0108
+Economy and class,Big Pharma,2022,All,Third party,1,11,0.0909
+Economy and class,Big Pharma,2024,All,Democratic,11,183,0.0601
+Economy and class,Big Pharma,2024,All,Independent,1,2,0.5
+Economy and class,Big Pharma,2024,All,Republican,2,185,0.0108
+Economy and class,Big Pharma,2024,All,Third party,0,14,0.0
+Economy and class,Big Pharma,2026,All,Democratic,2,143,0.014
+Economy and class,Big Pharma,2026,All,Independent,0,4,0.0
+Economy and class,Big Pharma,2026,All,Republican,0,124,0.0
+Economy and class,Big Pharma,2026,All,Third party,0,13,0.0
+Economy and class,tariffs,2020,All,Democratic,2,148,0.0135
+Economy and class,tariffs,2020,All,Independent,0,3,0.0
+Economy and class,tariffs,2020,All,Republican,4,162,0.0247
+Economy and class,tariffs,2020,All,Third party,2,13,0.1538
+Economy and class,tariffs,2022,All,Democratic,2,182,0.011
+Economy and class,tariffs,2022,All,Independent,0,2,0.0
+Economy and class,tariffs,2022,All,Republican,2,186,0.0108
+Economy and class,tariffs,2022,All,Third party,1,11,0.0909
+Economy and class,tariffs,2024,All,Democratic,5,183,0.0273
+Economy and class,tariffs,2024,All,Independent,0,2,0.0
+Economy and class,tariffs,2024,All,Republican,3,185,0.0162
+Economy and class,tariffs,2024,All,Third party,0,14,0.0
+Economy and class,tariffs,2026,All,Democratic,16,143,0.1119
+Economy and class,tariffs,2026,All,Independent,0,4,0.0
+Economy and class,tariffs,2026,All,Republican,3,124,0.0242
+Economy and class,tariffs,2026,All,Third party,1,13,0.0769
+Economy and class,tax cuts,2020,All,Democratic,11,148,0.0743
+Economy and class,tax cuts,2020,All,Independent,0,3,0.0
+Economy and class,tax cuts,2020,All,Republican,39,162,0.2407
+Economy and class,tax cuts,2020,All,Third party,0,13,0.0
+Economy and class,tax cuts,2022,All,Democratic,14,182,0.0769
+Economy and class,tax cuts,2022,All,Independent,0,2,0.0
+Economy and class,tax cuts,2022,All,Republican,32,186,0.172
+Economy and class,tax cuts,2022,All,Third party,0,11,0.0
+Economy and class,tax cuts,2024,All,Democratic,14,183,0.0765
+Economy and class,tax cuts,2024,All,Independent,0,2,0.0
+Economy and class,tax cuts,2024,All,Republican,29,185,0.1568
+Economy and class,tax cuts,2024,All,Third party,1,14,0.0714
+Economy and class,tax cuts,2026,All,Democratic,11,143,0.0769
+Economy and class,tax cuts,2026,All,Independent,0,4,0.0
+Economy and class,tax cuts,2026,All,Republican,30,124,0.2419
+Economy and class,tax cuts,2026,All,Third party,0,13,0.0
+Opponents and politics,radical left,2020,All,Democratic,0,148,0.0
+Opponents and politics,radical left,2020,All,Independent,0,3,0.0
+Opponents and politics,radical left,2020,All,Republican,8,162,0.0494
+Opponents and politics,radical left,2020,All,Third party,0,13,0.0
+Opponents and politics,radical left,2022,All,Democratic,0,182,0.0
+Opponents and politics,radical left,2022,All,Independent,0,2,0.0
+Opponents and politics,radical left,2022,All,Republican,19,186,0.1022
+Opponents and politics,radical left,2022,All,Third party,0,11,0.0
+Opponents and politics,radical left,2024,All,Democratic,0,183,0.0
+Opponents and politics,radical left,2024,All,Independent,0,2,0.0
+Opponents and politics,radical left,2024,All,Republican,22,185,0.1189
+Opponents and politics,radical left,2024,All,Third party,0,14,0.0
+Opponents and politics,radical left,2026,All,Democratic,0,143,0.0
+Opponents and politics,radical left,2026,All,Independent,0,4,0.0
+Opponents and politics,radical left,2026,All,Republican,14,124,0.1129
+Opponents and politics,radical left,2026,All,Third party,0,13,0.0
+Opponents and politics,socialism / socialist,2020,All,Democratic,3,148,0.0203
+Opponents and politics,socialism / socialist,2020,All,Independent,0,3,0.0
+Opponents and politics,socialism / socialist,2020,All,Republican,27,162,0.1667
+Opponents and politics,socialism / socialist,2020,All,Third party,1,13,0.0769
+Opponents and politics,socialism / socialist,2022,All,Democratic,1,182,0.0055
+Opponents and politics,socialism / socialist,2022,All,Independent,0,2,0.0
+Opponents and politics,socialism / socialist,2022,All,Republican,40,186,0.2151
+Opponents and politics,socialism / socialist,2022,All,Third party,1,11,0.0909
+Opponents and politics,socialism / socialist,2024,All,Democratic,1,183,0.0055
+Opponents and politics,socialism / socialist,2024,All,Independent,0,2,0.0
+Opponents and politics,socialism / socialist,2024,All,Republican,33,185,0.1784
+Opponents and politics,socialism / socialist,2024,All,Third party,1,14,0.0714
+Opponents and politics,socialism / socialist,2026,All,Democratic,2,143,0.014
+Opponents and politics,socialism / socialist,2026,All,Independent,1,4,0.25
+Opponents and politics,socialism / socialist,2026,All,Republican,18,124,0.1452
+Opponents and politics,socialism / socialist,2026,All,Third party,1,13,0.0769
+Opponents and politics,woke,2020,All,Democratic,0,148,0.0
+Opponents and politics,woke,2020,All,Independent,0,3,0.0
+Opponents and politics,woke,2020,All,Republican,2,162,0.0123
+Opponents and politics,woke,2020,All,Third party,0,13,0.0
+Opponents and politics,woke,2022,All,Democratic,1,182,0.0055
+Opponents and politics,woke,2022,All,Independent,0,2,0.0
+Opponents and politics,woke,2022,All,Republican,11,186,0.0591
+Opponents and politics,woke,2022,All,Third party,0,11,0.0
+Opponents and politics,woke,2024,All,Democratic,0,183,0.0
+Opponents and politics,woke,2024,All,Independent,0,2,0.0
+Opponents and politics,woke,2024,All,Republican,18,185,0.0973
+Opponents and politics,woke,2024,All,Third party,0,14,0.0
+Opponents and politics,woke,2026,All,Democratic,0,143,0.0
+Opponents and politics,woke,2026,All,Independent,0,4,0.0
+Opponents and politics,woke,2026,All,Republican,8,124,0.0645
+Opponents and politics,woke,2026,All,Third party,1,13,0.0769
+Opponents and politics,MAGA,2020,All,Democratic,0,148,0.0
+Opponents and politics,MAGA,2020,All,Independent,0,3,0.0
+Opponents and politics,MAGA,2020,All,Republican,3,162,0.0185
+Opponents and politics,MAGA,2020,All,Third party,0,13,0.0
+Opponents and politics,MAGA,2022,All,Democratic,2,182,0.011
+Opponents and politics,MAGA,2022,All,Independent,0,2,0.0
+Opponents and politics,MAGA,2022,All,Republican,3,186,0.0161
+Opponents and politics,MAGA,2022,All,Third party,0,11,0.0
+Opponents and politics,MAGA,2024,All,Democratic,14,183,0.0765
+Opponents and politics,MAGA,2024,All,Independent,0,2,0.0
+Opponents and politics,MAGA,2024,All,Republican,4,185,0.0216
+Opponents and politics,MAGA,2024,All,Third party,0,14,0.0
+Opponents and politics,MAGA,2026,All,Democratic,12,143,0.0839
+Opponents and politics,MAGA,2026,All,Independent,0,4,0.0
+Opponents and politics,MAGA,2026,All,Republican,4,124,0.0323
+Opponents and politics,MAGA,2026,All,Third party,1,13,0.0769
+Opponents and politics,extreme / extremist,2020,All,Democratic,17,148,0.1149
+Opponents and politics,extreme / extremist,2020,All,Independent,0,3,0.0
+Opponents and politics,extreme / extremist,2020,All,Republican,21,162,0.1296
+Opponents and politics,extreme / extremist,2020,All,Third party,1,13,0.0769
+Opponents and politics,extreme / extremist,2022,All,Democratic,34,182,0.1868
+Opponents and politics,extreme / extremist,2022,All,Independent,0,2,0.0
+Opponents and politics,extreme / extremist,2022,All,Republican,19,186,0.1022
+Opponents and politics,extreme / extremist,2022,All,Third party,1,11,0.0909
+Opponents and politics,extreme / extremist,2024,All,Democratic,48,183,0.2623
+Opponents and politics,extreme / extremist,2024,All,Independent,1,2,0.5
+Opponents and politics,extreme / extremist,2024,All,Republican,18,185,0.0973
+Opponents and politics,extreme / extremist,2024,All,Third party,0,14,0.0
+Opponents and politics,extreme / extremist,2026,All,Democratic,45,143,0.3147
+Opponents and politics,extreme / extremist,2026,All,Independent,1,4,0.25
+Opponents and politics,extreme / extremist,2026,All,Republican,9,124,0.0726
+Opponents and politics,extreme / extremist,2026,All,Third party,1,13,0.0769
+Opponents and politics,Trump,2020,All,Democratic,64,148,0.4324
+Opponents and politics,Trump,2020,All,Independent,0,3,0.0
+Opponents and politics,Trump,2020,All,Republican,94,162,0.5802
+Opponents and politics,Trump,2020,All,Third party,1,13,0.0769
+Opponents and politics,Trump,2022,All,Democratic,48,182,0.2637
+Opponents and politics,Trump,2022,All,Independent,0,2,0.0
+Opponents and politics,Trump,2022,All,Republican,83,186,0.4462
+Opponents and politics,Trump,2022,All,Third party,1,11,0.0909
+Opponents and politics,Trump,2024,All,Democratic,46,183,0.2514
+Opponents and politics,Trump,2024,All,Independent,0,2,0.0
+Opponents and politics,Trump,2024,All,Republican,90,185,0.4865
+Opponents and politics,Trump,2024,All,Third party,1,14,0.0714
+Opponents and politics,Trump,2026,All,Democratic,66,143,0.4615
+Opponents and politics,Trump,2026,All,Independent,1,4,0.25
+Opponents and politics,Trump,2026,All,Republican,78,124,0.629
+Opponents and politics,Trump,2026,All,Third party,4,13,0.3077
+Opponents and politics,Biden,2020,All,Democratic,22,148,0.1486
+Opponents and politics,Biden,2020,All,Independent,0,3,0.0
+Opponents and politics,Biden,2020,All,Republican,12,162,0.0741
+Opponents and politics,Biden,2020,All,Third party,1,13,0.0769
+Opponents and politics,Biden,2022,All,Democratic,43,182,0.2363
+Opponents and politics,Biden,2022,All,Independent,0,2,0.0
+Opponents and politics,Biden,2022,All,Republican,82,186,0.4409
+Opponents and politics,Biden,2022,All,Third party,3,11,0.2727
+Opponents and politics,Biden,2024,All,Democratic,38,183,0.2077
+Opponents and politics,Biden,2024,All,Independent,0,2,0.0
+Opponents and politics,Biden,2024,All,Republican,85,185,0.4595
+Opponents and politics,Biden,2024,All,Third party,2,14,0.1429
+Opponents and politics,Biden,2026,All,Democratic,19,143,0.1329
+Opponents and politics,Biden,2026,All,Independent,1,4,0.25
+Opponents and politics,Biden,2026,All,Republican,50,124,0.4032
+Opponents and politics,Biden,2026,All,Third party,3,13,0.2308
+Opponents and politics,career politicians,2020,All,Democratic,6,148,0.0405
+Opponents and politics,career politicians,2020,All,Independent,0,3,0.0
+Opponents and politics,career politicians,2020,All,Republican,17,162,0.1049
+Opponents and politics,career politicians,2020,All,Third party,0,13,0.0
+Opponents and politics,career politicians,2022,All,Democratic,7,182,0.0385
+Opponents and politics,career politicians,2022,All,Independent,0,2,0.0
+Opponents and politics,career politicians,2022,All,Republican,18,186,0.0968
+Opponents and politics,career politicians,2022,All,Third party,1,11,0.0909
+Opponents and politics,career politicians,2024,All,Democratic,6,183,0.0328
+Opponents and politics,career politicians,2024,All,Independent,1,2,0.5
+Opponents and politics,career politicians,2024,All,Republican,17,185,0.0919
+Opponents and politics,career politicians,2024,All,Third party,1,14,0.0714
+Opponents and politics,career politicians,2026,All,Democratic,5,143,0.035
+Opponents and politics,career politicians,2026,All,Independent,1,4,0.25
+Opponents and politics,career politicians,2026,All,Republican,7,124,0.0565
+Opponents and politics,career politicians,2026,All,Third party,0,13,0.0
+Opponents and politics,the swamp,2020,All,Democratic,0,148,0.0
+Opponents and politics,the swamp,2020,All,Independent,0,3,0.0
+Opponents and politics,the swamp,2020,All,Republican,9,162,0.0556
+Opponents and politics,the swamp,2020,All,Third party,0,13,0.0
+Opponents and politics,the swamp,2022,All,Democratic,1,182,0.0055
+Opponents and politics,the swamp,2022,All,Independent,0,2,0.0
+Opponents and politics,the swamp,2022,All,Republican,4,186,0.0215
+Opponents and politics,the swamp,2022,All,Third party,0,11,0.0
+Opponents and politics,the swamp,2024,All,Democratic,0,183,0.0
+Opponents and politics,the swamp,2024,All,Independent,0,2,0.0
+Opponents and politics,the swamp,2024,All,Republican,8,185,0.0432
+Opponents and politics,the swamp,2024,All,Third party,0,14,0.0
+Opponents and politics,the swamp,2026,All,Democratic,2,143,0.014
+Opponents and politics,the swamp,2026,All,Independent,1,4,0.25
+Opponents and politics,the swamp,2026,All,Republican,3,124,0.0242
+Opponents and politics,the swamp,2026,All,Third party,0,13,0.0
+Opponents and politics,elites,2020,All,Democratic,4,148,0.027
+Opponents and politics,elites,2020,All,Independent,0,3,0.0
+Opponents and politics,elites,2020,All,Republican,8,162,0.0494
+Opponents and politics,elites,2020,All,Third party,0,13,0.0
+Opponents and politics,elites,2022,All,Democratic,3,182,0.0165
+Opponents and politics,elites,2022,All,Independent,0,2,0.0
+Opponents and politics,elites,2022,All,Republican,11,186,0.0591
+Opponents and politics,elites,2022,All,Third party,0,11,0.0
+Opponents and politics,elites,2024,All,Democratic,3,183,0.0164
+Opponents and politics,elites,2024,All,Independent,0,2,0.0
+Opponents and politics,elites,2024,All,Republican,14,185,0.0757
+Opponents and politics,elites,2024,All,Third party,2,14,0.1429
+Opponents and politics,elites,2026,All,Democratic,2,143,0.014
+Opponents and politics,elites,2026,All,Independent,0,4,0.0
+Opponents and politics,elites,2026,All,Republican,5,124,0.0403
+Opponents and politics,elites,2026,All,Third party,1,13,0.0769
+Opponents and politics,corruption,2020,All,Democratic,16,148,0.1081
+Opponents and politics,corruption,2020,All,Independent,1,3,0.3333
+Opponents and politics,corruption,2020,All,Republican,17,162,0.1049
+Opponents and politics,corruption,2020,All,Third party,3,13,0.2308
+Opponents and politics,corruption,2022,All,Democratic,19,182,0.1044
+Opponents and politics,corruption,2022,All,Independent,0,2,0.0
+Opponents and politics,corruption,2022,All,Republican,21,186,0.1129
+Opponents and politics,corruption,2022,All,Third party,2,11,0.1818
+Opponents and politics,corruption,2024,All,Democratic,21,183,0.1148
+Opponents and politics,corruption,2024,All,Independent,0,2,0.0
+Opponents and politics,corruption,2024,All,Republican,26,185,0.1405
+Opponents and politics,corruption,2024,All,Third party,3,14,0.2143
+Opponents and politics,corruption,2026,All,Democratic,34,143,0.2378
+Opponents and politics,corruption,2026,All,Independent,1,4,0.25
+Opponents and politics,corruption,2026,All,Republican,14,124,0.1129
+Opponents and politics,corruption,2026,All,Third party,4,13,0.3077
+Opponents and politics,bipartisan,2020,All,Democratic,65,148,0.4392
+Opponents and politics,bipartisan,2020,All,Independent,0,3,0.0
+Opponents and politics,bipartisan,2020,All,Republican,34,162,0.2099
+Opponents and politics,bipartisan,2020,All,Third party,1,13,0.0769
+Opponents and politics,bipartisan,2022,All,Democratic,75,182,0.4121
+Opponents and politics,bipartisan,2022,All,Independent,0,2,0.0
+Opponents and politics,bipartisan,2022,All,Republican,30,186,0.1613
+Opponents and politics,bipartisan,2022,All,Third party,0,11,0.0
+Opponents and politics,bipartisan,2024,All,Democratic,76,183,0.4153
+Opponents and politics,bipartisan,2024,All,Independent,1,2,0.5
+Opponents and politics,bipartisan,2024,All,Republican,34,185,0.1838
+Opponents and politics,bipartisan,2024,All,Third party,1,14,0.0714
+Opponents and politics,bipartisan,2026,All,Democratic,65,143,0.4545
+Opponents and politics,bipartisan,2026,All,Independent,2,4,0.5
+Opponents and politics,bipartisan,2026,All,Republican,26,124,0.2097
+Opponents and politics,bipartisan,2026,All,Third party,0,13,0.0
+Opponents and politics,common sense,2020,All,Democratic,39,148,0.2635
+Opponents and politics,common sense,2020,All,Independent,1,3,0.3333
+Opponents and politics,common sense,2020,All,Republican,35,162,0.216
+Opponents and politics,common sense,2020,All,Third party,1,13,0.0769
+Opponents and politics,common sense,2022,All,Democratic,40,182,0.2198
+Opponents and politics,common sense,2022,All,Independent,1,2,0.5
+Opponents and politics,common sense,2022,All,Republican,35,186,0.1882
+Opponents and politics,common sense,2022,All,Third party,0,11,0.0
+Opponents and politics,common sense,2024,All,Democratic,45,183,0.2459
+Opponents and politics,common sense,2024,All,Independent,1,2,0.5
+Opponents and politics,common sense,2024,All,Republican,39,185,0.2108
+Opponents and politics,common sense,2024,All,Third party,1,14,0.0714
+Opponents and politics,common sense,2026,All,Democratic,28,143,0.1958
+Opponents and politics,common sense,2026,All,Independent,3,4,0.75
+Opponents and politics,common sense,2026,All,Republican,27,124,0.2177
+Opponents and politics,common sense,2026,All,Third party,2,13,0.1538
+Opponents and politics,term limits,2020,All,Democratic,1,148,0.0068
+Opponents and politics,term limits,2020,All,Independent,0,3,0.0
+Opponents and politics,term limits,2020,All,Republican,17,162,0.1049
+Opponents and politics,term limits,2020,All,Third party,2,13,0.1538
+Opponents and politics,term limits,2022,All,Democratic,2,182,0.011
+Opponents and politics,term limits,2022,All,Independent,0,2,0.0
+Opponents and politics,term limits,2022,All,Republican,12,186,0.0645
+Opponents and politics,term limits,2022,All,Third party,2,11,0.1818
+Opponents and politics,term limits,2024,All,Democratic,2,183,0.0109
+Opponents and politics,term limits,2024,All,Independent,1,2,0.5
+Opponents and politics,term limits,2024,All,Republican,24,185,0.1297
+Opponents and politics,term limits,2024,All,Third party,3,14,0.2143
+Opponents and politics,term limits,2026,All,Democratic,3,143,0.021
+Opponents and politics,term limits,2026,All,Independent,0,4,0.0
+Opponents and politics,term limits,2026,All,Republican,6,124,0.0484
+Opponents and politics,term limits,2026,All,Third party,0,13,0.0
+Rights and values,freedom,2020,All,Democratic,32,148,0.2162
+Rights and values,freedom,2020,All,Independent,2,3,0.6667
+Rights and values,freedom,2020,All,Republican,82,162,0.5062
+Rights and values,freedom,2020,All,Third party,6,13,0.4615
+Rights and values,freedom,2022,All,Democratic,52,182,0.2857
+Rights and values,freedom,2022,All,Independent,0,2,0.0
+Rights and values,freedom,2022,All,Republican,92,186,0.4946
+Rights and values,freedom,2022,All,Third party,5,11,0.4545
+Rights and values,freedom,2024,All,Democratic,82,183,0.4481
+Rights and values,freedom,2024,All,Independent,1,2,0.5
+Rights and values,freedom,2024,All,Republican,96,185,0.5189
+Rights and values,freedom,2024,All,Third party,5,14,0.3571
+Rights and values,freedom,2026,All,Democratic,58,143,0.4056
+Rights and values,freedom,2026,All,Independent,3,4,0.75
+Rights and values,freedom,2026,All,Republican,50,124,0.4032
+Rights and values,freedom,2026,All,Third party,5,13,0.3846
+Rights and values,liberty,2020,All,Democratic,9,148,0.0608
+Rights and values,liberty,2020,All,Independent,0,3,0.0
+Rights and values,liberty,2020,All,Republican,26,162,0.1605
+Rights and values,liberty,2020,All,Third party,5,13,0.3846
+Rights and values,liberty,2022,All,Democratic,13,182,0.0714
+Rights and values,liberty,2022,All,Independent,0,2,0.0
+Rights and values,liberty,2022,All,Republican,37,186,0.1989
+Rights and values,liberty,2022,All,Third party,4,11,0.3636
+Rights and values,liberty,2024,All,Democratic,9,183,0.0492
+Rights and values,liberty,2024,All,Independent,0,2,0.0
+Rights and values,liberty,2024,All,Republican,50,185,0.2703
+Rights and values,liberty,2024,All,Third party,5,14,0.3571
+Rights and values,liberty,2026,All,Democratic,7,143,0.049
+Rights and values,liberty,2026,All,Independent,1,4,0.25
+Rights and values,liberty,2026,All,Republican,26,124,0.2097
+Rights and values,liberty,2026,All,Third party,6,13,0.4615
+Rights and values,democracy,2020,All,Democratic,36,148,0.2432
+Rights and values,democracy,2020,All,Independent,0,3,0.0
+Rights and values,democracy,2020,All,Republican,7,162,0.0432
+Rights and values,democracy,2020,All,Third party,3,13,0.2308
+Rights and values,democracy,2022,All,Democratic,65,182,0.3571
+Rights and values,democracy,2022,All,Independent,1,2,0.5
+Rights and values,democracy,2022,All,Republican,20,186,0.1075
+Rights and values,democracy,2022,All,Third party,0,11,0.0
+Rights and values,democracy,2024,All,Democratic,73,183,0.3989
+Rights and values,democracy,2024,All,Independent,1,2,0.5
+Rights and values,democracy,2024,All,Republican,17,185,0.0919
+Rights and values,democracy,2024,All,Third party,3,14,0.2143
+Rights and values,democracy,2026,All,Democratic,58,143,0.4056
+Rights and values,democracy,2026,All,Independent,0,4,0.0
+Rights and values,democracy,2026,All,Republican,9,124,0.0726
+Rights and values,democracy,2026,All,Third party,4,13,0.3077
+Rights and values,Constitution,2020,All,Democratic,24,148,0.1622
+Rights and values,Constitution,2020,All,Independent,2,3,0.6667
+Rights and values,Constitution,2020,All,Republican,75,162,0.463
+Rights and values,Constitution,2020,All,Third party,6,13,0.4615
+Rights and values,Constitution,2022,All,Democratic,34,182,0.1868
+Rights and values,Constitution,2022,All,Independent,0,2,0.0
+Rights and values,Constitution,2022,All,Republican,80,186,0.4301
+Rights and values,Constitution,2022,All,Third party,3,11,0.2727
+Rights and values,Constitution,2024,All,Democratic,31,183,0.1694
+Rights and values,Constitution,2024,All,Independent,2,2,1.0
+Rights and values,Constitution,2024,All,Republican,86,185,0.4649
+Rights and values,Constitution,2024,All,Third party,7,14,0.5
+Rights and values,Constitution,2026,All,Democratic,29,143,0.2028
+Rights and values,Constitution,2026,All,Independent,2,4,0.5
+Rights and values,Constitution,2026,All,Republican,41,124,0.3306
+Rights and values,Constitution,2026,All,Third party,5,13,0.3846
+Rights and values,Second Amendment,2020,All,Democratic,8,148,0.0541
+Rights and values,Second Amendment,2020,All,Independent,1,3,0.3333
+Rights and values,Second Amendment,2020,All,Republican,73,162,0.4506
+Rights and values,Second Amendment,2020,All,Third party,1,13,0.0769
+Rights and values,Second Amendment,2022,All,Democratic,9,182,0.0495
+Rights and values,Second Amendment,2022,All,Independent,0,2,0.0
+Rights and values,Second Amendment,2022,All,Republican,71,186,0.3817
+Rights and values,Second Amendment,2022,All,Third party,0,11,0.0
+Rights and values,Second Amendment,2024,All,Democratic,5,183,0.0273
+Rights and values,Second Amendment,2024,All,Independent,2,2,1.0
+Rights and values,Second Amendment,2024,All,Republican,78,185,0.4216
+Rights and values,Second Amendment,2024,All,Third party,2,14,0.1429
+Rights and values,Second Amendment,2026,All,Democratic,4,143,0.028
+Rights and values,Second Amendment,2026,All,Independent,0,4,0.0
+Rights and values,Second Amendment,2026,All,Republican,51,124,0.4113
+Rights and values,Second Amendment,2026,All,Third party,2,13,0.1538
+Rights and values,faith / God,2020,All,Democratic,16,148,0.1081
+Rights and values,faith / God,2020,All,Independent,2,3,0.6667
+Rights and values,faith / God,2020,All,Republican,51,162,0.3148
+Rights and values,faith / God,2020,All,Third party,0,13,0.0
+Rights and values,faith / God,2022,All,Democratic,17,182,0.0934
+Rights and values,faith / God,2022,All,Independent,2,2,1.0
+Rights and values,faith / God,2022,All,Republican,61,186,0.328
+Rights and values,faith / God,2022,All,Third party,2,11,0.1818
+Rights and values,faith / God,2024,All,Democratic,23,183,0.1257
+Rights and values,faith / God,2024,All,Independent,1,2,0.5
+Rights and values,faith / God,2024,All,Republican,61,185,0.3297
+Rights and values,faith / God,2024,All,Third party,5,14,0.3571
+Rights and values,faith / God,2026,All,Democratic,15,143,0.1049
+Rights and values,faith / God,2026,All,Independent,0,4,0.0
+Rights and values,faith / God,2026,All,Republican,39,124,0.3145
+Rights and values,faith / God,2026,All,Third party,3,13,0.2308
+Rights and values,parental rights,2020,All,Democratic,0,148,0.0
+Rights and values,parental rights,2020,All,Independent,0,3,0.0
+Rights and values,parental rights,2020,All,Republican,3,162,0.0185
+Rights and values,parental rights,2020,All,Third party,0,13,0.0
+Rights and values,parental rights,2022,All,Democratic,0,182,0.0
+Rights and values,parental rights,2022,All,Independent,0,2,0.0
+Rights and values,parental rights,2022,All,Republican,5,186,0.0269
+Rights and values,parental rights,2022,All,Third party,0,11,0.0
+Rights and values,parental rights,2024,All,Democratic,0,183,0.0
+Rights and values,parental rights,2024,All,Independent,0,2,0.0
+Rights and values,parental rights,2024,All,Republican,9,185,0.0486
+Rights and values,parental rights,2024,All,Third party,1,14,0.0714
+Rights and values,parental rights,2026,All,Democratic,0,143,0.0
+Rights and values,parental rights,2026,All,Independent,0,4,0.0
+Rights and values,parental rights,2026,All,Republican,8,124,0.0645
+Rights and values,parental rights,2026,All,Third party,0,13,0.0
+Rights and values,abortion,2020,All,Democratic,12,148,0.0811
+Rights and values,abortion,2020,All,Independent,0,3,0.0
+Rights and values,abortion,2020,All,Republican,45,162,0.2778
+Rights and values,abortion,2020,All,Third party,1,13,0.0769
+Rights and values,abortion,2022,All,Democratic,49,182,0.2692
+Rights and values,abortion,2022,All,Independent,0,2,0.0
+Rights and values,abortion,2022,All,Republican,39,186,0.2097
+Rights and values,abortion,2022,All,Third party,0,11,0.0
+Rights and values,abortion,2024,All,Democratic,64,183,0.3497
+Rights and values,abortion,2024,All,Independent,2,2,1.0
+Rights and values,abortion,2024,All,Republican,43,185,0.2324
+Rights and values,abortion,2024,All,Third party,2,14,0.1429
+Rights and values,abortion,2026,All,Democratic,46,143,0.3217
+Rights and values,abortion,2026,All,Independent,0,4,0.0
+Rights and values,abortion,2026,All,Republican,21,124,0.1694
+Rights and values,abortion,2026,All,Third party,1,13,0.0769
+Rights and values,reproductive freedom / rights,2020,All,Democratic,29,148,0.1959
+Rights and values,reproductive freedom / rights,2020,All,Independent,0,3,0.0
+Rights and values,reproductive freedom / rights,2020,All,Republican,0,162,0.0
+Rights and values,reproductive freedom / rights,2020,All,Third party,0,13,0.0
+Rights and values,reproductive freedom / rights,2022,All,Democratic,54,182,0.2967
+Rights and values,reproductive freedom / rights,2022,All,Independent,0,2,0.0
+Rights and values,reproductive freedom / rights,2022,All,Republican,0,186,0.0
+Rights and values,reproductive freedom / rights,2022,All,Third party,0,11,0.0
+Rights and values,reproductive freedom / rights,2024,All,Democratic,81,183,0.4426
+Rights and values,reproductive freedom / rights,2024,All,Independent,0,2,0.0
+Rights and values,reproductive freedom / rights,2024,All,Republican,0,185,0.0
+Rights and values,reproductive freedom / rights,2024,All,Third party,1,14,0.0714
+Rights and values,reproductive freedom / rights,2026,All,Democratic,54,143,0.3776
+Rights and values,reproductive freedom / rights,2026,All,Independent,0,4,0.0
+Rights and values,reproductive freedom / rights,2026,All,Republican,0,124,0.0
+Rights and values,reproductive freedom / rights,2026,All,Third party,1,13,0.0769
+Rights and values,pro-life / unborn,2020,All,Democratic,1,148,0.0068
+Rights and values,pro-life / unborn,2020,All,Independent,1,3,0.3333
+Rights and values,pro-life / unborn,2020,All,Republican,73,162,0.4506
+Rights and values,pro-life / unborn,2020,All,Third party,1,13,0.0769
+Rights and values,pro-life / unborn,2022,All,Democratic,3,182,0.0165
+Rights and values,pro-life / unborn,2022,All,Independent,0,2,0.0
+Rights and values,pro-life / unborn,2022,All,Republican,66,186,0.3548
+Rights and values,pro-life / unborn,2022,All,Third party,2,11,0.1818
+Rights and values,pro-life / unborn,2024,All,Democratic,4,183,0.0219
+Rights and values,pro-life / unborn,2024,All,Independent,0,2,0.0
+Rights and values,pro-life / unborn,2024,All,Republican,69,185,0.373
+Rights and values,pro-life / unborn,2024,All,Third party,1,14,0.0714
+Rights and values,pro-life / unborn,2026,All,Democratic,3,143,0.021
+Rights and values,pro-life / unborn,2026,All,Independent,0,4,0.0
+Rights and values,pro-life / unborn,2026,All,Republican,31,124,0.25
+Rights and values,pro-life / unborn,2026,All,Third party,0,13,0.0
+Rights and values,election integrity,2020,All,Democratic,0,148,0.0
+Rights and values,election integrity,2020,All,Independent,0,3,0.0
+Rights and values,election integrity,2020,All,Republican,1,162,0.0062
+Rights and values,election integrity,2020,All,Third party,0,13,0.0
+Rights and values,election integrity,2022,All,Democratic,1,182,0.0055
+Rights and values,election integrity,2022,All,Independent,0,2,0.0
+Rights and values,election integrity,2022,All,Republican,13,186,0.0699
+Rights and values,election integrity,2022,All,Third party,1,11,0.0909
+Rights and values,election integrity,2024,All,Democratic,1,183,0.0055
+Rights and values,election integrity,2024,All,Independent,0,2,0.0
+Rights and values,election integrity,2024,All,Republican,17,185,0.0919
+Rights and values,election integrity,2024,All,Third party,0,14,0.0
+Rights and values,election integrity,2026,All,Democratic,1,143,0.007
+Rights and values,election integrity,2026,All,Independent,0,4,0.0
+Rights and values,election integrity,2026,All,Republican,7,124,0.0565
+Rights and values,election integrity,2026,All,Third party,0,13,0.0
+Security and immigration,border,2020,All,Democratic,28,148,0.1892
+Security and immigration,border,2020,All,Independent,0,3,0.0
+Security and immigration,border,2020,All,Republican,90,162,0.5556
+Security and immigration,border,2020,All,Third party,2,13,0.1538
+Security and immigration,border,2022,All,Democratic,23,182,0.1264
+Security and immigration,border,2022,All,Independent,1,2,0.5
+Security and immigration,border,2022,All,Republican,105,186,0.5645
+Security and immigration,border,2022,All,Third party,4,11,0.3636
+Security and immigration,border,2024,All,Democratic,42,183,0.2295
+Security and immigration,border,2024,All,Independent,2,2,1.0
+Security and immigration,border,2024,All,Republican,127,185,0.6865
+Security and immigration,border,2024,All,Third party,3,14,0.2143
+Security and immigration,border,2026,All,Democratic,25,143,0.1748
+Security and immigration,border,2026,All,Independent,0,4,0.0
+Security and immigration,border,2026,All,Republican,80,124,0.6452
+Security and immigration,border,2026,All,Third party,2,13,0.1538
+Security and immigration,illegal immigration / aliens,2020,All,Democratic,1,148,0.0068
+Security and immigration,illegal immigration / aliens,2020,All,Independent,0,3,0.0
+Security and immigration,illegal immigration / aliens,2020,All,Republican,49,162,0.3025
+Security and immigration,illegal immigration / aliens,2020,All,Third party,1,13,0.0769
+Security and immigration,illegal immigration / aliens,2022,All,Democratic,0,182,0.0
+Security and immigration,illegal immigration / aliens,2022,All,Independent,1,2,0.5
+Security and immigration,illegal immigration / aliens,2022,All,Republican,56,186,0.3011
+Security and immigration,illegal immigration / aliens,2022,All,Third party,1,11,0.0909
+Security and immigration,illegal immigration / aliens,2024,All,Democratic,3,183,0.0164
+Security and immigration,illegal immigration / aliens,2024,All,Independent,2,2,1.0
+Security and immigration,illegal immigration / aliens,2024,All,Republican,58,185,0.3135
+Security and immigration,illegal immigration / aliens,2024,All,Third party,1,14,0.0714
+Security and immigration,illegal immigration / aliens,2026,All,Democratic,2,143,0.014
+Security and immigration,illegal immigration / aliens,2026,All,Independent,0,4,0.0
+Security and immigration,illegal immigration / aliens,2026,All,Republican,35,124,0.2823
+Security and immigration,illegal immigration / aliens,2026,All,Third party,0,13,0.0
+Security and immigration,open borders,2020,All,Democratic,0,148,0.0
+Security and immigration,open borders,2020,All,Independent,0,3,0.0
+Security and immigration,open borders,2020,All,Republican,9,162,0.0556
+Security and immigration,open borders,2020,All,Third party,0,13,0.0
+Security and immigration,open borders,2022,All,Democratic,1,182,0.0055
+Security and immigration,open borders,2022,All,Independent,0,2,0.0
+Security and immigration,open borders,2022,All,Republican,18,186,0.0968
+Security and immigration,open borders,2022,All,Third party,0,11,0.0
+Security and immigration,open borders,2024,All,Democratic,0,183,0.0
+Security and immigration,open borders,2024,All,Independent,0,2,0.0
+Security and immigration,open borders,2024,All,Republican,21,185,0.1135
+Security and immigration,open borders,2024,All,Third party,1,14,0.0714
+Security and immigration,open borders,2026,All,Democratic,0,143,0.0
+Security and immigration,open borders,2026,All,Independent,0,4,0.0
+Security and immigration,open borders,2026,All,Republican,10,124,0.0806
+Security and immigration,open borders,2026,All,Third party,0,13,0.0
+Security and immigration,fentanyl,2020,All,Democratic,1,148,0.0068
+Security and immigration,fentanyl,2020,All,Independent,0,3,0.0
+Security and immigration,fentanyl,2020,All,Republican,2,162,0.0123
+Security and immigration,fentanyl,2020,All,Third party,0,13,0.0
+Security and immigration,fentanyl,2022,All,Democratic,4,182,0.022
+Security and immigration,fentanyl,2022,All,Independent,0,2,0.0
+Security and immigration,fentanyl,2022,All,Republican,18,186,0.0968
+Security and immigration,fentanyl,2022,All,Third party,0,11,0.0
+Security and immigration,fentanyl,2024,All,Democratic,15,183,0.082
+Security and immigration,fentanyl,2024,All,Independent,0,2,0.0
+Security and immigration,fentanyl,2024,All,Republican,33,185,0.1784
+Security and immigration,fentanyl,2024,All,Third party,0,14,0.0
+Security and immigration,fentanyl,2026,All,Democratic,9,143,0.0629
+Security and immigration,fentanyl,2026,All,Independent,1,4,0.25
+Security and immigration,fentanyl,2026,All,Republican,23,124,0.1855
+Security and immigration,fentanyl,2026,All,Third party,0,13,0.0
+Security and immigration,cartels,2020,All,Democratic,0,148,0.0
+Security and immigration,cartels,2020,All,Independent,0,3,0.0
+Security and immigration,cartels,2020,All,Republican,3,162,0.0185
+Security and immigration,cartels,2020,All,Third party,0,13,0.0
+Security and immigration,cartels,2022,All,Democratic,0,182,0.0
+Security and immigration,cartels,2022,All,Independent,0,2,0.0
+Security and immigration,cartels,2022,All,Republican,17,186,0.0914
+Security and immigration,cartels,2022,All,Third party,0,11,0.0
+Security and immigration,cartels,2024,All,Democratic,4,183,0.0219
+Security and immigration,cartels,2024,All,Independent,0,2,0.0
+Security and immigration,cartels,2024,All,Republican,21,185,0.1135
+Security and immigration,cartels,2024,All,Third party,0,14,0.0
+Security and immigration,cartels,2026,All,Democratic,0,143,0.0
+Security and immigration,cartels,2026,All,Independent,0,4,0.0
+Security and immigration,cartels,2026,All,Republican,9,124,0.0726
+Security and immigration,cartels,2026,All,Third party,1,13,0.0769
+Security and immigration,law enforcement / police,2020,All,Democratic,40,148,0.2703
+Security and immigration,law enforcement / police,2020,All,Independent,0,3,0.0
+Security and immigration,law enforcement / police,2020,All,Republican,75,162,0.463
+Security and immigration,law enforcement / police,2020,All,Third party,4,13,0.3077
+Security and immigration,law enforcement / police,2022,All,Democratic,64,182,0.3516
+Security and immigration,law enforcement / police,2022,All,Independent,1,2,0.5
+Security and immigration,law enforcement / police,2022,All,Republican,83,186,0.4462
+Security and immigration,law enforcement / police,2022,All,Third party,1,11,0.0909
+Security and immigration,law enforcement / police,2024,All,Democratic,69,183,0.377
+Security and immigration,law enforcement / police,2024,All,Independent,2,2,1.0
+Security and immigration,law enforcement / police,2024,All,Republican,85,185,0.4595
+Security and immigration,law enforcement / police,2024,All,Third party,4,14,0.2857
+Security and immigration,law enforcement / police,2026,All,Democratic,47,143,0.3287
+Security and immigration,law enforcement / police,2026,All,Independent,1,4,0.25
+Security and immigration,law enforcement / police,2026,All,Republican,49,124,0.3952
+Security and immigration,law enforcement / police,2026,All,Third party,3,13,0.2308
+Security and immigration,China,2020,All,Democratic,9,148,0.0608
+Security and immigration,China,2020,All,Independent,1,3,0.3333
+Security and immigration,China,2020,All,Republican,39,162,0.2407
+Security and immigration,China,2020,All,Third party,1,13,0.0769
+Security and immigration,China,2022,All,Democratic,14,182,0.0769
+Security and immigration,China,2022,All,Independent,0,2,0.0
+Security and immigration,China,2022,All,Republican,44,186,0.2366
+Security and immigration,China,2022,All,Third party,3,11,0.2727
+Security and immigration,China,2024,All,Democratic,21,183,0.1148
+Security and immigration,China,2024,All,Independent,0,2,0.0
+Security and immigration,China,2024,All,Republican,43,185,0.2324
+Security and immigration,China,2024,All,Third party,0,14,0.0
+Security and immigration,China,2026,All,Democratic,12,143,0.0839
+Security and immigration,China,2026,All,Independent,1,4,0.25
+Security and immigration,China,2026,All,Republican,23,124,0.1855
+Security and immigration,China,2026,All,Third party,1,13,0.0769
+Programs and policy,Social Security,2020,All,Democratic,66,148,0.4459
+Programs and policy,Social Security,2020,All,Independent,0,3,0.0
+Programs and policy,Social Security,2020,All,Republican,30,162,0.1852
+Programs and policy,Social Security,2020,All,Third party,5,13,0.3846
+Programs and policy,Social Security,2022,All,Democratic,65,182,0.3571
+Programs and policy,Social Security,2022,All,Independent,0,2,0.0
+Programs and policy,Social Security,2022,All,Republican,26,186,0.1398
+Programs and policy,Social Security,2022,All,Third party,1,11,0.0909
+Programs and policy,Social Security,2024,All,Democratic,70,183,0.3825
+Programs and policy,Social Security,2024,All,Independent,1,2,0.5
+Programs and policy,Social Security,2024,All,Republican,40,185,0.2162
+Programs and policy,Social Security,2024,All,Third party,2,14,0.1429
+Programs and policy,Social Security,2026,All,Democratic,49,143,0.3427
+Programs and policy,Social Security,2026,All,Independent,2,4,0.5
+Programs and policy,Social Security,2026,All,Republican,27,124,0.2177
+Programs and policy,Social Security,2026,All,Third party,2,13,0.1538
+Programs and policy,Medicare,2020,All,Democratic,76,148,0.5135
+Programs and policy,Medicare,2020,All,Independent,0,3,0.0
+Programs and policy,Medicare,2020,All,Republican,41,162,0.2531
+Programs and policy,Medicare,2020,All,Third party,3,13,0.2308
+Programs and policy,Medicare,2022,All,Democratic,87,182,0.478
+Programs and policy,Medicare,2022,All,Independent,0,2,0.0
+Programs and policy,Medicare,2022,All,Republican,31,186,0.1667
+Programs and policy,Medicare,2022,All,Third party,1,11,0.0909
+Programs and policy,Medicare,2024,All,Democratic,88,183,0.4809
+Programs and policy,Medicare,2024,All,Independent,1,2,0.5
+Programs and policy,Medicare,2024,All,Republican,37,185,0.2
+Programs and policy,Medicare,2024,All,Third party,1,14,0.0714
+Programs and policy,Medicare,2026,All,Democratic,59,143,0.4126
+Programs and policy,Medicare,2026,All,Independent,1,4,0.25
+Programs and policy,Medicare,2026,All,Republican,14,124,0.1129
+Programs and policy,Medicare,2026,All,Third party,3,13,0.2308
+Programs and policy,veterans,2020,All,Democratic,82,148,0.5541
+Programs and policy,veterans,2020,All,Independent,1,3,0.3333
+Programs and policy,veterans,2020,All,Republican,96,162,0.5926
+Programs and policy,veterans,2020,All,Third party,6,13,0.4615
+Programs and policy,veterans,2022,All,Democratic,97,182,0.533
+Programs and policy,veterans,2022,All,Independent,1,2,0.5
+Programs and policy,veterans,2022,All,Republican,99,186,0.5323
+Programs and policy,veterans,2022,All,Third party,4,11,0.3636
+Programs and policy,veterans,2024,All,Democratic,96,183,0.5246
+Programs and policy,veterans,2024,All,Independent,1,2,0.5
+Programs and policy,veterans,2024,All,Republican,110,185,0.5946
+Programs and policy,veterans,2024,All,Third party,4,14,0.2857
+Programs and policy,veterans,2026,All,Democratic,65,143,0.4545
+Programs and policy,veterans,2026,All,Independent,0,4,0.0
+Programs and policy,veterans,2026,All,Republican,64,124,0.5161
+Programs and policy,veterans,2026,All,Third party,6,13,0.4615
+Programs and policy,health care,2020,All,Democratic,119,148,0.8041
+Programs and policy,health care,2020,All,Independent,1,3,0.3333
+Programs and policy,health care,2020,All,Republican,96,162,0.5926
+Programs and policy,health care,2020,All,Third party,9,13,0.6923
+Programs and policy,health care,2022,All,Democratic,153,182,0.8407
+Programs and policy,health care,2022,All,Independent,1,2,0.5
+Programs and policy,health care,2022,All,Republican,80,186,0.4301
+Programs and policy,health care,2022,All,Third party,2,11,0.1818
+Programs and policy,health care,2024,All,Democratic,150,183,0.8197
+Programs and policy,health care,2024,All,Independent,2,2,1.0
+Programs and policy,health care,2024,All,Republican,88,185,0.4757
+Programs and policy,health care,2024,All,Third party,4,14,0.2857
+Programs and policy,health care,2026,All,Democratic,112,143,0.7832
+Programs and policy,health care,2026,All,Independent,2,4,0.5
+Programs and policy,health care,2026,All,Republican,46,124,0.371
+Programs and policy,health care,2026,All,Third party,5,13,0.3846
+Programs and policy,climate,2020,All,Democratic,70,148,0.473
+Programs and policy,climate,2020,All,Independent,1,3,0.3333
+Programs and policy,climate,2020,All,Republican,13,162,0.0802
+Programs and policy,climate,2020,All,Third party,4,13,0.3077
+Programs and policy,climate,2022,All,Democratic,95,182,0.522
+Programs and policy,climate,2022,All,Independent,0,2,0.0
+Programs and policy,climate,2022,All,Republican,15,186,0.0806
+Programs and policy,climate,2022,All,Third party,1,11,0.0909
+Programs and policy,climate,2024,All,Democratic,87,183,0.4754
+Programs and policy,climate,2024,All,Independent,0,2,0.0
+Programs and policy,climate,2024,All,Republican,14,185,0.0757
+Programs and policy,climate,2024,All,Third party,3,14,0.2143
+Programs and policy,climate,2026,All,Democratic,61,143,0.4266
+Programs and policy,climate,2026,All,Independent,1,4,0.25
+Programs and policy,climate,2026,All,Republican,3,124,0.0242
+Programs and policy,climate,2026,All,Third party,2,13,0.1538
+Programs and policy,clean energy,2020,All,Democratic,28,148,0.1892
+Programs and policy,clean energy,2020,All,Independent,0,3,0.0
+Programs and policy,clean energy,2020,All,Republican,5,162,0.0309
+Programs and policy,clean energy,2020,All,Third party,0,13,0.0
+Programs and policy,clean energy,2022,All,Democratic,36,182,0.1978
+Programs and policy,clean energy,2022,All,Independent,0,2,0.0
+Programs and policy,clean energy,2022,All,Republican,4,186,0.0215
+Programs and policy,clean energy,2022,All,Third party,0,11,0.0
+Programs and policy,clean energy,2024,All,Democratic,36,183,0.1967
+Programs and policy,clean energy,2024,All,Independent,0,2,0.0
+Programs and policy,clean energy,2024,All,Republican,5,185,0.027
+Programs and policy,clean energy,2024,All,Third party,0,14,0.0
+Programs and policy,clean energy,2026,All,Democratic,38,143,0.2657
+Programs and policy,clean energy,2026,All,Independent,0,4,0.0
+Programs and policy,clean energy,2026,All,Republican,2,124,0.0161
+Programs and policy,clean energy,2026,All,Third party,0,13,0.0
+Programs and policy,energy independence / dominance,2020,All,Democratic,4,148,0.027
+Programs and policy,energy independence / dominance,2020,All,Independent,0,3,0.0
+Programs and policy,energy independence / dominance,2020,All,Republican,18,162,0.1111
+Programs and policy,energy independence / dominance,2020,All,Third party,0,13,0.0
+Programs and policy,energy independence / dominance,2022,All,Democratic,7,182,0.0385
+Programs and policy,energy independence / dominance,2022,All,Independent,0,2,0.0
+Programs and policy,energy independence / dominance,2022,All,Republican,40,186,0.2151
+Programs and policy,energy independence / dominance,2022,All,Third party,1,11,0.0909
+Programs and policy,energy independence / dominance,2024,All,Democratic,11,183,0.0601
+Programs and policy,energy independence / dominance,2024,All,Independent,0,2,0.0
+Programs and policy,energy independence / dominance,2024,All,Republican,37,185,0.2
+Programs and policy,energy independence / dominance,2024,All,Third party,1,14,0.0714
+Programs and policy,energy independence / dominance,2026,All,Democratic,4,143,0.028
+Programs and policy,energy independence / dominance,2026,All,Independent,0,4,0.0
+Programs and policy,energy independence / dominance,2026,All,Republican,28,124,0.2258
+Programs and policy,energy independence / dominance,2026,All,Third party,0,13,0.0
+Programs and policy,housing,2020,All,Democratic,57,148,0.3851
+Programs and policy,housing,2020,All,Independent,0,3,0.0
+Programs and policy,housing,2020,All,Republican,19,162,0.1173
+Programs and policy,housing,2020,All,Third party,3,13,0.2308
+Programs and policy,housing,2022,All,Democratic,93,182,0.511
+Programs and policy,housing,2022,All,Independent,0,2,0.0
+Programs and policy,housing,2022,All,Republican,20,186,0.1075
+Programs and policy,housing,2022,All,Third party,0,11,0.0
+Programs and policy,housing,2024,All,Democratic,98,183,0.5355
+Programs and policy,housing,2024,All,Independent,0,2,0.0
+Programs and policy,housing,2024,All,Republican,29,185,0.1568
+Programs and policy,housing,2024,All,Third party,5,14,0.3571
+Programs and policy,housing,2026,All,Democratic,79,143,0.5524
+Programs and policy,housing,2026,All,Independent,2,4,0.5
+Programs and policy,housing,2026,All,Republican,13,124,0.1048
+Programs and policy,housing,2026,All,Third party,4,13,0.3077
+Programs and policy,child care,2020,All,Democratic,21,148,0.1419
+Programs and policy,child care,2020,All,Independent,0,3,0.0
+Programs and policy,child care,2020,All,Republican,5,162,0.0309
+Programs and policy,child care,2020,All,Third party,2,13,0.1538
+Programs and policy,child care,2022,All,Democratic,35,182,0.1923
+Programs and policy,child care,2022,All,Independent,0,2,0.0
+Programs and policy,child care,2022,All,Republican,2,186,0.0108
+Programs and policy,child care,2022,All,Third party,2,11,0.1818
+Programs and policy,child care,2024,All,Democratic,38,183,0.2077
+Programs and policy,child care,2024,All,Independent,0,2,0.0
+Programs and policy,child care,2024,All,Republican,8,185,0.0432
+Programs and policy,child care,2024,All,Third party,0,14,0.0
+Programs and policy,child care,2026,All,Democratic,30,143,0.2098
+Programs and policy,child care,2026,All,Independent,1,4,0.25
+Programs and policy,child care,2026,All,Republican,4,124,0.0323
+Programs and policy,child care,2026,All,Third party,0,13,0.0
+Programs and policy,artificial intelligence,2020,All,Democratic,1,148,0.0068
+Programs and policy,artificial intelligence,2020,All,Independent,0,3,0.0
+Programs and policy,artificial intelligence,2020,All,Republican,0,162,0.0
+Programs and policy,artificial intelligence,2020,All,Third party,0,13,0.0
+Programs and policy,artificial intelligence,2022,All,Democratic,3,182,0.0165
+Programs and policy,artificial intelligence,2022,All,Independent,0,2,0.0
+Programs and policy,artificial intelligence,2022,All,Republican,2,186,0.0108
+Programs and policy,artificial intelligence,2022,All,Third party,0,11,0.0
+Programs and policy,artificial intelligence,2024,All,Democratic,4,183,0.0219
+Programs and policy,artificial intelligence,2024,All,Independent,0,2,0.0
+Programs and policy,artificial intelligence,2024,All,Republican,2,185,0.0108
+Programs and policy,artificial intelligence,2024,All,Third party,0,14,0.0
+Programs and policy,artificial intelligence,2026,All,Democratic,10,143,0.0699
+Programs and policy,artificial intelligence,2026,All,Independent,1,4,0.25
+Programs and policy,artificial intelligence,2026,All,Republican,4,124,0.0323
+Programs and policy,artificial intelligence,2026,All,Third party,1,13,0.0769

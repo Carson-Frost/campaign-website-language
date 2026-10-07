@@ -1,0 +1,17 @@
+year,party_group,ballotpedia,fec,ballotpedia_on_fec_list,fec_on_ballotpedia_list
+2020,Democratic,483,487,483,487
+2020,Republican,462,462,462,461
+2020,Independent,72,69,71,68
+2020,Third party,238,239,237,236
+2022,Democratic,456,461,454,458
+2022,Republican,465,467,464,465
+2022,Independent,75,72,73,71
+2022,Third party,190,187,189,186
+2024,Democratic,455,456,453,455
+2024,Republican,459,456,455,455
+2024,Independent,53,41,37,41
+2024,Third party,211,160,166,159
+2026,Democratic,476,,,
+2026,Republican,465,,,
+2026,Independent,138,,,
+2026,Third party,201,,,
