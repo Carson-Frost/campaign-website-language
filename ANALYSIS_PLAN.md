@@ -202,8 +202,8 @@ documentation is read in full, and is exploratory.
 
 - *Coverage.* Of 4,889 candidate-years, 545 have no website address, 1,415 have an address but no saved
   copy of a usable page from the 60 days before the election, 153 have under 100 words and 23 are not
-  campaign sites. Among Democrats and Republicans 95 to 99 percent have an address, and 69 to 77 percent
-  of those have saved text. The first fix is a second text source. Hilbig's candidate-websites dataset is
+  campaign sites. Among Democrats and Republicans in 2020, 2022 and 2024, 95 to 98 percent have an
+  address, and 69 to 77 percent of those have saved text. The first fix is a second text source. Hilbig's candidate-websites dataset is
   public under a Creative Commons attribution license, and it holds captured text for 71 to 81 percent
   of Democratic and Republican general-election candidates in 2020, 2022 and 2024 (counted from its
   provenance file). The study adds its text for Democratic and Republican candidate-years that have none
