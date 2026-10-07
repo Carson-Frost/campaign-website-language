@@ -220,6 +220,22 @@ documentation is read in full, and is exploratory.
   a gap between the parties is larger than ordinary variation among candidates, and are labeled that
   way. This changes the first rule of section 10, which required an interval on every result.
 
+**Amendment 4, 2026-10-07, made before any collection with a different window.** The window of dates from
+which a site's text is taken is not fixed at 60 days.
+
+- *Rule.* The window is the one that captures the most campaign sites, within the election year and
+  ending on election day. Common Crawl's crawls from earlier in the election year are added to the 60-day
+  ones, and for each page the latest capture on or before election day is kept. There is no published
+  standard for the window: Druckman, Kifer and Parkin coded the ten days before election day,
+  CampaignView took a week before each primary, and Hilbig's dataset spans the election year, so the
+  choice is stated as a limitation.
+- *Sensitivity.* For candidate-years that have text in each window, the shares are reported for the 60 days
+  before election day, for 120 days and for the full election year, so the effect of the window on every
+  headline figure is visible. Reason: a page saved months before election day can differ from what the
+  campaign showed at the end.
+- *Timing.* The current results rest on the 60-day collection. The wider collection belongs to the full
+  recollection that Amendment 3 defers.
+
 **Amendment 3, 2026-10-07, made before any result using a second source.** It supersedes the first two
 bullets of Amendment 2 and keeps its third.
 

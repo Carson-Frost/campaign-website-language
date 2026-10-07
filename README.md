@@ -194,8 +194,10 @@ the tracked `results/`, because live sites and Ballotpedia change. Every exclusi
   year, then the current Ballotpedia link. Wayback links quoted by Ballotpedia are unwrapped to the
   original address. Social-media, donation, Ballotpedia and official House or Senate addresses are
   skipped (`sites.clean_site`).
-- Every year is analyzed from archived text (60 days before election day, homepage plus up to three
-  linked pages), and only pages of the candidate-year's current site count.
+- Every year is analyzed from archived text (the current results use the 60 days before election day,
+  homepage plus up to three linked pages), and only pages of the candidate-year's current site count. The
+  window is the study's own choice with no published standard. A later collection is to use the window that
+  captures the most sites within the election year, with the 60-day and 120-day figures reported beside it.
 - Screening (`analyze.py`): paragraphs of page code, gambling spam, placeholder Latin and Spanish are
   dropped. A candidate-year is excluded as not campaign content when what remains is under 100 words
   but the dropped text would have reached it, when spam outweighs the rest, when hosting-error or
