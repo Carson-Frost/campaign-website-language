@@ -198,4 +198,17 @@ documentation is read in full, and is exploratory.
 
 ## Amendments
 
-None.
+**Amendment 1, 2026-10-07, made before any question 1 classification was run.** It replaces the
+definitions in section 7 for question 1 and the sentence in section 7 on the family of tests, for the
+gap tests and the within-party change tests only.
+
+- *Families by wave.* The gap tests for 2020, 2022 and 2024 (171 tests) form one family, and the 2026
+  gap tests (57) form their own. The within-party change tests for question 1 (57 terms by two parties
+  by two pairs of elections, 228 tests) form one family. Reason: adding a later year must not change
+  adjusted values already reported.
+- *Question 1 classes.* A term is **split** if its gap has the same sign in 2020, 2022 and 2024, each with
+  an adjusted p-value below 0.05. A term is **moving** if at least one within-party change between
+  consecutive elections has an adjusted p-value below 0.05. The four classes are split and still, split
+  and moving, not consistently split and still, and not consistently split and moving. Reason: the
+  original definitions made split and changing mutually exclusive, which would hide a term whose
+  party gap persists while one or both parties' use shifts.

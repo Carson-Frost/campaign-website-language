@@ -168,6 +168,15 @@ class TableTest(unittest.TestCase):
             self.assertGreaterEqual(bh, p * 0.999)
             self.assertGreaterEqual(by, bh * 0.999)
 
+    def test_each_wave_is_adjusted_on_its_own(self):
+        early = [r for r in self.gaps if int(r[2]) <= 2024]
+        self.assertEqual(len(early), 57 * 3)
+        recomputed = inf.benjamini_hochberg([float(r[16]) for r in early])
+        for r, q in zip(early, recomputed):
+            self.assertAlmostEqual(float(r[17]), q, delta=abs(q) * 1.5e-2 + 1e-12)
+            self.assertEqual(r[19], "2020-2024")
+        self.assertEqual({r[19] for r in self.gaps if r[2] == "2026"}, {"2026"})
+
     def test_bounds_contain_the_observed_share_and_are_wider_for_the_ballot(self):
         for r in self.bounds:
             share, lo_s, hi_s, lo_b, hi_b = r[8], r[9], r[10], r[11], r[12]

@@ -448,8 +448,11 @@ checked by `tools/test_inference.py` against published and hand-worked values.
   candidates as independent and the sample as random, which the archive coverage does not support, so the
   p-values describe chance variation among the analyzed candidates only.
 - **Multiple comparisons: Benjamini and Hochberg's false discovery rate adjustment, with Benjamini and
-  Yekutieli's conservative version beside it.** The family is every term in every year, 57 terms and
-  four years, 228 comparisons, and not only the ones reported. Benjamini and Hochberg proved control for
+  Yekutieli's conservative version beside it.** Each wave of years is its own family: the 171 gap tests of
+  2020, 2022 and 2024 together (57 terms, three years), and the 57 gap tests of 2026 separately, so adding
+  a later year never changes earlier values. The within-party change tests are adjusted over their own
+  family of 228 (57 terms, two parties, two pairs of elections). Every term is included, and not only the
+  ones reported. Benjamini and Hochberg proved control for
   independent tests (1995, *Journal of the Royal Statistical Society B* 57(1): 289-300; pages 289 to 293
   read). Words that co-occur may not be independent, so the Benjamini-Yekutieli version, which controls the
   rate under any dependence, is reported as well (2001, *Annals of Statistics* 29(4): 1165-1188; abstract

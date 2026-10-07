@@ -110,6 +110,11 @@ def _int(x):
     return int(x)
 
 
+def wave_of(year):
+    """The family a year's tests are adjusted in: 2020 to 2024 together, and 2026 on its own."""
+    return "2020-2024" if int(year) <= 2024 else "2026"
+
+
 def term_gaps():
     """Rows for results/term_gaps.csv, from term_shares.csv (all offices) and Democratic and Republican only."""
     cells = {}
@@ -127,15 +132,22 @@ def term_gaps():
         rlo, rhi = wilson(kr, nr)
         p = fisher_exact(kd, nd - kd, kr, nr - kr)
         rows.append([theme, t, y, kd, nd, kr, nr, kd / nd, dlo, dhi, kr / nr, rlo, rhi, gap, glo, ghi, p])
-    ps = [r[-1] for r in rows]
-    bh, by = benjamini_hochberg(ps), benjamini_yekutieli(ps)
-    return [[*r[:7], *(round(x, 4) for x in r[7:16]), f"{r[16]:.3g}", f"{b:.3g}", f"{y:.3g}"]
-            for r, b, y in zip(rows, bh, by)]
+    # Each wave of years is adjusted as its own family, so adding a later year never changes earlier values.
+    out = [None] * len(rows)
+    for wave in sorted({wave_of(r[2]) for r in rows}):
+        idx = [i for i, r in enumerate(rows) if wave_of(r[2]) == wave]
+        ps = [rows[i][16] for i in idx]
+        bh, by = benjamini_hochberg(ps), benjamini_yekutieli(ps)
+        for i, b, y in zip(idx, bh, by):
+            r = rows[i]
+            out[i] = [*r[:7], *(round(x, 4) for x in r[7:16]), f"{r[16]:.3g}", f"{b:.3g}", f"{y:.3g}", wave]
+    return out
 
 
 GAP_HEADER = ["theme", "term", "year", "dem_using", "dem_analyzed", "rep_using", "rep_analyzed",
               "dem_share", "dem_low", "dem_high", "rep_share", "rep_low", "rep_high",
-              "gap_dem_minus_rep", "gap_low", "gap_high", "fisher_p", "q_benjamini_hochberg", "q_benjamini_yekutieli"]
+              "gap_dem_minus_rep", "gap_low", "gap_high", "fisher_p", "q_benjamini_hochberg", "q_benjamini_yekutieli",
+              "family"]
 
 
 def term_bounds():

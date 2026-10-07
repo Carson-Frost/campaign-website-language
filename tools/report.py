@@ -384,7 +384,7 @@ function mainTable(term, office) {
   }
   return h + `</table></div><p class="note" style="margin-top:8px">Ranges for shares are 95% Wilson score intervals. Ranges for
     gaps are Newcombe score intervals, and each adjusted p-value comes from Fisher's exact test, adjusted by the
-    Benjamini-Hochberg method for the 228 term-year comparisons in this study. All of them describe chance variation
+    Benjamini-Hochberg method over all 57 terms in each wave of years (2020 to 2024 together, 2026 on its own). All of them describe chance variation
     among the candidates analyzed. They do not cover the candidates whose sites could not be analyzed.</p>`;
 }
 
