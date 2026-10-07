@@ -73,8 +73,15 @@ while the raw inputs are cached (`artifacts/cache/ccx` index blocks, `ccw` WARC 
 2022 2024 2026`, `sites.py archived` and `sites.py live` with `OFFLINE=1` set. A cache miss then
 raises instead of fetching; the collector logs it as "retry later ... offline: not cached" and
 writes nothing for that candidate-year, so compare the status lines with the previous files. Then run
-`analyze.py`, `precision.py`, `check_language.py`, `report.py`, `tone.py` and
-`python -m unittest test_tone`.
+`analyze.py`, `precision.py`, `check_language.py`, `report.py` and `tone.py`.
+
+## Tests
+
+Run from `tools/`: `python -m unittest test_terms test_pipeline test_tone`. `test_terms` checks the 57
+patterns against every hand-coded match and the cases they were narrowed for. `test_pipeline` checks
+party grouping, website-address handling, page choice, the screening and exclusion rules, share
+counting, the t-test and the intervals on small made-up inputs. Neither needs collected data.
+`test_tone` needs the lexicon files in `artifacts/lexicons/`.
 
 The term list is `tools/terms.py`. It was fixed before any results were examined, and six patterns
 were narrowed after the precision check below.
