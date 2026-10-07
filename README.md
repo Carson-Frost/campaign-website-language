@@ -1,4 +1,4 @@
-# Candidate language
+# Campaign website language
 
 A study of which words and phrases, such as "working people", U.S. House and Senate general-election
 candidates used on their campaign websites in 2020, 2022, 2024 and 2026. It compares Democratic,

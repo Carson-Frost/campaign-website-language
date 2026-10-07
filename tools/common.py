@@ -30,7 +30,7 @@ STATES = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", 
 ABBR = dict(zip(STATES, "AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV "
                         "NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY".split()))
 
-RESEARCH_UA = "candidate-language-research/0.1 (python-requests; academic text study)"
+RESEARCH_UA = "campaign-website-language-research/0.1 (python-requests; academic text study)"
 OFFLINE = os.environ.get("OFFLINE") == "1"  # cache misses raise instead of fetching (re-extraction runs)
 _session = requests.Session()
 _session.headers["User-Agent"] = UA
