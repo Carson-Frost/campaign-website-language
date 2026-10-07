@@ -198,6 +198,28 @@ documentation is read in full, and is exploratory.
 
 ## Amendments
 
+**Amendment 2, 2026-10-07, made before any result using the new source or the new reporting rule.**
+
+- *Coverage.* Of 4,889 candidate-years, 545 have no website address, 1,415 have an address but no saved
+  copy of a usable page from the 60 days before the election, 153 have under 100 words and 23 are not
+  campaign sites. Among Democrats and Republicans 95 to 99 percent have an address, and 69 to 77 percent
+  of those have saved text. The first fix is a second text source. Hilbig's candidate-websites dataset is
+  public under a Creative Commons attribution license, and it holds captured text for 71 to 81 percent
+  of Democratic and Republican general-election candidates in 2020, 2022 and 2024 (counted from its
+  provenance file). The study adds its text for Democratic and Republican candidate-years that have none
+  in this study's own archive text, keeping only pages captured within the same 60-day window, and marks
+  each candidate-year with its source. Every headline share is reported for this study's own text alone and
+  for the combined text, and the two are compared on candidate-years that both sources hold, which also
+  measures how much the choice of archive and extractor changes the counts. Independents and third parties
+  are unchanged, because Hilbig's data hold none. This replaces the first sentence of section 9, where
+  the dataset was an outside check only. The comparison with its topic shares stays exploratory.
+- *2026.* The 2026 sites are live, so the final capture saves them directly, and that capture is the
+  primary 2026 text for candidates with a live site. Archived text for 2026 is the comparison.
+- *Reporting.* Shares are reported as exact counts of the candidates analyzed, with the share of the
+  ballot that this covers beside them. Intervals and adjusted p-values answer a different question, whether
+  a gap between the parties is larger than ordinary variation among candidates, and are labeled that
+  way. This changes the first rule of section 10, which required an interval on every result.
+
 **Amendment 1, 2026-10-07, made before any question 1 classification was run.** It replaces the
 definitions in section 7 for question 1 and the sentence in section 7 on the family of tests, for the
 gap tests and the within-party change tests only.
