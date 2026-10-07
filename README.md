@@ -12,6 +12,10 @@ General-election candidates were chosen over primary candidates because their si
 more completely, because 2026 sites are still live before election day, and because independents
 mostly appear only on general ballots.
 
+The text comes from one source, Common Crawl, for every year (two of the 2,753 analyzed sites come from the
+Wayback Machine). The study therefore covers the campaign websites that Common Crawl saved within the 60
+days before each election, and its coverage of the ballot is reported below by year and party.
+
 ## Data and coverage
 
 Of 4,889 general-election candidate-years, 4,344 have a usable campaign website and 2,753 yielded at

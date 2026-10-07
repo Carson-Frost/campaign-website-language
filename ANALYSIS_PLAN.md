@@ -220,6 +220,20 @@ documentation is read in full, and is exploratory.
   a gap between the parties is larger than ordinary variation among candidates, and are labeled that
   way. This changes the first rule of section 10, which required an interval on every result.
 
+**Amendment 3, 2026-10-07, made before any result using a second source.** It supersedes the first two
+bullets of Amendment 2 and keeps its third.
+
+- *One source.* The study's text comes from one source, Common Crawl, for every year, party and office,
+  with the few Wayback Machine pages described in `README.md`. Coverage is incomplete and is reported as
+  it is, so the scope of the study can be stated in one sentence: the campaign websites that Common Crawl
+  saved within the 60 days before each election. No text from another archive is merged in. Hilbig's
+  dataset stays what section 9 says, an outside check. Reason: a single source with one extraction method
+  keeps every year, party and office comparable and keeps the claim about scope simple.
+- *2026.* The 2026 analysis uses the Common Crawl crawls that fall inside the 2026 window, as the earlier
+  years do, and the live fetch stays a check. All of the data are to be collected again in full at a later
+  date, after the 2026 election, and that collection is outside the current analysis.
+- *Reporting.* As in Amendment 2.
+
 **Amendment 1, 2026-10-07, made before any question 1 classification was run.** It replaces the
 definitions in section 7 for question 1 and the sentence in section 7 on the family of tests, for the
 gap tests and the within-party change tests only.
