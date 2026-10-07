@@ -68,9 +68,11 @@ def main():
              for r in rows("list_crosscheck.csv")]
     panel = [dict(t=r["term"], y=int(r["year"]), g=r["party_group"], u=int(r["candidates_using"]), n=int(r["candidates_analyzed"]))
              for r in rows("term_shares_panel.csv") if r["party_group"] in ("Democratic", "Republican")]
+    gaps = [dict(t=r["term"], y=int(r["year"]), d=float(r["gap_dem_minus_rep"]), lo=float(r["gap_low"]), hi=float(r["gap_high"]),
+                 q=float(r["q_benjamini_hochberg"])) for r in rows("term_gaps.csv")]
     excluded = len(rows("excluded_sites.csv"))
     data = dict(findings=[dict(term=t, text=x) for t, x in FINDINGS], shares=shares, dist=dist, cov=cov, ex=ex, live=live,
-                stats=stats, sel=sel, prec=prec, cross=cross, panel=panel, excluded=excluded, built=date.today().isoformat())
+                stats=stats, sel=sel, prec=prec, cross=cross, panel=panel, gaps=gaps, excluded=excluded, built=date.today().isoformat())
     html = TEMPLATE.replace("/*DATA*/null", json.dumps(data, ensure_ascii=False, separators=(",", ":")))
     (RESULTS / "report.html").write_text(html, encoding="utf-8")
     print("wrote", RESULTS / "report.html", len(html) // 1024, "KB")
@@ -169,6 +171,7 @@ th:first-child, td:first-child { text-align: left; }
 th { color: var(--ink-2); font-weight: 600; }
 details summary { cursor: pointer; color: var(--ink-2); font-size: 13px; margin-top: 12px; }
 .scroll { overflow-x: auto; }
+.numbers td, .numbers th { white-space: nowrap; }
 ul.method { padding-left: 20px; max-width: 800px; }
 ul.method li { margin-bottom: 8px; }
 .checks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 20px; align-items: start; }
@@ -195,9 +198,11 @@ ul.method li { margin-bottom: 8px; }
   <section class="section">
     <h2>What changed</h2>
     <p class="lede">Shares are the percentage of each party's analyzed candidates whose campaign website used a term at
-    least once. Changes smaller than about 8 points may be noise. These findings are exploratory: they were picked
-    after looking at all 57 terms, so they point to patterns worth testing rather than settled results. Select a
-    finding to open its term below.</p>
+    least once. These findings are exploratory: they were picked after looking at all 57 terms, so they point to
+    patterns worth testing rather than settled results. Every share in the term table below has a 95% range, and
+    every Democratic minus Republican gap has a range and an adjusted p-value. Those ranges describe chance variation
+    among the candidates analyzed, and they do not cover the 44% of candidate-years that could not be analyzed.
+    Select a finding to open its term below.</p>
     <ol class="findings" id="findings"></ol>
   </section>
 
@@ -285,6 +290,7 @@ const PARTIES = [
 const SMALL_N = 15;
 const fmt = v => (v * 100).toFixed(v < 0.1 ? 1 : 0) + "%";
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+const gapIdx = new Map(D.gaps.map(r => [r.t + "|" + r.y, r]));
 const idx = new Map();
 for (const r of D.shares) idx.set([r.t, r.y, r.o, r.g].join("|"), r);
 const get = (t, y, o, g) => idx.get([t, y, o, g].join("|"));
@@ -362,15 +368,24 @@ function wilson(u, n) {
 }
 
 function mainTable(term, office) {
-  let h = `<table><tr><th>Party</th>${YEARS.map(y => `<th>${y}</th>`).join("")}</tr>`;
+  let h = `<div class="scroll"><table class="numbers"><tr><th>Party</th>${YEARS.map(y => `<th>${y}</th>`).join("")}</tr>`;
   for (const g of ["Democratic", "Republican", "Independent", "Third party"]) {
     h += `<tr><td>${g}</td>` + YEARS.map(y => { const r = get(term, y, office, g);
       if (!r || !r.n) return "<td>–</td>";
       const [lo, hi] = wilson(r.u, r.n);
       return `<td>${fmt(r.u / r.n)} <span class="pct">${r.u} of ${r.n}<br>95% CI ${fmt(lo)}–${fmt(hi)}</span></td>`; }).join("") + "</tr>";
   }
-  return h + `</table><p class="note" style="margin-top:8px">Intervals are 95% Wilson score intervals for the share of
-    analyzed candidates. Changes smaller than the intervals' width may be noise.</p>`;
+  if (office === "All") {
+    h += `<tr><td>Democratic minus Republican</td>` + YEARS.map(y => { const r = gapIdx.get(term + "|" + y);
+      if (!r) return "<td>–</td>";
+      const pts = v => (v >= 0 ? "+" : "−") + Math.abs(v * 100).toFixed(0);
+      const q = r.q < 0.001 ? "adjusted p &lt; 0.001" : "adjusted p = " + r.q.toFixed(r.q < 0.01 ? 3 : 2);
+      return `<td>${pts(r.d)} points<br><span class="pct">95% CI ${pts(r.lo)} to ${pts(r.hi)}<br>${q}</span></td>`; }).join("") + "</tr>";
+  }
+  return h + `</table></div><p class="note" style="margin-top:8px">Ranges for shares are 95% Wilson score intervals. Ranges for
+    gaps are Newcombe score intervals, and each adjusted p-value comes from Fisher's exact test, adjusted by the
+    Benjamini-Hochberg method for the 228 term-year comparisons in this study. All of them describe chance variation
+    among the candidates analyzed. They do not cover the candidates whose sites could not be analyzed.</p>`;
 }
 
 function examples() {

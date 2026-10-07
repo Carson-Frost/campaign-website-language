@@ -421,3 +421,54 @@ text by `analyze.py` and `check_language.py`, and the figures below come from it
   contest as the general election and the December contest in a separate "GE Runoff" column, as they
   do for Georgia. The FEC's 2020 and 2022 results show one House runoff in those years, Louisiana's 5th
   District in 2020 (Letlow against Harris). Both runoff candidates are on the November list.
+
+# Uncertainty, multiple testing and bounds
+
+Added after the audit. Every choice below is in `tools/inference.py`, which writes
+`results/term_gaps.csv` and `results/term_bounds.csv` from the tracked share and coverage tables, and is
+checked by `tools/test_inference.py` against published and hand-worked values.
+
+- **Interval for each share: the Wilson score interval, 95 percent.** The ordinary Wald interval has
+  coverage that varies erratically with the sample size and the true share, and the Wilson interval is a
+  safe default at every sample size used here (Brown, Cai and DasGupta 2001, *Statistical Science*
+  16(2): 101-133, doi:10.1214/ss/1009213286; read in full). The same function gives the precision
+  intervals. Limitation: it measures chance variation among the candidates analyzed. It does not cover
+  the candidate-years that could not be analyzed, and it treats a candidate in several years as separate
+  observations.
+- **Interval for a party gap: Newcombe's hybrid score interval for a difference of independent
+  proportions (method 10).** It is built from the two Wilson intervals, and it is not the difference of
+  two intervals (Newcombe 1998, *Statistics in Medicine* 17(8): 873-890; only an abstract excerpt was
+  read). The test of the implementation uses 56 of 70 against 48 of 80, a difference of 0.2000 with
+  interval 0.0524 to 0.3339. That example is recalled from the paper and has not been checked against
+  it, so the match is unverified until the paper is opened.
+- **Test of each gap: Fisher's exact test, two-sided.** It makes no large-sample approximation. It is
+  chosen because many terms are rare, and Lijffijt and coauthors (2016) validated the t-test for
+  frequent words only. The p-value sums the probability of every table with the same margins that is no
+  more likely than the observed one, with the relative tolerance R uses. Limitation: the test treats
+  candidates as independent and the sample as random, which the archive coverage does not support, so the
+  p-values describe chance variation among the analyzed candidates only.
+- **Multiple comparisons: Benjamini and Hochberg's false discovery rate adjustment, with Benjamini and
+  Yekutieli's conservative version beside it.** The family is every term in every year, 57 terms and
+  four years, 228 comparisons, and not only the ones reported. Benjamini and Hochberg proved control for
+  independent tests (1995, *Journal of the Royal Statistical Society B* 57(1): 289-300; pages 289 to 293
+  read). Words that co-occur may not be independent, so the Benjamini-Yekutieli version, which controls the
+  rate under any dependence, is reported as well (2001, *Annals of Statistics* 29(4): 1165-1188; abstract
+  read). The test of the implementation uses the fifteen p-values recalled as the 1995 paper's worked example,
+  where four are rejected at 5 percent. The recollection has not been checked against the paper, and the
+  hand-worked adjusted values in the test are checked independently. The adjusted values do not remove the exploratory label from results chosen after viewing.
+- **Worst-case bounds for the unanalyzed candidates.** If k of n analyzed candidates use a term and the
+  population has N candidates, the share in the population is at least k over N and at most k plus the
+  N minus n unanalyzed, over N. The width equals the unanalyzed fraction. This follows Manski's treatment
+  of selection with a bounded outcome (1988, IRP Discussion Paper 873-88; abstract, introduction and
+  section 2 read). Two populations are used: all candidates on the ballot, and candidates with a known
+  website. The bounds are very wide, which is their point. Narrowing them needs an assumption about the
+  unanalyzed, such as weighting by incumbency and race, and that analysis is separate.
+- **Agreement between two coders: Krippendorff's alpha for two coders and 0/1 codes, with percent
+  agreement beside it.** Alpha is the standard coefficient proposed by Hayes and Krippendorff (2007,
+  *Communication Methods and Measures* 1(1): 77-89; read in full). With almost every match correct, alpha
+  and kappa can be low although raw agreement is high, so both are reported (Byrt, Bishop and Carlin 1993,
+  abstract read). A bootstrap interval for alpha is not yet implemented.
+- **Precision samples.** With 20 matches per term, even 20 correct supports only a lower bound of 84
+  percent. Thirty-five error-free checks are the fewest that support a lower bound of 90 percent, so the
+  90 percent cutoff in the earlier precision check could not be met with confidence. Future samples are
+  at least 50 matches per term, drawn as candidate-and-term pairs, and coded by two coders.

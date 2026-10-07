@@ -60,6 +60,7 @@ under `artifacts/cache/`, so reruns are cheap and every collector resumes where 
 | Screening, term shares, distinctive phrases, examples, checks | `analyze.py` | `results/*.csv`, `results/*.json` |
 | Match precision from the hand-coded sample | `precision.py` | `results/term_precision.csv` |
 | Spanish paragraph rule checked against langid.py | `check_language.py` | `results/language_check*.csv` |
+| Intervals, gap tests, adjusted p-values and bounds | `inference.py` | `results/term_gaps.csv`, `results/term_bounds.csv` |
 | Report page | `report.py` | `results/report.html` |
 | Sentiment and tone | `tone.py` | `artifacts/data/tone_sentences.jsonl`, `results/tone_scores.csv` |
 
@@ -77,10 +78,12 @@ writes nothing for that candidate-year, so compare the status lines with the pre
 
 ## Tests
 
-Run from `tools/`: `python -m unittest test_terms test_pipeline test_tone`. `test_terms` checks the 57
+Run from `tools/`: `python -m unittest test_terms test_pipeline test_inference test_tone`. `test_terms` checks the 57
 patterns against every hand-coded match and the cases they were narrowed for. `test_pipeline` checks
 party grouping, website-address handling, page choice, the screening and exclusion rules, share
-counting, the t-test and the intervals on small made-up inputs. Neither needs collected data.
+counting and the t-test on small made-up inputs. `test_inference` checks the intervals, exact test,
+adjusted p-values, bounds and agreement coefficient against published or hand-worked values, and checks
+the tables built from the tracked results. None of the three needs collected data.
 `test_tone` needs the lexicon files in `artifacts/lexicons/`.
 
 The term list is `tools/terms.py`. It was fixed before any results were examined, and six patterns
@@ -244,6 +247,16 @@ exploratory. Shares are of each party's analyzed candidates.
   two-party vote where both exist. Coverage: all 2022 and 2026 candidate-years; for 2020, only Senate
   and at-large seats; for 2024, Senate and the 41 states that kept their lines. The report shows only
   the complete years.
+- Gaps between the parties (`results/term_gaps.csv`): 180 of the 228 term-year comparisons have an
+  adjusted p-value below 0.05 by the Benjamini-Hochberg method, so most are large. The 2022 gap in
+  "abortion" is not: 29% of Democratic and 21% of Republican candidates, a gap of 7 points with a 95%
+  interval of 0 to 14 points and an adjusted p-value of 0.067. In 2020 the gap favored Republicans by 15
+  points, and in 2024 it favored Democrats by 17.
+- Worst-case ranges (`results/term_bounds.csv`): because 44% of candidate-years are not analyzed, the
+  share of all candidates on the ballot who used a term can lie anywhere from the share of the whole
+  ballot that analyzed candidates account for to that plus the unanalyzed fraction. For Republican
+  "inflation" in 2022, 39% of analyzed candidates used it, and the range for candidates with a known
+  website is 25% to 61%.
 - Match precision (`results/term_matches_coded.csv`, `results/term_precision.csv`): 20 random users
   per finding term were hand-coded at one random match each. The prespecified patterns for inflation
   (Inflation Reduction Act), corporations (biographies, company names), health care (job

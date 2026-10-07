@@ -14,16 +14,10 @@ import re
 from collections import defaultdict
 
 from common import ROOT
+from inference import wilson
 from terms import TERMS
 
 RESULTS = ROOT / "results"
-
-
-def wilson(k, n, z=1.959964):
-    """95% Wilson score interval for k successes in n trials."""
-    p, d = k / n, 1 + z * z / n
-    c, h = (p + z * z / (2 * n)) / d, z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d
-    return max(0.0, c - h), min(1.0, c + h)
 
 
 def main():
