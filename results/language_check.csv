@@ -1,13 +1,13 @@
 length,rule,langid,paragraphs,words
-8+ words,Spanish,en,5,1209
-8+ words,Spanish,es,871,45239
-8+ words,Spanish,other,13,674
-8+ words,kept,en,98951,4130829
-8+ words,kept,es,461,7238
-8+ words,kept,other,1869,40808
-under 8 words,Spanish,en,2,11
-under 8 words,Spanish,es,18,109
-under 8 words,Spanish,other,3,16
-under 8 words,kept,en,72805,252162
-under 8 words,kept,es,3842,12589
-under 8 words,kept,other,20381,67850
+8+ words,Spanish,en,6,1225
+8+ words,Spanish,es,856,45315
+8+ words,Spanish,other,16,770
+8+ words,kept,en,117863,4963489
+8+ words,kept,es,437,7097
+8+ words,kept,other,2021,24199
+under 8 words,Spanish,en,3,18
+under 8 words,Spanish,es,16,94
+under 8 words,Spanish,other,4,22
+under 8 words,kept,en,86546,302366
+under 8 words,kept,es,4488,14586
+under 8 words,kept,other,24027,80102

@@ -1,641 +1,641 @@
 year,kind,favors,rank,term,welch_t,dem_mean_per_10k,rep_mean_per_10k,dem_candidates_using,rep_candidates_using,dem_analyzed,rep_analyzed
-2020,word,Democratic,1,affordable,9.41,11.745,3.271,213,97,344,319
-2020,word,Democratic,2,access,9.2,13.571,4.745,223,117,344,319
-2020,word,Democratic,3,education,9.04,23.958,10.541,284,170,344,319
-2020,word,Democratic,4,public,9.0,20.477,8.902,278,175,344,319
-2020,word,Democratic,5,climate,8.89,7.37,0.774,167,34,344,319
-2020,word,Democratic,6,working,7.92,18.756,9.453,262,201,344,319
-2020,word,Democratic,7,democratic,7.63,11.971,1.778,176,56,344,319
-2020,word,Democratic,8,equality,7.61,4.136,0.344,121,14,344,319
-2020,word,Democratic,9,universal,7.43,2.183,0.072,78,6,344,319
-2020,word,Democratic,10,lgbtq,7.38,2.666,0.016,75,1,344,319
-2020,word,Democratic,11,equal,7.37,3.999,0.627,115,25,344,319
-2020,word,Democratic,12,health,7.34,27.157,13.51,272,178,344,319
-2020,word,Democratic,13,reproductive,7.19,2.057,0.0,70,0,344,319
-2020,word,Democratic,14,workers,7.14,9.559,3.333,182,95,344,319
-2020,word,Democratic,15,wage,7.11,3.419,0.458,108,21,344,319
-2020,word,Democratic,16,gun,6.93,8.872,2.438,149,87,344,319
-2020,word,Democratic,17,change,6.63,9.342,3.728,202,99,344,319
-2020,word,Democratic,18,violence,6.57,5.047,1.367,124,63,344,319
-2020,word,Democratic,19,discrimination,6.44,1.91,0.283,81,12,344,319
-2020,word,Democratic,20,expand,6.36,5.737,1.979,158,73,344,319
-2020,word,Democratic,21,minimum,6.24,2.124,0.336,86,17,344,319
-2020,word,Democratic,22,leave,6.16,2.634,0.491,98,29,344,319
-2020,word,Democratic,23,social,6.04,9.858,4.255,192,109,344,319
-2020,word,Democratic,24,everyone,5.97,5.833,2.37,153,80,344,319
-2020,word,Democratic,25,communities,5.89,12.874,6.637,217,147,344,319
-2020,word,Democratic,26,afl-cio,5.73,1.73,0.047,58,3,344,319
-2020,word,Democratic,27,justice,5.71,8.354,2.524,158,73,344,319
-2020,word,Democratic,28,every,5.69,12.891,7.839,239,185,344,319
-2020,word,Democratic,29,democracy,5.62,2.924,0.311,93,18,344,319
-2020,word,Democratic,30,expanding,5.6,2.905,0.747,96,35,344,319
-2020,word,Democratic,31,prescription,5.51,3.559,1.297,120,56,344,319
-2020,word,Democratic,32,class,5.49,4.702,1.825,133,69,344,319
-2020,word,Democratic,33,color,5.47,1.719,0.205,61,11,344,319
-2020,word,Democratic,34,environment,5.37,6.769,2.724,163,85,344,319
-2020,word,Democratic,35,orientation,5.37,0.68,0.025,40,3,344,319
-2020,word,Democratic,36,people,5.31,28.698,18.726,293,235,344,319
-2020,word,Democratic,37,gender,5.29,1.234,0.212,55,11,344,319
-2020,word,Democratic,38,teachers,5.28,3.79,1.172,113,47,344,319
-2020,word,Democratic,39,naral,5.24,0.704,0.018,37,1,344,319
-2020,word,Democratic,40,afford,5.19,2.123,0.651,84,35,344,319
-2020,word,Republican,1,conservative,-10.52,0.253,12.565,17,165,344,319
-2020,word,Republican,2,amendment,-8.81,1.847,7.794,76,155,344,319
-2020,word,Republican,3,government,-8.48,10.691,23.309,211,249,344,319
-2020,word,Republican,4,pro-life,-8.26,0.0,4.03,0,99,344,319
-2020,word,Republican,5,taxes,-8.16,1.939,8.814,70,167,344,319
-2020,word,Republican,6,regulations,-8.12,0.593,3.77,35,115,344,319
-2020,word,Republican,7,republican,-7.91,2.951,15.382,98,181,344,319
-2020,word,Republican,8,unborn,-7.82,0.026,2.503,1,78,344,319
-2020,word,Republican,9,border,-7.77,1.616,7.853,52,145,344,319
-2020,word,Republican,10,constitution,-7.14,0.797,4.043,33,118,344,319
-2020,word,Republican,11,arms,-7.04,0.181,1.993,13,74,344,319
-2020,word,Republican,12,freedom,-6.91,1.68,6.559,71,138,344,319
-2020,word,Republican,13,borders,-6.74,0.444,2.835,28,90,344,319
-2020,word,Republican,14,illegal,-6.74,0.294,3.802,18,106,344,319
-2020,word,Republican,15,radical,-6.48,0.147,2.017,8,71,344,319
-2020,word,Republican,16,bureaucrats,-6.46,0.028,1.157,2,51,344,319
-2020,word,Republican,17,second,-6.19,2.573,6.599,98,146,344,319
-2020,word,Republican,18,spending,-6.17,1.149,6.558,56,130,344,319
-2020,word,Republican,19,bear,-6.1,0.275,2.106,12,77,344,319
-2020,word,Republican,20,taxpayers,-5.83,0.419,3.034,23,84,344,319
-2020,word,Republican,21,competition,-5.78,0.229,1.492,15,64,344,319
-2020,word,Republican,22,liberal,-5.67,0.114,1.428,9,55,344,319
-2020,word,Republican,23,obamacare,-5.57,0.332,2.343,12,71,344,319
-2020,word,Republican,24,the,-5.56,408.404,455.343,344,319,344,319
-2020,word,Republican,25,individual,-5.39,0.853,2.596,47,91,344,319
-2020,word,Republican,26,regulation,-5.37,0.149,1.129,12,51,344,319
-2020,word,Republican,27,business,-5.3,8.713,15.958,177,228,344,319
-2020,word,Republican,28,nation,-5.3,7.539,12.908,182,207,344,319
-2020,word,Republican,29,enforcement,-5.27,2.207,6.199,73,125,344,319
-2020,word,Republican,30,defend,-5.22,1.191,3.715,54,102,344,319
-2020,word,Republican,31,abortion,-5.16,0.507,2.688,30,69,344,319
-2020,word,Republican,32,principles,-5.14,0.581,2.599,30,82,344,319
-2020,word,Republican,33,liberty,-5.09,0.536,2.965,28,71,344,319
-2020,word,Republican,34,military,-5.06,4.912,9.973,119,169,344,319
-2020,word,Republican,35,life,-5.03,10.745,17.472,212,237,344,319
-2020,word,Republican,36,wasteful,-4.99,0.096,1.327,5,42,344,319
-2020,word,Republican,37,men,-4.98,1.391,3.434,72,113,344,319
-2020,word,Republican,38,constitutional,-4.97,0.841,3.132,41,86,344,319
-2020,word,Republican,39,burdensome,-4.97,0.119,0.997,7,44,344,319
-2020,word,Republican,40,infringed,-4.94,0.0,0.615,0,29,344,319
-2020,phrase,Democratic,1,access to,9.29,11.745,3.705,210,102,344,319
-2020,phrase,Democratic,2,climate change,7.9,4.976,0.483,133,21,344,319
-2020,phrase,Democratic,3,gun violence,7.67,3.157,0.148,92,11,344,319
-2020,phrase,Democratic,4,public schools,7.26,2.94,0.345,97,20,344,319
-2020,phrase,Democratic,5,care act,6.63,2.151,0.256,85,21,344,319
-2020,phrase,Democratic,6,affordable care,6.63,2.19,0.293,86,22,344,319
-2020,phrase,Democratic,7,affordable care act,6.58,2.159,0.249,83,19,344,319
-2020,phrase,Democratic,8,the affordable,6.56,2.11,0.269,84,19,344,319
-2020,phrase,Democratic,9,the affordable care,6.41,2.071,0.247,81,18,344,319
-2020,phrase,Democratic,10,minimum wage,6.32,1.934,0.18,75,6,344,319
-2020,phrase,Democratic,11,working families,6.3,4.27,0.5,109,26,344,319
-2020,phrase,Democratic,12,equal pay,6.0,1.014,0.043,51,2,344,319
-2020,phrase,Democratic,13,voting rights,5.69,1.518,0.041,49,4,344,319
-2020,phrase,Democratic,14,action fund,5.64,2.114,0.065,51,2,344,319
-2020,phrase,Democratic,15,public education,5.61,2.626,0.224,73,11,344,319
-2020,phrase,Democratic,16,of color,5.59,1.498,0.024,53,1,344,319
-2020,phrase,Democratic,17,a public,5.51,2.032,0.327,75,19,344,319
-2020,phrase,Democratic,18,for equal,5.51,0.874,0.025,46,3,344,319
-2020,phrase,Democratic,19,citizens united,5.49,1.754,0.088,66,3,344,319
-2020,phrase,Democratic,20,gun safety,5.44,1.709,0.074,59,3,344,319
-2020,phrase,Democratic,21,education and,5.39,4.506,1.631,135,59,344,319
-2020,phrase,Democratic,22,the minimum,5.34,1.014,0.039,47,2,344,319
-2020,phrase,Democratic,23,affordable health,5.29,1.957,0.342,65,18,344,319
-2020,phrase,Democratic,24,affordable health care,5.28,1.74,0.242,60,13,344,319
-2020,phrase,Democratic,25,planned parenthood action,5.25,1.307,0.0,42,0,344,319
-2020,phrase,Democratic,26,parenthood action fund,5.22,1.292,0.0,42,0,344,319
-2020,phrase,Democratic,27,parenthood action,5.22,1.192,0.0,42,0,344,319
-2020,phrase,Democratic,28,sexual orientation,5.21,0.687,0.026,38,3,344,319
-2020,phrase,Democratic,29,an economy,5.2,1.148,0.112,43,8,344,319
-2020,phrase,Democratic,30,an economy that,5.2,1.067,0.059,38,4,344,319
-2020,phrase,Democratic,31,access to affordable,5.18,1.458,0.255,61,14,344,319
-2020,phrase,Democratic,32,campaign finance,5.17,0.806,0.023,39,1,344,319
-2020,phrase,Democratic,33,to affordable,5.16,1.411,0.262,61,15,344,319
-2020,phrase,Democratic,34,investing in,5.15,1.727,0.319,68,12,344,319
-2020,phrase,Democratic,35,social security,5.13,6.085,2.094,126,51,344,319
-2020,phrase,Democratic,36,lgbtq community,5.12,0.759,0.016,39,1,344,319
-2020,phrase,Democratic,37,women rights,5.11,1.063,0.0,36,0,344,319
-2020,phrase,Democratic,38,sierra club,5.1,1.614,0.014,54,1,344,319
-2020,phrase,Democratic,39,middle class,5.01,2.903,0.818,85,33,344,319
-2020,phrase,Democratic,40,the minimum wage,5.01,0.953,0.035,43,1,344,319
-2020,phrase,Republican,1,second amendment,-7.74,0.446,4.026,28,101,344,319
-2020,phrase,Republican,2,right to life,-7.69,0.043,3.084,2,83,344,319
-2020,phrase,Republican,3,to life,-7.47,0.183,3.019,9,87,344,319
-2020,phrase,Republican,4,bear arms,-6.96,0.079,1.813,6,68,344,319
-2020,phrase,Republican,5,the unborn,-6.87,0.0,1.758,0,58,344,319
-2020,phrase,Republican,6,2nd amendment,-6.45,0.242,2.145,13,66,344,319
-2020,phrase,Republican,7,amendment rights,-6.26,0.166,1.671,11,64,344,319
-2020,phrase,Republican,8,illegal immigration,-6.26,0.016,1.645,2,60,344,319
-2020,phrase,Republican,9,the constitution,-6.22,0.312,2.362,18,75,344,319
-2020,phrase,Republican,10,right to,-6.09,2.678,6.764,96,151,344,319
-2020,phrase,Republican,11,the second amendment,-5.81,0.285,1.984,18,67,344,319
-2020,phrase,Republican,12,president trump,-5.77,2.029,7.028,52,126,344,319
-2020,phrase,Republican,13,men and women,-5.71,0.894,3.355,46,101,344,319
-2020,phrase,Republican,14,men and,-5.71,0.885,3.227,47,101,344,319
-2020,phrase,Republican,15,secure our,-5.54,0.155,1.452,9,54,344,319
-2020,phrase,Republican,16,and bear,-5.49,0.023,1.186,1,43,344,319
-2020,phrase,Republican,17,border security,-5.41,0.21,1.693,12,63,344,319
-2020,phrase,Republican,18,and bear arms,-5.38,0.024,1.202,1,41,344,319
-2020,phrase,Republican,19,keep and bear,-5.38,0.024,1.202,1,41,344,319
-2020,phrase,Republican,20,taxes and,-5.33,0.301,2.303,12,72,344,319
-2020,phrase,Republican,21,southern border,-5.32,0.13,1.304,8,51,344,319
-2020,phrase,Republican,22,our borders,-5.31,0.348,1.871,19,67,344,319
-2020,phrase,Republican,23,with president trump,-5.27,0.017,1.625,1,45,344,319
-2020,phrase,Republican,24,illegal immigrants,-5.15,0.021,0.916,1,39,344,319
-2020,phrase,Republican,25,to keep and,-5.14,0.024,1.143,1,39,344,319
-2020,phrase,Republican,26,keep and,-5.13,0.059,1.194,2,41,344,319
-2020,phrase,Republican,27,a conservative,-5.11,0.043,1.409,2,39,344,319
-2020,phrase,Republican,28,free market,-5.1,0.0,1.066,0,36,344,319
-2020,phrase,Republican,29,with president,-5.06,0.085,1.793,6,49,344,319
-2020,phrase,Republican,30,law enforcement,-5.04,1.829,5.758,55,109,344,319
-2020,phrase,Republican,31,our military,-5.03,0.618,2.758,28,77,344,319
-2020,phrase,Republican,32,federal government,-4.95,1.65,4.32,66,114,344,319
-2020,phrase,Republican,33,president donald,-4.9,0.289,1.677,12,51,344,319
-2020,phrase,Republican,34,2nd amendment rights,-4.87,0.014,0.762,1,32,344,319
-2020,phrase,Republican,35,of the unborn,-4.77,0.0,0.775,0,29,344,319
-2020,phrase,Republican,36,our nation,-4.75,3.848,7.396,114,151,344,319
-2020,phrase,Republican,37,of independent,-4.7,0.004,0.701,1,29,344,319
-2020,phrase,Republican,38,national right to,-4.7,0.0,1.108,0,32,344,319
-2020,phrase,Republican,39,national right,-4.69,0.0,1.035,0,32,344,319
-2020,phrase,Republican,40,tax cuts and,-4.65,0.03,0.953,1,36,344,319
-2022,word,Democratic,1,affordable,11.37,12.343,1.944,185,50,286,290
-2022,word,Democratic,2,democratic,9.38,14.808,1.42,161,35,286,290
-2022,word,Democratic,3,climate,8.8,8.66,1.103,142,27,286,290
-2022,word,Democratic,4,access,8.77,15.771,4.929,202,85,286,290
-2022,word,Democratic,5,health,8.76,25.986,8.588,220,111,286,290
-2022,word,Democratic,6,public,7.86,17.917,8.761,226,155,286,290
-2022,word,Democratic,7,rights,7.53,18.273,7.055,208,123,286,290
-2022,word,Democratic,8,equality,7.24,3.933,0.365,91,8,286,290
-2022,word,Democratic,9,care,7.16,22.906,9.04,213,128,286,290
-2022,word,Democratic,10,justice,7.03,10.226,2.379,139,52,286,290
-2022,word,Democratic,11,medicare,6.89,7.597,1.234,122,37,286,290
-2022,word,Democratic,12,working,6.86,20.683,10.239,230,164,286,290
-2022,word,Democratic,13,reproductive,6.69,4.465,0.0,93,0,286,290
-2022,word,Democratic,14,expand,6.62,5.874,1.705,124,52,286,290
-2022,word,Democratic,15,invest,6.61,3.909,0.597,98,26,286,290
-2022,word,Democratic,16,everyone,6.54,5.332,1.574,130,48,286,290
-2022,word,Democratic,17,democracy,6.44,6.745,0.899,109,26,286,290
-2022,word,Democratic,18,prescription,6.4,3.807,0.765,100,25,286,290
-2022,word,Democratic,19,gun,6.18,9.396,2.313,118,54,286,290
-2022,word,Democratic,20,lgbtq,6.16,2.965,0.097,65,2,286,290
-2022,word,Democratic,21,women,6.15,13.97,5.708,173,110,286,290
-2022,word,Democratic,22,workers,6.06,9.772,3.298,141,77,286,290
-2022,word,Democratic,23,healthcare,5.87,14.705,6.031,172,84,286,290
-2022,word,Democratic,24,clean,5.77,5.517,1.405,108,37,286,290
-2022,word,Democratic,25,funding,5.73,8.518,3.52,140,86,286,290
-2022,word,Democratic,26,communities,5.67,14.467,7.541,195,130,286,290
-2022,word,Democratic,27,racial,5.67,2.581,0.064,56,6,286,290
-2022,word,Democratic,28,civil,5.62,3.326,0.562,85,25,286,290
-2022,word,Democratic,29,wage,5.59,4.142,0.564,81,16,286,290
-2022,word,Democratic,30,act,5.58,16.752,7.278,166,107,286,290
-2022,word,Democratic,31,woman,5.53,3.747,0.96,97,27,286,290
-2022,word,Democratic,32,childcare,5.53,1.191,0.039,39,3,286,290
-2022,word,Democratic,33,parenthood,5.44,2.09,0.426,61,20,286,290
-2022,word,Democratic,34,infrastructure,5.43,8.314,2.882,134,66,286,290
-2022,word,Democratic,35,equal,5.39,3.424,0.643,77,19,286,290
-2022,word,Democratic,36,violence,5.37,6.581,1.769,114,47,286,290
-2022,word,Democratic,37,progressive,5.32,4.777,0.623,80,21,286,290
-2022,word,Democratic,38,coverage,5.31,2.803,0.405,71,19,286,290
-2022,word,Democratic,39,pandemic,5.26,4.924,1.949,114,50,286,290
-2022,word,Democratic,40,environmental,5.19,3.676,0.879,84,31,286,290
-2022,word,Republican,1,spending,-9.49,1.225,9.952,40,143,286,290
-2022,word,Republican,2,government,-8.28,8.798,21.479,163,210,286,290
-2022,word,Republican,3,border,-8.22,1.172,13.65,29,142,286,290
-2022,word,Republican,4,regulations,-7.84,0.383,3.586,22,89,286,290
-2022,word,Republican,5,conservative,-7.65,0.182,13.666,10,142,286,290
-2022,word,Republican,6,taxes,-7.22,2.034,8.131,57,137,286,290
-2022,word,Republican,7,borders,-7.15,0.367,3.155,16,81,286,290
-2022,word,Republican,8,biden,-6.86,2.481,13.175,57,121,286,290
-2022,word,Republican,9,republican,-6.83,3.737,16.905,94,162,286,290
-2022,word,Republican,10,enforcement,-6.77,1.818,8.229,59,127,286,290
-2022,word,Republican,11,radical,-6.75,0.189,3.482,10,72,286,290
-2022,word,Republican,12,illegal,-6.43,0.568,5.181,28,100,286,290
-2022,word,Republican,13,america,-6.18,10.642,20.826,177,188,286,290
-2022,word,Republican,14,inflation,-6.12,2.191,9.176,51,116,286,290
-2022,word,Republican,15,business,-6.07,6.726,16.078,129,191,286,290
-2022,word,Republican,16,crime,-5.96,0.901,5.417,35,86,286,290
-2022,word,Republican,17,amendment,-5.78,1.863,5.905,53,115,286,290
-2022,word,Republican,18,life,-5.71,9.321,16.827,172,198,286,290
-2022,word,Republican,19,pro-life,-5.71,0.245,3.316,5,73,286,290
-2022,word,Republican,20,unborn,-5.69,0.065,2.158,1,52,286,290
-2022,word,Republican,21,mandates,-5.34,0.107,1.893,7,45,286,290
-2022,word,Republican,22,regulation,-5.32,0.1,1.275,7,39,286,290
-2022,word,Republican,23,administration,-5.28,2.556,6.3,70,121,286,290
-2022,word,Republican,24,taxpayer,-5.27,0.207,1.711,13,60,286,290
-2022,word,Republican,25,president,-5.23,8.738,17.063,137,181,286,290
-2022,word,Republican,26,defund,-5.15,0.222,1.758,12,57,286,290
-2022,word,Republican,27,fiscal,-5.14,0.604,2.748,25,59,286,290
-2022,word,Republican,28,men,-5.12,1.148,3.254,42,89,286,290
-2022,word,Republican,29,bureaucrats,-5.03,0.0,1.391,0,41,286,290
-2022,word,Republican,30,trump,-5.02,3.12,8.893,63,108,286,290
-2022,word,Republican,31,constitution,-4.97,1.195,4.207,40,90,286,290
-2022,word,Republican,32,stop,-4.95,3.255,7.46,93,138,286,290
-2022,word,Republican,33,socialist,-4.93,0.0,1.186,0,34,286,290
-2022,word,Republican,34,liberal,-4.91,0.259,1.89,10,52,286,290
-2022,word,Republican,35,values,-4.87,4.771,10.587,105,148,286,290
-2022,word,Republican,36,second,-4.8,2.419,5.246,73,114,286,290
-2022,word,Republican,37,the,-4.76,406.957,452.972,286,290,286,290
-2022,word,Republican,38,taxpayers,-4.73,0.438,2.368,19,55,286,290
-2022,word,Republican,39,his,-4.71,29.33,48.641,165,224,286,290
-2022,word,Republican,40,businessman,-4.7,0.158,1.796,3,38,286,290
-2022,phrase,Democratic,1,access to,8.28,13.116,3.7,187,70,286,290
-2022,phrase,Democratic,2,voting rights,7.86,3.557,0.019,79,2,286,290
-2022,phrase,Democratic,3,climate change,7.11,4.778,0.623,104,11,286,290
-2022,phrase,Democratic,4,invest in,6.76,3.692,0.498,91,22,286,290
-2022,phrase,Democratic,5,our democracy,6.27,4.068,0.161,81,8,286,290
-2022,phrase,Democratic,6,affordable health care,6.18,1.826,0.076,52,4,286,290
-2022,phrase,Democratic,7,affordable health,6.15,1.929,0.143,55,7,286,290
-2022,phrase,Democratic,8,for all,6.03,9.247,3.732,155,92,286,290
-2022,phrase,Democratic,9,the affordable,5.94,1.775,0.156,63,8,286,290
-2022,phrase,Democratic,10,a woman,5.85,1.98,0.192,61,7,286,290
-2022,phrase,Democratic,11,working families,5.77,5.454,0.839,98,22,286,290
-2022,phrase,Democratic,12,to affordable,5.67,1.594,0.183,55,9,286,290
-2022,phrase,Democratic,13,gun violence,5.65,4.414,0.129,77,4,286,290
-2022,phrase,Democratic,14,health care,5.62,12.89,4.178,171,57,286,290
-2022,phrase,Democratic,15,action fund,5.62,1.84,0.037,41,2,286,290
-2022,phrase,Democratic,16,the climate,5.56,1.443,0.037,44,2,286,290
-2022,phrase,Democratic,17,prescription drug,5.56,1.768,0.185,57,9,286,290
-2022,phrase,Democratic,18,democratic party,5.43,2.77,0.187,55,7,286,290
-2022,phrase,Democratic,19,planned parenthood,5.43,2.284,0.449,61,20,286,290
-2022,phrase,Democratic,20,reproductive rights,5.41,1.958,0.0,50,0,286,290
-2022,phrase,Democratic,21,funding for,5.4,4.129,1.329,98,46,286,290
-2022,phrase,Democratic,22,access to affordable,5.4,1.505,0.156,50,7,286,290
-2022,phrase,Democratic,23,investing in,5.36,1.735,0.272,55,13,286,290
-2022,phrase,Democratic,24,climate crisis,5.36,1.337,0.017,40,1,286,290
-2022,phrase,Democratic,25,have access,5.3,2.085,0.45,70,16,286,290
-2022,phrase,Democratic,26,civil rights,5.3,2.405,0.114,60,7,286,290
-2022,phrase,Democratic,27,have access to,5.24,2.154,0.476,70,16,286,290
-2022,phrase,Democratic,28,and expand,5.22,1.417,0.201,51,9,286,290
-2022,phrase,Democratic,29,minimum wage,5.15,2.736,0.163,55,4,286,290
-2022,phrase,Democratic,30,affordable care,5.13,1.64,0.191,56,8,286,290
-2022,phrase,Democratic,31,of conservation,5.11,1.361,0.0,38,0,286,290
-2022,phrase,Democratic,32,the climate crisis,5.1,1.317,0.017,37,1,286,290
-2022,phrase,Democratic,33,the affordable care,5.06,1.558,0.136,52,7,286,290
-2022,phrase,Democratic,34,for working,5.0,2.96,0.482,69,12,286,290
-2022,phrase,Democratic,35,conservation voters,5.0,1.339,0.0,37,0,286,290
-2022,phrase,Democratic,36,gun safety,4.99,1.376,0.028,36,2,286,290
-2022,phrase,Democratic,37,human rights,4.97,1.715,0.269,51,12,286,290
-2022,phrase,Democratic,38,citizens united,4.94,0.955,0.0,36,0,286,290
-2022,phrase,Democratic,39,of color,4.94,1.363,0.061,44,2,286,290
-2022,phrase,Democratic,40,parenthood action,4.92,1.069,0.0,36,0,286,290
-2022,phrase,Republican,1,second amendment,-6.42,0.442,2.946,18,72,286,290
-2022,phrase,Republican,2,southern border,-6.29,0.116,2.346,5,61,286,290
-2022,phrase,Republican,3,president trump,-6.14,0.575,4.728,17,82,286,290
-2022,phrase,Republican,4,law enforcement,-6.13,1.753,7.8,53,115,286,290
-2022,phrase,Republican,5,illegal immigration,-6.04,0.008,1.972,1,52,286,290
-2022,phrase,Republican,6,our southern border,-5.98,0.037,1.436,2,46,286,290
-2022,phrase,Republican,7,the border,-5.97,0.34,3.737,14,74,286,290
-2022,phrase,Republican,8,the republican,-5.93,0.449,3.496,16,71,286,290
-2022,phrase,Republican,9,our southern,-5.92,0.05,1.394,2,47,286,290
-2022,phrase,Republican,10,our border,-5.88,0.044,1.863,2,49,286,290
-2022,phrase,Republican,11,america first,-5.78,0.02,2.411,1,45,286,290
-2022,phrase,Republican,12,the biden,-5.68,0.344,3.326,18,72,286,290
-2022,phrase,Republican,13,the unborn,-5.61,0.0,1.605,0,43,286,290
-2022,phrase,Republican,14,conservative values,-5.54,0.0,1.599,0,40,286,290
-2022,phrase,Republican,15,biden administration,-5.53,0.314,2.965,16,66,286,290
-2022,phrase,Republican,16,the biden administration,-5.51,0.322,2.966,16,65,286,290
-2022,phrase,Republican,17,to life,-5.48,0.074,3.014,2,61,286,290
-2022,phrase,Republican,18,the democrats,-5.48,0.098,1.716,4,43,286,290
-2022,phrase,Republican,19,border security,-5.42,0.155,1.543,7,48,286,290
-2022,phrase,Republican,20,secure our,-5.37,0.111,1.671,5,44,286,290
-2022,phrase,Republican,21,government spending,-5.33,0.012,1.174,2,38,286,290
-2022,phrase,Republican,22,spending and,-5.3,0.019,1.17,3,39,286,290
-2022,phrase,Republican,23,taxes and,-5.23,0.389,2.283,12,56,286,290
-2022,phrase,Republican,24,our borders,-5.18,0.225,1.587,11,45,286,290
-2022,phrase,Republican,25,border and,-5.18,0.161,1.237,11,43,286,290
-2022,phrase,Republican,26,securing our,-5.1,0.092,1.071,5,39,286,290
-2022,phrase,Republican,27,the wall,-5.07,0.027,1.129,3,33,286,290
-2022,phrase,Republican,28,right to life,-5.05,0.078,2.801,2,55,286,290
-2022,phrase,Republican,29,of control,-4.99,0.069,1.372,5,38,286,290
-2022,phrase,Republican,30,biden and,-4.95,0.179,1.796,7,41,286,290
-2022,phrase,Republican,31,school choice,-4.92,0.0,1.239,0,32,286,290
-2022,phrase,Republican,32,out of control,-4.86,0.074,1.349,5,37,286,290
-2022,phrase,Republican,33,men and,-4.83,0.873,2.574,30,74,286,290
-2022,phrase,Republican,34,our law,-4.82,0.103,1.336,8,36,286,290
-2022,phrase,Republican,35,our law enforcement,-4.81,0.107,1.407,8,36,286,290
-2022,phrase,Republican,36,energy independence,-4.79,0.453,2.28,13,58,286,290
-2022,phrase,Republican,37,2nd amendment,-4.79,0.133,1.319,4,39,286,290
-2022,phrase,Republican,38,men and women,-4.75,0.875,2.595,29,73,286,290
-2022,phrase,Republican,39,our constitutional,-4.73,0.07,0.917,5,31,286,290
-2022,phrase,Republican,40,joe biden,-4.71,0.554,3.751,17,64,286,290
-2024,word,Democratic,1,reproductive,12.74,9.535,0.055,167,2,292,297
-2024,word,Democratic,2,access,11.25,16.787,4.171,202,97,292,297
-2024,word,Democratic,3,affordable,9.46,14.908,3.077,190,73,292,297
-2024,word,Democratic,4,democratic,8.88,13.472,1.218,152,41,292,297
-2024,word,Democratic,5,health,8.67,26.322,9.339,236,134,292,297
-2024,word,Democratic,6,care,8.65,25.221,9.066,220,150,292,297
-2024,word,Democratic,7,workers,8.53,10.083,1.931,152,57,292,297
-2024,word,Democratic,8,democracy,8.17,7.785,0.78,126,34,292,297
-2024,word,Democratic,9,prescription,7.98,4.251,0.538,101,27,292,297
-2024,word,Democratic,10,working,7.43,20.52,9.571,229,170,292,297
-2024,word,Democratic,11,healthcare,7.29,15.921,5.624,185,96,292,297
-2024,word,Democratic,12,woman,7.26,4.979,0.856,111,29,292,297
-2024,word,Democratic,13,women,7.24,17.332,5.599,212,116,292,297
-2024,word,Democratic,14,rights,7.07,21.987,10.537,228,163,292,297
-2024,word,Democratic,15,expanding,7.04,4.109,0.87,107,32,292,297
-2024,word,Democratic,16,climate,7.01,8.229,0.991,137,35,292,297
-2024,word,Democratic,17,gun,7.0,10.744,2.661,141,63,292,297
-2024,word,Democratic,18,medicare,6.9,7.824,2.29,140,54,292,297
-2024,word,Democratic,19,universal,6.62,1.817,0.086,64,5,292,297
-2024,word,Democratic,20,clean,6.6,5.386,1.277,115,42,292,297
-2024,word,Democratic,21,expand,6.59,6.475,2.017,141,59,292,297
-2024,word,Democratic,22,violence,6.55,6.448,1.561,118,51,292,297
-2024,word,Democratic,23,families,6.47,24.195,13.414,239,193,292,297
-2024,word,Democratic,24,equality,6.42,3.714,0.279,87,8,292,297
-2024,word,Democratic,25,for,6.42,181.006,150.325,292,297,292,297
-2024,word,Democratic,26,public,6.26,20.272,11.198,229,179,292,297
-2024,word,Democratic,27,everyone,6.22,5.293,1.766,130,64,292,297
-2024,word,Democratic,28,roe,6.14,1.94,0.185,66,7,292,297
-2024,word,Democratic,29,her,6.05,33.419,12.573,172,97,292,297
-2024,word,Democratic,30,action,6.0,9.62,2.739,129,77,292,297
-2024,word,Democratic,31,fund,5.92,5.751,1.695,116,57,292,297
-2024,word,Democratic,32,funding,5.87,10.069,4.473,162,104,292,297
-2024,word,Democratic,33,worked,5.87,11.756,5.548,184,119,292,297
-2024,word,Democratic,34,negotiate,5.82,1.2,0.065,45,6,292,297
-2024,word,Democratic,35,wage,5.79,3.44,0.232,76,9,292,297
-2024,word,Democratic,36,infrastructure,5.78,8.118,2.95,144,72,292,297
-2024,word,Democratic,37,checks,5.76,1.286,0.155,57,9,292,297
-2024,word,Democratic,38,fair,5.72,5.069,1.844,123,55,292,297
-2024,word,Democratic,39,benefits,5.63,5.767,2.413,130,69,292,297
-2024,word,Democratic,40,lgbtq,5.6,2.745,0.038,61,2,292,297
-2024,word,Republican,1,conservative,-9.49,0.156,12.216,11,136,292,297
-2024,word,Republican,2,spending,-9.21,1.047,8.562,43,150,292,297
-2024,word,Republican,3,border,-8.4,4.498,16.167,73,183,292,297
-2024,word,Republican,4,republican,-8.31,3.8,14.682,95,169,292,297
-2024,word,Republican,5,illegal,-7.74,0.798,5.994,28,113,292,297
-2024,word,Republican,6,government,-7.31,10.679,22.089,178,225,292,297
-2024,word,Republican,7,regulations,-7.21,0.507,3.319,27,90,292,297
-2024,word,Republican,8,amendment,-6.95,1.883,7.37,52,136,292,297
-2024,word,Republican,9,fiscal,-6.58,0.426,3.095,19,79,292,297
-2024,word,Republican,10,borders,-6.57,0.551,4.094,28,92,292,297
-2024,word,Republican,11,america,-6.15,10.275,21.545,164,217,292,297
-2024,word,Republican,12,biden,-6.11,2.304,8.913,57,121,292,297
-2024,word,Republican,13,crime,-6.05,1.034,4.854,38,98,292,297
-2024,word,Republican,14,bear,-5.91,0.186,1.535,8,61,292,297
-2024,word,Republican,15,arms,-5.87,0.225,1.599,9,61,292,297
-2024,word,Republican,16,radical,-5.86,0.329,3.499,11,73,292,297
-2024,word,Republican,17,secure,-5.81,3.413,8.091,97,154,292,297
-2024,word,Republican,18,taxes,-5.74,2.58,7.021,61,138,292,297
-2024,word,Republican,19,unborn,-5.71,0.0,1.839,0,49,292,297
-2024,word,Republican,20,pro-life,-5.71,0.191,2.54,6,68,292,297
-2024,word,Republican,21,bureaucrats,-5.62,0.067,1.309,4,48,292,297
-2024,word,Republican,22,great,-5.57,2.497,6.617,76,134,292,297
-2024,word,Republican,23,trump,-5.56,3.147,10.022,71,118,292,297
-2024,word,Republican,24,states,-5.4,6.324,12.475,138,195,292,297
-2024,word,Republican,25,liberty,-5.26,0.719,3.011,21,77,292,297
-2024,word,Republican,26,second,-5.26,2.077,5.695,57,118,292,297
-2024,word,Republican,27,administration,-5.21,2.397,5.491,66,129,292,297
-2024,word,Republican,28,inflation,-5.2,2.338,6.752,70,117,292,297
-2024,word,Republican,29,wasteful,-5.13,0.084,1.177,7,44,292,297
-2024,word,Republican,30,god,-5.03,0.155,1.931,5,48,292,297
-2024,word,Republican,31,liberal,-5.01,0.137,1.443,4,47,292,297
-2024,word,Republican,32,independence,-5.01,0.549,2.092,25,65,292,297
-2024,word,Republican,33,the,-4.84,394.896,443.753,291,297,292,297
-2024,word,Republican,34,values,-4.81,5.2,10.646,120,157,292,297
-2024,word,Republican,35,criminals,-4.76,0.257,2.172,17,55,292,297
-2024,word,Republican,36,military,-4.76,4.221,9.819,81,144,292,297
-2024,word,Republican,37,again,-4.71,1.738,4.553,55,109,292,297
-2024,word,Republican,38,nuclear,-4.67,0.296,1.83,13,49,292,297
-2024,word,Republican,39,constitution,-4.63,1.022,3.351,32,83,292,297
-2024,word,Republican,40,stop,-4.62,4.491,8.314,118,155,292,297
-2024,phrase,Democratic,1,access to,10.71,13.437,2.848,183,75,292,297
-2024,phrase,Democratic,2,climate change,7.98,4.423,0.376,97,14,292,297
-2024,phrase,Democratic,3,working families,7.94,5.939,0.827,113,27,292,297
-2024,phrase,Democratic,4,our democracy,7.87,4.475,0.065,95,5,292,297
-2024,phrase,Democratic,5,reproductive freedom,7.41,3.005,0.0,73,0,292,297
-2024,phrase,Democratic,6,reproductive rights,7.2,2.937,0.035,77,1,292,297
-2024,phrase,Democratic,7,health care,7.02,13.223,3.651,167,64,292,297
-2024,phrase,Democratic,8,a woman,7.0,2.379,0.124,67,7,292,297
-2024,phrase,Democratic,9,gun violence,6.99,4.568,0.302,89,11,292,297
-2024,phrase,Democratic,10,for all,6.96,10.824,4.0,178,100,292,297
-2024,phrase,Democratic,11,for working,6.85,3.457,0.239,76,11,292,297
-2024,phrase,Democratic,12,voting rights,6.53,4.146,0.017,82,1,292,297
-2024,phrase,Democratic,13,background checks,6.47,1.047,0.031,50,3,292,297
-2024,phrase,Democratic,14,for women,6.41,2.636,0.211,70,11,292,297
-2024,phrase,Democratic,15,the affordable,6.38,2.289,0.115,69,6,292,297
-2024,phrase,Democratic,16,affordable care,6.0,2.237,0.115,68,6,292,297
-2024,phrase,Democratic,17,for working families,5.98,2.533,0.149,53,6,292,297
-2024,phrase,Democratic,18,prescription drugs,5.96,2.063,0.275,59,13,292,297
-2024,phrase,Democratic,19,action fund,5.92,3.571,0.0,54,0,292,297
-2024,phrase,Democratic,20,gun safety,5.87,2.67,0.037,63,2,292,297
-2024,phrase,Democratic,21,roe v,5.78,1.578,0.05,53,3,292,297
-2024,phrase,Democratic,22,v wade,5.78,1.578,0.05,53,3,292,297
-2024,phrase,Democratic,23,roe v wade,5.77,1.648,0.052,53,3,292,297
-2024,phrase,Democratic,24,affordable care act,5.75,2.239,0.118,63,6,292,297
-2024,phrase,Democratic,25,care act,5.73,2.209,0.158,64,7,292,297
-2024,phrase,Democratic,26,and expand,5.72,1.468,0.184,52,13,292,297
-2024,phrase,Democratic,27,the affordable care,5.7,2.091,0.118,61,6,292,297
-2024,phrase,Democratic,28,woman right,5.67,1.388,0.02,46,1,292,297
-2024,phrase,Democratic,29,woman right to,5.6,1.469,0.021,46,1,292,297
-2024,phrase,Democratic,30,prescription drug,5.6,1.964,0.176,61,11,292,297
-2024,phrase,Democratic,31,social security,5.47,7.103,2.394,120,60,292,297
-2024,phrase,Democratic,32,a woman right,5.47,1.431,0.021,44,1,292,297
-2024,phrase,Democratic,33,human rights,5.42,2.15,0.301,61,13,292,297
-2024,phrase,Democratic,34,citizens united,5.38,0.802,0.0,35,0,292,297
-2024,phrase,Democratic,35,right to choose,5.38,1.526,0.091,44,5,292,297
-2024,phrase,Democratic,36,rights and,5.36,4.021,1.38,99,46,292,297
-2024,phrase,Democratic,37,go through,5.34,1.241,0.0,39,0,292,297
-2024,phrase,Democratic,38,clean energy,5.24,2.572,0.227,62,11,292,297
-2024,phrase,Democratic,39,to negotiate,5.23,0.985,0.041,38,4,292,297
-2024,phrase,Democratic,40,drug prices,5.18,1.36,0.121,48,7,292,297
-2024,phrase,Republican,1,second amendment,-7.14,0.333,3.494,10,83,292,297
-2024,phrase,Republican,2,illegal immigration,-6.95,0.06,2.312,4,62,292,297
-2024,phrase,Republican,3,bear arms,-6.07,0.093,1.459,3,55,292,297
-2024,phrase,Republican,4,spending and,-5.95,0.057,1.529,5,55,292,297
-2024,phrase,Republican,5,secure our,-5.82,0.446,2.758,13,74,292,297
-2024,phrase,Republican,6,president trump,-5.71,0.458,5.383,18,80,292,297
-2024,phrase,Republican,7,the biden,-5.66,0.347,2.537,14,71,292,297
-2024,phrase,Republican,8,the second amendment,-5.55,0.167,1.925,6,56,292,297
-2024,phrase,Republican,9,the border,-5.46,1.314,4.328,37,100,292,297
-2024,phrase,Republican,10,our border,-5.41,0.344,2.632,16,69,292,297
-2024,phrase,Republican,11,united states,-5.29,4.955,10.001,114,174,292,297
-2024,phrase,Republican,12,america first,-5.28,0.051,2.304,3,45,292,297
-2024,phrase,Republican,13,southern border,-5.25,0.541,3.194,15,74,292,297
-2024,phrase,Republican,14,the united states,-5.23,4.22,8.897,105,159,292,297
-2024,phrase,Republican,15,taxes and,-5.21,0.395,2.05,10,66,292,297
-2024,phrase,Republican,16,biden administration,-5.16,0.381,2.2,15,64,292,297
-2024,phrase,Republican,17,a conservative,-5.14,0.0,1.252,0,37,292,297
-2024,phrase,Republican,18,the biden administration,-5.12,0.335,2.177,12,61,292,297
-2024,phrase,Republican,19,illegal immigrants,-5.06,0.0,1.032,0,34,292,297
-2024,phrase,Republican,20,conservative values,-5.06,0.0,1.707,0,41,292,297
-2024,phrase,Republican,21,the united,-5.05,4.358,8.937,110,162,292,297
-2024,phrase,Republican,22,the unborn,-5.03,0.0,1.386,0,38,292,297
-2024,phrase,Republican,23,the republican,-5.01,0.535,2.708,20,62,292,297
-2024,phrase,Republican,24,a balanced budget,-4.96,0.017,0.871,1,34,292,297
-2024,phrase,Republican,25,our borders,-4.96,0.358,2.445,17,59,292,297
-2024,phrase,Republican,26,government spending,-4.95,0.042,1.552,3,46,292,297
-2024,phrase,Republican,27,lower taxes,-4.91,0.114,1.231,4,41,292,297
-2024,phrase,Republican,28,the constitution,-4.84,0.357,2.342,15,61,292,297
-2024,phrase,Republican,29,defund the police,-4.8,0.012,0.601,1,27,292,297
-2024,phrase,Republican,30,secure the,-4.77,0.289,2.13,15,60,292,297
-2024,phrase,Republican,31,secure the border,-4.76,0.136,1.615,6,48,292,297
-2024,phrase,Republican,32,of illegal,-4.74,0.062,0.867,3,34,292,297
-2024,phrase,Republican,33,secure our border,-4.66,0.076,1.233,3,41,292,297
-2024,phrase,Republican,34,and his,-4.58,2.392,5.48,59,119,292,297
-2024,phrase,Republican,35,school choice,-4.56,0.015,1.447,1,38,292,297
-2024,phrase,Republican,36,to bear,-4.5,0.031,0.705,3,29,292,297
-2024,phrase,Republican,37,to life,-4.46,0.305,1.994,6,54,292,297
-2024,phrase,Republican,38,defund the,-4.45,0.058,0.665,2,30,292,297
-2024,phrase,Republican,39,the wall,-4.45,0.076,0.963,4,35,292,297
-2024,phrase,Republican,40,2nd amendment,-4.42,0.166,2.452,4,56,292,297
-2026,word,Democratic,1,care,10.36,21.328,5.689,230,94,322,251
-2026,word,Democratic,2,health,10.13,22.377,5.508,229,82,322,251
-2026,word,Democratic,3,democratic,9.9,13.809,0.863,173,23,322,251
-2026,word,Democratic,4,reproductive,9.3,4.618,0.047,114,1,322,251
-2026,word,Democratic,5,access,8.67,14.416,4.556,204,78,322,251
-2026,word,Democratic,6,democracy,8.04,6.963,0.386,129,14,322,251
-2026,word,Democratic,7,everyone,7.59,5.898,1.129,144,34,322,251
-2026,word,Democratic,8,equality,7.15,2.828,0.057,79,4,322,251
-2026,word,Democratic,9,climate,7.09,4.762,0.416,96,11,322,251
-2026,word,Democratic,10,affordable,6.94,13.372,4.682,192,68,322,251
-2026,word,Democratic,11,fair,6.79,5.097,1.303,131,35,322,251
-2026,word,Democratic,12,wage,6.62,2.216,0.113,65,7,322,251
-2026,word,Democratic,13,prescription,6.54,3.186,0.515,88,16,322,251
-2026,word,Democratic,14,teachers,6.06,2.888,0.528,88,16,322,251
-2026,word,Democratic,15,corporate,6.0,6.8,1.046,120,15,322,251
-2026,word,Democratic,16,billionaires,5.98,2.499,0.0,67,0,322,251
-2026,word,Democratic,17,parenthood,5.94,2.071,0.165,62,6,322,251
-2026,word,Democratic,18,people,5.76,33.974,19.984,265,163,322,251
-2026,word,Democratic,19,childcare,5.76,2.425,0.109,57,4,322,251
-2026,word,Democratic,20,healthcare,5.75,17.85,6.988,202,68,322,251
-2026,word,Democratic,21,medicare,5.73,6.572,1.98,141,27,322,251
-2026,word,Democratic,22,working,5.64,25.622,14.58,255,147,322,251
-2026,word,Democratic,23,medicaid,5.61,3.848,0.453,91,9,322,251
-2026,word,Democratic,24,paying,5.58,2.203,0.404,73,20,322,251
-2026,word,Democratic,25,expand,5.56,8.092,2.956,156,60,322,251
-2026,word,Democratic,26,funding,5.48,9.018,3.784,162,69,322,251
-2026,word,Democratic,27,progressive,5.48,2.968,0.302,59,8,322,251
-2026,word,Democratic,28,good,5.45,5.243,1.901,130,54,322,251
-2026,word,Democratic,29,violence,5.36,4.338,1.089,102,23,322,251
-2026,word,Democratic,30,minimum,5.3,1.53,0.113,51,6,322,251
-2026,word,Democratic,31,ice,5.3,2.495,0.411,65,13,322,251
-2026,word,Democratic,32,planned,5.29,2.222,0.385,70,12,322,251
-2026,word,Democratic,33,union,5.27,6.588,1.997,118,36,322,251
-2026,word,Democratic,34,workers,5.24,9.456,3.43,154,55,322,251
-2026,word,Democratic,35,hospitals,5.2,2.249,0.397,65,16,322,251
-2026,word,Democratic,36,housing,5.14,13.166,4.794,177,48,322,251
-2026,word,Democratic,37,lgbtq,5.13,2.226,0.151,60,1,322,251
-2026,word,Democratic,38,investing,5.12,2.406,0.518,71,12,322,251
-2026,word,Democratic,39,roe,5.12,1.281,0.03,44,1,322,251
-2026,word,Democratic,40,fund,5.06,5.708,2.234,127,44,322,251
-2026,word,Republican,1,conservative,-9.68,0.048,16.899,6,123,322,251
-2026,word,Republican,2,border,-8.46,2.23,15.078,53,126,322,251
-2026,word,Republican,3,spending,-7.55,1.454,9.621,53,111,322,251
-2026,word,Republican,4,america,-7.51,8.638,24.28,169,165,322,251
-2026,word,Republican,5,regulations,-7.21,0.47,3.94,30,75,322,251
-2026,word,Republican,6,taxes,-6.81,1.909,8.739,65,111,322,251
-2026,word,Republican,7,republican,-6.79,4.262,15.32,87,131,322,251
-2026,word,Republican,8,amendment,-6.5,1.373,8.026,45,96,322,251
-2026,word,Republican,9,president,-6.16,7.82,20.542,138,143,322,251
-2026,word,Republican,10,radical,-5.97,0.154,3.633,9,53,322,251
-2026,word,Republican,11,states,-5.51,4.794,12.01,130,130,322,251
-2026,word,Republican,12,illegal,-5.38,1.02,4.91,40,69,322,251
-2026,word,Republican,13,bureaucrats,-5.21,0.019,1.143,1,36,322,251
-2026,word,Republican,14,american,-5.11,11.805,22.874,190,157,322,251
-2026,word,Republican,15,enforcement,-5.07,3.081,8.037,85,101,322,251
-2026,word,Republican,16,unborn,-4.83,0.0,1.347,0,30,322,251
-2026,word,Republican,17,chairman,-4.82,0.986,5.775,29,66,322,251
-2026,word,Republican,18,policies,-4.78,5.389,10.661,141,130,322,251
-2026,word,Republican,19,burdensome,-4.76,0.055,1.297,4,31,322,251
-2026,word,Republican,20,second,-4.72,2.12,6.613,69,89,322,251
-2026,word,Republican,21,first,-4.66,15.082,23.755,225,191,322,251
-2026,word,Republican,22,values,-4.63,5.522,11.279,128,128,322,251
-2026,word,Republican,23,sports,-4.6,0.255,1.849,10,37,322,251
-2026,word,Republican,24,fiscal,-4.56,0.603,2.767,20,53,322,251
-2026,word,Republican,25,wife,-4.54,1.901,5.114,61,85,322,251
-2026,word,Republican,26,man,-4.53,0.201,1.887,17,38,322,251
-2026,word,Republican,27,criminals,-4.46,0.445,2.504,21,45,322,251
-2026,word,Republican,28,mandates,-4.43,0.073,0.971,7,30,322,251
-2026,word,Republican,29,tax,-4.39,6.282,13.2,129,118,322,251
-2026,word,Republican,30,government,-4.38,13.127,21.745,206,168,322,251
-2026,word,Republican,31,liberty,-4.32,0.621,2.635,21,50,322,251
-2026,word,Republican,32,again,-4.3,2.028,4.991,69,80,322,251
-2026,word,Republican,33,god,-4.3,0.094,2.263,4,33,322,251
-2026,word,Republican,34,record,-4.29,3.082,6.743,100,94,322,251
-2026,word,Republican,35,wall,-4.26,0.625,2.31,28,47,322,251
-2026,word,Republican,36,patrol,-4.19,0.116,1.242,3,30,322,251
-2026,word,Republican,37,biden,-4.17,1.353,5.561,29,63,322,251
-2026,word,Republican,38,principles,-4.16,0.392,2.423,16,47,322,251
-2026,word,Republican,39,parental,-4.14,0.138,1.148,7,28,322,251
-2026,word,Republican,40,secure,-4.11,4.554,8.63,118,117,322,251
-2026,phrase,Democratic,1,access to,8.29,11.391,3.146,184,56,322,251
-2026,phrase,Democratic,2,for all,8.02,8.665,2.248,172,44,322,251
-2026,phrase,Democratic,3,health care,7.97,10.312,1.746,147,34,322,251
-2026,phrase,Democratic,4,affordable housing,7.15,3.221,0.194,91,4,322,251
-2026,phrase,Democratic,5,gun violence,6.6,2.54,0.069,61,2,322,251
-2026,phrase,Democratic,6,our democracy,6.56,3.372,0.067,79,4,322,251
-2026,phrase,Democratic,7,climate change,6.39,2.867,0.081,70,4,322,251
-2026,phrase,Democratic,8,working people,6.0,3.144,0.244,72,5,322,251
-2026,phrase,Democratic,9,to choose,5.99,2.074,0.246,68,11,322,251
-2026,phrase,Democratic,10,planned parenthood,5.87,2.282,0.171,62,6,322,251
-2026,phrase,Democratic,11,action fund,5.85,2.668,0.0,52,0,322,251
-2026,phrase,Democratic,12,care and,5.84,2.706,0.622,90,21,322,251
-2026,phrase,Democratic,13,public education,5.81,2.127,0.126,62,2,322,251
-2026,phrase,Democratic,14,reproductive freedom,5.65,1.575,0.0,52,0,322,251
-2026,phrase,Democratic,15,gun safety,5.57,1.248,0.0,39,0,322,251
-2026,phrase,Democratic,16,parenthood action,5.53,1.275,0.0,42,0,322,251
-2026,phrase,Democratic,17,for everyone,5.52,2.319,0.214,69,10,322,251
-2026,phrase,Democratic,18,planned parenthood action,5.45,1.43,0.0,42,0,322,251
-2026,phrase,Democratic,19,medicare for all,5.42,1.395,0.026,42,1,322,251
-2026,phrase,Democratic,20,parenthood action fund,5.36,1.385,0.0,41,0,322,251
-2026,phrase,Democratic,21,minimum wage,5.34,1.393,0.039,43,3,322,251
-2026,phrase,Democratic,22,affordable care,5.26,1.471,0.074,50,4,322,251
-2026,phrase,Democratic,23,for people,5.23,1.49,0.159,51,5,322,251
-2026,phrase,Democratic,24,health and,5.14,2.501,0.579,79,18,322,251
-2026,phrase,Democratic,25,investing in,5.12,2.349,0.475,68,10,322,251
-2026,phrase,Democratic,26,citizens united,5.04,1.485,0.0,48,0,322,251
-2026,phrase,Democratic,27,human right,5.02,0.99,0.0,33,0,322,251
-2026,phrase,Democratic,28,choose between,5.01,1.102,0.078,38,4,322,251
-2026,phrase,Democratic,29,to choose between,4.95,1.132,0.083,38,4,322,251
-2026,phrase,Democratic,30,to expand,4.95,2.993,0.831,83,23,322,251
-2026,phrase,Democratic,31,care act,4.93,1.396,0.099,48,4,322,251
-2026,phrase,Democratic,32,democratic party,4.9,2.011,0.213,53,4,322,251
-2026,phrase,Democratic,33,to healthcare,4.9,1.292,0.045,43,2,322,251
-2026,phrase,Democratic,34,civil rights,4.89,1.959,0.127,53,6,322,251
-2026,phrase,Democratic,35,affordable care act,4.88,1.419,0.069,46,3,322,251
-2026,phrase,Democratic,36,a human right,4.76,0.859,0.0,30,0,322,251
-2026,phrase,Democratic,37,of us,4.71,3.206,0.827,79,21,322,251
-2026,phrase,Democratic,38,voting rights,4.69,3.016,0.0,60,0,322,251
-2026,phrase,Democratic,39,medicare to,4.68,0.697,0.0,30,0,322,251
-2026,phrase,Democratic,40,clean energy,4.68,2.243,0.064,56,2,322,251
-2026,phrase,Republican,1,president trump,-7.53,0.657,10.758,27,94,322,251
-2026,phrase,Republican,2,america first,-6.63,0.019,6.992,2,63,322,251
-2026,phrase,Republican,3,conservative values,-6.02,0.0,2.428,0,40,322,251
-2026,phrase,Republican,4,our border,-5.86,0.032,2.151,4,44,322,251
-2026,phrase,Republican,5,law enforcement,-5.82,1.976,7.584,57,92,322,251
-2026,phrase,Republican,6,american energy,-5.42,0.021,1.986,2,41,322,251
-2026,phrase,Republican,7,the border,-5.25,0.58,3.637,26,61,322,251
-2026,phrase,Republican,8,second amendment,-5.22,0.386,5.458,11,66,322,251
-2026,phrase,Republican,9,with president trump,-5.02,0.0,2.486,0,37,322,251
-2026,phrase,Republican,10,trump to,-4.98,0.02,1.883,3,34,322,251
-2026,phrase,Republican,11,secure our,-4.86,0.345,2.242,15,47,322,251
-2026,phrase,Republican,12,border and,-4.86,0.213,2.053,10,41,322,251
-2026,phrase,Republican,13,united states,-4.86,3.91,9.705,115,111,322,251
-2026,phrase,Republican,14,border security,-4.69,0.577,2.344,20,54,322,251
-2026,phrase,Republican,15,the republican,-4.67,0.496,2.975,17,43,322,251
-2026,phrase,Republican,16,president donald,-4.67,0.242,3.232,11,46,322,251
-2026,phrase,Republican,17,with president,-4.65,0.195,2.566,5,41,322,251
-2026,phrase,Republican,18,southern border,-4.65,0.14,3.64,5,49,322,251
-2026,phrase,Republican,19,president trump to,-4.62,0.017,1.681,3,30,322,251
-2026,phrase,Republican,20,the radical,-4.61,0.038,1.723,2,29,322,251
-2026,phrase,Republican,21,illegal immigration,-4.56,0.036,1.7,3,31,322,251
-2026,phrase,Republican,22,border patrol,-4.55,0.033,1.247,2,29,322,251
-2026,phrase,Republican,23,lower taxes,-4.52,0.189,1.973,4,32,322,251
-2026,phrase,Republican,24,energy independence,-4.52,0.155,1.316,7,34,322,251
-2026,phrase,Republican,25,chairman of,-4.49,0.456,2.897,14,43,322,251
-2026,phrase,Republican,26,chairman of the,-4.41,0.357,2.824,11,38,322,251
-2026,phrase,Republican,27,taxes and,-4.38,0.481,2.284,18,47,322,251
-2026,phrase,Republican,28,the unborn,-4.37,0.0,1.121,0,26,322,251
-2026,phrase,Republican,29,2nd amendment,-4.31,0.102,1.472,2,31,322,251
-2026,phrase,Republican,30,our military,-4.27,0.34,3.051,16,40,322,251
-2026,phrase,Republican,31,our southern border,-4.27,0.022,1.306,1,26,322,251
-2026,phrase,Republican,32,national security,-4.26,1.578,4.64,42,74,322,251
-2026,phrase,Republican,33,our southern,-4.25,0.021,1.247,1,26,322,251
-2026,phrase,Republican,34,america first agenda,-4.24,0.0,2.648,0,28,322,251
-2026,phrase,Republican,35,secure the border,-4.17,0.13,1.63,8,31,322,251
-2026,phrase,Republican,36,to life,-4.15,0.011,2.064,1,33,322,251
-2026,phrase,Republican,37,amendment rights,-4.15,0.109,1.288,3,30,322,251
-2026,phrase,Republican,38,first agenda,-4.14,0.071,2.481,1,28,322,251
-2026,phrase,Republican,39,his wife,-4.11,1.445,4.263,46,65,322,251
-2026,phrase,Republican,40,natural gas,-4.08,0.049,0.826,3,22,322,251
+2020,word,Democratic,1,affordable,9.75,11.537,3.264,227,110,370,353
+2020,word,Democratic,2,access,9.67,14.18,4.765,245,135,370,353
+2020,word,Democratic,3,equality,9.05,3.967,0.312,131,17,370,353
+2020,word,Democratic,4,public,8.93,20.32,9.577,301,207,370,353
+2020,word,Democratic,5,climate,8.84,7.54,0.967,188,37,370,353
+2020,word,Democratic,6,education,8.67,24.343,11.102,312,186,370,353
+2020,word,Democratic,7,democratic,8.41,11.754,1.652,193,58,370,353
+2020,word,Democratic,8,working,8.17,18.672,9.613,286,233,370,353
+2020,word,Democratic,9,universal,7.9,2.257,0.065,87,6,370,353
+2020,word,Democratic,10,violence,7.77,5.341,1.225,139,63,370,353
+2020,word,Democratic,11,equal,7.66,3.858,0.608,124,27,370,353
+2020,word,Democratic,12,lgbtq,7.66,2.642,0.012,80,1,370,353
+2020,word,Democratic,13,wage,7.49,3.722,0.469,120,23,370,353
+2020,word,Democratic,14,workers,7.45,9.48,3.312,199,104,370,353
+2020,word,Democratic,15,health,7.29,26.658,13.949,294,205,370,353
+2020,word,Democratic,16,minimum,7.0,2.375,0.308,98,17,370,353
+2020,word,Democratic,17,gun,6.99,9.288,2.78,163,97,370,353
+2020,word,Democratic,18,discrimination,6.94,1.938,0.222,89,12,370,353
+2020,word,Democratic,19,democracy,6.75,3.029,0.278,106,20,370,353
+2020,word,Democratic,20,corporations,6.7,2.839,0.383,94,17,370,353
+2020,word,Democratic,21,communities,6.67,13.04,6.577,241,163,370,353
+2020,word,Democratic,22,change,6.48,9.372,3.913,220,118,370,353
+2020,word,Democratic,23,reproductive,6.42,2.258,0.021,75,1,370,353
+2020,word,Democratic,24,everyone,6.42,6.045,2.349,166,88,370,353
+2020,word,Democratic,25,justice,6.21,8.316,2.517,173,83,370,353
+2020,word,Democratic,26,leave,6.15,2.476,0.667,105,38,370,353
+2020,word,Democratic,27,afl-cio,6.1,1.684,0.043,62,3,370,353
+2020,word,Democratic,28,social,6.07,9.515,4.435,214,122,370,353
+2020,word,Democratic,29,expanding,5.98,2.827,0.725,107,38,370,353
+2020,word,Democratic,30,people,5.92,29.545,18.868,318,258,370,353
+2020,word,Democratic,31,environment,5.74,6.472,2.663,173,93,370,353
+2020,word,Democratic,32,prescription,5.68,4.018,1.171,132,57,370,353
+2020,word,Democratic,33,women,5.67,12.735,6.387,228,165,370,353
+2020,word,Democratic,34,action,5.63,7.419,3.147,170,110,370,353
+2020,word,Democratic,35,gender,5.57,1.371,0.164,62,10,370,353
+2020,word,Democratic,36,progressive,5.55,3.6,0.336,76,18,370,353
+2020,word,Democratic,37,class,5.5,4.855,1.884,150,76,370,353
+2020,word,Democratic,38,wealthy,5.48,1.298,0.03,54,5,370,353
+2020,word,Democratic,39,care,5.47,22.381,13.522,286,213,370,353
+2020,word,Democratic,40,investing,5.43,1.785,0.385,81,19,370,353
+2020,word,Republican,1,conservative,-11.04,0.278,12.217,19,181,370,353
+2020,word,Republican,2,pro-life,-9.71,0.0,3.655,0,108,370,353
+2020,word,Republican,3,amendment,-9.44,1.747,8.509,78,180,370,353
+2020,word,Republican,4,spending,-9.32,1.11,6.211,59,149,370,353
+2020,word,Republican,5,government,-9.08,10.757,23.571,231,275,370,353
+2020,word,Republican,6,regulations,-8.88,0.588,4.151,37,135,370,353
+2020,word,Republican,7,taxes,-8.63,2.09,8.57,80,188,370,353
+2020,word,Republican,8,unborn,-8.43,0.0,2.456,0,86,370,353
+2020,word,Republican,9,republican,-8.4,3.332,14.49,112,204,370,353
+2020,word,Republican,10,arms,-8.22,0.161,2.392,12,92,370,353
+2020,word,Republican,11,constitution,-8.15,0.76,4.297,34,137,370,353
+2020,word,Republican,12,freedom,-7.58,1.689,6.754,75,162,370,353
+2020,word,Republican,13,border,-7.4,1.953,7.71,62,164,370,353
+2020,word,Republican,14,borders,-7.27,0.515,2.902,35,104,370,353
+2020,word,Republican,15,bear,-7.1,0.326,2.45,14,96,370,353
+2020,word,Republican,16,bureaucrats,-6.98,0.026,1.289,2,60,370,353
+2020,word,Republican,17,competition,-6.6,0.185,1.484,15,72,370,353
+2020,word,Republican,18,radical,-6.53,0.165,1.979,9,75,370,353
+2020,word,Republican,19,individual,-6.39,0.841,3.094,47,106,370,353
+2020,word,Republican,20,enforcement,-6.37,1.888,6.035,77,140,370,353
+2020,word,Republican,21,second,-6.28,2.572,6.403,106,165,370,353
+2020,word,Republican,22,taxpayers,-6.23,0.456,3.044,26,91,370,353
+2020,word,Republican,23,the,-6.16,407.656,456.561,370,353,370,353
+2020,word,Republican,24,illegal,-5.93,0.365,4.784,22,123,370,353
+2020,word,Republican,25,business,-5.87,8.666,15.982,188,254,370,353
+2020,word,Republican,26,nation,-5.84,7.263,12.892,195,228,370,353
+2020,word,Republican,27,liberal,-5.73,0.117,1.396,10,58,370,353
+2020,word,Republican,28,constitutional,-5.71,0.774,3.182,44,99,370,353
+2020,word,Republican,29,military,-5.66,4.777,9.709,128,196,370,353
+2020,word,Republican,30,burdensome,-5.61,0.054,0.973,4,47,370,353
+2020,word,Republican,31,defend,-5.54,1.231,3.74,58,118,370,353
+2020,word,Republican,32,liberty,-5.54,0.501,2.994,29,80,370,353
+2020,word,Republican,33,life,-5.52,10.937,18.221,236,271,370,353
+2020,word,Republican,34,regulation,-5.38,0.185,1.144,15,56,370,353
+2020,word,Republican,35,abortion,-5.38,0.532,2.658,31,76,370,353
+2020,word,Republican,36,free,-5.36,2.422,5.435,99,151,370,353
+2020,word,Republican,37,obamacare,-5.35,0.314,3.021,14,84,370,353
+2020,word,Republican,38,principles,-5.35,0.592,2.538,31,88,370,353
+2020,word,Republican,39,sanctuary,-5.33,0.11,1.656,6,54,370,353
+2020,word,Republican,40,infringed,-5.32,0.0,0.651,0,33,370,353
+2020,phrase,Democratic,1,access to,9.61,12.27,3.58,230,113,370,353
+2020,phrase,Democratic,2,climate change,8.82,5.109,0.452,149,22,370,353
+2020,phrase,Democratic,3,gun violence,7.89,3.515,0.134,103,11,370,353
+2020,phrase,Democratic,4,affordable care,6.96,2.213,0.3,94,24,370,353
+2020,phrase,Democratic,5,affordable care act,6.95,2.198,0.256,91,21,370,353
+2020,phrase,Democratic,6,working families,6.87,3.971,0.544,115,29,370,353
+2020,phrase,Democratic,7,minimum wage,6.79,2.121,0.163,86,6,370,353
+2020,phrase,Democratic,8,the affordable care,6.75,2.093,0.253,89,20,370,353
+2020,phrase,Democratic,9,the affordable,6.69,2.106,0.296,91,22,370,353
+2020,phrase,Democratic,10,public schools,6.66,3.043,0.503,106,27,370,353
+2020,phrase,Democratic,11,public education,6.37,2.454,0.18,76,11,370,353
+2020,phrase,Democratic,12,equal pay,6.05,0.94,0.039,52,2,370,353
+2020,phrase,Democratic,13,a public,6.04,1.876,0.379,85,22,370,353
+2020,phrase,Democratic,14,gun safety,5.75,1.807,0.067,65,3,370,353
+2020,phrase,Democratic,15,for equal,5.74,0.845,0.023,49,3,370,353
+2020,phrase,Democratic,16,action fund,5.74,2.198,0.059,56,2,370,353
+2020,phrase,Democratic,17,affordable health,5.68,1.967,0.287,70,18,370,353
+2020,phrase,Democratic,18,the minimum,5.59,1.177,0.059,58,3,370,353
+2020,phrase,Democratic,19,for working,5.58,2.145,0.171,65,9,370,353
+2020,phrase,Democratic,20,voting rights,5.57,1.536,0.037,54,4,370,353
+2020,phrase,Democratic,21,economy that,5.56,1.391,0.208,61,11,370,353
+2020,phrase,Democratic,22,affordable health care,5.55,1.805,0.218,65,13,370,353
+2020,phrase,Democratic,23,league of conservation,5.55,1.058,0.0,43,0,370,353
+2020,phrase,Democratic,24,sierra club,5.51,1.605,0.012,59,1,370,353
+2020,phrase,Democratic,25,to affordable,5.5,1.387,0.236,65,15,370,353
+2020,phrase,Democratic,26,with dignity,5.5,0.805,0.06,51,3,370,353
+2020,phrase,Democratic,27,of color,5.49,1.427,0.068,56,3,370,353
+2020,phrase,Democratic,28,of conservation voters,5.49,1.046,0.0,42,0,370,353
+2020,phrase,Democratic,29,conservation voters,5.43,0.978,0.0,42,0,370,353
+2020,phrase,Democratic,30,education and,5.43,4.436,1.703,151,64,370,353
+2020,phrase,Democratic,31,access to affordable,5.4,1.398,0.23,63,14,370,353
+2020,phrase,Democratic,32,women rights,5.37,1.27,0.0,42,0,370,353
+2020,phrase,Democratic,33,citizens united,5.33,2.281,0.083,78,3,370,353
+2020,phrase,Democratic,34,civil rights,5.3,2.507,0.497,83,22,370,353
+2020,phrase,Democratic,35,investing in,5.3,1.716,0.34,75,15,370,353
+2020,phrase,Democratic,36,our public,5.29,1.492,0.294,69,18,370,353
+2020,phrase,Democratic,37,the minimum wage,5.28,1.123,0.031,53,1,370,353
+2020,phrase,Democratic,38,equal pay for,5.27,0.613,0.022,39,1,370,353
+2020,phrase,Democratic,39,social security,5.25,6.11,2.233,141,58,370,353
+2020,phrase,Democratic,40,background checks,5.25,1.285,0.148,64,13,370,353
+2020,phrase,Republican,1,second amendment,-8.38,0.466,4.18,28,120,370,353
+2020,phrase,Republican,2,bear arms,-8.03,0.073,2.226,6,85,370,353
+2020,phrase,Republican,3,president trump,-7.14,1.657,7.1,52,143,370,353
+2020,phrase,Republican,4,the constitution,-7.1,0.311,2.652,19,91,370,353
+2020,phrase,Republican,5,the unborn,-7.06,0.0,1.72,0,63,370,353
+2020,phrase,Republican,6,amendment rights,-6.74,0.146,1.728,10,72,370,353
+2020,phrase,Republican,7,2nd amendment,-6.68,0.201,2.175,12,74,370,353
+2020,phrase,Republican,8,illegal immigration,-6.57,0.018,1.844,2,69,370,353
+2020,phrase,Republican,9,right to life,-6.51,0.04,3.242,2,90,370,353
+2020,phrase,Republican,10,to life,-6.43,0.182,3.166,9,95,370,353
+2020,phrase,Republican,11,and bear,-6.31,0.021,1.415,1,54,370,353
+2020,phrase,Republican,12,law enforcement,-6.22,1.489,5.586,58,121,370,353
+2020,phrase,Republican,13,and bear arms,-6.21,0.022,1.445,1,52,370,353
+2020,phrase,Republican,14,keep and bear,-6.21,0.022,1.445,1,52,370,353
+2020,phrase,Republican,15,with president,-6.18,0.062,1.605,5,56,370,353
+2020,phrase,Republican,16,with president trump,-6.05,0.016,1.514,1,52,370,353
+2020,phrase,Republican,17,taxes and,-6.05,0.291,2.346,13,80,370,353
+2020,phrase,Republican,18,men and,-6.02,0.891,3.271,52,112,370,353
+2020,phrase,Republican,19,to keep and,-6.0,0.022,1.389,1,50,370,353
+2020,phrase,Republican,20,keep and,-5.99,0.055,1.423,2,52,370,353
+2020,phrase,Republican,21,federal government,-5.94,1.628,4.649,75,135,370,353
+2020,phrase,Republican,22,men and women,-5.86,0.896,3.276,50,110,370,353
+2020,phrase,Republican,23,illegal immigrants,-5.81,0.033,1.079,2,48,370,353
+2020,phrase,Republican,24,the second amendment,-5.79,0.318,2.021,18,74,370,353
+2020,phrase,Republican,25,right to,-5.7,3.236,7.283,112,170,370,353
+2020,phrase,Republican,26,a conservative,-5.68,0.04,1.375,2,46,370,353
+2020,phrase,Republican,27,our military,-5.59,0.577,2.761,30,90,370,353
+2020,phrase,Republican,28,our borders,-5.57,0.376,1.777,24,73,370,353
+2020,phrase,Republican,29,president donald,-5.52,0.261,1.792,13,59,370,353
+2020,phrase,Republican,30,free market,-5.44,0.007,1.176,1,42,370,353
+2020,phrase,Republican,31,our nation,-5.43,3.653,7.433,121,167,370,353
+2020,phrase,Republican,32,secure our,-5.35,0.24,1.563,14,62,370,353
+2020,phrase,Republican,33,tax cuts and,-5.34,0.028,0.821,1,40,370,353
+2020,phrase,Republican,34,conservative values,-5.34,0.0,1.634,0,46,370,353
+2020,phrase,Republican,35,of independent,-5.23,0.004,0.733,1,35,370,353
+2020,phrase,Republican,36,right to keep,-5.19,0.022,0.96,1,36,370,353
+2020,phrase,Republican,37,the federal government,-5.19,1.445,3.844,65,121,370,353
+2020,phrase,Republican,38,national debt,-5.15,0.157,1.441,8,58,370,353
+2020,phrase,Republican,39,the sanctity,-5.11,0.049,0.866,4,35,370,353
+2020,phrase,Republican,40,of the unborn,-5.1,0.0,0.729,0,32,370,353
+2022,word,Democratic,1,affordable,12.4,11.99,1.942,209,67,317,322
+2022,word,Democratic,2,democratic,10.53,15.106,1.052,191,38,317,322
+2022,word,Democratic,3,access,9.98,14.734,4.842,226,113,317,322
+2022,word,Democratic,4,climate,9.47,8.081,1.018,162,38,317,322
+2022,word,Democratic,5,health,8.87,25.146,9.821,254,154,317,322
+2022,word,Democratic,6,reproductive,8.71,3.893,0.0,110,0,317,322
+2022,word,Democratic,7,equality,7.5,4.163,0.305,113,10,317,322
+2022,word,Democratic,8,working,7.48,20.569,10.732,262,202,317,322
+2022,word,Democratic,9,care,7.42,21.037,9.318,242,157,317,322
+2022,word,Democratic,10,gun,7.39,9.468,2.453,139,76,317,322
+2022,word,Democratic,11,universal,7.15,1.725,0.117,71,7,317,322
+2022,word,Democratic,12,justice,7.14,9.634,2.618,159,69,317,322
+2022,word,Democratic,13,invest,7.13,3.654,0.737,112,38,317,322
+2022,word,Democratic,14,civil,7.12,3.378,0.661,111,35,317,322
+2022,word,Democratic,15,democracy,7.07,5.779,1.104,132,37,317,322
+2022,word,Democratic,16,women,6.94,14.18,5.902,203,156,317,322
+2022,word,Democratic,17,public,6.89,19.741,10.716,262,198,317,322
+2022,word,Democratic,18,wage,6.84,3.685,0.553,99,19,317,322
+2022,word,Democratic,19,workers,6.83,10.239,2.963,170,90,317,322
+2022,word,Democratic,20,medicare,6.74,6.554,1.648,143,51,317,322
+2022,word,Democratic,21,equal,6.74,3.742,0.688,97,26,317,322
+2022,word,Democratic,22,clean,6.73,5.611,1.386,130,52,317,322
+2022,word,Democratic,23,protections,6.55,2.94,0.633,95,26,317,322
+2022,word,Democratic,24,lgbtq,6.51,3.056,0.14,81,3,317,322
+2022,word,Democratic,25,families,6.48,21.926,11.867,245,207,317,322
+2022,word,Democratic,26,everyone,6.37,5.044,1.796,146,65,317,322
+2022,word,Democratic,27,woman,6.36,3.752,0.866,111,32,317,322
+2022,word,Democratic,28,expand,6.35,5.379,1.864,138,67,317,322
+2022,word,Democratic,29,action,6.31,9.358,3.105,170,84,317,322
+2022,word,Democratic,30,prescription,6.26,3.343,0.853,107,35,317,322
+2022,word,Democratic,31,housing,6.14,8.971,1.557,151,48,317,322
+2022,word,Democratic,32,social,6.06,8.523,3.412,171,94,317,322
+2022,word,Democratic,33,healthcare,6.05,14.076,6.361,204,109,317,322
+2022,word,Democratic,34,violence,6.05,6.084,1.638,128,55,317,322
+2022,word,Democratic,35,afl-cio,6.03,1.809,0.006,57,1,317,322
+2022,word,Democratic,36,childcare,5.87,1.039,0.042,45,4,317,322
+2022,word,Democratic,37,pandemic,5.8,5.519,2.067,130,63,317,322
+2022,word,Democratic,38,progressive,5.79,4.411,0.727,89,26,317,322
+2022,word,Democratic,39,change,5.77,8.23,3.594,176,99,317,322
+2022,word,Democratic,40,communities,5.75,14.306,7.89,225,161,317,322
+2022,word,Republican,1,spending,-10.97,0.995,9.327,45,170,317,322
+2022,word,Republican,2,border,-10.24,1.383,12.201,37,172,317,322
+2022,word,Republican,3,conservative,-10.05,0.14,13.646,10,174,317,322
+2022,word,Republican,4,government,-9.2,9.829,22.955,193,251,317,322
+2022,word,Republican,5,illegal,-9.1,0.428,4.383,24,121,317,322
+2022,word,Republican,6,amendment,-8.69,1.838,7.941,65,165,317,322
+2022,word,Republican,7,republican,-8.4,2.983,16.362,95,191,317,322
+2022,word,Republican,8,regulations,-8.29,0.504,3.525,27,107,317,322
+2022,word,Republican,9,taxes,-8.08,2.027,8.34,66,162,317,322
+2022,word,Republican,10,borders,-7.94,0.493,3.263,24,107,317,322
+2022,word,Republican,11,pro-life,-7.62,0.165,3.673,4,97,317,322
+2022,word,Republican,12,enforcement,-7.58,2.166,7.427,71,163,317,322
+2022,word,Republican,13,biden,-7.32,2.237,10.665,66,139,317,322
+2022,word,Republican,14,radical,-7.32,0.312,4.166,10,93,317,322
+2022,word,Republican,15,unborn,-7.0,0.0,2.223,0,72,317,322
+2022,word,Republican,16,life,-6.97,9.717,17.73,209,243,317,322
+2022,word,Republican,17,second,-6.94,2.394,6.31,87,158,317,322
+2022,word,Republican,18,crime,-6.54,0.919,5.73,41,106,317,322
+2022,word,Republican,19,inflation,-6.52,1.956,8.05,56,136,317,322
+2022,word,Republican,20,business,-6.49,7.899,16.516,165,227,317,322
+2022,word,Republican,21,constitution,-6.37,1.226,4.38,47,123,317,322
+2022,word,Republican,22,stop,-6.37,3.099,7.482,107,167,317,322
+2022,word,Republican,23,back,-6.26,6.378,12.454,168,228,317,322
+2022,word,Republican,24,america,-6.18,11.547,21.184,206,229,317,322
+2022,word,Republican,25,military,-6.14,4.273,10.055,102,174,317,322
+2022,word,Republican,26,taxpayer,-6.09,0.265,1.661,17,70,317,322
+2022,word,Republican,27,fiscal,-6.07,0.553,2.749,26,78,317,322
+2022,word,Republican,28,independence,-5.8,0.491,3.227,19,88,317,322
+2022,word,Republican,29,bureaucrats,-5.79,0.0,1.497,0,55,317,322
+2022,word,Republican,30,states,-5.77,7.436,14.207,166,222,317,322
+2022,word,Republican,31,mandates,-5.68,0.096,1.815,5,55,317,322
+2022,word,Republican,32,policies,-5.63,4.151,8.521,117,177,317,322
+2022,word,Republican,33,wasteful,-5.55,0.104,1.638,6,54,317,322
+2022,word,Republican,34,rule,-5.51,0.341,1.896,22,67,317,322
+2022,word,Republican,35,men,-5.49,1.353,3.638,55,122,317,322
+2022,word,Republican,36,criminals,-5.44,0.228,1.663,12,59,317,322
+2022,word,Republican,37,strong,-5.43,6.184,11.131,157,204,317,322
+2022,word,Republican,38,administration,-5.3,2.843,6.271,90,151,317,322
+2022,word,Republican,39,budget,-5.28,1.583,4.802,61,107,317,322
+2022,word,Republican,40,agenda,-5.27,1.119,3.882,52,96,317,322
+2022,phrase,Democratic,1,access to,9.77,12.049,3.595,205,93,317,322
+2022,phrase,Democratic,2,climate change,8.0,4.376,0.506,118,17,317,322
+2022,phrase,Democratic,3,voting rights,7.58,3.608,0.036,94,3,317,322
+2022,phrase,Democratic,4,invest in,7.51,3.412,0.536,105,29,317,322
+2022,phrase,Democratic,5,our democracy,7.24,3.418,0.137,91,10,317,322
+2022,phrase,Democratic,6,for all,7.12,9.427,3.766,187,116,317,322
+2022,phrase,Democratic,7,gun violence,7.01,3.964,0.167,89,7,317,322
+2022,phrase,Democratic,8,democratic party,6.92,3.295,0.098,77,5,317,322
+2022,phrase,Democratic,9,working families,6.72,5.109,0.816,108,30,317,322
+2022,phrase,Democratic,10,civil rights,6.71,2.393,0.172,79,11,317,322
+2022,phrase,Democratic,11,the affordable,6.21,1.555,0.12,63,9,317,322
+2022,phrase,Democratic,12,clean energy,6.21,1.984,0.154,68,9,317,322
+2022,phrase,Democratic,13,a woman,6.19,2.118,0.172,71,9,317,322
+2022,phrase,Democratic,14,health care,6.04,12.35,4.694,195,85,317,322
+2022,phrase,Democratic,15,reproductive rights,6.0,1.807,0.0,62,0,317,322
+2022,phrase,Democratic,16,to affordable,5.96,1.609,0.229,64,13,317,322
+2022,phrase,Democratic,17,affordable health,5.91,1.94,0.304,67,13,317,322
+2022,phrase,Democratic,18,access to affordable,5.87,1.672,0.209,62,11,317,322
+2022,phrase,Democratic,19,citizens united,5.78,0.854,0.0,42,0,317,322
+2022,phrase,Democratic,20,affordable health care,5.77,1.801,0.242,63,9,317,322
+2022,phrase,Democratic,21,gun safety,5.76,1.536,0.021,48,2,317,322
+2022,phrase,Democratic,22,affordable care,5.7,1.316,0.099,57,8,317,322
+2022,phrase,Democratic,23,care act,5.69,1.348,0.12,59,9,317,322
+2022,phrase,Democratic,24,action fund,5.65,2.574,0.03,59,2,317,322
+2022,phrase,Democratic,25,affordable housing,5.6,2.283,0.194,64,10,317,322
+2022,phrase,Democratic,26,of color,5.53,1.194,0.046,48,3,317,322
+2022,phrase,Democratic,27,parenthood action,5.51,1.287,0.0,48,0,317,322
+2022,phrase,Democratic,28,investing in,5.49,1.728,0.327,64,16,317,322
+2022,phrase,Democratic,29,for working,5.47,2.494,0.402,71,15,317,322
+2022,phrase,Democratic,30,funding for,5.46,3.996,1.408,111,58,317,322
+2022,phrase,Democratic,31,affordable care act,5.46,1.322,0.102,53,8,317,322
+2022,phrase,Democratic,32,campaign finance,5.45,0.836,0.017,39,1,317,322
+2022,phrase,Democratic,33,background checks,5.43,0.708,0.034,39,3,317,322
+2022,phrase,Democratic,34,the affordable care,5.42,1.308,0.102,53,8,317,322
+2022,phrase,Democratic,35,minimum wage,5.4,2.212,0.308,66,7,317,322
+2022,phrase,Democratic,36,investments in,5.37,1.298,0.159,53,11,317,322
+2022,phrase,Democratic,37,equal pay,5.36,0.704,0.0,34,0,317,322
+2022,phrase,Democratic,38,planned parenthood action,5.34,1.426,0.0,48,0,317,322
+2022,phrase,Democratic,39,woman right,5.29,1.035,0.0,43,0,317,322
+2022,phrase,Democratic,40,prescription drug,5.26,1.398,0.182,60,13,317,322
+2022,phrase,Republican,1,second amendment,-9.04,0.337,3.984,20,107,317,322
+2022,phrase,Republican,2,law enforcement,-7.21,1.894,6.704,61,145,317,322
+2022,phrase,Republican,3,illegal immigration,-7.17,0.019,1.89,2,66,317,322
+2022,phrase,Republican,4,southern border,-7.09,0.151,2.307,8,74,317,322
+2022,phrase,Republican,5,america first,-6.62,0.0,2.556,0,60,317,322
+2022,phrase,Republican,6,our border,-6.53,0.068,1.828,4,64,317,322
+2022,phrase,Republican,7,the unborn,-6.47,0.0,1.708,0,58,317,322
+2022,phrase,Republican,8,our military,-6.37,0.336,2.965,18,83,317,322
+2022,phrase,Republican,9,to life,-6.33,0.089,3.152,4,79,317,322
+2022,phrase,Republican,10,the biden,-6.3,0.346,3.164,22,88,317,322
+2022,phrase,Republican,11,president trump,-6.27,0.465,5.815,20,103,317,322
+2022,phrase,Republican,12,the second amendment,-6.25,0.247,1.926,15,68,317,322
+2022,phrase,Republican,13,our southern border,-6.16,0.063,1.424,3,56,317,322
+2022,phrase,Republican,14,the biden administration,-6.12,0.334,2.753,18,79,317,322
+2022,phrase,Republican,15,our southern,-6.1,0.074,1.379,3,57,317,322
+2022,phrase,Republican,16,the border,-6.04,0.493,3.226,19,89,317,322
+2022,phrase,Republican,17,biden administration,-6.03,0.328,2.724,18,80,317,322
+2022,phrase,Republican,18,right to life,-5.95,0.07,3.01,2,71,317,322
+2022,phrase,Republican,19,bear arms,-5.89,0.156,1.597,7,64,317,322
+2022,phrase,Republican,20,border security,-5.84,0.19,1.369,10,56,317,322
+2022,phrase,Republican,21,the republican,-5.81,0.462,3.516,19,87,317,322
+2022,phrase,Republican,22,school choice,-5.76,0.02,1.499,1,46,317,322
+2022,phrase,Republican,23,secure our,-5.69,0.192,1.808,11,60,317,322
+2022,phrase,Republican,24,taxes and,-5.68,0.45,2.332,16,72,317,322
+2022,phrase,Republican,25,spending and,-5.67,0.027,1.564,4,57,317,322
+2022,phrase,Republican,26,men and women,-5.66,0.935,3.121,36,106,317,322
+2022,phrase,Republican,27,men and,-5.62,0.992,3.065,40,108,317,322
+2022,phrase,Republican,28,our borders,-5.61,0.342,1.695,18,63,317,322
+2022,phrase,Republican,29,border and,-5.6,0.211,1.426,13,56,317,322
+2022,phrase,Republican,30,national debt,-5.59,0.135,1.42,3,58,317,322
+2022,phrase,Republican,31,illegal immigrants,-5.54,0.042,0.987,3,40,317,322
+2022,phrase,Republican,32,energy independence,-5.5,0.264,2.418,11,69,317,322
+2022,phrase,Republican,33,government spending,-5.45,0.044,1.117,5,47,317,322
+2022,phrase,Republican,34,federal government,-5.4,1.618,4.234,65,119,317,322
+2022,phrase,Republican,35,biden and,-5.4,0.15,1.641,7,49,317,322
+2022,phrase,Republican,36,2nd amendment,-5.27,0.279,2.132,8,61,317,322
+2022,phrase,Republican,37,keep and bear,-5.26,0.01,0.854,1,38,317,322
+2022,phrase,Republican,38,keep and,-5.23,0.01,0.836,1,38,317,322
+2022,phrase,Republican,39,to keep and,-5.21,0.01,0.872,1,38,317,322
+2022,phrase,Republican,40,balanced budget,-5.2,0.028,1.079,2,42,317,322
+2024,word,Democratic,1,reproductive,14.19,9.399,0.049,187,2,316,335
+2024,word,Democratic,2,access,12.1,16.724,4.154,223,113,316,335
+2024,word,Democratic,3,affordable,11.02,14.938,2.888,222,80,316,335
+2024,word,Democratic,4,women,10.03,17.818,5.258,241,139,316,335
+2024,word,Democratic,5,democratic,10.02,13.838,1.184,181,49,316,335
+2024,word,Democratic,6,health,9.36,25.186,9.123,261,157,316,335
+2024,word,Democratic,7,democracy,9.04,8.138,0.859,143,40,316,335
+2024,word,Democratic,8,care,8.81,23.751,9.012,249,172,316,335
+2024,word,Democratic,9,equality,8.69,4.12,0.254,110,9,316,335
+2024,word,Democratic,10,workers,8.64,9.82,2.303,169,74,316,335
+2024,word,Democratic,11,healthcare,8.3,17.256,5.835,215,114,316,335
+2024,word,Democratic,12,gun,8.16,11.083,2.606,162,76,316,335
+2024,word,Democratic,13,prescription,8.11,3.877,0.582,109,28,316,335
+2024,word,Democratic,14,rights,8.03,21.987,9.968,250,190,316,335
+2024,word,Democratic,15,woman,7.99,4.678,0.845,128,35,316,335
+2024,word,Democratic,16,working,7.92,20.97,9.863,255,201,316,335
+2024,word,Democratic,17,violence,7.8,6.895,1.583,136,58,316,335
+2024,word,Democratic,18,expand,7.73,6.147,1.752,151,65,316,335
+2024,word,Democratic,19,climate,7.66,8.9,1.122,157,42,316,335
+2024,word,Democratic,20,public,7.45,21.468,11.219,262,210,316,335
+2024,word,Democratic,21,housing,7.17,10.985,2.66,175,64,316,335
+2024,word,Democratic,22,labor,7.01,4.792,1.247,129,46,316,335
+2024,word,Democratic,23,wage,6.96,3.428,0.223,92,10,316,335
+2024,word,Democratic,24,expanding,6.92,3.805,0.838,112,37,316,335
+2024,word,Democratic,25,universal,6.8,1.815,0.127,73,6,316,335
+2024,word,Democratic,26,everyone,6.72,5.504,1.801,148,72,316,335
+2024,word,Democratic,27,for,6.67,179.668,150.128,316,334,316,335
+2024,word,Democratic,28,clean,6.66,5.107,1.382,129,49,316,335
+2024,word,Democratic,29,benefits,6.64,5.871,2.128,147,74,316,335
+2024,word,Democratic,30,medicare,6.54,7.826,2.389,154,59,316,335
+2024,word,Democratic,31,funding,6.42,9.503,4.043,177,115,316,335
+2024,word,Democratic,32,lgbtq,6.39,2.779,0.034,74,2,316,335
+2024,word,Democratic,33,families,6.22,23.112,13.839,262,228,316,335
+2024,word,Democratic,34,checks,6.13,1.272,0.15,63,11,316,335
+2024,word,Democratic,35,action,6.02,8.833,2.963,150,92,316,335
+2024,word,Democratic,36,fair,6.02,4.766,1.76,134,66,316,335
+2024,word,Democratic,37,corporate,5.93,2.971,0.531,82,21,316,335
+2024,word,Democratic,38,her,5.92,33.613,13.767,188,114,316,335
+2024,word,Democratic,39,planned,5.91,2.187,0.412,77,23,316,335
+2024,word,Democratic,40,afl-cio,5.89,1.584,0.012,51,1,316,335
+2024,word,Republican,1,conservative,-10.27,0.179,12.167,11,158,316,335
+2024,word,Republican,2,spending,-9.83,1.271,8.505,51,175,316,335
+2024,word,Republican,3,border,-9.64,4.375,16.892,83,211,316,335
+2024,word,Republican,4,amendment,-8.87,1.731,7.126,59,165,316,335
+2024,word,Republican,5,republican,-8.86,4.176,15.233,112,202,316,335
+2024,word,Republican,6,illegal,-8.24,0.849,6.124,32,136,316,335
+2024,word,Republican,7,regulations,-8.21,0.509,3.864,33,111,316,335
+2024,word,Republican,8,borders,-8.02,0.486,3.588,31,111,316,335
+2024,word,Republican,9,america,-7.56,10.476,22.223,195,251,316,335
+2024,word,Republican,10,government,-7.56,10.857,21.848,194,259,316,335
+2024,word,Republican,11,unborn,-7.04,0.025,1.65,1,60,316,335
+2024,word,Republican,12,radical,-6.92,0.311,3.564,12,90,316,335
+2024,word,Republican,13,crime,-6.77,1.044,4.882,42,115,316,335
+2024,word,Republican,14,biden,-6.69,2.151,8.868,59,141,316,335
+2024,word,Republican,15,taxes,-6.63,2.455,7.19,71,164,316,335
+2024,word,Republican,16,second,-6.52,2.027,6.004,62,146,316,335
+2024,word,Republican,17,bear,-6.52,0.164,1.457,9,70,316,335
+2024,word,Republican,18,pro-life,-6.49,0.245,2.772,9,83,316,335
+2024,word,Republican,19,arms,-6.45,0.195,1.502,10,69,316,335
+2024,word,Republican,20,bureaucrats,-6.41,0.068,1.422,4,59,316,335
+2024,word,Republican,21,great,-6.4,2.309,6.451,85,157,316,335
+2024,word,Republican,22,fiscal,-6.4,0.554,2.951,22,90,316,335
+2024,word,Republican,23,secure,-6.21,3.286,7.622,111,176,316,335
+2024,word,Republican,24,states,-5.82,6.845,13.075,164,230,316,335
+2024,word,Republican,25,inflation,-5.8,2.089,6.312,78,134,316,335
+2024,word,Republican,26,trump,-5.79,3.041,9.334,80,136,316,335
+2024,word,Republican,27,country,-5.73,9.309,15.771,193,244,316,335
+2024,word,Republican,28,the,-5.69,396.24,447.664,315,335,316,335
+2024,word,Republican,29,god,-5.68,0.157,2.122,6,61,316,335
+2024,word,Republican,30,trafficking,-5.56,0.561,2.536,27,75,316,335
+2024,word,Republican,31,enforcement,-5.51,2.924,6.91,89,149,316,335
+2024,word,Republican,32,stop,-5.46,4.304,8.335,131,185,316,335
+2024,word,Republican,33,mandates,-5.45,0.071,1.089,7,47,316,335
+2024,word,Republican,34,independence,-5.41,0.68,2.463,29,83,316,335
+2024,word,Republican,35,illegally,-5.36,0.043,0.838,3,40,316,335
+2024,word,Republican,36,liberty,-5.33,0.716,2.829,26,86,316,335
+2024,word,Republican,37,criminals,-5.31,0.326,2.265,21,68,316,335
+2024,word,Republican,38,wasteful,-5.23,0.091,1.193,7,49,316,335
+2024,word,Republican,39,values,-5.18,5.294,10.371,139,184,316,335
+2024,word,Republican,40,military,-5.18,4.834,10.063,100,177,316,335
+2024,phrase,Democratic,1,access to,11.86,13.388,2.903,203,92,316,335
+2024,phrase,Democratic,2,climate change,8.79,5.151,0.356,120,16,316,335
+2024,phrase,Democratic,3,our democracy,8.35,4.586,0.078,106,6,316,335
+2024,phrase,Democratic,4,gun violence,8.27,4.854,0.236,104,10,316,335
+2024,phrase,Democratic,5,reproductive rights,8.03,3.167,0.031,93,1,316,335
+2024,phrase,Democratic,6,reproductive freedom,7.77,2.843,0.0,81,0,316,335
+2024,phrase,Democratic,7,a woman,7.74,2.456,0.123,80,8,316,335
+2024,phrase,Democratic,8,for all,7.45,11.255,4.087,203,112,316,335
+2024,phrase,Democratic,9,working families,7.17,5.486,1.043,119,35,316,335
+2024,phrase,Democratic,10,for women,6.98,2.632,0.218,79,14,316,335
+2024,phrase,Democratic,11,background checks,6.88,1.119,0.035,58,4,316,335
+2024,phrase,Democratic,12,health care,6.86,12.317,3.555,189,72,316,335
+2024,phrase,Democratic,13,planned parenthood action,6.74,1.47,0.0,50,0,316,335
+2024,phrase,Democratic,14,parenthood action,6.74,1.31,0.0,50,0,316,335
+2024,phrase,Democratic,15,parenthood action fund,6.65,1.443,0.0,49,0,316,335
+2024,phrase,Democratic,16,gun safety,6.49,2.675,0.032,70,2,316,335
+2024,phrase,Democratic,17,the affordable,6.48,2.053,0.106,71,6,316,335
+2024,phrase,Democratic,18,for working,6.4,3.152,0.371,82,15,316,335
+2024,phrase,Democratic,19,voting rights,6.38,4.28,0.028,93,1,316,335
+2024,phrase,Democratic,20,and expand,6.37,1.505,0.162,61,13,316,335
+2024,phrase,Democratic,21,affordable housing,6.33,3.154,0.522,92,17,316,335
+2024,phrase,Democratic,22,woman right,6.3,1.497,0.017,55,1,316,335
+2024,phrase,Democratic,23,action fund,6.26,3.163,0.0,61,0,316,335
+2024,phrase,Democratic,24,woman right to,6.22,1.592,0.018,55,1,316,335
+2024,phrase,Democratic,25,women health,6.11,1.196,0.109,57,6,316,335
+2024,phrase,Democratic,26,investing in,6.1,2.12,0.46,83,21,316,335
+2024,phrase,Democratic,27,a woman right,6.1,1.556,0.018,53,1,316,335
+2024,phrase,Democratic,28,affordable care,6.02,1.941,0.106,68,6,316,335
+2024,phrase,Democratic,29,planned parenthood,6.0,2.284,0.376,74,20,316,335
+2024,phrase,Democratic,30,to affordable,5.93,1.713,0.146,59,8,316,335
+2024,phrase,Democratic,31,prescription drugs,5.92,1.899,0.279,65,14,316,335
+2024,phrase,Democratic,32,affordable care act,5.84,1.986,0.109,64,6,316,335
+2024,phrase,Democratic,33,care act,5.83,1.95,0.144,66,7,316,335
+2024,phrase,Democratic,34,reproductive health,5.83,1.404,0.0,47,0,316,335
+2024,phrase,Democratic,35,clean energy,5.79,2.385,0.208,72,11,316,335
+2024,phrase,Democratic,36,democratic party,5.78,2.353,0.153,59,8,316,335
+2024,phrase,Democratic,37,the affordable care,5.76,1.881,0.109,62,6,316,335
+2024,phrase,Democratic,38,prescription drug,5.75,1.872,0.241,66,12,316,335
+2024,phrase,Democratic,39,access to affordable,5.72,1.638,0.107,53,6,316,335
+2024,phrase,Democratic,40,right to choose,5.69,1.573,0.073,48,5,316,335
+2024,phrase,Republican,1,second amendment,-8.36,0.308,3.828,11,105,316,335
+2024,phrase,Republican,2,illegal immigration,-6.91,0.108,2.372,5,74,316,335
+2024,phrase,Republican,3,bear arms,-6.81,0.07,1.391,3,64,316,335
+2024,phrase,Republican,4,southern border,-6.46,0.46,3.191,16,89,316,335
+2024,phrase,Republican,5,spending and,-6.4,0.062,1.551,7,63,316,335
+2024,phrase,Republican,6,the border,-6.39,1.165,4.55,40,118,316,335
+2024,phrase,Republican,7,the second amendment,-6.35,0.157,1.979,7,67,316,335
+2024,phrase,Republican,8,secure our,-6.23,0.438,2.708,18,86,316,335
+2024,phrase,Republican,9,conservative values,-6.2,0.0,1.449,0,47,316,335
+2024,phrase,Republican,10,our border,-6.05,0.395,2.778,22,83,316,335
+2024,phrase,Republican,11,2nd amendment,-6.02,0.168,1.901,6,61,316,335
+2024,phrase,Republican,12,illegal immigrants,-5.99,0.0,1.254,0,46,316,335
+2024,phrase,Republican,13,president trump,-5.97,0.458,5.081,20,91,316,335
+2024,phrase,Republican,14,the biden,-5.91,0.399,2.529,21,81,316,335
+2024,phrase,Republican,15,america first,-5.86,0.139,2.674,5,59,316,335
+2024,phrase,Republican,16,united states,-5.85,5.268,10.675,136,204,316,335
+2024,phrase,Republican,17,our borders,-5.79,0.321,1.928,18,69,316,335
+2024,phrase,Republican,18,border and,-5.78,0.566,2.306,25,82,316,335
+2024,phrase,Republican,19,secure the,-5.74,0.28,1.959,16,71,316,335
+2024,phrase,Republican,20,the united states,-5.67,4.502,9.438,124,186,316,335
+2024,phrase,Republican,21,the unborn,-5.62,0.026,1.174,1,45,316,335
+2024,phrase,Republican,22,and his,-5.61,2.617,6.18,74,154,316,335
+2024,phrase,Republican,23,the republican,-5.49,0.572,2.929,22,77,316,335
+2024,phrase,Republican,24,of illegal,-5.48,0.056,0.944,3,43,316,335
+2024,phrase,Republican,25,the united,-5.44,4.697,9.426,131,189,316,335
+2024,phrase,Republican,26,a conservative,-5.44,0.0,1.138,0,42,316,335
+2024,phrase,Republican,27,taxes and,-5.42,0.405,1.95,14,74,316,335
+2024,phrase,Republican,28,biden administration,-5.34,0.43,2.157,21,74,316,335
+2024,phrase,Republican,29,lower taxes,-5.33,0.093,1.275,4,46,316,335
+2024,phrase,Republican,30,law enforcement,-5.28,2.639,6.397,73,133,316,335
+2024,phrase,Republican,31,right to life,-5.21,0.178,1.729,6,56,316,335
+2024,phrase,Republican,32,his wife,-5.2,1.727,4.357,58,123,316,335
+2024,phrase,Republican,33,defund the police,-5.2,0.01,0.6,1,30,316,335
+2024,phrase,Republican,34,the biden administration,-5.2,0.374,2.04,18,69,316,335
+2024,phrase,Republican,35,national debt,-5.17,0.103,1.621,6,53,316,335
+2024,phrase,Republican,36,the constitution,-5.15,0.377,2.404,18,70,316,335
+2024,phrase,Republican,37,secure the border,-5.14,0.125,1.552,6,54,316,335
+2024,phrase,Republican,38,the southern border,-5.13,0.109,1.281,6,47,316,335
+2024,phrase,Republican,39,to life,-5.12,0.244,1.758,8,59,316,335
+2024,phrase,Republican,40,government spending,-5.1,0.102,1.53,6,53,316,335
+2026,word,Democratic,1,care,11.41,21.782,7.079,279,147,360,309
+2026,word,Democratic,2,reproductive,11.18,5.375,0.057,153,2,360,309
+2026,word,Democratic,3,democratic,11.07,13.374,0.819,210,29,360,309
+2026,word,Democratic,4,access,9.83,15.615,5.563,263,125,360,309
+2026,word,Democratic,5,health,9.61,22.236,7.733,290,125,360,309
+2026,word,Democratic,6,workers,8.79,11.089,2.953,204,77,360,309
+2026,word,Democratic,7,democracy,8.45,6.389,0.723,167,25,360,309
+2026,word,Democratic,8,everyone,7.9,6.096,1.821,189,59,360,309
+2026,word,Democratic,9,climate,7.88,5.254,0.505,124,17,360,309
+2026,word,Democratic,10,affordable,7.85,13.403,5.36,251,110,360,309
+2026,word,Democratic,11,medicaid,7.61,4.033,0.401,124,14,360,309
+2026,word,Democratic,12,wages,7.44,2.776,0.385,114,15,360,309
+2026,word,Democratic,13,people,7.38,36.487,20.453,322,228,360,309
+2026,word,Democratic,14,fair,7.35,5.602,1.773,170,64,360,309
+2026,word,Democratic,15,healthcare,7.23,18.931,7.918,256,114,360,309
+2026,word,Democratic,16,wage,7.16,2.535,0.231,89,10,360,309
+2026,word,Democratic,17,prescription,7.1,3.112,0.62,116,24,360,309
+2026,word,Democratic,18,working,7.06,26.869,15.009,316,217,360,309
+2026,word,Democratic,19,union,6.99,6.892,1.792,150,45,360,309
+2026,word,Democratic,20,labor,6.88,5.505,1.257,145,30,360,309
+2026,word,Democratic,21,equality,6.76,2.565,0.206,95,6,360,309
+2026,word,Democratic,22,clean,6.71,4.833,1.208,142,40,360,309
+2026,word,Democratic,23,corporate,6.65,5.851,0.956,144,22,360,309
+2026,word,Democratic,24,violence,6.63,4.538,0.86,128,25,360,309
+2026,word,Democratic,25,childcare,6.6,2.769,0.274,85,11,360,309
+2026,word,Democratic,26,billionaires,6.52,2.459,0.0,84,0,360,309
+2026,word,Democratic,27,universal,6.45,1.881,0.2,78,9,360,309
+2026,word,Democratic,28,planned,6.44,2.197,0.396,91,18,360,309
+2026,word,Democratic,29,parenthood,6.4,1.982,0.26,80,10,360,309
+2026,word,Democratic,30,corporations,6.4,3.687,0.816,118,21,360,309
+2026,word,Democratic,31,medicare,6.37,6.61,2.346,178,51,360,309
+2026,word,Democratic,32,investing,6.37,2.546,0.54,96,22,360,309
+2026,word,Democratic,33,lgbtq,6.34,1.992,0.122,74,1,360,309
+2026,word,Democratic,34,afl-cio,6.26,1.628,0.028,57,2,360,309
+2026,word,Democratic,35,public,6.25,23.367,14.326,310,204,360,309
+2026,word,Democratic,36,civil,6.1,2.973,0.692,103,27,360,309
+2026,word,Democratic,37,minimum,6.0,1.671,0.183,71,9,360,309
+2026,word,Democratic,38,schools,5.97,8.286,3.829,198,95,360,309
+2026,word,Democratic,39,fund,5.95,5.402,1.886,152,62,360,309
+2026,word,Democratic,40,progressive,5.94,3.057,0.379,75,14,360,309
+2026,word,Republican,1,spending,-10.34,1.312,9.071,62,160,360,309
+2026,word,Republican,2,border,-10.26,2.174,13.085,77,174,360,309
+2026,word,Republican,3,conservative,-10.23,0.105,15.752,8,162,360,309
+2026,word,Republican,4,regulations,-8.32,0.607,3.918,42,112,360,309
+2026,word,Republican,5,amendment,-8.3,1.263,7.601,59,129,360,309
+2026,word,Republican,6,republican,-8.21,2.916,12.665,103,165,360,309
+2026,word,Republican,7,america,-8.1,9.472,23.519,212,219,360,309
+2026,word,Republican,8,taxes,-7.42,2.356,9.179,89,163,360,309
+2026,word,Republican,9,enforcement,-7.26,2.967,8.622,109,157,360,309
+2026,word,Republican,10,borders,-7.12,0.759,3.423,42,103,360,309
+2026,word,Republican,11,bureaucrats,-6.92,0.016,1.512,1,58,360,309
+2026,word,Republican,12,illegal,-6.84,0.886,5.059,53,104,360,309
+2026,word,Republican,13,pro-life,-6.79,0.043,2.278,3,61,360,309
+2026,word,Republican,14,radical,-6.54,0.229,3.409,13,76,360,309
+2026,word,Republican,15,president,-6.53,7.768,20.693,186,178,360,309
+2026,word,Republican,16,parental,-6.38,0.094,1.694,9,52,360,309
+2026,word,Republican,17,fiscal,-6.2,0.57,3.019,27,82,360,309
+2026,word,Republican,18,american,-6.17,12.608,22.75,249,217,360,309
+2026,word,Republican,19,business,-6.14,7.657,14.696,184,207,360,309
+2026,word,Republican,20,policies,-6.13,5.413,11.127,189,187,360,309
+2026,word,Republican,21,unborn,-6.1,0.0,1.351,0,47,360,309
+2026,word,Republican,22,second,-6.04,2.223,6.442,98,124,360,309
+2026,word,Republican,23,chairman,-5.97,0.964,5.405,34,92,360,309
+2026,word,Republican,24,wasteful,-5.97,0.207,2.473,13,67,360,309
+2026,word,Republican,25,sports,-5.97,0.247,2.072,16,56,360,309
+2026,word,Republican,26,wife,-5.89,2.138,5.735,84,135,360,309
+2026,word,Republican,27,mandates,-5.65,0.039,1.316,5,47,360,309
+2026,word,Republican,28,liberty,-5.65,0.313,2.482,22,64,360,309
+2026,word,Republican,29,states,-5.62,5.016,10.654,171,174,360,309
+2026,word,Republican,30,complete,-5.41,0.325,1.889,23,66,360,309
+2026,word,Republican,31,criminals,-5.35,0.432,2.463,28,63,360,309
+2026,word,Republican,32,independence,-5.32,0.608,2.531,36,77,360,309
+2026,word,Republican,33,burdensome,-5.25,0.061,1.062,4,39,360,309
+2026,word,Republican,34,government,-5.23,13.877,22.188,252,234,360,309
+2026,word,Republican,35,taxpayers,-5.2,0.673,3.057,45,73,360,309
+2026,word,Republican,36,god,-5.19,0.126,1.949,7,44,360,309
+2026,word,Republican,37,law,-5.17,10.477,17.285,210,216,360,309
+2026,word,Republican,38,life,-5.15,11.414,17.752,263,237,360,309
+2026,word,Republican,39,secure,-5.08,4.511,8.411,146,172,360,309
+2026,word,Republican,40,order,-5.08,1.29,3.627,72,96,360,309
+2026,phrase,Democratic,1,for all,10.13,8.986,2.296,219,72,360,309
+2026,phrase,Democratic,2,access to,9.74,11.79,3.62,237,89,360,309
+2026,phrase,Democratic,3,affordable housing,8.39,3.123,0.203,115,8,360,309
+2026,phrase,Democratic,4,health care,8.18,10.09,2.651,196,58,360,309
+2026,phrase,Democratic,5,gun violence,7.83,2.693,0.036,82,2,360,309
+2026,phrase,Democratic,6,our democracy,7.48,3.065,0.109,99,8,360,309
+2026,phrase,Democratic,7,climate change,7.19,2.912,0.094,91,5,360,309
+2026,phrase,Democratic,8,public schools,6.99,3.402,0.648,119,19,360,309
+2026,phrase,Democratic,9,reproductive freedom,6.9,1.759,0.0,70,0,360,309
+2026,phrase,Democratic,10,public education,6.53,2.17,0.2,82,6,360,309
+2026,phrase,Democratic,11,parenthood action,6.52,1.199,0.0,54,0,360,309
+2026,phrase,Democratic,12,planned parenthood action,6.47,1.317,0.0,54,0,360,309
+2026,phrase,Democratic,13,voting rights,6.42,2.739,0.0,78,0,360,309
+2026,phrase,Democratic,14,parenthood action fund,6.39,1.29,0.0,53,0,360,309
+2026,phrase,Democratic,15,planned parenthood,6.39,2.125,0.27,79,10,360,309
+2026,phrase,Democratic,16,civil rights,6.36,2.026,0.185,75,10,360,309
+2026,phrase,Democratic,17,investing in,6.35,2.492,0.48,91,17,360,309
+2026,phrase,Democratic,18,reproductive rights,6.31,1.128,0.01,54,1,360,309
+2026,phrase,Democratic,19,affordable care,6.28,1.531,0.115,71,9,360,309
+2026,phrase,Democratic,20,to choose,6.18,2.053,0.449,93,23,360,309
+2026,phrase,Democratic,21,action fund,6.12,2.779,0.0,67,0,360,309
+2026,phrase,Democratic,22,minimum wage,5.99,1.493,0.102,62,4,360,309
+2026,phrase,Democratic,23,citizens united,5.95,1.429,0.024,69,1,360,309
+2026,phrase,Democratic,24,investment in,5.93,1.365,0.21,71,14,360,309
+2026,phrase,Democratic,25,clean energy,5.91,1.887,0.069,69,3,360,309
+2026,phrase,Democratic,26,working people,5.9,2.995,0.308,88,9,360,309
+2026,phrase,Democratic,27,affordable care act,5.87,1.482,0.114,65,8,360,309
+2026,phrase,Democratic,28,medicare for all,5.82,1.7,0.069,53,5,360,309
+2026,phrase,Democratic,29,healthcare and,5.78,2.631,0.705,107,26,360,309
+2026,phrase,Democratic,30,their fair,5.77,0.748,0.052,46,4,360,309
+2026,phrase,Democratic,31,their fair share,5.74,0.793,0.054,46,4,360,309
+2026,phrase,Democratic,32,to affordable,5.74,1.469,0.089,61,6,360,309
+2026,phrase,Democratic,33,invest in,5.69,3.169,1.012,119,36,360,309
+2026,phrase,Democratic,34,demand action,5.63,0.941,0.017,41,1,360,309
+2026,phrase,Democratic,35,care is,5.62,0.589,0.012,39,2,360,309
+2026,phrase,Democratic,36,moms demand,5.62,0.893,0.0,40,0,360,309
+2026,phrase,Democratic,37,choose between,5.62,1.142,0.119,56,7,360,309
+2026,phrase,Democratic,38,the affordable,5.6,1.266,0.099,60,7,360,309
+2026,phrase,Democratic,39,of us,5.59,3.277,0.928,112,30,360,309
+2026,phrase,Democratic,40,ends meet,5.58,1.229,0.064,51,4,360,309
+2026,phrase,Republican,1,president trump,-8.54,0.847,10.769,37,124,360,309
+2026,phrase,Republican,2,law enforcement,-8.06,1.846,7.836,74,142,360,309
+2026,phrase,Republican,3,america first,-7.61,0.034,5.382,2,79,360,309
+2026,phrase,Republican,4,the border,-7.0,0.586,3.314,35,86,360,309
+2026,phrase,Republican,5,conservative values,-6.67,0.0,2.391,0,55,360,309
+2026,phrase,Republican,6,second amendment,-6.62,0.41,4.593,19,88,360,309
+2026,phrase,Republican,7,american energy,-6.49,0.027,2.343,3,64,360,309
+2026,phrase,Republican,8,government spending,-6.07,0.03,1.437,3,48,360,309
+2026,phrase,Republican,9,border security,-5.88,0.584,2.41,26,75,360,309
+2026,phrase,Republican,10,donald j,-5.77,0.031,1.648,2,41,360,309
+2026,phrase,Republican,11,j trump,-5.77,0.031,1.648,2,41,360,309
+2026,phrase,Republican,12,spending and,-5.74,0.133,1.784,13,59,360,309
+2026,phrase,Republican,13,energy independence,-5.72,0.182,1.721,10,55,360,309
+2026,phrase,Republican,14,our border,-5.72,0.109,1.983,11,56,360,309
+2026,phrase,Republican,15,southern border,-5.71,0.106,2.671,6,60,360,309
+2026,phrase,Republican,16,secure our,-5.68,0.337,2.181,22,67,360,309
+2026,phrase,Republican,17,chairman of,-5.68,0.406,3.258,17,65,360,309
+2026,phrase,Republican,18,to life,-5.66,0.023,1.612,2,44,360,309
+2026,phrase,Republican,19,the republican,-5.65,0.279,2.873,16,56,360,309
+2026,phrase,Republican,20,trump to,-5.64,0.017,1.571,2,42,360,309
+2026,phrase,Republican,21,donald j trump,-5.63,0.032,1.811,2,41,360,309
+2026,phrase,Republican,22,lower taxes,-5.57,0.187,1.929,6,50,360,309
+2026,phrase,Republican,23,right to life,-5.55,0.015,1.632,1,43,360,309
+2026,phrase,Republican,24,the unborn,-5.48,0.0,1.093,0,41,360,309
+2026,phrase,Republican,25,chairman of the,-5.45,0.303,3.152,13,57,360,309
+2026,phrase,Republican,26,with president trump,-5.44,0.0,2.522,0,53,360,309
+2026,phrase,Republican,27,president trump to,-5.41,0.014,1.532,2,39,360,309
+2026,phrase,Republican,28,parental rights,-5.41,0.0,1.163,0,36,360,309
+2026,phrase,Republican,29,law enforcement and,-5.34,0.33,1.864,20,55,360,309
+2026,phrase,Republican,30,with president,-5.33,0.128,2.581,5,58,360,309
+2026,phrase,Republican,31,border and,-5.32,0.218,1.633,14,51,360,309
+2026,phrase,Republican,32,president donald,-5.32,0.151,3.421,12,62,360,309
+2026,phrase,Republican,33,america first agenda,-5.27,0.0,1.749,0,34,360,309
+2026,phrase,Republican,34,illegal immigration,-5.23,0.054,2.141,5,51,360,309
+2026,phrase,Republican,35,our military,-5.18,0.359,2.49,23,59,360,309
+2026,phrase,Republican,36,bear arms,-5.16,0.123,1.086,8,45,360,309
+2026,phrase,Republican,37,enforcement and,-5.14,0.431,1.935,26,59,360,309
+2026,phrase,Republican,38,wasteful spending,-5.13,0.088,1.594,6,46,360,309
+2026,phrase,Republican,39,and his wife,-5.12,0.686,3.08,30,71,360,309
+2026,phrase,Republican,40,the wall,-5.07,0.025,0.857,2,32,360,309

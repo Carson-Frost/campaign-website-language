@@ -1,64 +1,70 @@
 case,year,cand_key,langid,paragraph
 "rule Spanish, langid not",2024,H6CA44103,en,| Senator Kamala Harris (D-CA) Senator Cory Booker (D-NJ) Senator Bernie Sanders (I-VT) Congressman Pete Aguilar (CA-31) Congresswoman Karen Bass (CA-37) Congresswoman Julia Brownley (CA-26) Congressman André Carson (IN-7) Congresswoman Judy Chu (CA-27) Congresswoman Yvette Clarke (NY-9) Congressman Emanuel Cleaver II (MO-5) Congresswoman Bonnie Watson Coleman (NJ-12) Congresswoman Val Butler Demings (FL-10) Congressman Dwight Evans (PA-2) Congressman Ruben Gallego (AZ-7) Congressman Jimmy Gomez
-"rule Spanish, langid not",2024,H2CT05222,an,Espero que todo esté bien rezando por ti ❤️🙌🇺🇸❤️🙌
-"rule Spanish, langid not",2026,S6MA00288,pt,"Durante este tempo, Joe também organizou e ministrou aulas de educação política sobre tópicos cruciais como a história negra e o movimento pelos direitos dos imigrantes, enfatizando a necessidade de compreendermos nossa história para que possamos moldar nosso futuro coletivo."
-"rule Spanish, langid not",2024,H2CT05222,ca,Eso es una mentira descarada.
-"rule Spanish, langid not",2026,H4CA45170,vi,"Derek tin rằng chăm sóc y tế phải là một quyền chứ không phải một đặc quyền. Là chủ một hiệu thuốc địa phương cùng với vợ, Derek đã giúp mọi người trong cộng đồng của mình tiếp cận được với các loại thuốc cứu sinh và hiểu được những thách thức mà mọi người phải đối mặt khi cố gắng chi trả chi phí y tế cho gia đình mình. Ông sẽ tranh đấu với các công ty bảo hiểm và dược phẩm lớn để kiểm soát chi phí chăm sóc y tế và thuốc theo toa đang ở mức cao, đồng thời mở rộng Medicare để mọi người đều có thể"
-"rule Spanish, langid not",2026,S6MA00288,pt,"Após se formar na faculdade em 2018, Joe começou a trabalhar como instrutor de HiSET (Teste de Equivalência do Ensino Médio) e mentor para estudantes universitários de primeira geração. Mais tarde, ele dirigiu um programa extracurricular e de verão de ensino médio focado nos direitos dos trabalhadores. Ele tem uma paixão por criar ambientes nos quais os jovens se sintam seguros, apoiados e empoderados."
-"rule Spanish, langid not",2022,S6IL00292,it,Una defensora incansable para Illinois
-"rule Spanish, langid not",2026,S6MA00288,pt,"Através de anos de ativismo e trabalho comunitário, Joe aprendeu que os problemas que afetam as pessoas da classe trabalhadora não têm apenas uma causa comum, mas também uma solução comum: o socialismo. Em 2018, Joe se juntou ao Party for Socialism and Liberation para lutar por uma sociedade que priorize as necessidades das pessoas sobre os lucros dos bilionários. Durante todo esse tempo, ele tem vivido em Roxbury e fornecido liderança a inúmeros movimentos por justiça na Grande Boston: por mora"
 "rule Spanish, langid not",2026,S6MA00288,pt,"Joe Tache é um trabalhador juvenil, organizador comunitário e socialista baseado em Boston. Por mais de dez anos, Joe tem sido parte de —e tem sido moldado por— organizações e movimentos em Massachusetts. Joe tem trabalhado ao lado de ativistas dedicados em movimentos contra a exploração de trabalhadores, guerra, brutalidade policial, gentrificação e muitas outras questões. Ele dedica grande parte de seu tempo a escrever e educar sobre a causa raiz desses problemas: o capitalismo."
-"rule Spanish, langid not",2026,H4FL17060,de,UNA VIDA ENTERA COMO UN DEMÓCRATA QUE CUMPLE LO QUE SE PROPONE
-"rule Spanish, langid not",2024,H2TX33248,vi,"Texas, bỏ phiếu sớm bắt đầu từ ngày 21/10/2024 đến ngày 1/11/2024."
+"rule Spanish, langid not",2026,S6MA00288,pt,"Após se formar na faculdade em 2018, Joe começou a trabalhar como instrutor de HiSET (Teste de Equivalência do Ensino Médio) e mentor para estudantes universitários de primeira geração. Mais tarde, ele dirigiu um programa extracurricular e de verão de ensino médio focado nos direitos dos trabalhadores. Ele tem uma paixão por criar ambientes nos quais os jovens se sintam seguros, apoiados e empoderados."
+"rule Spanish, langid not",2024,H2CT05222,an,Espero que todo esté bien rezando por ti ❤️🙌🇺🇸❤️🙌
 "rule Spanish, langid not",2026,H6CA44103,en,| Senator Kamala Harris (D-CA) Senator Cory Booker (D-NJ) Senator Bernie Sanders (I-VT) Congressman Pete Aguilar (CA-31) Congresswoman Karen Bass (CA-37) Congresswoman Julia Brownley (CA-26) Congressman André Carson (IN-7) Congresswoman Judy Chu (CA-27) Congresswoman Yvette Clarke (NY-9) Congressman Emanuel Cleaver II (MO-5) Congresswoman Bonnie Watson Coleman (NJ-12) Congresswoman Val Butler Demings (FL-10) Congressman Dwight Evans (PA-2) Congressman Ruben Gallego (AZ-7) Congressman Jimmy Gomez
-"rule Spanish, langid not",2026,S6MA00288,pt,"Joe se matriculou como estudante de administração de empresas na Northeastern University em 2013. Como um jovem adulto moldado pelas consequências sociais das guerras dos EUA no Iraque, Afeganistão e Líbia, a Grande Recessão e o assassinato de Trayvon Martin, Joe entrou na faculdade buscando respostas sobre como causar um impacto positivo na sociedade. Ele não as encontrou na sala de aula, onde cada curso de negócios ensinava a mesma tese geral: dinheiro é rei e todo o resto é secundário."
+"rule Spanish, langid not",2024,H2CT05222,ca,Eso es una mentira descarada.
+"rule Spanish, langid not",2026,H6NJ03192,pt,Por qué me postulo como independiente
+"rule Spanish, langid not",2026,H2TX33248,vi,"- Sự thánh thiện, sự sống. Tôi tin vào việc bảo vệ sự sống con người từ khi thụ thai đến khi chết tự nhiên. Tất cả chúng ta đều là một món quà từ Đức Chúa Trời Toàn Năng. Để tránh mang thai ngoài ý muốn, vui lòng sử dụng bao cao su hoặc đập âm đạo."
 "rule Spanish, langid not",2026,H6CT02196,ug,"EN EL CONGRESO LUCHARÉ POR LOS VALORESDE FAMILIA, LIBERTAD, Y NUESTRO FUTURO"
-"rule Spanish, langid not",2026,H4FL17060,en,ES UN MIEMBRO ACTIVO DE NUESTRA COMUNIDAD
-"rule Spanish, langid not",2022,H6CA44103,en,| Senator Kamala Harris (D-CA) Senator Cory Booker (D-NJ) Senator Bernie Sanders (I-VT) Congressman Pete Aguilar (CA-31) Congresswoman Karen Bass (CA-37) Congresswoman Julia Brownley (CA-26) Congressman André Carson (IN-7) Congresswoman Judy Chu (CA-27) Congresswoman Yvette Clarke (NY-9) Congressman Emanuel Cleaver II (MO-5) Congresswoman Bonnie Watson Coleman (NJ-12) Congresswoman Val Butler Demings (FL-10) Congressman Dwight Evans (PA-2) Congressman Ruben Gallego (AZ-7) Congressman Jimmy Gomez
-"rule Spanish, langid not",2020,H6CA44103,en,| Senator Kamala Harris (D-CA) Senator Cory Booker (D-NJ) Senator Bernie Sanders (I-VT) Congressman Pete Aguilar (CA-31) Congresswoman Karen Bass (CA-37) Congresswoman Julia Brownley (CA-26) Congressman André Carson (IN-7) Congresswoman Judy Chu (CA-27) Congresswoman Yvette Clarke (NY-9) Congressman Emanuel Cleaver II (MO-5) Congresswoman Bonnie Watson Coleman (NJ-12) Congresswoman Val Butler Demings (FL-10) Congressman Dwight Evans (PA-2) Congressman Ruben Gallego (AZ-7) Congressman Jimmy Gomez
-"rule Spanish, langid not",2020,H0CA40138,en,UNA VERDADERA VOZ DE PROGRESO Y DE LAS PERSONAS
+"rule Spanish, langid not",2022,S6IL00292,it,Una defensora incansable para Illinois
+"rule Spanish, langid not",2026,H6NJ06278,pt,Quase 200.000 eleitores no 6º Distrito Congressional de Nova Jersey optaram por não se filiar a nenhum dos dois principais partidos políticos. Eles também merecem representação.
 "rule Spanish, langid not",2026,H4FL17060,an,Amy Bennett Williams es reportera sénior. Puede contactarla en awilliams@newspress.com.
+"rule Spanish, langid not",2026,H2TX33248,vi,"Texas, bỏ phiếu sớm bắt đầu từ ngày 17/2/2026 đến ngày 27/2/2026."
+"rule Spanish, langid not",2026,S6MA00288,pt,"Joe se matriculou como estudante de administração de empresas na Northeastern University em 2013. Como um jovem adulto moldado pelas consequências sociais das guerras dos EUA no Iraque, Afeganistão e Líbia, a Grande Recessão e o assassinato de Trayvon Martin, Joe entrou na faculdade buscando respostas sobre como causar um impacto positivo na sociedade. Ele não as encontrou na sala de aula, onde cada curso de negócios ensinava a mesma tese geral: dinheiro é rei e todo o resto é secundário."
+"rule Spanish, langid not",2026,H4FL17060,en,ES UN MIEMBRO ACTIVO DE NUESTRA COMUNIDAD
+"rule Spanish, langid not",2026,H6AZ07121,en,LUCHA POR LA JUSTICIA AMBIENTAL PARA TODOS
+"rule Spanish, langid not",2026,S6MA00288,pt,"Durante este tempo, Joe também organizou e ministrou aulas de educação política sobre tópicos cruciais como a história negra e o movimento pelos direitos dos imigrantes, enfatizando a necessidade de compreendermos nossa história para que possamos moldar nosso futuro coletivo."
+"rule Spanish, langid not",2026,H4FL17060,de,UNA VIDA ENTERA COMO UN DEMÓCRATA QUE CUMPLE LO QUE SE PROPONE
+"rule Spanish, langid not",2026,H6AL04098,en,"HALEYVILLE, AL — Former President Donald J. Trump has endorsed Congressman Robert Aderholt (AL-04) for reelection."
+"rule Spanish, langid not",2022,H6CA44103,en,| Senator Kamala Harris (D-CA) Senator Cory Booker (D-NJ) Senator Bernie Sanders (I-VT) Congressman Pete Aguilar (CA-31) Congresswoman Karen Bass (CA-37) Congresswoman Julia Brownley (CA-26) Congressman André Carson (IN-7) Congresswoman Judy Chu (CA-27) Congresswoman Yvette Clarke (NY-9) Congressman Emanuel Cleaver II (MO-5) Congresswoman Bonnie Watson Coleman (NJ-12) Congresswoman Val Butler Demings (FL-10) Congressman Dwight Evans (PA-2) Congressman Ruben Gallego (AZ-7) Congressman Jimmy Gomez
+"rule Spanish, langid not",2024,H2TX33248,vi,"Texas, bỏ phiếu sớm bắt đầu từ ngày 21/10/2024 đến ngày 1/11/2024."
+"rule Spanish, langid not",2020,H6CA44103,en,| Senator Kamala Harris (D-CA) Senator Cory Booker (D-NJ) Senator Bernie Sanders (I-VT) Congressman Pete Aguilar (CA-31) Congresswoman Karen Bass (CA-37) Congresswoman Julia Brownley (CA-26) Congressman André Carson (IN-7) Congresswoman Judy Chu (CA-27) Congresswoman Yvette Clarke (NY-9) Congressman Emanuel Cleaver II (MO-5) Congresswoman Bonnie Watson Coleman (NJ-12) Congresswoman Val Butler Demings (FL-10) Congressman Dwight Evans (PA-2) Congressman Ruben Gallego (AZ-7) Congressman Jimmy Gomez
+"rule Spanish, langid not",2026,H4CA45170,vi,"Derek tin rằng chăm sóc y tế phải là một quyền chứ không phải một đặc quyền. Là chủ một hiệu thuốc địa phương cùng với vợ, Derek đã giúp mọi người trong cộng đồng của mình tiếp cận được với các loại thuốc cứu sinh và hiểu được những thách thức mà mọi người phải đối mặt khi cố gắng chi trả chi phí y tế cho gia đình mình. Ông sẽ tranh đấu với các công ty bảo hiểm và dược phẩm lớn để kiểm soát chi phí chăm sóc y tế và thuốc theo toa đang ở mức cao, đồng thời mở rộng Medicare để mọi người đều có thể"
+"rule Spanish, langid not",2020,H0CA40138,en,UNA VERDADERA VOZ DE PROGRESO Y DE LAS PERSONAS
 "rule Spanish, langid not",2026,H4FL17060,cs,UNA VIDA CONSTRUÍDA CON TRABAJO DURO
+"rule Spanish, langid not",2026,S6MA00288,pt,"Através de anos de ativismo e trabalho comunitário, Joe aprendeu que os problemas que afetam as pessoas da classe trabalhadora não têm apenas uma causa comum, mas também uma solução comum: o socialismo. Em 2018, Joe se juntou ao Party for Socialism and Liberation para lutar por uma sociedade que priorize as necessidades das pessoas sobre os lucros dos bilionários. Durante todo esse tempo, ele tem vivido em Roxbury e fornecido liderança a inúmeros movimentos por justiça na Grande Boston: por mora"
+"rule Spanish, langid not",2020,H0CA40138,en,LO QUE DELGADO REPRESENTA
 "rule Spanish, langid not",2024,H2TX33248,vi,"2. Sự thánh thiện, sự sống. Tôi tin vào việc bảo vệ sự sống con người từ khi thụ thai đến khi chết tự nhiên. Tất cả chúng ta đều là một món quà từ Đức Chúa Trời Toàn Năng. Để tránh mang thai ngoài ý muốn, vui lòng sử dụng bao cao su hoặc đập âm đạo."
 "rule Spanish, langid not",2020,H8IA04106,cs,LUCHANDO POR UNA ECONOMÍA QUE TRABAJA PARA TODOS
-"rule Spanish, langid not",2020,H0CA40138,en,LO QUE DELGADO REPRESENTA
-"langid Spanish, rule not",2024,H4CA30149,es,Los Feliz Improvement Association Treasurer*
-"langid Spanish, rule not",2020,S0GA00559,es,"- Pedro Marin, Rep., GA-96"
-"langid Spanish, rule not",2022,S0CO00211,es,"Janet Buckner, Colorado State Senator SD28, Lafayette"
-"langid Spanish, rule not",2020,H2WA06129,es,"Victoria Woodards, Tacoma Mayor"
-"langid Spanish, rule not",2024,H4FL07137,es,¡Jennifer Adams es tú candidata local!
-"langid Spanish, rule not",2020,H8CT01152,es,https://electronicintifada.net/tags/bds
-"langid Spanish, rule not",2024,H8TX07140,es,2020 Endorsements
-"langid Spanish, rule not",2022,H4MN06087,es,2018 Notable Endorsements
-"langid Spanish, rule not",2022,H4CA12055,es,- San Francisco Chronicle
-"langid Spanish, rule not",2024,H4CA16197,es,Portola Valley Councilmember
-"langid Spanish, rule not",2020,S4MA00028,es,- Tricia Farley-Bouvier
-"langid Spanish, rule not",2024,H4CA30149,es,"Founder, Swing Left Los Feliz*"
-"langid Spanish, rule not",2024,H2CA37304,es,Sierra Club
-"langid Spanish, rule not",2020,S0LA00386,es,- Catherine Cortez Masto – U.S. Senator
-"langid Spanish, rule not",2020,S0WY00137,es,Endorsed
-"langid Spanish, rule not",2024,H0CA10073,es,- Elizabeth Copley
+"langid Spanish, rule not",2022,H6OR03064,es,A Devastating Loss
+"langid Spanish, rule not",2020,H2TX00015,es,| Jessica AnackerTXDWD Co-Chair |
+"langid Spanish, rule not",2026,S4WV00159,es,- WV Delegate Jeff Eldridge (District 30)
+"langid Spanish, rule not",2024,H2TX15203,es,Veronica Escobar
+"langid Spanish, rule not",2020,H8CA51062,es,"Mario Gutierrez, Latinos For Trump Co-Founder"
+"langid Spanish, rule not",2024,H4MD06340,es,Sierra Club
+"langid Spanish, rule not",2022,H2TN02120,es,Georgiana Vines
+"langid Spanish, rule not",2022,H2NY24127,es,Ontario
+"langid Spanish, rule not",2024,H2FL22171,es,Endorsements
+"langid Spanish, rule not",2020,S0OR00329,es,Agendas
+"langid Spanish, rule not",2024,H2NY10308,es,Combating Hate Crimes
+"langid Spanish, rule not",2022,S2VT00235,es,Aron M
+"langid Spanish, rule not",2020,H8TX29052,es,Endorsements
+"langid Spanish, rule not",2020,S0GA00724,es,Federal Laws & Policies
+"langid Spanish, rule not",2022,H8OH05036,es,Endorsements
 "langid Spanish, rule not",2020,H0CT05200,es,Ansonia Police Officers Endorse
-"langid Spanish, rule not",2024,H4IL17101,es,Aaron Bean
-"langid Spanish, rule not",2024,H4CA30149,es,Los Angeles Bruin Democrats
-"langid Spanish, rule not",2022,H2CA34079,es,- Youth Climate Strike Los Angeles (YCSLA)
+"langid Spanish, rule not",2024,H2VT01076,es,Endorsements
+"langid Spanish, rule not",2024,H2NY10308,es,Seguridad Pública
+"langid Spanish, rule not",2026,H6MI11191,es,Farmington Hills Councilman
+"langid Spanish, rule not",2022,H2CA07141,es,Laguna West
 "langid Spanish, rule not",2020,H0FL17068,es,President Barack Obama Endorses Congresswoman Frederica S. Wilson
-"langid Spanish, rule not",2022,H0CA10073,es,- Debra Pearson
-"langid Spanish, rule not",2024,H2CA42205,es,Congresswoman Anna G. Eshoo
-"langid Spanish, rule not",2024,H0WA02080,es,2024 Endorsements
-"langid Spanish, rule not",2026,Elias_Montgomery,es,Elias Henry Montgomery
-"langid Spanish, rule not",2020,H6MN04244,es,- Criticism: NONE
-"langid Spanish, rule not",2026,H4CA47085,es,- Aliso Viejo Democratic Club
-"langid Spanish, rule not",2024,H2NC14050,es,Wife: Teresa Edwards
-"langid Spanish, rule not",2020,H6FL07140,es,Endorsements
-"langid Spanish, rule not",2024,H4WA05234,es,- Tommy Elliott
-"langid Spanish, rule not",2024,H8TX16109,es,- Verificación de antecedentes para la venta de armas de fuego
-"langid Spanish, rule not",2026,H6CA24113,es,Sara Jacobs
-"langid Spanish, rule not",2024,H2CA21233,es,Asm. Sabrina Cervantes
-"langid Spanish, rule not",2020,H8AZ01104,es,Endorsements
-"langid Spanish, rule not",2026,H4CA47085,es,Elected Officials
-"langid Spanish, rule not",2024,H4CO04280,es,Colorado State representative HD-43
-"langid Spanish, rule not",2020,H4AZ06045,es,Financial Services
-"langid Spanish, rule not",2026,H8CA01109,es,U.S. Representative Veronica Escobar
-"langid Spanish, rule not",2020,H0MI06152,es,Endorsements
-"langid Spanish, rule not",2026,S6FL00640,es,Florida Home Builders Association
+"langid Spanish, rule not",2020,S0WY00137,es,U.S. Representative & Freedom Caucus Co-Founder Mark Meadows
+"langid Spanish, rule not",2022,S2VT00235,es,Elizabeth B
+"langid Spanish, rule not",2022,S2AK00226,es,General Election Timeline
+"langid Spanish, rule not",2024,H4WA06117,es,- Nicholas Carr
+"langid Spanish, rule not",2020,H6FL13205,es,Florida Sierra Club
+"langid Spanish, rule not",2024,S4CA00803,es,Negative Contrast
+"langid Spanish, rule not",2026,H6CA49128,es,Escondido Firefighters Association
+"langid Spanish, rule not",2024,H0FL13158,es,Endorsements
+"langid Spanish, rule not",2020,H6CO01141,es,Congresswoman Diana DeGette
+"langid Spanish, rule not",2024,H4CA30149,es,Los Feliz Neighborhood Councilmember*
+"langid Spanish, rule not",2026,H6FL06365,es,Arcadia
+"langid Spanish, rule not",2024,H4MO01134,es,Group Endorsements
+"langid Spanish, rule not",2026,H6MI11191,es,Clawson Councilmember
+"langid Spanish, rule not",2026,H2CA39078,es,"Janice Hahn, Supervisor"
+"langid Spanish, rule not",2022,S2OH00402,es,"- Jimmy Julian, Niles Council At-Large"
+"langid Spanish, rule not",2020,H6WA09025,es,Elected Officials
+"langid Spanish, rule not",2026,H6FL06258,es,Former Florida Representatives
+"langid Spanish, rule not",2026,H8TX29052,es,General Election Day
+"langid Spanish, rule not",2024,S4MD00327,es,Councilmember

@@ -13,29 +13,32 @@ General-election candidates were chosen over primary candidates because their si
 more completely and because 2026 sites are still live before election day.
 
 The text comes from one source, Common Crawl, for every year (a few analyzed sites come from the
-Wayback Machine). The study therefore covers the campaign websites that Common Crawl saved within the 60
-days before each election, and its coverage of the ballot is reported below by year and party.
+Wayback Machine). The study therefore covers the campaign websites that Common Crawl saved between
+January 1 of each election year and election day, and its coverage of the ballot is reported below by
+year and party. Shares from the 60 days and 120 days before election day are reported beside them
+(`results/term_shares_windows.csv`; see "Collection window" in `METHODS.md`).
 
 ## Data and coverage
 
 Of 3,712 Democratic and Republican general-election candidate-years, 3,616 have a usable campaign
-website, 2,541 yielded some saved text, and 2,401 yielded at least 100 words of campaign text from the 60
-days before election day. 22 further candidate-years were excluded as not campaign content. The 1,075
+website, 2,773 yielded some saved text, and 2,701 yielded at least 100 words of campaign text from the
+election year. 19 of those were excluded as not campaign content, leaving 2,682 analyzed. The 843
 candidate-years with a website and no saved text are the largest gap: no archive in this source saved a
 usable copy of the site inside the window. The presidential vote by seat covers 3,436 of the 4,900 rows of
 `seat_pres.csv`, including every 2022 and 2026 candidate-year.
 
-The 2026 text is a mid-campaign snapshot. The window for 2026 runs through election day, November 3,
-2026, and the figures below will change when the final capture is analyzed.
+The 2026 text is a mid-campaign snapshot from Common Crawl's crawls of January to September 2026. The
+window for 2026 runs through election day, November 3, 2026, and the figures below will change when the
+final capture is analyzed.
 
 Coverage of analyzed candidates (share of those on the ballot):
 
 | Year | Democratic | Republican |
 | --- | --- | --- |
-| 2020 | 344 of 482 (71%) | 319 of 462 (69%) |
-| 2022 | 286 of 454 (63%) | 290 of 462 (63%) |
-| 2024 | 292 of 453 (64%) | 297 of 458 (65%) |
-| 2026 | 322 of 476 (68%) | 251 of 465 (54%) |
+| 2020 | 370 of 482 (77%) | 353 of 462 (76%) |
+| 2022 | 317 of 454 (70%) | 322 of 462 (70%) |
+| 2024 | 316 of 453 (70%) | 335 of 458 (73%) |
+| 2026 | 360 of 476 (76%) | 309 of 465 (66%) |
 
 Mike Johnson's 2022 candidate-year is not included because his race was not printed on the November
 ballot. Page text extraction is serial, because trafilatura shares one parser across threads, and
@@ -148,9 +151,10 @@ the tracked `results/`, because live sites and Ballotpedia change. Every exclusi
 - Common Crawl is the main archive. The index server (index.commoncrawl.org) returned 504s under
   load, so `cc.py` binary-searches each crawl's `cluster.idx` (100–175 MB each, saved in
   `artifacts/ccindex/`) and range-fetches index blocks and WARC records from data.commoncrawl.org.
-  That takes 1–5 seconds per candidate uncached. Crawls used: 2020-40 and 2020-45, 2022-40, 2024-38,
-  2024-42 and 2024-46 (captures after election day dropped), and 2026-39. 2022 has only one crawl
-  inside the 60-day window.
+  That takes 1–5 seconds per candidate uncached. Crawls used: every crawl of the election year, eight
+  in 2020 (2020-05 to 2020-45), five in 2022 (2022-05 to 2022-40), nine in 2024 (2024-10 to 2024-46,
+  captures after election day dropped) and nine in 2026 so far (2026-04 to 2026-39). The 60-day window
+  holds two crawls in 2020, one in 2022, three in 2024 and one in 2026.
 - Wayback Machine: CDX at `web.archive.org/cdx/search/cdx`, raw captures at
   `web.archive.org/web/<timestamp>id_/<url>`. In October 2026 it returned 429 to browser-like user
   agents, refused connections for about 20 minutes after repeated 429s, and then allowed only about
@@ -196,27 +200,32 @@ the tracked `results/`, because live sites and Ballotpedia change. Every exclusi
   year, then the current Ballotpedia link. Wayback links quoted by Ballotpedia are unwrapped to the
   original address. Social-media, donation, Ballotpedia and official House or Senate addresses are
   skipped (`sites.clean_site`).
-- Every year is analyzed from archived text (the current results use the 60 days before election day,
-  homepage plus up to three linked pages), and only pages of the candidate-year's current site count. The
-  window is the study's own choice with no published standard. A later collection is to use the window that
-  captures the most sites within the election year, with the 60-day and 120-day figures reported beside it.
+- Every year is analyzed from archived text (January 1 of the election year to election day, the latest
+  capture of each page, homepage plus up to three linked pages), and only pages of the candidate-year's
+  current site count. This is the window that saves the most sites (analysis plan, Amendments 4 and 6); it
+  has no published standard. The 60-day and 120-day windows are collected the same way and compared in
+  `windows.py`.
 - Screening (`analyze.py`): paragraphs of page code, gambling spam, placeholder Latin and Spanish are
   dropped. A candidate-year is excluded as not campaign content when what remains is under 100 words
   but the dropped text would have reached it, when spam outweighs the rest, when hosting-error or
   parked pages make up a short site, or when the text has neither the candidate's name nor any
   campaign word. One flagged site (Chris Russomanno, 2022) was kept after hand review, and two sites
-  that pass the screen are excluded (`analyze.REVIEWED_NOT_CAMPAIGN`). Each of the 23 exclusions in
-  `results/excluded_sites.csv` was read and confirmed: Robin Kelly 2020–2024 and Eugene Yu 2024
-  (unrelated content on lapsed domains), Marcy Kaptur 2020 and Lynnette Grey Bull 2022 (supplement
-  and gambling spam), Ted Lieu 2024 and 2026 (gambling spam), Terri Sewell 2020, Adrienne Bell 2020
-  and Michael McCaul 2022 and 2024 (hosting errors), James Comer 2022, Vicente Gonzalez 2022, Glenn
-  Thompson 2024, Rebecca Whiting 2024, Ronald Russell 2026, Melissa Strange 2026 and Ndidiamaka
-  Okpareke 2026 (unfinished templates), Rhonda Hart 2026 and Christian Maxwell 2026 (only
-  site-builder page titles, each with the same site description), and Joe Mackey 2020 and George
-  Austin 2026 (Spanish only). Christy Peterson's 2026 site carries injected gambling spam after a
-  hack; the spam paragraphs are dropped and the rest is analyzed.
-- The live 2026 crawl is a check, not the main source. Live shares run several points higher than
-  archived shares because live sites expose more pages; the partisan gaps are similar.
+  that pass the screen are excluded (`analyze.REVIEWED_NOT_CAMPAIGN`). Each of the 20 exclusions in
+  `results/excluded_sites.csv` was read and confirmed: Robin Kelly 2020–2024, Eugene Yu 2024, Dayna
+  Steele 2024 and Nathan Lewis 2024 (unrelated content or a for-sale notice on lapsed domains), Marcy
+  Kaptur 2020 and Lynnette Grey Bull 2022 (supplement and gambling spam), Ted Lieu 2024 and 2026
+  (gambling spam), Terri Sewell 2020, Adrienne Bell 2020 and Michael McCaul 2022 and 2024 (hosting
+  errors), James Comer 2022, Vicente Gonzalez 2022, Glenn Thompson 2022 and La'Ron Singletary 2022
+  (unfinished templates, under 100 words without the placeholder text), and Rhonda Hart 2026 and
+  Christian Maxwell 2026 (only site-builder page titles, each with the same site description). Seven
+  candidate-years excluded under the 60-day window are analyzed under the election-year window, each
+  read and confirmed as campaign text: Joe Mackey 2020, Glenn Thompson 2024, Rebecca Whiting 2024, Ronald
+  Russell 2026, George Austin 2026, Melissa Strange 2026 and Ndidiamaka Okpareke 2026. Christy
+  Peterson's 2026 site carries injected gambling spam after a hack; the spam paragraphs are dropped and
+  the rest is analyzed.
+- The live 2026 crawl is a check, not the main source. Live shares run about one point higher than
+  archived shares on average (higher for 77 of 114 term-party shares), and the partisan gaps agree
+  closely (correlation 0.99 across the 57 terms).
 - Terms are counted as the share of candidates using a term at least once, so long sites do not
   dominate.
 - Distinctive words and phrases are ranked by Welch's t-test on each candidate's relative frequency,
@@ -228,53 +237,53 @@ the tracked `results/`, because live sites and Ballotpedia change. Every exclusi
 The findings were chosen after viewing results for all 57 terms, so the report labels them
 exploratory. Shares are of each party's analyzed candidates.
 
-- Democrats: "working families" 33% (2020) to 48% (2026), "middle class" 31% to 20%, "working
-  people" 14% to 24%. In 2026, "billionaires" 25% (5–9% before), "tariffs" 18% (1–4%),
-  "corporations" 43% (31–35%). "Reproductive freedom or rights" 15% to 48% in 2024, then 29%.
-  "Freedom" 24% to 50% in 2024, then 39%. "Democracy" 27% to 38–43% from 2022 on. "Climate" 47–49%
-  through 2024, then 29%. "Housing" 35% to 55%.
-- Republicans: "inflation" 3% to 39% (2022) and 40% (2024), then 25%. "Working families" 10–11%
-  through 2024, then 27% in 2026; 9 of the 67 sites use it only in the name of the "Working Families
-  Tax Cut", and without them the share is 23%. "Pro-life" or "unborn" 39% to 20%, "abortion" 26% to
-  11%, "freedom" 52% to 43%, "health care" 61% to 35–42% from 2022 on.
-- Both parties: "artificial intelligence" 13% of Democrats and 8% of Republicans in 2026, 4% or less
-  before. "Cost of living" rose steadily in both, from 6% to 17% of Democrats and 3% to 12% of
+- Democrats: "working families" 32% (2020) to 39% (2024) and 55% (2026), "middle class" 31% to 24–27%
+  from 2022 on, "working people" 15% to 26%. In 2026, "billionaires" 28% (5–9% before), "tariffs" 22%
+  (1–4%), "corporations" 48% (32–36%). "Reproductive freedom or rights" 14% to 52% in 2024, then 36%.
+  "Freedom" 23% to 53% in 2024, then 46%. "Democracy" 29% to 42–47% from 2022 on. "Climate" 50–51%
+  through 2024, then 34%. "Housing" 37% to 63%.
+- Republicans: "inflation" 3% to 41% (2022) and 40% (2024), then 28%. "Working families" 10–12%
+  through 2024, then 34% in 2026; 7 of the 104 sites use it only in the name of the "Working Families
+  Tax Cut", and without them the share is 31%. "Pro-life" or "unborn" 39% to 32% (2024) and 26% (2026),
+  "abortion" 26–27% to 16% in 2026, "health care" 63% to 45–47% from 2022 on. "Freedom" held at 52–54%.
+- Both parties: "artificial intelligence" 15% of Democrats and 9% of Republicans in 2026, 4% or less
+  before. "Cost of living" rose steadily in both, from 6% to 22% of Democrats and 3% to 14% of
   Republicans.
-- Returning candidates (`results/term_shares_panel.csv`, 504 candidates analyzed in two or more
-  years): the Republican shifts hold, but several 2026 Democratic shifts are much smaller. Among them
-  "working families" went 36% to 38%, "climate" 47% to 43%, and "billionaires" reached 13%, so those
-  2026 shifts come mostly from new candidates.
+- Returning candidates (`results/term_shares_panel.csv`, 578 candidates analyzed in two or more
+  years): the Republican shifts hold, and the 2026 Democratic shifts are smaller. Among them "working
+  families" went 35% (2020) to 46% (2026), "climate" stayed at 49%, and "billionaires" reached 16% and
+  "tariffs" 12%, so those 2026 shifts come partly from new candidates.
 - Selection (`results/selection.csv`): in every year analyzed candidates are more often incumbents
-  and more often won than unanalyzed ones (2024 Democrats: 49% against 34% incumbents, 58% against
-  37% won), and analyzed Democrats more often ran in close races. The results lean toward incumbents
+  and more often won than unanalyzed ones (2024 Democrats: 48% against 34% incumbents, 56% against
+  38% won), and analyzed Democrats more often ran in close races. The results lean toward incumbents
   and winning campaigns.
 - Seat partisanship by presidential vote (a close seat has a Democratic two-party presidential share of
-  45–55%): in 2022, 23% of analyzed Democrats ran in close seats against 13% of unanalyzed ones, and
-  21% against 14% for Republicans. In 2026 the shares were 22% against 10% for Democrats and 20%
-  against 16% for Republicans. So the tilt toward competitive seats is not just a product of the race
+  45–55%): in 2022, 22% of analyzed Democrats ran in close seats against 12% of unanalyzed ones, and
+  19% against 16% for Republicans. In 2026 the shares were 21% against 9% for Democrats and 20%
+  against 15% for Republicans. So the tilt toward competitive seats is not just a product of the race
   vote, and it reaches Republicans as well. The seat measure correlates 0.97–0.99 with the race's own
   two-party vote where both exist. Coverage: all 2022 and 2026 candidate-years; for 2020, only Senate
   and at-large seats; for 2024, Senate and the 41 states that kept their lines. The report shows only
   the complete years.
-- Gaps between the parties (`results/term_gaps.csv`): 135 of the 171 term-year comparisons in 2020, 2022
+- Gaps between the parties (`results/term_gaps.csv`): 138 of the 171 term-year comparisons in 2020, 2022
   and 2024 have an adjusted p-value below 0.05 by the Benjamini-Hochberg method (adjusted over those 171),
-  so most are large. 2026, adjusted on its own, has 45 of 57, provisionally. The 2022 gap in
-  "abortion" is not: 29% of Democratic and 21% of Republican candidates, a gap of 7 points with a 95%
-  interval of 0 to 14 points and an adjusted p-value of 0.067. In 2020 the gap favored Republicans by 15
-  points, and in 2024 it favored Democrats by 17.
+  so most are large. 2026, adjusted on its own, has 48 of 57, provisionally. The 2022 gap in
+  "abortion" is not: 28% of Democratic and 27% of Republican candidates, a gap of 2 points with a 95%
+  interval of −5 to 9 points and an adjusted p-value of 0.70. In 2020 the gap favored Republicans by 16
+  points, and in 2024 it favored Democrats by 19.
 - Stable and changing words (`results/term_classes.csv`, `results/term_changes.csv`; exploratory, because the
-  gaps were seen before the rule was fixed): 37 of the 57 terms are split between the parties in the same
-  direction in 2020, 2022 and 2024 with adjusted p-values below 0.05. Of these 26 are also still (no
+  gaps were seen before the rule was fixed): 39 of the 57 terms are split between the parties in the same
+  direction in 2020, 2022 and 2024 with adjusted p-values below 0.05. Of these 28 are also still (no
   within-party change with an adjusted p-value below 0.05), including "climate", "working families",
   "billionaires" and "Second Amendment" for their parties, and 11 are split and moving, including
-  "border", "health care", "housing", "Trump" and "reproductive freedom / rights". Of the 20
-  that are not consistently split, 9 move, including "inflation", "abortion" and "freedom". Only 28
+  "border", "health care", "housing", "Trump" and "reproductive freedom / rights". Of the 18
+  that are not consistently split, 10 move, including "inflation", "abortion" and "freedom". Only 30
   of the 228 within-party changes have an adjusted p-value below 0.05.
-- Worst-case ranges (`results/term_bounds.csv`): because about 35% of Democratic and Republican candidacies are not analyzed, the
+- Worst-case ranges (`results/term_bounds.csv`): because about 28% of Democratic and Republican candidacies are not analyzed, the
   share of all candidates on the ballot who used a term can lie anywhere from the share of the whole
   ballot that analyzed candidates account for to that plus the unanalyzed fraction. For Republican
-  "inflation" in 2022, 39% of analyzed candidates used it, and the range for candidates with a known
-  website is 25% to 61%.
+  "inflation" in 2022, 41% of analyzed candidates used it, and the range for candidates with a known
+  website is 30% to 58%.
 - Match precision (`results/term_matches_coded.csv`, `results/term_precision.csv`): 20 random users
   per finding term were hand-coded at one random match each. The prespecified patterns for inflation
   (Inflation Reduction Act), corporations (biographies, company names), health care (job
@@ -283,8 +292,12 @@ exploratory. Shares are of each party's analyzed candidates.
   ("business climate" and similar), were narrowed and recoded on a fresh sample, and a narrowed term's
   precision comes from that sample alone (`precision.py`, with 95% Wilson intervals). Every finding
   term measures 18 of 20 or better except "freedom", 17 of 20 (85%), whose misses are award and
-  endorser names. Excluding the Inflation Reduction Act lowered Democrats' "inflation" from 24% to 15%
-  in 2024.
+  endorser names. Excluding the Inflation Reduction Act lowered Democrats' "inflation" from 25% to 16%
+  in 2024. The coded samples were drawn from the 60-day text.
+- Collection window (`results/term_shares_windows.csv`, `results/coverage_windows.csv`): the
+  election-year window analyzes 185 more Democratic and Republican candidate-years in 2020–2024 than the
+  60-day window. For the same candidates, 2022 shares rise most, because the 60-day window holds one 2022
+  crawl and gave shorter text; the largest move is Republican "Second Amendment", 35% to 46%.
 
 ## Method standard
 
@@ -332,10 +345,10 @@ dictionary.
   minimum after the line rules get no scores.
 - Outputs: sentence counts in `artifacts/data/tone_sentences.jsonl` (ignored) and per candidate-year
   scores in `results/tone_scores.csv`.
-- Coverage: of 196,841 extracted lines, 68,454 had under 5 words and 400 carried javascript or policy
-  text, leaving 238,130 sentences. 2,731 of the 2,753 analyzed candidate-years are scored (22 fall
-  under 100 words after the line rules). 608 scored candidate-years have at least one sentence naming
-  an opponent, and 1,500 at least one naming the other party or its leaders.
+- Coverage: of 234,209 extracted lines, 81,007 had under 5 words and 505 carried javascript or policy
+  text, leaving 286,416 sentences. 3,086 of the 3,102 analyzed candidate-years are scored (16 fall
+  under 100 words after the line rules). 656 scored candidate-years have at least one sentence naming
+  an opponent, and 1,722 at least one naming the other party or its leaders.
 
 The LSD files are licensed by McGill for academic research only, may not be modified or shared, and
 publications must acknowledge that the dictionary was developed at and licensed from McGill. They
@@ -348,7 +361,7 @@ sentence-level coding and must be rewritten for site-level coding first.
 
 ## Limitations
 
-- 1,075 of the 3,616 major-party candidates with known websites (30%) yielded no archived text from
+- 843 of the 3,616 major-party candidates with known websites (23%) yielded no archived text from
   the window. The Wayback Machine could fill some of these, but only as a slow multi-day trickle at
   its current limits.
 - Ballotpedia's quoted website text is collected in `bp_profiles.jsonl` but not analyzed.

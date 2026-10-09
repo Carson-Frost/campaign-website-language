@@ -347,8 +347,9 @@ The five departures the audit found, and what was done about each on 2026-10-05.
   Gulati and Williams included minor parties, and no source separates the two groups (MIT Election
   Lab codes both as OTHER).
 - Ballotpedia's quoted and linked websites as fallbacks when Form 1 has none.
-- The 60-day window. Druckman et al. coded in the last ten days and found little change from Labor
-  Day; CampaignView used one month.
+- The collection window, now the election year up to election day (see "Collection window" below).
+  Druckman et al. coded in the last ten days and found little change from Labor Day; CampaignView used
+  one month.
 - The homepage plus at most three linked pages, chosen by URL pattern. Di Tella et al. took every page
   one click from the homepage; CampaignView took biography and issues pages.
 - The latest capture of each page in the window, and Common Crawl's copy preferred over the Wayback
@@ -371,31 +372,34 @@ The five departures the audit found, and what was done about each on 2026-10-05.
 
 ## Checks
 
-Run on 2026-10-05. The three checks that depend on the page text were rerun on the re-extracted
-text by `analyze.py` and `check_language.py`, and the figures below come from it.
+First run on 2026-10-05. The three checks that depend on the page text were rerun on 2026-10-09 on the
+election-year text by `analyze.py` and `check_language.py`, and the figures below come from that run
+except where a step is marked as done on the earlier text.
 
 - **Minimum length and site length** (`results/term_shares_min_words.csv`, `results/site_length.csv`).
-  - At 50 or 200 words instead of 100, no finding term's share for either major party in any year
-    moves by more than 2.3 points: 1.4 at 50 words and 2.3 at 200.
+  - At 50 or 200 words instead of 100, no term's share for either major party in any year moves by
+    more than 1.8 points: 0.9 at 50 words and 1.8 at 200.
   - Candidate-years admitted only at 50 words pass the same automatic screen but were not read by hand.
-  - Median analyzed site length: Democrats 1,132–1,312 words a year. Republicans 1,067–1,234 in
-    2020–2024 and 876 in 2026. Because presence depends on length (Manning, Raghavan and Schütze 2008, sec. 13.3),
+  - Median analyzed site length: Democrats 1,349–1,484 words a year. Republicans 1,236–1,281 in
+    2020–2024 and 1,155 in 2026. Because presence depends on length (Manning, Raghavan and Schütze 2008, sec. 13.3),
     part of any 2026 Republican decline may reflect shorter sites.
 - **Spanish paragraph rule against langid.py 1.1.6** (Lui and Baldwin 2012, *ACL System
   Demonstrations*, aclanthology.org/P12-3005; `tools/check_language.py`, `results/language_check.csv`).
   langid.py is a naive Bayes identifier with a fixed distributed model, so its labels are repeatable.
-  - Paragraphs of 8 or more words: langid labeled 871 of the 889 that the rule dropped as Spanish.
-  - The other 23 dropped paragraphs, of any length, were all read. Nineteen are not English: 11
-    Spanish lines that langid misreads (mostly upper-case headings), 5 Portuguese and 3 Vietnamese.
-    The rule drops them as intended, since its label is "not English". The other 4 are one English
-    endorsement list of names, wrongly dropped on four sites; it holds no study term.
-  - langid labels 4,303 kept paragraphs Spanish (19,827 words, 0.44% of kept words). In a random 40 of
-    them, 2 are Spanish (a slogan and a policy line). The rest are English, mostly names, places and
-    short headings such as "Endorsements".
+  - Paragraphs of 8 or more words: langid labeled 856 of the 878 that the rule dropped as Spanish.
+  - The 29 dropped paragraphs that langid does not label Spanish, of any length, were all read.
+    Twenty-four are not English: 13 Spanish lines that langid misreads (mostly upper-case headings), 6
+    Portuguese and 5 Vietnamese. The rule drops them as intended, since its label is "not English". The
+    other 5 are English and wrongly dropped: one endorsement list of names on one candidate's site in
+    four years, which holds no study term, and one news line on Robert Aderholt's 2026 site that names
+    Trump; that site names Trump 18 more times, so no count changes.
+  - langid labels 4,925 kept paragraphs Spanish (21,683 words, 0.40% of kept words). On the 2026-10-05
+    text, a random 40 of the 4,303 then labelled held 2 Spanish lines (a slogan and a policy line); the
+    rest were English, mostly names, places and short headings such as "Endorsements".
   - Conclusion: the rule matches langid closely, and no change was made.
 - **Exclusions and coverage by party and year** (`results/coverage.csv`, now with min_words_met and
-  excluded columns). The 23 exclusions are 13 Democratic, 9 Republican, 1 third-party and no
-  independent candidate-years, and no party-year has more than 5.
+  excluded columns). The 20 exclusions are 12 Democratic, 7 Republican, 1 independent and no
+  third-party candidate-years, and no party-year has more than 4.
 - **Candidates not printed on the ballot.**
   - Florida and Louisiana declare an unopposed candidate elected without printing the race. The FEC's
     certified results mark these "Unopposed" in the general-vote column. In 2020 and 2022 these were
@@ -475,3 +479,39 @@ checked by `tools/test_inference.py` against published and hand-worked values.
   percent. Thirty-five error-free checks are the fewest that support a lower bound of 90 percent, so the
   90 percent cutoff in the earlier precision check could not be met with confidence. Future samples are
   at least 50 matches per term, drawn as candidate-and-term pairs, and coded by two coders.
+
+# Collection window (2026-10-09)
+
+**Decision.** A site's text comes from the Common Crawl captures made between January 1 of the election
+year and election day, the latest capture of each page in that span (cc.py --window year). The 60-day
+and 120-day windows are collected the same way and compared in 	ools/windows.py. This applies the rule
+in Amendment 4 of `ANALYSIS_PLAN.md`: the window that saves the most campaign sites, within the election
+year and ending on election day.
+
+**Standard.** None is published. Druckman, Kifer and Parkin coded the ten days before election day,
+CampaignView a week before each primary, and Hilbig's dataset spans the election year (median record 255
+days). The choice is stated as a limitation.
+
+**Evidence from the comparison** (Democratic and Republican candidates, 2020, 2022 and 2024):
+
+- Every candidate-year analyzed under the 60-day window is also analyzed under the wider ones. The
+  election-year window analyzes 2,013 candidate-years against 1,828, which raises each party's coverage
+  of the ballot from 63 to 71 percent to 70 to 77 percent (`results/coverage_windows.csv`).
+- The 60-day window holds one crawl in 2022 (CC-MAIN-2022-40) and two or three in 2020 and 2024. For the
+  candidate-years analyzed under both windows, the median analyzed site in 2022 had 1,062 words
+  (Republican) and 1,253 (Democratic) under the 60-day window and 1,334 and 1,481 under the election-year
+  window; in 2020 and 2024 the medians rose by 6 to 14 percent. Pages per collected site were 3.36 in
+  the 60-day 2022 collection against 3.48 to 3.52 in 2020 and 2024, and 3.63 to 3.67 in every year under
+  the election-year window.
+- Because a candidate counts as using a term if it appears anywhere in the collected text, shorter text
+  lowers shares. For the same candidates, the largest moves from the 60-day to the election-year window
+  are 2022 Republican terms: "Second Amendment" 34.5 to 46.2 percent, "veterans" 48.6 to 60.3, "health
+  care" 39.0 to 48.3. Across all terms the mean move is 1.6 points on the same candidates. Between the
+  120-day and election-year windows, no share of all analyzed candidates moves more than 3.8 points.
+- So the 60-day results partly reflect how often the archive visited each year. The election-year window
+  narrows the differences in site length between years.
+
+**Limitation.** A page saved months before election day can differ from what the campaign showed at the
+end, and a site captured early in the year may still carry an earlier campaign's text. The latest capture
+of each page is used to limit this, and the 60-day and 120-day shares are reported beside every headline
+figure so the effect is visible.

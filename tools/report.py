@@ -7,37 +7,38 @@ from common import ROOT
 
 RESULTS = ROOT / "results"
 
-# Written from the 2026-10-05 rebuild on re-extracted text (2,753 candidate-years analyzed). Rewrite when the data change.
-# Exploratory: chosen after viewing results for all 57 terms. Every term named here was hand-checked
-# for match precision (results/term_precision.csv).
+# Written from the 2026-10-09 rebuild on the election-year window (3,102 candidate-years analyzed). Rewrite when
+# the data change. Exploratory: chosen after viewing results for all 57 terms. Every term named here was
+# hand-checked for match precision (results/term_precision.csv).
 FINDINGS = [
-    ("working families", "Democrats moved from “middle class” toward “working families.” “Working families” rose "
-     "from 33% of Democratic candidates in 2020 to 48% in 2026, and “middle class” fell from 31% to 20%. "
-     "“Working people” rose from 14% to 24%, almost all of it in 2026. Among Democrats analyzed in more than one "
-     "year, “working families” barely moved (36% to 38%), so the 2026 rise comes mostly from new candidates."),
-    ("working families", "Republicans took up “working families” in 2026: 27% of Republican candidates used it, "
-     "against 10–11% in 2020–2024. Nine of those 67 sites use it only in the name of the “Working Families Tax "
-     "Cut,” the party’s label for its 2025 tax law. Without them the share is 23%, still more than double the "
-     "earlier level, and the rise also appears among Republicans analyzed in more than one year (10% to 21%)."),
+    ("working families", "Democrats moved toward “working families.” It rose from 32% of Democratic candidates in "
+     "2020 to 39% in 2024 and 55% in 2026, while “middle class” fell from 31% in 2020 to 24–27% from 2022 on. "
+     "“Working people” rose from 15% to 26%, almost all of it in 2026. Among Democrats analyzed in more than one "
+     "year, “working families” also rose, from 35% to 46%, so the 2026 rise comes from returning and new "
+     "candidates alike."),
+    ("working families", "Republicans took up “working families” in 2026: 34% of Republican candidates used it, "
+     "against 10–12% in 2020–2024. Seven of those 104 sites use it only in the name of the “Working Families Tax "
+     "Cut,” the party’s label for its 2025 tax law. Without them the share is 31%, still more than double the "
+     "earlier level, and the rise also appears among Republicans analyzed in more than one year (10% to 29%)."),
     ("inflation", "Prices became a Republican theme after 2020. “Inflation” went from 3% of Republican candidates "
-     "in 2020 to 39% in 2022 and 40% in 2024, then fell to 25% in 2026. Democrats’ use peaked at 15%, not counting "
-     "mentions of the Inflation Reduction Act. “Cost of living” rose steadily in both parties, from 6% to 17% of "
-     "Democrats and from 3% to 12% of Republicans, and Democrats’ use of “housing” rose from 35% to 55%."),
-    ("billionaires", "In 2026 Democrats turned to “billionaires” (25%, up from 5–9%), “tariffs” (18%, up from "
-     "1–4%) and “corporations” (43%, up from 31–35%). These are mostly new candidates’ words: among Democrats "
-     "analyzed in more than one year, “billionaires” reached 13% and “tariffs” 11%."),
+     "in 2020 to 41% in 2022 and 40% in 2024, then fell to 28% in 2026. Democrats’ use peaked at 16%, not counting "
+     "mentions of the Inflation Reduction Act. “Cost of living” rose steadily in both parties, from 6% to 22% of "
+     "Democrats and from 3% to 14% of Republicans, and Democrats’ use of “housing” rose from 37% to 63%."),
+    ("billionaires", "In 2026 Democrats turned to “billionaires” (28%, up from 5–9%), “tariffs” (22%, up from "
+     "1–4%) and “corporations” (48%, up from 32–36%). These are partly new candidates’ words: among Democrats "
+     "analyzed in more than one year, “billionaires” reached 16% and “tariffs” 12%."),
     ("reproductive freedom / rights", "Abortion language shifted after the 2022 Dobbs decision. Democrats’ "
-     "“reproductive freedom or rights” rose from 15% in 2020 to 48% in 2024 and stood at 29% in 2026, and their "
-     "use of “abortion” rose from 10% to 38% in 2024. Republicans’ “pro-life” or “unborn” fell from 39% in 2020 "
-     "to 20% in 2026, and their use of “abortion” from 26% to 11%."),
-    ("freedom", "Democrats took up “freedom” and “democracy.” “Freedom” rose from 24% of Democratic candidates "
-     "in 2020 to 50% in 2024, level with Republicans, and stood at 39% in 2026. “Democracy” rose from 27% to "
-     "38–43% from 2022 on. Republicans’ use of “freedom” fell from 52% in 2020 to 43% in 2026."),
-    ("artificial intelligence", "Artificial intelligence arrived in 2026: 13% of Democratic and 8% of Republican "
+     "“reproductive freedom or rights” rose from 14% in 2020 to 52% in 2024 and stood at 36% in 2026, and their "
+     "use of “abortion” rose from 10% to 42% in 2024. Republicans’ “pro-life” or “unborn” fell from 39% in 2020 "
+     "to 32% in 2024 and 26% in 2026, and their use of “abortion” from 26–27% in 2020–2022 to 16% in 2026."),
+    ("freedom", "Democrats took up “freedom” and “democracy.” “Freedom” rose from 23% of Democratic candidates "
+     "in 2020 to 53% in 2024, level with Republicans, and stood at 46% in 2026. “Democracy” rose from 29% to "
+     "42–47% from 2022 on. Republicans’ use of “freedom” held between 52% and 54% in every year."),
+    ("artificial intelligence", "Artificial intelligence arrived in 2026: 15% of Democratic and 9% of Republican "
      "candidates mentioned it, against 4% or less in every earlier year."),
-    ("climate", "Some issues faded. Democrats’ use of “climate” held at 47–49% through 2024 and fell to 29% in "
-     "2026, though among Democrats analyzed in more than one year it fell only to 43%. Republicans’ use of "
-     "“health care” fell from 61% in 2020 to between 35% and 42% from 2022 on."),
+    ("climate", "Some issues faded. Democrats’ use of “climate” held at 50–51% through 2024 and fell to 34% in "
+     "2026, though among Democrats analyzed in more than one year it stayed at 49%. Republicans’ use of "
+     "“health care” fell from 63% in 2020 to 45–47% from 2022 on."),
 ]
 
 
@@ -508,7 +509,7 @@ function method() {
     "Candidates: every Democratic and Republican U.S. House and Senate candidate on a November general-election ballot (independent and third-party candidates are outside the study), taken from Ballotpedia's candidate lists for all four years, with FEC candidate IDs attached by state, district and name. Write-in candidates are excluded. Louisiana's November all-party primary counts as its general election, including its 2026 House races, which went back to that system after the Supreme Court's Louisiana v. Callais ruling canceled the state's new party primaries. The FEC's own general-election lists for 2020–2024 agree with Ballotpedia's within five major-party candidates a year.",
     "Parties: the study covers Democratic and Republican candidates. Both include fusion lines such as Working Families or Conservative. Independent and third-party candidates are outside the study.",
     "Websites: the site listed on the campaign committee's FEC Statement of Organization in force at that election. When none was listed, the campaign site Ballotpedia quoted for that election is used, then the one currently on the candidate's Ballotpedia page. Social media, donation pages and official House or Senate sites are never used.",
-    "Text: archived captures from the 60 days before each election day, the same way for all four years. Nearly all come from Common Crawl's public crawls (late September and October 2020, late September 2022, September through early November 2024, mid-September 2026), and the Wayback Machine fills in two sites that Common Crawl missed. Each site contributes its homepage and up to three linked pages, preferring issue and biography pages and skipping donation, volunteer, contact, store and event pages. Text was extracted with trafilatura, and repeated paragraphs were removed. 2022 has a single Common Crawl crawl in the window, so fewer 2022 sites were recovered.",
+    "Text: archived captures from January 1 of each election year to election day, the same way for all four years, using the latest capture of each page. Nearly all come from Common Crawl's public crawls (eight in 2020, five in 2022, nine in 2024 and nine so far in 2026, the last in mid-September), and the Wayback Machine fills in two sites that Common Crawl missed. Shares from the 60 days and 120 days before election day are compared in the method record. Each site contributes its homepage and up to three linked pages, preferring issue and biography pages and skipping donation, volunteer, contact, store and event pages. Text was extracted with trafilatura, and repeated paragraphs were removed. Coverage differs by year because Common Crawl saved some campaign sites more often than others.",
     `Screening: paragraphs of page code, placeholder text (lorem ipsum), gambling spam and Spanish are removed before counting, because the English term list cannot read them or they are not the campaign's words. A site then needs at least 100 words. ${D.excluded} candidate-years were excluded as not campaign content, each checked by hand: lapsed or hijacked domains serving gambling or other spam, hosting-error pages, unfinished templates, sites holding only page titles and Spanish-only sites.`,
     "Measure: a candidate uses a term when it appears at least once in that candidate's collected text. Shares are the percentage of analyzed candidates in a party who used the term. Counting candidates rather than words keeps long sites from dominating.",
     "Terms: the list was fixed before any results were examined. Afterward, 20 randomly chosen users of each term named in the findings were checked by hand at one random match each. Six patterns were then narrowed to drop matches that are not the term's sense, such as the Inflation Reduction Act, the House Freedom Caucus, “business climate” and biographies that mention corporations, and each narrowed pattern was checked again on a fresh sample, which alone gives its precision. Every term in the findings matched its intended sense in at least 18 of 20 checked matches except “freedom” (17 of 20), whose remaining misses are award and endorser names. Matching still counts a word's appearance, not its stance: “abortion” counts both supporters and opponents of abortion rights.",

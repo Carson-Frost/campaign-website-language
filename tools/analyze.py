@@ -1,10 +1,11 @@
 """Term usage by party and year in collected campaign-website text.
 
-Inputs: artifacts/data/sites_input.csv and pages_cc.jsonl (Common Crawl), pages_archived.jsonl
-(Wayback) and pages_live.jsonl (2026 live sites).
-Main analysis: archived text for every year (Common Crawl and Wayback captures from the 60 days
-before election day), so all four years share one source and method. Check: 2026 term shares
-recomputed from the live crawl of every 2026 site with a known address.
+Inputs: artifacts/data/sites_input.csv and pages_cc_year.jsonl (Common Crawl, election-year window),
+pages_archived.jsonl (Wayback) and pages_live.jsonl (2026 live sites).
+Main analysis: archived text for every year (Common Crawl captures from January 1 of the election
+year to election day, the window that saves the most sites; analysis plan, Amendment 4), so all four
+years share one source and method. windows.py compares the 60-day and 120-day windows. Check: 2026
+term shares recomputed from the live crawl of every 2026 site with a known address.
 A candidate-year is analyzed when its de-duplicated text from its current site has at least MIN_WORDS
 words and passes screen(), which drops text that is not campaign content.
 
@@ -31,6 +32,7 @@ from sites import MAX_PAGES, main_host, norm_site
 from terms import ADDED_TERMS, TERMS
 
 MIN_WORDS = 100
+WINDOW = "year"  # the Common Crawl collection the main analysis reads (cc.py --window)
 GROUPS = ("Democratic", "Republican", "Independent", "Third party")
 RESULTS = ROOT / "results"
 
@@ -87,7 +89,7 @@ def para_kind(p):
     return "not English" if es >= 2 and es > en else ""
 
 
-def load_texts(live2026=False, paras_out=None, window="60"):
+def load_texts(live2026=False, paras_out=None, window=WINDOW):
     """meta, texts, source, status and dropped: words removed per candidate-year by para_kind().
 
     paras_out, a list, receives (key, paragraph, para_kind) for every paragraph (check_language.py).

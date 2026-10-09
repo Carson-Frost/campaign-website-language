@@ -198,6 +198,17 @@ documentation is read in full, and is exploratory.
 
 ## Amendments
 
+**Amendment 6, 2026-10-09, made after the window comparison was seen.** The collection that
+Amendment 4 deferred was run now instead of after the 2026 election, and Amendment 4's rule was
+applied: the main analysis uses the election-year window, from January 1 to election day, for every
+year, with the 60-day and 120-day windows reported beside it (`tools/windows.py`). The rule itself was
+fixed by Amendment 4 before any wider collection, so nothing in it changes. What was seen before this
+amendment: the number of candidate-years analyzed under each window, and how far term shares move
+between windows. Reason for running it now: the 60-day window holds one Common Crawl crawl in 2022 and
+two or three in 2020 and 2024, so 2022 sites yielded fewer pages and shorter text, and part of the
+year-to-year change in the 60-day shares reflects how often the archive visited rather than what
+candidates wrote. The full recollection after the 2026 election still follows Amendment 3.
+
 **Amendment 2, 2026-10-07, made before any result using the new source or the new reporting rule.**
 
 - *Coverage.* Of 4,889 candidate-years, 545 have no website address, 1,415 have an address but no saved
