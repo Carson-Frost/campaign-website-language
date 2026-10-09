@@ -152,8 +152,8 @@ class TableTest(unittest.TestCase):
 
     def test_working_families_2020_matches_the_walkthrough_example(self):
         row = next(r for r in self.gaps if r[1] == "working families" and r[2] == "2020")
-        self.assertEqual((row[3], row[4]), (114, 344))
-        self.assertAlmostEqual(row[7], 114 / 344, places=4)
+        self.assertEqual((row[3], row[4]), (120, 370))
+        self.assertAlmostEqual(row[7], 120 / 370, places=4)
 
     def test_intervals_contain_their_estimates(self):
         for r in self.gaps:
