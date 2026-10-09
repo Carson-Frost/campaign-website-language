@@ -219,5 +219,19 @@ class StatisticsTest(unittest.TestCase):
         self.assertEqual(precision.wilson(0, 20)[0], 0.0)
 
 
+class WindowTest(unittest.TestCase):
+    def test_windows_end_on_election_day_and_start_where_named(self):
+        import cc
+        self.assertEqual(cc.bounds(2020, "60"), ("20200904", "20201103235959"))
+        self.assertEqual(cc.bounds(2022, "120"), ("20220711", "20221108235959"))
+        self.assertEqual(cc.bounds(2024, "year"), ("20240101", "20241105235959"))
+
+    def test_every_window_crawl_list_holds_the_60_day_crawls(self):
+        import cc
+        for year, crawls in cc.CRAWLS.items():
+            self.assertTrue(set(crawls) <= set(cc.YEAR_CRAWLS[year]))
+            self.assertTrue(all(c.startswith(f"CC-MAIN-{year}-") for c in cc.YEAR_CRAWLS[year]))
+
+
 if __name__ == "__main__":
     unittest.main()

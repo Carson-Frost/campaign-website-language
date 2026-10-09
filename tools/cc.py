@@ -1,11 +1,13 @@
 """Collect archived campaign-website text from Common Crawl.
 
-Uses the crawls that fall inside the 60 days before each general election and keeps only
-captures dated inside that window. Page choice matches sites.py: the homepage plus up to
-MAX_PAGES linked pages, preferring issue and biography pages.
+Keeps only captures dated inside the window ending on election day: the 60 days before it (the
+default), 120 days, or the whole election year from January 1. For each page the latest capture in
+the window is used. Page choice matches sites.py: the homepage plus up to MAX_PAGES linked pages,
+preferring issue and biography pages.
 
-Reads artifacts/data/sites_input.csv. Appends to artifacts/data/pages_cc.jsonl.
-Usage: cc.py [years...]   (default 2020 2022 2024)
+Reads artifacts/data/sites_input.csv. Appends to artifacts/data/pages_cc.jsonl for the 60-day
+window and to pages_cc_120.jsonl or pages_cc_year.jsonl for the others.
+Usage: cc.py [--window 60|120|year] [years...]   (default 60, and 2020 2022 2024)
 """
 import csv
 import gzip
@@ -30,6 +32,18 @@ CRAWLS = {
     2024: ["CC-MAIN-2024-38", "CC-MAIN-2024-42", "CC-MAIN-2024-46"],
     2026: ["CC-MAIN-2026-39"],
 }
+# Every crawl with captures between January 1 of the election year and election day
+# (index.commoncrawl.org/collinfo.json, 2026-10-09), used for the 120-day and election-year windows.
+YEAR_CRAWLS = {
+    2020: ["CC-MAIN-2020-05", "CC-MAIN-2020-10", "CC-MAIN-2020-16", "CC-MAIN-2020-24", "CC-MAIN-2020-29",
+           "CC-MAIN-2020-34", "CC-MAIN-2020-40", "CC-MAIN-2020-45"],
+    2022: ["CC-MAIN-2022-05", "CC-MAIN-2022-21", "CC-MAIN-2022-27", "CC-MAIN-2022-33", "CC-MAIN-2022-40"],
+    2024: ["CC-MAIN-2024-10", "CC-MAIN-2024-18", "CC-MAIN-2024-22", "CC-MAIN-2024-26", "CC-MAIN-2024-30",
+           "CC-MAIN-2024-33", "CC-MAIN-2024-38", "CC-MAIN-2024-42", "CC-MAIN-2024-46"],
+    2026: ["CC-MAIN-2026-04", "CC-MAIN-2026-08", "CC-MAIN-2026-12", "CC-MAIN-2026-17", "CC-MAIN-2026-21",
+           "CC-MAIN-2026-25", "CC-MAIN-2026-30", "CC-MAIN-2026-34", "CC-MAIN-2026-39"],
+}
+WINDOWS = ("60", "120", "year")
 S = requests.Session()
 S.headers["User-Agent"] = RESEARCH_UA
 lock = threading.Lock()
@@ -57,6 +71,24 @@ def cached(kind, key, produce):
 
 
 IDX = CACHE.parent / "ccindex"  # <crawl>.cluster.idx files from data.commoncrawl.org
+
+
+def ensure_idx(coll):
+    """Download a crawl's cluster.idx (100-175 MB) once."""
+    f = IDX / f"{coll}.cluster.idx"
+    if f.exists():
+        return
+    if OFFLINE:
+        raise RuntimeError(f"offline: not cached cluster.idx {coll}")
+    IDX.mkdir(parents=True, exist_ok=True)
+    part = f.with_suffix(".part")
+    with S.get(f"https://data.commoncrawl.org/cc-index/collections/{coll}/indexes/cluster.idx",
+               stream=True, timeout=120) as r:
+        r.raise_for_status()
+        with open(part, "wb") as out:
+            for chunk in r.iter_content(1 << 20):
+                out.write(chunk)
+    part.replace(f)
 
 
 def _line_at(f, pos):
@@ -154,13 +186,19 @@ def record(rec):
     return cached("ccw", f"{rec['filename']} {rec['offset']}", produce)
 
 
-def collect(row):
+def bounds(year, window):
+    """First and last timestamps (YYYYMMDDhhmmss prefixes) of a window ending on election day."""
+    end = date.fromisoformat(GENERAL_DAY[year])
+    start = date(year, 1, 1) if window == "year" else end - timedelta(days=WINDOW_DAYS if window == "60" else int(window))
+    return start.strftime("%Y%m%d"), end.strftime("%Y%m%d") + "235959"
+
+
+def collect(row, window="60"):
     year = int(row["year"])
     domain, _ = norm_site(row["website"])
-    end = date.fromisoformat(GENERAL_DAY[year])
-    lo, hi = (end - timedelta(days=WINDOW_DAYS)).strftime("%Y%m%d"), end.strftime("%Y%m%d") + "235959"
+    lo, hi = bounds(year, window)
     latest = {}
-    for coll in CRAWLS[year]:
+    for coll in (CRAWLS if window == "60" else YEAR_CRAWLS)[year]:
         for rec in index(coll, domain):
             if "html" not in rec.get("mime", "") or not (lo <= rec["timestamp"] <= hi) or not main_host(rec["url"], domain):
                 continue
@@ -180,10 +218,10 @@ def collect(row):
     return out
 
 
-def work(row):
+def work(row, window="60"):
     """JSON lines for one candidate-year (its pages, then a status line), or [] to retry later."""
     try:
-        pages = collect(row)
+        pages = collect(row, window)
     except Exception as e:
         print("retry later:", row["year"], row["cand_key"], str(e)[:120], flush=True)
         return []
@@ -198,19 +236,22 @@ def work(row):
     return [json.dumps(r) + "\n" for r in recs]
 
 
-def main(years):
+def main(years, window="60"):
+    for y in years:
+        for coll in (CRAWLS if window == "60" else YEAR_CRAWLS)[y]:
+            ensure_idx(coll)
     rows = [r for r in csv.DictReader(open(DATA / "sites_input.csv", encoding="utf-8"))
             if r["website"] and int(r["year"]) in years]
-    out = DATA / "pages_cc.jsonl"
+    out = DATA / ("pages_cc.jsonl" if window == "60" else f"pages_cc_{window}.jsonl")
     done = set()
     if out.exists():
         done = {(d["year"], d["cand_key"], d.get("site")) for d in map(json.loads, open(out, encoding="utf-8"))
                 if d["kind"] == "status"}
     todo = [r for r in rows if (r["year"], r["cand_key"], norm_site(r["website"])[0]) not in done]
     random.Random(7).shuffle(todo)
-    print(f"cc: {len(todo)} of {len(rows)} candidate-years to do", flush=True)
+    print(f"cc {window}: {len(todo)} of {len(rows)} candidate-years to do", flush=True)
     with open(out, "a", encoding="utf-8") as sink, ThreadPoolExecutor(3) as ex:
-        for i, lines in enumerate(ex.map(work, todo)):  # map yields in input order, so the file order is fixed
+        for i, lines in enumerate(ex.map(lambda r: work(r, window), todo)):  # input order, so the file order is fixed
             sink.writelines(lines)
             sink.flush()
             if i % 100 == 0:
@@ -219,4 +260,10 @@ def main(years):
 
 
 if __name__ == "__main__":
-    main([int(a) for a in sys.argv[1:]] or [2020, 2022, 2024])
+    args = sys.argv[1:]
+    window = "60"
+    if args[:1] == ["--window"]:
+        window, args = args[1], args[2:]
+        if window not in WINDOWS:
+            sys.exit(f"window must be one of {', '.join(WINDOWS)}")
+    main([int(a) for a in args] or [2020, 2022, 2024], window)

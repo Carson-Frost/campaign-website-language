@@ -87,17 +87,19 @@ def para_kind(p):
     return "not English" if es >= 2 and es > en else ""
 
 
-def load_texts(live2026=False, paras_out=None):
+def load_texts(live2026=False, paras_out=None, window="60"):
     """meta, texts, source, status and dropped: words removed per candidate-year by para_kind().
 
     paras_out, a list, receives (key, paragraph, para_kind) for every paragraph (check_language.py).
+    window picks the Common Crawl collection (cc.py --window): "60" is pages_cc.jsonl, and "120" or
+    "year" is pages_cc_120.jsonl or pages_cc_year.jsonl. The Wayback pages are the 60-day collection.
     """
     meta = {(r["year"], r["cand_key"]): r for r in csv.DictReader(open(DATA / "sites_input.csv", encoding="utf-8"))}
     site = {k: norm_site(r["website"])[0] for k, r in meta.items() if r["website"]}
     pages = defaultdict(lambda: defaultdict(list))
     status = defaultdict(dict)
     for mode in ("cc", "archived", "live"):
-        p = DATA / f"pages_{mode}.jsonl"
+        p = DATA / (f"pages_cc_{window}.jsonl" if mode == "cc" and window != "60" else f"pages_{mode}.jsonl")
         if not p.exists():
             continue
         for line in open(p, encoding="utf-8"):

@@ -57,6 +57,7 @@ under `artifacts/cache/`, so reruns are cheap and every collector resumes where 
 | Ballotpedia pages: website link, quoted website text, survey answers | `bp_profiles.py [lists]` | `artifacts/data/bp_profiles.jsonl` |
 | Merge into the collection list | `build_input.py` | `artifacts/data/sites_input.csv` |
 | Site text from Common Crawl (main archive) | `cc.py 2020 2022 2024 2026` | `artifacts/data/pages_cc.jsonl` |
+| The same for the 120-day and election-year windows | `cc.py --window 120 ...`, `cc.py --window year ...` | `artifacts/data/pages_cc_120.jsonl`, `pages_cc_year.jsonl` |
 | Site text from the Wayback Machine, or live 2026 sites | `sites.py archived` / `sites.py live` | `artifacts/data/pages_archived.jsonl`, `pages_live.jsonl` |
 | General-election results for 2020–2024 | `vote_results.py` | `artifacts/data/results.csv` |
 | Presidential vote by seat | `seat_pres.py` | `artifacts/data/seat_pres.csv` |
@@ -66,6 +67,7 @@ under `artifacts/cache/`, so reruns are cheap and every collector resumes where 
 | Spanish paragraph rule checked against langid.py | `check_language.py` | `results/language_check*.csv` |
 | Intervals, gap tests, adjusted p-values and bounds | `inference.py` | `results/term_gaps.csv`, `results/term_bounds.csv` |
 | Stable and changing words, question 1 of the analysis plan | `questions.py` | `results/term_classes.csv`, `results/term_changes.csv` |
+| Shares under the three windows | `windows.py` | `results/coverage_windows.csv`, `results/term_shares_windows.csv` |
 | Report page | `report.py` | `results/report.html` |
 | Sentiment and tone | `tone.py` | `artifacts/data/tone_sentences.jsonl`, `results/tone_scores.csv` |
 
