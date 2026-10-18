@@ -162,6 +162,35 @@ def candidate_list_losses(meta):
     return dict(label=len(label), repeated=len(repeated))
 
 
+
+def glossary():
+    """The definitions the site shows, read from the tracked GLOSSARY.md so each is written in one place.
+
+    Each "### Name" heading starts an entry and the paragraphs under it are its definition. An entry's id is
+    its heading slugged, which is also the anchor GitHub gives that heading, so one link works in both places.
+    """
+    out, name, body = [], None, []
+
+    def flush():
+        if name:
+            out.append(dict(id=re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-"), name=name,
+                            html="".join("<p>%s</p>" % p for p in body if p)))
+
+    for para in (PROJECT / "GLOSSARY.md").read_text(encoding="utf-8").split("\n\n"):
+        para = para.strip()
+        if para.startswith("### "):
+            flush()
+            name, body = para[4:].strip(), []
+        elif para.startswith("#"):
+            flush()
+            name, body = None, []
+        elif name:
+            body.append(" ".join(para.split()))
+    flush()
+    assert len(out) >= 30, len(out)
+    return out
+
+
 def main():
     loaded = analyze.load_texts()
     meta, texts, source, dropped, words, excluded, analyzed = analyze.analyzed_texts(loaded=loaded)
@@ -257,6 +286,7 @@ def main():
     out = dict(
         terms=[dict(theme=th, term=lab) for th, lab, _ in TERMS],
         candidates=cands,
+        glossary=glossary(),
         shares=table("term_shares.csv", lambda r: r["party_group"] in PARTIES),
         gaps=table("term_gaps.csv"),
         classes=table("term_classes.csv"),

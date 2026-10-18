@@ -368,7 +368,20 @@ The five departures the audit found, and what was done about each on 2026-10-05.
 - The 57-term list, chosen by the researcher before results were examined but not preregistered, and
   never checked for recall. King, Lam and Roberts show that hand-picked keywords miss synonyms.
 - Precision checked on 20 matches per term by one coder with a 90% cutoff. No source sets either
-  number, and standard practice uses two or more coders.
+  number, and standard practice uses two or more coders. 17 of the 57 terms were checked, so 40 were
+  not; the per-term figures and their Wilson intervals are in `results/term_precision.csv`.
+- Party labels not recognized. 10 major-party candidate-years whose label abbreviates the party to a
+  single letter, such as "D / Working Families Party", are grouped as third party and left out. A
+  known error that has not been corrected.
+- Repeated candidate numbers. In 6 cases the candidate list gave a major-party candidate the same FEC
+  candidate number as another candidate in the same year, and only the first was kept, so those 6
+  candidate-years are left out and a candidate who was kept may carry the other's website. A known
+  error that has not been corrected.
+- Ballotpedia quotations. Where a candidate had no usable website, Ballotpedia's quoted campaign text
+  was collected but is not analyzed, so it contributes nothing to any share.
+- Selection toward incumbents and winners. Analyzed candidates include a higher share of incumbents
+  and of winners than candidates not analyzed, in most combinations of cycle and party. The per-group
+  shares and the Newcombe intervals of the differences are in `results/selection.csv`.
 
 ## Checks
 

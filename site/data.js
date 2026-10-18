@@ -69,7 +69,7 @@ INS.key = v => Math.round(v * 1e9);
 const S = INS.S = {
   tab: "explorer", sub: null,
   terms: [], year: INS.DEFAULT_YEAR, f: {}, range: false,
-  sort: "prom", dir: "desc", theme: false, panel: null, cand: null,
+  sort: "prom", dir: "desc", panel: null, cand: null,
 };
 INS.D = null;
 INS.TERM_BY_SLUG = {};
@@ -103,14 +103,6 @@ INS.filtered = () => INS.GROUPS.some(g => S.f[g.key].size);
 
 /* ---------- address ---------- */
 const FILTER_KEYS = ["office", "inc", "seat", "won", "state"];
-INS.TABS = [
-  { id: "explorer", label: "Explorer", path: "" },
-  { id: "method", label: "Method", path: "method" },
-  { id: "coverage", label: "Coverage", path: "coverage" },
-  { id: "related-work", label: "Related Work", path: "related-work" },
-  { id: "downloads", label: "Downloads", path: "downloads" },
-  { id: "glossary", label: "Glossary", path: "glossary" },
-];
 const SORTS = ["prom", "d", "r", "gap", "dchg", "rchg", "tchg", "name"];
 
 INS.readAddress = () => {
@@ -121,8 +113,8 @@ INS.readAddress = () => {
   S.tab = "explorer"; S.sub = null; S.terms = [];
   if (seg[0] === "term" || seg[0] === "terms") {
     S.terms = (seg[1] || "").split(",").map(s => INS.TERM_BY_SLUG[s]).filter(i => i !== undefined);
-  } else if (seg[0] && INS.TABS.some(t => t.id === seg[0])) {
-    S.tab = seg[0]; S.sub = seg[1] || null;
+  } else if (seg[0] === "definitions") {
+    S.tab = "definitions"; S.sub = seg[1] || null;
   }
   FILTER_KEYS.forEach(k => {
     const g = INS.GROUPS.find(x => x.key === k);
@@ -135,7 +127,6 @@ INS.readAddress = () => {
   const so = q.get("sort");
   S.sort = SORTS.includes(so) ? so : "prom";
   S.dir = q.get("dir") === "asc" ? "asc" : "desc";
-  S.theme = q.get("by") === "theme";
   const pm = /^([a-z0-9-]+)\.(\d{4})\.([DR])$/.exec(q.get("panel") || "");
   S.panel = pm && INS.TERM_BY_SLUG[pm[1]] !== undefined && INS.YEARS.includes(+pm[2]) ? { ti: INS.TERM_BY_SLUG[pm[1]], y: +pm[2], p: pm[3] } : null;
   S.cand = S.panel ? q.get("cand") : null;
@@ -147,7 +138,7 @@ INS.addressFor = (o = {}) => {
   const terms = o.terms !== undefined ? o.terms : S.terms;
   const q = new URLSearchParams();
   let path = "";
-  if (tab !== "explorer") path = "/" + tab + (o.sub ? "/" + o.sub : "");
+  if (tab !== "explorer") path = "/definitions" + (o.sub ? "/" + o.sub : "");
   else if (terms.length === 1) path = "/term/" + INS.tslug(terms[0]);
   else if (terms.length > 1) path = "/terms/" + terms.map(INS.tslug).join(",");
   else path = "/";
@@ -158,7 +149,6 @@ INS.addressFor = (o = {}) => {
     if (y !== INS.DEFAULT_YEAR) q.set("year", y);
     const sort = o.sort || S.sort;
     if (sort !== "prom" || (o.dir || S.dir) === "asc") { q.set("sort", sort); q.set("dir", o.dir || S.dir); }
-    if (o.theme !== undefined ? o.theme : S.theme) q.set("by", "theme");
     const range = o.range !== undefined ? o.range : S.range;
     if (range && terms.length === 1) q.set("range", "1");
     const panel = o.panel !== undefined ? o.panel : S.panel;
