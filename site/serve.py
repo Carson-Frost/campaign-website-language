@@ -1,17 +1,17 @@
-"""Serve the public site on a loopback address.
+"""Serve the site on a loopback address.
 
 From the project root:
 
-    python design/mockups/serve.py --detach
+    python site/serve.py --detach
 
 --detach starts the server as a background process with no window that keeps running after the
 terminal or agent session that started it ends, waits until http://127.0.0.1:8765/ answers, and
 prints the address. If a server already answers on the port it says so and starts nothing. Without
---detach the server runs in the foreground. The pages read data/ from the ignored
-artifacts/mockup-data/ (build it first with build_data.py)
-and offer the tracked results/ tables of the project checkout as downloads under files/, with the rows
-for independent and third-party candidates removed, because the site shows Democratic and Republican
-candidates only. It also serves the treatment specimens in design/treatments/ under /treatments/.
+--detach the server runs in the foreground.
+
+The pages read /data/ from the ignored artifacts/site-data/ (build it first with build_data.py) and
+offer the tracked results/ tables as downloads under /files/, with the rows for independent and
+third-party candidates removed, because the site shows Democratic and Republican candidates only.
 """
 import csv
 import functools
@@ -23,16 +23,9 @@ import time
 import urllib.request
 from pathlib import Path
 
-HERE = Path(__file__).resolve().parent
-PROJECT = HERE.parents[1]
-# The site is the Instrument, the treatment chosen 2026-10-09 and reviewed through 2026-10-13.
-# design/mockups/ is the draft rejected in full on 2026-10-09; it is kept for reference at /mockups/.
-SITE = HERE.parent / "instrument"
-ROUTES = {"/treatments/": HERE.parent / "treatments",
-          "/instrument/": SITE,
-          "/mockups/data/": PROJECT / "artifacts" / "mockup-data",
-          "/mockups/": HERE,
-          "/data/": PROJECT / "artifacts" / "mockup-data",
+SITE = Path(__file__).resolve().parent
+PROJECT = SITE.parent
+ROUTES = {"/data/": PROJECT / "artifacts" / "site-data",
           "/files/": PROJECT / "results"}
 
 

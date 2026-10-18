@@ -1,10 +1,10 @@
-"""Build the data files the public-site mockups read, from the study's own code and tracked results.
+"""Build the data files the site reads, from the study's own code and tracked results.
 
 Run with the project's virtual environment, from the project root:
 
-    artifacts/.venv/Scripts/python design/mockups/build_data.py
+    artifacts/.venv/Scripts/python site/build_data.py
 
-It writes into the ignored artifacts/mockup-data/:
+It writes into the ignored artifacts/site-data/:
 site.json (the tracked results tables the pages show, plus one row per Democratic or Republican
 candidate-year with its attributes, its status at each step and which of the 57 terms it used) and
 excerpts/<n>.json (one short excerpt per candidate-year using term n, with the day its page was saved,
@@ -30,8 +30,8 @@ from bisect import bisect_right
 from collections import Counter, defaultdict
 from pathlib import Path
 
-PROJECT = Path(__file__).resolve().parents[2]
-OUT = PROJECT / "artifacts" / "mockup-data"
+PROJECT = Path(__file__).resolve().parents[1]
+OUT = PROJECT / "artifacts" / "site-data"
 sys.path.insert(0, str(PROJECT / "tools"))
 
 import analyze  # noqa: E402

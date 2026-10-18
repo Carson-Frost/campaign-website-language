@@ -1,2 +1,0 @@
-IBM Plex Sans 1.1.0 (release @ibm/plex-sans@1.1.0) and IBM Plex Mono 2.5.0 (release @ibm/plex-mono@2.5.0),
-from https://github.com/IBM/plex/releases, fonts/complete/woff2. SIL Open Font License 1.1: LICENSE.txt.

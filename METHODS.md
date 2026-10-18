@@ -484,8 +484,8 @@ checked by `tools/test_inference.py` against published and hand-worked values.
 
 **Decision.** A site's text comes from the Common Crawl captures made between January 1 of the election
 year and election day, the latest capture of each page in that span (cc.py --window year). The 60-day
-and 120-day windows are collected the same way and compared in 	ools/windows.py. This applies the rule
-in Amendment 4 of `ANALYSIS_PLAN.md`: the window that saves the most campaign sites, within the election
+and 120-day windows are collected the same way and compared in tools/windows.py. This applies the rule
+in Amendment 4 of the pre-registered analysis plan: the window that saves the most campaign sites, within the election
 year and ending on election day.
 
 **Standard.** None is published. Druckman, Kifer and Parkin coded the ten days before election day,
