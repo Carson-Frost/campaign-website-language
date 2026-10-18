@@ -1,4 +1,4 @@
-"""Serve the public-site mockups on a loopback address.
+"""Serve the public site on a loopback address.
 
 From the project root:
 
@@ -25,8 +25,13 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 PROJECT = HERE.parents[1]
+# The site is the Instrument, the treatment chosen 2026-10-09 and reviewed through 2026-10-13.
+# design/mockups/ is the draft rejected in full on 2026-10-09; it is kept for reference at /mockups/.
+SITE = HERE.parent / "instrument"
 ROUTES = {"/treatments/": HERE.parent / "treatments",
-          "/instrument/": HERE.parent / "instrument",
+          "/instrument/": SITE,
+          "/mockups/data/": PROJECT / "artifacts" / "mockup-data",
+          "/mockups/": HERE,
           "/data/": PROJECT / "artifacts" / "mockup-data",
           "/files/": PROJECT / "results"}
 
@@ -96,6 +101,6 @@ if __name__ == "__main__":
     class Server(http.server.ThreadingHTTPServer):
         request_queue_size = 128   # a page loads several scripts at once; the default of 5 refuses some
 
-    server = Server(("127.0.0.1", port), functools.partial(Handler, directory=str(HERE)))
+    server = Server(("127.0.0.1", port), functools.partial(Handler, directory=str(SITE)))
     print(f"http://127.0.0.1:{port}/")
     server.serve_forever()

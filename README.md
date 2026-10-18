@@ -91,8 +91,9 @@ writes nothing for that candidate-year, so compare the status lines with the pre
 
 ## Public site
 
-`design/` holds the public site, the Instrument interface it is built in, and the four treatments it
-was chosen from. `design/README.md` has the two commands that build its data and serve it. The site
+`design/` holds the public site, which is the Instrument interface in `design/instrument/`, and the
+four treatments it was chosen from. `design/mockups/` is the first draft, rejected on 2026-10-09 and
+kept only for reference. `design/README.md` has the two commands that build its data and serve it. The site
 reads only the tracked `results/` tables, through `design/mockups/build_data.py`.
 
 ## Documents

@@ -6,8 +6,8 @@ The study's public site and the design work behind it. Everything here runs from
 
 | Path | What it is |
 | --- | --- |
-| `mockups/` | The site: `index.html`, `app.js`, `style.css`. One page with hash routes (`#/`, `#/method`, `#/explore`, `#/coverage`, `#/related`, `#/data`). |
-| `instrument/` | The Instrument build of the interface: explorer, charts, filters and drawer. Served at `/instrument/`. |
+| `instrument/` | **The site.** The Instrument build: explorer, charts, filters and drawer. Served at `/` and at `/instrument/`. |
+| `mockups/` | The first mockups, **rejected in full by the owner on 2026-10-09** as bloated and machine-made, before the Instrument treatment was chosen. Kept only as a reference specimen at `/mockups/`; it is not the site and must not be served at `/`. |
 | `treatments/` | The four visual treatments the Instrument was chosen from, one directory each. `treatments/README.md` describes the families and the rules every one follows. |
 | `mockups/build_data.py` | Builds the data the pages read, from `results/` and `tools/`. |
 | `mockups/serve.py` | Serves the site, the built data and the result tables on a loopback address. |
@@ -33,8 +33,9 @@ foreground. It serves:
 
 | Route | From |
 | --- | --- |
-| `/` | `design/mockups/` |
-| `/instrument/` | `design/instrument/` |
+| `/` | `design/instrument/` (the site) |
+| `/instrument/` | `design/instrument/`, the same pages |
+| `/mockups/` | `design/mockups/`, the rejected first draft, reference only |
 | `/treatments/` | `design/treatments/` |
 | `/data/` | `artifacts/mockup-data/`, built by `build_data.py` |
 | `/files/*.csv` | `results/`, as downloads, with independent and third-party rows removed |
