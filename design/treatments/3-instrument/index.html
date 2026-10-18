@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campaign Website Language</title>
+<link rel="preload" href="fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="instrument.css">
+</head>
+<body>
+<header class="topbar">
+  <h1>Campaign Website Language</h1>
+  <span class="status">exploratory results</span>
+</header>
+
+<div class="frame">
+  <aside class="rail" id="rail" aria-label="Filters">
+    <div class="sheet-head">
+      <h2>Filters</h2>
+      <button class="close" type="button" id="sheetDone">Done</button>
+    </div>
+    <section class="grp" aria-labelledby="g-term">
+      <div class="grp-head"><h2 id="g-term">Term</h2></div>
+      <div class="combo">
+        <input id="termInput" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="suggest" placeholder="Add a term" autocomplete="off" aria-labelledby="g-term">
+        <ul class="suggest" id="suggest" role="listbox" aria-label="Terms by theme" tabindex="-1" hidden></ul>
+      </div>
+      <ul class="chosen" id="chosen"></ul>
+    </section>
+    <div id="groups"></div>
+  </aside>
+
+  <main class="main" id="main">
+    <div class="groupline" id="groupline" aria-live="polite"></div>
+    <p class="question">Which words did Democratic and Republican candidates for the House and Senate use on their campaign websites in 2020, 2022, 2024 and 2026?</p>
+
+    <section aria-labelledby="h-pipe">
+      <div class="rh">
+        <h2 id="h-pipe">Pipeline</h2>
+        <div class="aside pipe-key">
+          <span><svg width="20" height="8" aria-hidden="true"><line x1="0" y1="4" x2="20" y2="4" stroke="#858F99"/></svg>dropped by code</span>
+          <span><svg width="20" height="8" aria-hidden="true"><line x1="0" y1="4" x2="20" y2="4" stroke="#56606B" stroke-dasharray="3 3"/></svg>flagged by code, read by hand</span>
+        </div>
+      </div>
+      <div class="pipe pipe-h" id="pipeH"></div>
+      <div class="pipe pipe-v" id="pipeV"></div>
+    </section>
+
+    <section aria-label="Explorer" id="explorer"></section>
+  </main>
+</div>
+
+<aside class="panel closed" id="panel" role="dialog" aria-modal="false" aria-labelledby="panelTitle" tabindex="-1"></aside>
+
+<dialog class="step-dlg" id="stepDlg" aria-labelledby="stepTitle"></dialog>
+
+<script src="../stats.js"></script>
+<script src="instrument.js"></script>
+</body>
+</html>

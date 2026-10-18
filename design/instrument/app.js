@@ -1,0 +1,780 @@
+/* Instrument: the shell and the Explorer. Top bar, ranked table, one-term view, several terms, filters, candidate drawer. */
+(() => {
+"use strict";
+const { S, C, PCOL, PNAME, YEARS, TINY, SMALL, STATES, $, $$, esc, nf, yl } = INS;
+
+INS.views = {};
+const excerptCache = {};
+let query = "";            // the word search above the table; not part of the address
+let filtersOpen = false;
+let opener = null;         // the control that opened the drawer or the filters, to return focus to
+let scrollAt = null;       // the page's scroll position when the drawer opened, restored when it closes
+let lastKey = "";          // the address of the view without its drawer, to tell a drawer change from a new view
+
+/* A word's own note, with the mark that ties it to the word wherever the word is in view: a dagger for Working Families,
+   which is also set on the value it changes, the 2026 Republican share, and only where a site that uses the phrase only as part of
+   "Working Families Tax Cut" (flagged `bill`) is in the group on view. `long` names the word, for views that hold several. */
+const CAVEATS = {
+  freedom: { mark: "‡", text: "In a sample of 20 matches, 17 used the word as intended and 3 were an award or group name. The shares count every match.",
+    long: w => `In a sample of 20 ${w} matches, 17 used the word as intended and 3 were an award or group name. The shares count every match.` },
+  inflation: { mark: "§", text: "Excludes mentions of the Inflation Reduction Act.", long: w => `${w} excludes mentions of the Inflation Reduction Act.` },
+  "working families": { mark: "†", text: "Includes sites that use the phrase only as part of “Working Families Tax Cut,” a bill’s name.",
+    dagger: c => c.y === 2026 && c.p === "R" && INS.group(c.y, c.p).an.some(x => x.bill),
+    long: w => `${w} includes sites that use the phrase only as part of “Working Families Tax Cut,” a bill’s name.` },
+};
+const caveat = ti => CAVEATS[INS.D.terms[ti].term];
+/* A word's mark applies where its note is true of what is drawn: always, or for a dagger, where a drawn value carries it. */
+const markApplies = ti => { const cv = caveat(ti); return !!cv && (!cv.dagger || YEARS.some(y => INS.PARTIES.some(p => { const c = INS.cell(ti, y, p); return c.n && cv.dagger(c); }))); };
+const markFor = ti => (markApplies(ti) ? `<sup class="fn" aria-label="Note">${caveat(ti).mark}</sup>` : "");
+
+/* A change the reader makes to the view (cycle, sort, grouping, filters, possible range) is a step in the history, so
+   Back undoes it and stays on the view. Anything else replaces the address; the drawer's own entry keeps its mark
+   until the drawer is gone. */
+INS.commit = (o = {}) => {
+  const a = INS.addressFor();
+  if (o.push && a !== location.hash) history.pushState(null, "", a);
+  else history.replaceState(S.panel ? history.state : null, "", a);
+  INS.render(o);
+};
+INS.go = addr => { if (location.hash === addr) INS.render(); else location.hash = addr; };
+
+/* ---------- small pieces ---------- */
+const glossLink = (id, text) => `<a class="gl-link" href="#/glossary/${id}">${text}</a>`;
+const analyzedIn = (y, p) => INS.group(y, p).n;
+
+function yearSeg() {
+  return `<div class="seg-wrap"><div class="seg" role="group" aria-label="Cycle">${YEARS.map(y => `<button type="button" data-year="${y}" aria-pressed="${S.year === y}"${y === 2026 ? ' class="y26"' : ""}>${yl(y)}</button>`).join("")}</div>${S.year === 2026 ? `<span class="asof">${asOf()}</span>` : ""}</div>`;
+}
+function toggle(id, label, on, hint) {
+  return `<label class="check" for="${id}"${hint ? ` title="${esc(hint)}"` : ""}><input type="checkbox" id="${id}"${on ? " checked" : ""}><span class="box" aria-hidden="true"></span><span>${label}</span></label>`;
+}
+function filtersButton() {
+  const n = INS.GROUPS.filter(g => S.f[g.key].size).length;
+  return `<button type="button" class="btn" id="filtersBtn" aria-haspopup="dialog" aria-expanded="${filtersOpen}" aria-controls="filters">Filters${n ? `<span class="badge">${n}</span>` : ""}</button>`;
+}
+/* The active filters as removable chips. */
+function chips() {
+  const out = [];
+  INS.GROUPS.forEach(g => [...S.f[g.key]].forEach(v => {
+    const label = g.key === "state" ? STATES[v] : g.byV[v].label;
+    out.push(`<button type="button" class="chip" data-unfilter="${g.key}:${v}" aria-label="Remove filter ${esc(label)}">${esc(label)}<svg width="9" height="9" aria-hidden="true"><path d="M1 1 L8 8 M8 1 L1 8" stroke="currentColor" stroke-width="1.5"/></svg></button>`);
+  }));
+  return out.join("");
+}
+
+/* ---------- filters popover ---------- */
+function optCounts(g) {
+  const years = S.terms.length === 0 ? [S.year] : YEARS;
+  const base = INS.D.candidates.filter(c => c.status === "analyzed" && years.includes(c.year) && INS.match(c, g.key));
+  return g.opts.map(o => base.filter(o.test).length);
+}
+function renderFilters() {
+  const el = $("#filters");
+  el.hidden = !filtersOpen;
+  $("#fscrim").hidden = !filtersOpen;
+  if (!filtersOpen) { el.innerHTML = ""; return; }
+  const keep = $(".fscroll", el), at = keep ? keep.scrollTop : 0;   // a choice redraws the list; it stays where the reader was
+  const group = g => {
+    const counts = optCounts(g);
+    const tot = INS.D.candidates.filter(c => c.status === "analyzed" && (S.terms.length ? true : c.year === S.year) && INS.match(c, g.key)).length;
+    const left = tot - counts.reduce((a, b) => a + b, 0);
+    const dead = counts.every(n => !n) && !g.opts.some(o => S.f[g.key].has(o.v));   // a group with nothing to choose in this cycle
+    return `<fieldset class="fgrp"${dead ? " disabled" : ""}><legend>${g.key === "seat" ? glossLink("close-seat", g.label) : g.label}</legend>${g.opts.map((o, i) => `<label class="opt${counts[i] ? "" : " zero"}">
+      <input type="checkbox" data-g="${g.key}" value="${o.v}"${S.f[g.key].has(o.v) ? " checked" : counts[i] ? "" : " disabled"}><span class="box" aria-hidden="true"></span>
+      <span class="lab">${esc(o.label)}</span><span class="cnt">${nf(counts[i])}<span class="vh"> analyzed</span></span></label>`).join("")}${left > 0 && g.key !== "office" && g.key !== "inc" ? `<p class="fleft">${nf(left)} with no ${g.key === "seat" ? "seat rating" : "result"}</p>` : ""}</fieldset>`;
+  };
+  const sg = INS.GROUPS.find(g => g.key === "state"), sc = optCounts(sg);
+  const any = INS.filtered();
+  const years = S.terms.length === 0 ? yl(S.year) : "All Cycles";
+  el.innerHTML = `<div class="fscroll"><div class="fhead"><h2 id="fTitle">Filters</h2><span class="fnote">Analyzed Candidates in ${esc(years)}${INS.filtered() ? " Matching the Other Filters" : ""}</span></div>
+    <div class="fgrid">${["office", "inc", "seat", "won"].map(k => group(INS.GROUPS.find(g => g.key === k))).join("")}</div>
+    <div class="fstate"><label for="stateSel">State</label>
+      <select id="stateSel"><option value="">Add State</option>${sg.opts.map((o, i) => (S.f.state.has(o.v) ? "" : `<option value="${o.v}">${esc(o.label)} (${sc[i]})</option>`)).join("")}</select></div></div>
+    <div class="ffoot"><button type="button" class="textbtn" id="fClear"${any ? "" : " disabled"}>Clear All</button><button type="button" class="btn dark" id="fDone">Done</button></div>`;
+  const box = $(".fscroll", el); if (box) box.scrollTop = at;
+}
+function openFilters(from) { opener = from || null; filtersOpen = true; renderFilters(); positionFilters(); const f = $("#filters input, #filters select"); if (f) f.focus(); const b = $("#filtersBtn"); if (b) b.setAttribute("aria-expanded", "true"); }
+function closeFilters(refocus = true) {
+  filtersOpen = false; renderFilters();
+  const b = $("#filtersBtn"); if (b) { b.setAttribute("aria-expanded", "false"); if (refocus) b.focus(); }
+}
+function positionFilters() {
+  const el = $("#filters"), b = $("#filtersBtn");
+  if (!b || INS.isPhone()) { el.style.left = el.style.top = el.style.width = el.style.maxHeight = ""; return; }
+  /* Fixed under its button, kept inside the window: the height left below the button is the most it takes, and its list scrolls. */
+  const r = b.getBoundingClientRect(), w = Math.min(520, innerWidth - 32), bar = $("#topbar").offsetHeight;
+  const top = Math.max(bar + 8, r.bottom + 6);
+  el.style.width = w + "px";
+  el.style.left = Math.max(16, Math.min(r.left, innerWidth - w - 16)) + "px";
+  el.style.top = top + "px";
+  el.style.maxHeight = Math.max(160, innerHeight - top - 16) + "px";
+}
+
+/* ---------- chips and notes ---------- */
+const pn = p => `<span class="pn ${p}">${PNAME[p]}</span>`;
+function groupLine() {
+  const c = chips();
+  return c ? `<div class="scope">${c}</div>` : "";
+}
+/* The foot of a view: footnotes, each its own short paragraph, then the source. A mark in the view (a dagger, an
+   asterisk) points to its note; a note that holds for the whole view has no mark. Nothing that qualifies a view sits
+   above it or around its chart. */
+function notebook() {
+  const lines = [], marks = [];
+  return {
+    add(html) { if (html && !lines.includes(html)) lines.push(html); },
+    mark(m, html) { if (!marks.some(x => x[0] === m)) marks.push([m, html]); },
+    html() {
+      marks.sort((a, b) => (/^\d$/.test(b[0]) ? 1 : 0) - (/^\d$/.test(a[0]) ? 1 : 0));   // the numbered notes first
+      return `<footer class="notes">${lines.map(x => `<p>${x}</p>`).join("")}${marks.map(([m, h]) => `<p><span class="fk">${m}</span>${h}</p>`).join("")}${sourceLine()}</footer>`;
+    },
+  };
+}
+/* Every site's copy is the newest saved from January 1 through election day (for 2026, through the date its figures reach),
+   and some analyzed 2024 sites have a newest copy saved on election day itself; one analyzed 2024 site has Wayback Machine copies
+   only. The age of a copy runs from 0 days to months, so it is said as what can be, not as what always is. */
+const sourceLine = () => `<p class="src">Source: Common Crawl copies of campaign websites, and for one site Wayback Machine copies, each the newest saved from January 1 through election day or, for 2026, through ${INS.fmtDate(INS.through2026)}. A copy can be weeks to months old. Results are ${glossLink("exploratory", "exploratory")}. <a class="gl-link" href="#/method">Method</a></p>`;
+/* Notes 1 and 2 are marked on the Gap and Adjusted P-Value heads (and on a phone's labels), so a reader meets the key
+   at the figure it explains. */
+const GAPMARK = "1", PMARK = "2";
+const ROUNDED = "from unrounded shares, so it can differ by a point from the difference of the shares shown";
+/* The sentence on rounding is said once in a foot: with the Change line when both are there, else in the note of the one that is. */
+const gapNote = withChange => `Gap is Democratic minus Republican${withChange ? "" : ", " + ROUNDED}. <span class="pn D">D+</span>&nbsp;is higher Democratic, <span class="pn R">R+</span>&nbsp;higher Republican; a gap in italics may be chance.`;
+const noteMark = m => `<sup class="fn" aria-label="Note ${m}">${m}</sup>`;
+const changeDef = (total, withGap) => `Change is a party’s share minus its share in the previous cycle${withGap ? "" : ", " + ROUNDED}. A change in italics may be chance.${withGap ? " Change and Gap come from unrounded shares, so either can differ by a point from the difference of the shares shown." : ""}${total ? ` <span class="tcnote">Total Change is the same figure for both parties’ candidates together.</span>` : ""}`;
+const pNote = () => `${glossLink("adjusted-p-value", "Adjusted P-Value")}: no more than this share of gaps at least this strong are expected to be only chance, assuming one term’s result does not affect another’s. Smaller is stronger evidence. It is adjusted across all terms, with 2020, 2022 and 2024 together and 2026 apart.`;
+const rangeNote = () => `${glossLink("possible-range", "Possible Range")} is the lowest and highest share of all candidates with a website that could have used the term, in each party and cycle: lowest if none of those with no analyzed text did, highest if every one did. It counts the candidates not analyzed and does not measure chance, so it is not an interval of the same kind as the ${glossLink("interval", "95% Interval")} and can be narrower.`;
+const starNote = () => "Fewer than 30 analyzed candidates, so one candidate moves a share by 3% or more.";
+/* What a share is, for the offices in view: a filter on one office narrows the candidates named. A group of under ten
+   analyzed candidates shows a count in place of a share, so the line says which each view shows. */
+const SHARE_BASE = () => { const o = [...S.f.office]; return `analyzed ${o.length === 1 ? o[0] : "House and Senate"} candidates whose campaign website used the term at least once`; };
+const shareDef = mode => mode === "count" ? `Number of ${SHARE_BASE()}.`
+  : `Share of ${SHARE_BASE()}${mode === "mixed" ? ", or the number where fewer than ten were analyzed" : ""}.`;
+const smallCell = y => INS.PARTIES.some(p => { const n = INS.group(y, p).n; return n > 0 && n < TINY; });
+/* The date the 2026 figures reach is said beside the cycle only while 2026 is the cycle on view, and under 2026 in a chart, a cycle table and the drawer. */
+const asOf = () => `As of ${INS.fmtDate(INS.through2026)}`;
+/* What the shares rest on: the analyzed candidates of each party and those left out. */
+const basisNote = y => {
+  const g = INS.PARTIES.map(p => INS.group(y, p)), lost = g.map(x => x.B - x.n);
+  const out = lost[0] + lost[1] > 0 ? ` Not analyzed: ${nf(lost[0])} Democratic and ${nf(lost[1])} Republican. ${glossLink("not-analyzed", "Reasons for Not Analyzing")}.` : "";
+  return `Analyzed: ${nf(g[0].n)} Democratic and ${nf(g[1].n)} Republican ${g[1].n === 1 ? "candidate" : "candidates"}.${out}`;
+};
+
+/* ---------- cells ---------- */
+const tipFor = (c, o = {}) => {
+  const lo = Math.round(c.ci[0] * 100), hi = Math.round(c.ci[1] * 100);
+  const cv = CAVEATS[INS.D.terms[c.ti].term];
+  return `${PNAME[c.p]}, ${yl(c.y)}\n${c.k} of ${c.n} analyzed candidates` + (c.n >= TINY ? `\n95% Interval ${lo} to ${hi}%` : "")
+    + (o.range && c.range && c.n >= TINY ? `\nPossible Range ${c.rangePct[0]} to ${c.rangePct[1]}%` : "")
+    + (o.dagger && o.dagger(c) && cv ? `\n${cv.mark} ${cv.text}` : "") + "\nSelect to list the candidates";
+};
+function shareBtn(c, o = {}) {
+  if (!c || !c.n) return `<span class="na" role="img" aria-label="not analyzed">—</span>`;
+  const val = c.n < TINY ? `${c.k} of ${c.n}` : INS.pctOf(c.k, c.n), text = val + INS.starFor(c);
+  const on = S.panel && S.panel.ti === c.ti && S.panel.y === c.y && S.panel.p === c.p ? " on" : "";
+  const dag = o.dagger && o.dagger(c) ? `<span class="dag">†</span>` : "";
+  const lab = `${PNAME[c.p]}, ${yl(c.y)}: ${c.n < TINY ? val : `${val} of ${c.n}`} analyzed candidates` + (INS.starFor(c) ? ", fewer than 30 analyzed" : "") + (c.n >= TINY ? `, 95% Interval ${Math.round(c.ci[0] * 100)} to ${Math.round(c.ci[1] * 100)}%` : "") + `. Show the candidates`;
+  return `<button type="button" class="share${c.n < SMALL ? " small" : ""}${on}" style="${o.style || ""}" data-panel="${INS.tslug(c.ti)}.${c.y}.${c.p}" data-tip="${esc(tipFor(c, o))}" aria-label="${esc(lab)}">${text}${dag}</button>`;
+}
+/* A party's move from the previous cycle, as a percent, beside its share; set in italics where its interval includes zero. */
+function chgEl(ch) {
+  if (!ch) return "";
+  const t = INS.diff(ch.a.k, ch.a.n, ch.b.k, ch.b.n), lo = INS.signedPts(ch.ci[0]), hi = INS.signedPts(ch.ci[1]);
+  const tip = `Change from ${yl(ch.from)}\nChange Interval ${lo}% to ${hi}%` + (ch.weak ? "\nIn italics: the Change Interval includes zero" : "");
+  const dir = t.sign > 0 ? "Up" : t.sign < 0 ? "Down" : "No change,";
+  return `<span class="chg${ch.weak ? " weak" : ""}" tabindex="0" role="img" data-tip="${esc(tip)}" aria-label="${dir}${t.sign ? ` ${String(t.text).replace(/^[+−]/, "")} percent` : ""} from ${yl(ch.from)}${ch.weak ? ", may be chance" : ""}">${t.text}%</span>`;
+}
+/* One party's cell in the ranked table: a bar from 0 to 100% with its value at the end. */
+function barCell(c, p, o = {}) {
+  const tag = `<span class="tag ${p}" aria-hidden="true">${PNAME[p]}</span>`;
+  if (!c || !c.n) return `${tag}<span class="na" role="img" aria-label="not analyzed">—</span>`;
+  if (c.n < TINY) return `${tag}${shareBtn(c, o)}`;
+  const w = c.share * 100;
+  return `${tag}<span class="barwrap"><span class="bars"><i style="width:${w.toFixed(1)}%"></i><span class="vlab" style="left:calc(${w.toFixed(1)}% + 9px)">${shareBtn(c, o)}${chgEl(o.chg)}</span></span></span>`;
+}
+/* A gap is weak, and set in italics, when its Gap Interval includes zero or its adjusted p-value is 0.05 or more. */
+const weakGap = g => g.ci[0] <= 0 && g.ci[1] >= 0 || (g.q !== null && g.q >= 0.05);
+/* The gap in the ranked table is a button: selecting it, or focusing it, shows its Gap Interval and adjusted p-value. */
+function gapEl(g, d, r) {
+  if (!g) return `<span class="na" role="img" aria-label="not analyzed">—</span>`;
+  if (g.tiny) return `<span class="muted">Too Few Candidates</span>`;
+  const t = INS.diff(d.k, d.n, r.k, r.n), mag = t.text.replace(/^[+−]/, "");
+  const who = t.sign > 0 ? "D" : t.sign < 0 ? "R" : null;
+  const weak = weakGap(g);
+  const iv = `Gap Interval ${INS.partyPts(g.ci[0])} to ${INS.partyPts(g.ci[1])}`, q = g.q !== null ? `Adjusted P-Value ${INS.fmtQ(g.q)}` : "";
+  const why = g.ci[0] <= 0 && g.ci[1] >= 0 ? "the Gap Interval includes zero" : "the adjusted p-value is 0.05 or more";
+  const tip = `Gap, Democratic Minus Republican\n${iv}` + (q ? `\n${q}` : "") + (weak ? `\nIn italics: ${why}` : "");
+  const lab = (who ? `${PNAME[who]} candidates higher by ${mag} points` : "No gap") + `. ${iv[0].toUpperCase() + iv.slice(1)}` + (q ? `. ${q}` : "") + (weak ? `. In italics because ${why}` : "") + ".";
+  return `<button type="button" class="gp ${who || ""}${g.small ? " small" : ""}${weak ? " weak" : ""}" data-tip="${esc(tip)}" aria-label="${esc(lab)}">${who ? `${who}+${mag}` : "0"}</button>`;
+}
+
+/* ---------- the ranked table ---------- */
+function modelRows(termIdx) {
+  const y = S.year;
+  const ids = termIdx || INS.D.terms.map((t, i) => i);
+  return ids.map(ti => {
+    const d = INS.cell(ti, y, "D"), r = INS.cell(ti, y, "R");
+    const k = d.k + r.k, n = d.n + r.n;
+    const dc = INS.changeOf(ti, y, "D"), rc = INS.changeOf(ti, y, "R"), tc = INS.changeTotal(ti, y);
+    return { ti, theme: INS.D.terms[ti].theme, d, r, dc, rc, tc, g: INS.gapOf(d, r, ti, y), prom: n ? k / n : null };
+  });
+}
+const SORT_NAMES = { prom: "Most Used Overall", d: "Democratic Share", r: "Republican Share", gap: "Most Democratic Gap", gapr: "Most Republican Gap", dchg: "Democratic Change", rchg: "Republican Change", tchg: "Total Change", name: "Alphabetical" };
+/* What the table can show this year under these filters: a count-only table has no gap. */
+function tableFacts(pool) {
+  const y = S.year, rows = modelRows();
+  const counts = INS.PARTIES.every(p => INS.group(y, p).n < TINY);   // nothing to draw: shares are counts
+  const noGap = counts || !rows.some(x => x.g && !x.g.tiny);         // no word has a gap to show: the column is left out
+  // a change column is left out, like the gap, when no word shown has a value in it; its sort goes with it
+  const chgRows = pool || rows, can = !counts && y !== INS.YEARS[0];
+  const dc = can && chgRows.some(x => x.dc), rc = can && chgRows.some(x => x.rc), tc = can && chgRows.some(x => x.tc);
+  const hasChg = dc || rc || tc;
+  const sorts = ["prom", "d", "r"].concat(noGap ? [] : ["gap", "gapr"], dc ? ["dchg"] : [], rc ? ["rchg"] : [], tc ? ["tchg"] : [], ["name"]);
+  return { y, counts, noGap, hasChg, dc, rc, tc, sorts, sort: sorts.includes(S.sort) || S.sort === "gap" && sorts.includes("gapr") ? S.sort : "prom" };
+}
+function sortRows(rows, sort = S.sort) {
+  const key = { prom: x => x.prom, d: x => (x.d.n ? x.d.share : null), r: x => (x.r.n ? x.r.share : null), gap: x => (x.g ? INS.key(x.g.v) : null), dchg: x => (x.dc ? INS.key(x.dc.v) : null), rchg: x => (x.rc ? INS.key(x.rc.v) : null), tchg: x => (x.tc ? INS.key(x.tc.v) : null), name: x => INS.dn(x.ti).replace(/[“”]/g, "").toLowerCase() }[sort];
+  const sign = S.dir === "desc" ? -1 : 1;
+  if (sort === "name") return rows.slice().sort((a, b) => key(a).localeCompare(key(b)) * sign || a.ti - b.ti);
+  return rows.slice().sort((a, b) => {
+    const A = key(a), B = key(b);
+    if (A === null && B === null) return a.ti - b.ti;
+    if (A === null) return 1; if (B === null) return -1;
+    return (A - B) * sign || a.ti - b.ti;
+  });
+}
+
+/* The table. ordered: the rows keep the order given, as when they follow the charts above them. Its notes go to the
+   notebook `fn`, which the caller sets at the foot of the view. */
+function tableHTML(rows, fn, ordered = false) {
+  const { y, counts, noGap, hasChg, dc, rc, tc, sort } = tableFacts(ordered ? rows : undefined);
+  /* A head is a button that sorts by its column; a second press turns the order round. Nothing is sorted by a head
+     while the order is Most Used Overall, which no column holds. */
+  const sh = (k, label, mark = "") => {
+    const cls = { name: "first", d: "ph D", r: "ph R", gap: "gaph", dchg: "chgh D", rchg: "chgh R", tchg: "chgh T" }[k];
+    if (ordered) return `<th class="${cls}" scope="col">${label}${mark}`;
+    const on = S.sort === k && sort === k;
+    return `<th class="${cls}" scope="col"${on ? ` aria-sort="${S.dir === "asc" ? "ascending" : "descending"}"` : ""}>`
+      + `<button type="button" class="sorth" data-sort="${k}"><span>${label}${mark}</span><span class="arr" aria-hidden="true"></span></button>`;
+  };
+  const head = `<thead><tr>${sh("name", "Term")}</th>
+      ${sh("d", "Democratic")}</th>${dc ? `${sh("dchg", "Change")}</th>` : ""}${sh("r", "Republican")}</th>${rc ? `${sh("rchg", "Change")}</th>` : ""}${tc ? `${sh("tchg", "Total Change")}</th>` : ""}${noGap ? "" : `${sh("gap", "Gap", noteMark(GAPMARK))}</th>`}</tr></thead>`;
+  const row = x => {
+    const dag = caveat(x.ti) && caveat(x.ti).dagger;
+    const link = INS.addressFor({ terms: [x.ti], panel: null });
+    return `<tr><th scope="row" class="first"><a href="${link}">${esc(INS.dn(x.ti))}</a></th>
+      <td class="pcell D"><div class="pc D">${barCell(x.d, "D", { dagger: dag, chg: x.dc })}</div></td>${dc ? `<td class="chgc D">${chgEl(x.dc)}</td>` : ""}
+      <td class="pcell R"><div class="pc R">${barCell(x.r, "R", { dagger: dag, chg: x.rc })}</div></td>${rc ? `<td class="chgc R">${chgEl(x.rc)}</td>` : ""}${tc ? `<td class="chgc T">${chgEl(x.tc)}</td>` : ""}
+      ${noGap ? "" : `<td class="gapc"><span class="flab">Gap${noteMark(GAPMARK)}</span>${gapEl(x.g, x.d, x.r)}</td>`}</tr>`;
+  };
+  let body = "";
+  if (ordered) body = rows.map(row).join("");
+  else if (S.theme) {
+    const themes = [...new Set(rows.map(x => x.theme))];
+    const order = [...new Set(INS.D.terms.map(t => t.theme))].filter(t => themes.includes(t));
+    order.forEach(t => {
+      body += `<tr class="theme-row"><th colspan="${3 + (dc ? 1 : 0) + (rc ? 1 : 0) + (tc ? 1 : 0)}" scope="colgroup">${esc(cap(t))}</th>${noGap ? "" : `<td class="gapc"></td>`}</tr>`;
+      body += sortRows(rows.filter(x => x.theme === t), sort).map(row).join("");
+    });
+  } else body = sortRows(rows, sort).map(row).join("");
+  const g = INS.PARTIES.map(p => INS.group(y, p));
+  fn.add(basisNote(y) + " Select a value to list its candidates.");
+  if (noGap) fn.add(`Fewer than ten analyzed candidates in a party, so its results are counts${g.some(x => !x.n) ? ", or a dash if none" : ""}, and a gap needs ten or more in both.`);
+  else { if (hasChg) fn.add(changeDef(tc, true)); fn.mark(GAPMARK, gapNote(hasChg)); }
+  if (hasChg && noGap) fn.add(changeDef(tc, false));
+  if (g.some(x => x.n >= TINY && x.n < SMALL)) fn.mark("*", starNote());
+  rows.forEach(x => {
+    const cv = caveat(x.ti);
+    if (cv && cv.dagger && INS.PARTIES.some(p => cv.dagger({ y, p }))) fn.mark(cv.mark, cv.long(esc(INS.dn(x.ti))));
+  });
+  return `<table class="rank${hasChg ? " hc" : ""}${counts ? " counts" : ""}${noGap ? " nogap" : ""}${y === 2026 ? " y26" : ""}">${head}<tbody>${body}</tbody></table>`;
+}
+
+function emptyHTML(years = [S.year]) {
+  const base = INS.D.candidates.filter(c => years.includes(c.year) && c.status === "analyzed");
+  const when = years.length === 1 ? yl(years[0]) : "any cycle";
+  const opts = [];
+  INS.GROUPS.forEach(g => [...S.f[g.key]].forEach(v => {
+    const keep = c => INS.GROUPS.every(h => { const sel = [...S.f[h.key]].filter(x => !(h.key === g.key && x === v)); return sel.length === 0 || sel.some(x => h.byV[x].test(c)); });
+    const n = base.filter(keep).length;
+    const label = g.key === "state" ? STATES[v] : g.byV[v].label;
+    opts.push(`<li><button type="button" class="textbtn" data-unfilter="${g.key}:${v}">Remove ${esc(label)}</button> <span class="muted">${nf(n)} analyzed candidates would match</span></li>`);
+  }));
+  const all = INS.D.candidates.filter(c => years.includes(c.year) && INS.match(c)).length;
+  return `<div class="empty"><h2>No Matching Candidates</h2><p>${all ? `${nf(all)} ${all === 1 ? "candidate matches" : "candidates match"} in ${when}, but no site text was analyzed. A missing site is not a zero.` : "No Democratic or Republican candidate matches these filters."}</p>${opts.length ? `<ul>${opts.join("")}</ul>` : ""}</div>`;
+}
+
+function tableBlock(termIdx, fn, ordered = false) {
+  const rows = modelRows(termIdx);
+  const q = query.trim().toLowerCase();
+  const shown = q ? rows.filter(x => INS.dn(x.ti).toLowerCase().includes(q)) : rows;
+  const none = INS.PARTIES.every(p => !INS.group(S.year, p).n);
+  if (none) return emptyHTML();
+  if (!shown.length) return `<p class="nomatch">No term matches “${esc(query)}”.</p>`;
+  return tableHTML(shown, fn, ordered);
+}
+/* The ranked table with its own foot, as the opening view and its search draw it. */
+function tableWithFoot() {
+  const fn = notebook(), t = tableBlock(null, fn);
+  return t.startsWith("<table") ? t + fn.html() : t;
+}
+
+function controlsTable(f, none) {
+  return `<div class="controls">
+    ${yearSeg()}
+    <div class="find"><label class="vh" for="termQ">Term Search</label><input id="termQ" type="search" placeholder="Term Search" autocomplete="off" value="${esc(query)}"></div>
+    ${filtersButton()}
+    ${none ? "" : `<div class="sortsel"><label class="vh" for="sortSel">Sort</label><select id="sortSel">${f.sorts.map(k => `<option value="${k}"${(f.sort === "gap" && S.dir === "asc" ? "gapr" : f.sort) === k ? " selected" : ""}>Sort: ${SORT_NAMES[k]}</option>`).join("")}</select></div>
+    <div class="opts">${toggle("byTheme", "By Theme", S.theme)}</div>`}
+  </div>`;
+}
+
+function renderTable(host) {
+  const f = tableFacts();
+  const none = INS.PARTIES.every(p => !INS.group(S.year, p).n);
+  host.innerHTML = `<h1 class="title">Terms on Democratic and Republican Candidate Websites</h1>
+    ${none ? "" : `<p class="sub">${shareDef(f.counts ? "count" : smallCell(S.year) ? "mixed" : "share")}</p>`}
+    ${controlsTable(f, none)}
+    <div id="groupline">${groupLine()}</div>
+    <div id="tablehost">${tableWithFoot()}</div>`;
+}
+
+/* ---------- one word ---------- */
+const backLink = href => `<a class="back" href="${href}"><svg width="12" height="10" aria-hidden="true"><path d="M11 5 H2 M5.5 1 L1.5 5 L5.5 9" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>All Terms</a>`;
+function compareSelect(exclude) {
+  const themes = [...new Set(INS.D.terms.map(t => t.theme))];
+  return `<div class="addword"><label class="vh" for="addSel">Compare with Another Term</label><select class="addsel" id="addSel"><option value="">Compare with Another Term</option>
+    ${themes.map(th => `<optgroup label="${esc(cap(th))}">${INS.D.terms.map((t, i) => (t.theme === th && !exclude.includes(i) ? `<option value="${i}">${esc(INS.dn(i).replace(/[“”]/g, ""))}</option>` : "")).join("")}</optgroup>`).join("")}</select></div>`;
+}
+const ofN = c => (c && c.n >= TINY ? `<span class="of">${nf(c.n)} Analyzed Candidates</span>` : "");
+function cycleTable(ti, has) {
+  const cv = caveat(ti);
+  const all = YEARS.map(y => {
+    const d = INS.cell(ti, y, "D"), r = INS.cell(ti, y, "R");
+    return { y, d, r, g: INS.gapOf(d, r, ti, y) };
+  });
+  const rows = all.filter(x => x.d.n || x.r.n), none = all.filter(x => !x.d.n && !x.r.n).map(x => yl(x.y));
+  const showQ = rows.some(x => x.g && x.g.q !== null);
+  const showGap = rows.some(x => x.g && !x.g.tiny);
+  const g2 = x => {
+    if (!x.g) return { gap: `<span class="na" role="img" aria-label="not analyzed">—</span>`, ci: "" };
+    if (x.g.tiny) return { gap: `<span class="muted">Too Few Candidates</span>`, ci: "" };
+    const t = INS.diff(x.d.k, x.d.n, x.r.k, x.r.n), mag = t.text.replace(/^[+−]/, "");
+    const who = t.sign > 0 ? "D" : t.sign < 0 ? "R" : null;
+    return { gap: `<span class="gp ${who || ""}${x.g.small ? " small" : ""}${weakGap(x.g) ? " weak" : ""}">${who ? `${who}+${mag}` : "0"}</span>`, ci: `${INS.partyPts(x.g.ci[0])} to ${INS.partyPts(x.g.ci[1])}` };
+  };
+  const cell = c => `<td class="fig ${c.p}"><span class="sv"><span class="tag ${c.p}" aria-hidden="true">${PNAME[c.p]}</span>${shareBtn(c, { dagger: cv && cv.dagger, range: INS.showRange() })}${chgEl(INS.changeOf(ti, c.y, c.p))}</span>${ofN(c)}</td>`;
+  const hasChg = rows.some(x => INS.changeOf(ti, x.y, "D") || INS.changeOf(ti, x.y, "R"));
+  const tr = x => `<tr class="${x.y === 2026 ? "y26" : ""}"><th scope="row" class="first"><span class="yr">${yl(x.y)}</span>${x.y === 2026 && !has ? `<span class="of nf">${asOf()}</span>` : ""}</th>
+    ${cell(x.d)}${cell(x.r)}
+    ${showGap ? (g => `<td class="gapt"><span class="flab">Gap${noteMark(GAPMARK)} </span>${g.gap}</td><td class="cit">${g.ci ? `<span class="flab">Gap Interval </span><span class="nw">${g.ci}</span>` : ""}</td>`)(g2(x)) : ""}${showQ ? `<td class="fig q">${x.g && x.g.q !== null ? `<span class="flab">Adjusted P-Value${noteMark(PMARK)} </span>${INS.fmtQ(x.g.q)}` : ""}</td>` : ""}</tr>`;
+  const dash = rows.some(x => !x.d.n || !x.r.n);
+  return { showGap, showQ, none, dash, hasChg, html: `<table class="rank cyc"><thead>
+    <tr><th class="first" scope="col">Cycle</th><th class="ph D" scope="col">Democratic</th><th class="ph R" scope="col">Republican</th>
+      ${showGap ? `<th class="gaph" scope="col">Gap${noteMark(GAPMARK)}</th><th class="gaph ciph" scope="col">Gap Interval</th>` : ""}${showQ ? `<th class="qh" scope="col">Adjusted P-Value${noteMark(PMARK)}</th>` : ""}</tr></thead>
+    <tbody>${rows.map(tr).join("")}</tbody></table>` };
+}
+
+function renderTerm(host) {
+  const ti = S.terms[0], cv = caveat(ti);
+  const w = Math.max(280, Math.round($("#view").clientWidth || (innerWidth - 2 * (INS.isPhone() ? 16 : 32))));
+  const data = INS.lineData(ti);
+  const has = INS.lineHasData(data);
+  const any = YEARS.some(y => INS.PARTIES.some(p => INS.group(y, p).n));
+  const chartHTML = has ? INS.lineChart(ti, w, { range: INS.showRange(), dagger: cv && cv.dagger, asof: INS.PARTIES.some(p => INS.group(2026, p).n >= INS.TINY) ? asOf() : "" }) : "";
+  const key = `<div class="chartkey"><span><i class="band" aria-hidden="true"></i>${glossLink("interval", "95% Interval")}</span>${toggle("rangeTg", `${INS.showRange() ? `<i class="band wide" aria-hidden="true"></i>` : ""}Possible Range`, INS.showRange())}</div>`;
+  const undrawn = INS.PARTIES.map(p => ({ p, ys: YEARS.filter(y => { const c = INS.cell(ti, y, p); return c.n > 0 && c.n < TINY; }) })).filter(x => x.ys.length);
+  const ct = any ? cycleTable(ti, has) : null;
+  /* The word's own mark follows its title; a word whose note is set on a value shows it only where that value is drawn. */
+  const markShown = markApplies(ti);
+  const fn = notebook();
+  if (any) fn.add("Select a value to list its candidates.");
+  if (markShown) fn.mark(cv.mark, esc(cv.text));
+  if (has && INS.showRange()) fn.add(rangeNote());
+  if (has && undrawn.length) fn.add("A party and cycle with fewer than ten analyzed candidates is not drawn and has no gap.");
+  if (!has && any) fn.add(`Fewer than ten analyzed candidates in every party and cycle, so results are counts and have no gap.${ct.dash ? " A dash means none were analyzed, not zero." : ""}`);
+  if (ct && ct.none.length) fn.add(`No analyzed candidates in ${ct.none.length > 1 ? `${ct.none.slice(0, -1).join(", ")} or ${ct.none[ct.none.length - 1]}` : ct.none[0]} with these filters.`);
+  if (ct && ct.hasChg) fn.add(changeDef(false, ct.showGap));
+  if (ct && ct.showGap) fn.mark(GAPMARK, gapNote(ct.hasChg));
+  if (ct && ct.showQ) fn.mark(PMARK, pNote());
+  if (YEARS.some(y => INS.PARTIES.some(p => INS.starFor(INS.cell(ti, y, p))))) fn.mark("*", starNote());
+  host.innerHTML = `<div class="crumb">${backLink(INS.addressFor({ terms: [], panel: null }))}</div>
+    <h1 class="title t1">${esc(INS.dn(ti))}${markShown ? markFor(ti) : ""}</h1>
+    <p class="sub">${shareDef(!any ? "share" : !has ? "count" : YEARS.some(smallCell) ? "mixed" : "share")}</p>
+    <div class="controls">${filtersButton()}${compareSelect([ti])}</div>
+    <div id="groupline">${groupLine()}</div>
+    ${!any ? emptyHTML(YEARS) : `${has ? `<div class="chartbox" id="chartbox">${chartHTML}</div>${key}` : ""}
+    <div class="cycles">${ct.html}</div>${fn.html()}`}`;
+}
+
+/* ---------- several words ---------- */
+function renderTerms(host) {
+  // one column on a phone, two to 860 px, three above; a chart fills its column less the padding that sets the columns apart
+  const cols = innerWidth <= 760 ? 1 : innerWidth <= 860 ? 2 : 3, vw = $("#view").clientWidth || innerWidth - 64;
+  const w = cols === 1 ? Math.max(260, vw) : Math.floor(vw / cols - 28);
+  const shown = [];
+  // the charts of one view share a height: the greatest any of them needs to keep its labels clear
+  const mo = ti => ({ mini: true, range: false, dagger: (caveat(ti) || {}).dagger });
+  const drawnTi = S.terms.filter(ti => INS.lineHasData(INS.lineData(ti)));
+  const oneLine = drawnTi.every(ti => INS.lineOneLine(ti, w, mo(ti)));
+  const hh = Math.max(0, ...drawnTi.map(ti => INS.lineChartHeight(ti, w, Object.assign(mo(ti), { oneLine }))));
+  const cards = S.terms.map(ti => {
+    const data = INS.lineData(ti), has = INS.lineHasData(data);
+    if (has) shown.push(ti);
+    return `<figure class="multiple"><figcaption><a href="${INS.addressFor({ terms: [ti], panel: null })}">${esc(INS.dn(ti))}${has ? markFor(ti) : ""}</a>
+      <button type="button" class="rm" data-rm="${ti}" aria-label="Remove ${esc(INS.dn(ti))}"><svg width="10" height="10" aria-hidden="true"><path d="M1 1 L9 9 M9 1 L1 9" stroke="currentColor" stroke-width="1.5"/></svg></button></figcaption>
+      ${has ? INS.lineChart(ti, w, Object.assign(mo(ti), { h: hh, oneLine })) : `<p class="nochart">Fewer than ten analyzed candidates in every group</p>`}</figure>`;
+  }).join("");
+  const fn = notebook();
+  S.terms.forEach(ti => { const cv = caveat(ti); if (cv && markApplies(ti) && INS.lineHasData(INS.lineData(ti))) fn.mark(cv.mark, cv.long(esc(INS.dn(ti)))); });
+  if (shown.some(ti => YEARS.some(y => INS.PARTIES.some(p => INS.starFor(INS.cell(ti, y, p)))))) fn.mark("*", starNote());
+  const tbl = tableBlock(S.terms, fn, true);
+  if (shown.length && !tbl.startsWith("<table")) fn.add("Select a value to list its candidates.");
+  host.innerHTML = `<div class="crumb">${backLink(INS.addressFor({ terms: [], panel: null }))}</div>
+    <h1 class="title">Compared Terms</h1>
+    <p class="sub">${shareDef(!shown.length ? "count" : smallCell(S.year) ? "mixed" : "share")}</p>
+    <div class="controls">${filtersButton()}${compareSelect(S.terms)}</div>
+    <div id="groupline">${groupLine()}</div>
+    ${shown.length ? `<div class="chartkey top"><span><i class="band" aria-hidden="true"></i>${glossLink("interval", "95% Interval")}</span></div>` : ""}
+    <div class="multiples">${cards}</div>
+    <div class="controls tight"><span class="seglab">Table Cycle</span>${yearSeg()}</div>
+    <div id="tablehost">${tbl}</div>${fn.html()}`;
+}
+
+/* ---------- the candidate drawer ---------- */
+const trimText = (s, n, end) => {
+  if (s.length <= n) return s;
+  if (end) { const t = s.slice(-n); return "…" + t.slice(t.indexOf(" ") + 1); }
+  const t = s.slice(0, n); return t.slice(0, t.lastIndexOf(" ")) + "…";
+};
+let openGroups = new Set(["use"]);   // the candidate lists the reader has open; "Used it" opens first
+const SMALL_WORDS = new Set(["a", "an", "the", "and", "but", "or", "nor", "for", "of", "in", "on", "at", "to", "by", "as", "up", "with", "from", "into"]);
+const cap = s => s.split(" ").map((w, i, a) => (i && i < a.length - 1 && SMALL_WORDS.has(w.toLowerCase()) ? w.toLowerCase() : w.charAt(0).toUpperCase() + w.slice(1))).join(" ");
+const REASON = { "no website": "No Website Found", "no saved text": "No Saved Text", "under 100 words": "Under 100 Words", excluded: "Not Campaign Content" };
+/* The study's reasons for removing a site as not campaign content, each in the three words a row can hold. */
+const WHY = { "no candidate name or campaign words": "No Campaign Words", "hosting error or parked domain": "Site Unavailable", "placeholder text": "Placeholder Text", spam: "Spam", "site-builder page titles only": "Page Titles Only" };
+let panelCode = "";   // the address code of the drawer on screen, to find its control again when it closes
+/* anchor: the name just selected and where it sat on screen, so the list does not move under the reader. */
+async function renderPanel(anchor = null) {
+  const el = $("#panel"), sc = $("#dscrim");
+  if (!S.panel) { el.classList.remove("open"); sc.hidden = true; el.hidden = true; el.innerHTML = ""; document.body.classList.remove("drawer-open"); $("#main").inert = false; $("#topbar").inert = false; $("#skip").inert = false; openGroups = new Set(["use"]); return; }
+  const { ti, y, p } = S.panel;
+  panelCode = `${INS.tslug(ti)}.${y}.${p}`;
+  const g = INS.group(y, p);
+  const an = g.an, users = an.filter(c => c.terms.includes(ti)), non = an.filter(c => !c.terms.includes(ti));
+  const out = g.all.filter(c => c.status !== "analyzed");
+  if (!excerptCache[ti]) {
+    try { excerptCache[ti] = await (await fetch(`/data/excerpts/${ti}.json`)).json(); } catch (e) { excerptCache[ti] = {}; }
+  }
+  if (!S.panel || S.panel.ti !== ti || S.panel.y !== y || S.panel.p !== p) return;
+  const ex = excerptCache[ti], c = INS.cell(ti, y, p);
+  const seat = x => `${x.state}-${x.office === "Senate" ? "Senate" : x.district === "00" ? "AL" : String(+x.district)}`;
+  /* Each part of a candidate's line is kept whole, a seat code such as NC-12 above all; the line may break between parts. */
+  const meta = x => [seat(x), x.inc ? "Incumbent" : "Challenger", x.won === 1 ? "Won" : x.won === 0 ? "Lost" : null].filter(Boolean).map(t => `<span class="nw">${esc(t)}</span>`).join(" · ");
+  const sel = S.cand && users.find(u => u.id === S.cand);
+  /* The excerpt is a window onto the page's text, so each end that is not the page's own edge reads as cut. */
+  const excerpt = x => {
+    const e = ex[x.id];
+    if (!e) return "";
+    const before = trimText(e[0], 100, true), after = trimText(e[2], 100, false);
+    const lead = before.startsWith("…") ? before : "…" + before, tail = after.endsWith("…") ? after : after + "…";
+    return `<div class="exc" id="exc"><p class="ex">${esc(lead)}<mark>${esc(e[1])}</mark>${esc(tail)}</p>
+      <p class="src">Saved ${e[3] ? INS.fmtDate(e[3], true) + " " : ""}from ${esc(x.site)}${e[4] === "archived" ? ` by the ${glossLink("wayback-machine", "Wayback Machine")}` : ""}</p></div>`;
+  };
+  /* A name that opens a sentence has a chevron; the names in the other lists are plain text. */
+  /* The names that open a passage are one stop in the Tab order and are walked with the arrow keys, so a list of
+     124 names does not stand between the reader and the lists below it. */
+  const li = (x, kind, stop) => {
+    const on = S.cand === x.id;
+    const head = `<span class="nm">${esc(INS.cname(x.name))}</span><span class="meta">${meta(x)}${kind === "out" ? ` · ${esc(x.status === "excluded" ? WHY[x.why] || cap(x.why || REASON.excluded) : REASON[x.status] || cap(x.status))}` : ""}</span>`;
+    return kind === "use" && ex[x.id]
+      ? `<li><button type="button" class="crow can${on ? " sel" : ""}" data-cand="${x.id}" aria-expanded="${on}" tabindex="${stop ? 0 : -1}">${head}<span class="chev" aria-hidden="true"></span></button>${on ? excerpt(x) : ""}</li>`
+      : `<li><div class="crow plain${kind === "out" ? " out" : ""}">${head}</div></li>`;
+  };
+  const section = (key, label, list, kind) => {
+    if (!list.length) return "";
+    const sorted = list.slice().sort(INS.byName);
+    const opens = sorted.filter(x => kind === "use" && ex[x.id]);
+    const stop = (opens.find(x => x.id === S.cand) || opens[0] || {}).id;
+    return `<details class="cgrp" data-k="${key}"${openGroups.has(key) ? " open" : ""}><summary><span>${label}</span>${key === "use" ? "" : `<span class="n">${nf(list.length)}</span>`}</summary>
+      ${key === "out" ? `<p class="gnote"><a class="gl-link" href="#/glossary/not-analyzed">Reasons for Not Analyzing</a></p>` : ""}<ul>${sorted.map(x => li(x, kind, x.id === stop)).join("")}</ul></details>`;
+  };
+  const where = INS.GROUPS.flatMap(gr => [...S.f[gr.key]].map(v => (gr.key === "state" ? STATES[v] : gr.byV[v].label)));
+  const miss = c.K - c.n;
+  const star = INS.starFor(c);
+  /* The word's own dagger travels with its share: the drawer states the same fact the table's mark stands for. */
+  const cv = caveat(ti), dag = !!(cv && cv.dagger && c.n && cv.dagger({ y, p }));
+  const facts = c.n >= TINY ? `<p class="facts">${glossLink("interval", "95% Interval")} ${Math.round(c.ci[0] * 100)} to ${Math.round(c.ci[1] * 100)}%</p>` : "";
+  const ch = INS.changeOf(ti, y, p);
+  const chgTxt = ch ? `<p class="facts">Change from ${yl(ch.from)} ${INS.diff(ch.a.k, ch.a.n, ch.b.k, ch.b.n).text}%</p>` : "";
+  const rangeTxt = c.range && c.n >= TINY && miss > 0 ? `<p class="facts">${glossLink("possible-range", "Possible Range")} ${c.rangePct[0]} to ${c.rangePct[1]}%</p>` : "";
+  const noneTxt = c.n ? "" : `<p class="facts">No candidates were analyzed in this group${where.length ? " with these filters" : ""}.</p>`;
+  /* The drawer's footnotes are pinned to its foot, so they are in view however far the lists run. */
+  const foot = [dag ? [cv.mark, esc(cv.text)] : null, star ? ["*", starNote()] : null].filter(Boolean);
+  el.innerHTML = `<div class="dhead"><div><p class="dtitle" id="panelTitle" tabindex="-1">${esc(INS.dn(ti))}</p>
+      <div class="sub"><span class="nw">${yl(y)} ${pn(p)} Candidates</span></div>${y === 2026 ? `<div class="sub">${asOf()}</div>` : ""}${where.length ? `<div class="sub">${where.map(t => esc(t)).map((t, i, a) => `<span class="nw">${t}${i < a.length - 1 ? " ·" : ""}</span>`).join(" ")}</div>` : ""}</div>
+      <button type="button" class="btn" id="panelClose">Close</button></div>
+    <div class="dsum ${p}">${c.n ? `<span class="big">${c.n < TINY ? `${c.k} of ${c.n}` : INS.pctOf(c.k, c.n) + star}${dag ? "†" : ""}</span><span class="of">${c.n < TINY ? "" : `${nf(c.k)} of ${nf(c.n)} `}Analyzed Candidates Using the Term</span>` : ""}${facts}${chgTxt}${rangeTxt}${noneTxt}</div>
+    <div class="clist">
+      ${section("use", "Using the Term", users, "use")}
+      ${section("no", "Not Using the Term", non, "no")}${section("out", "Not Analyzed", out, "out")}
+    </div><div class="dfoot">${foot.map(([m, h]) => `<p><span class="fk">${m}</span>${h}</p>`).join("")}${an.length || out.length ? `<p>${glossLink("seat-code", "Seat Code")} and ${glossLink("challenger", "Challenger")} Definitions</p>` : ""}</div>`;
+  el.hidden = false; sc.hidden = false; el.classList.add("open");
+  if (!document.body.classList.contains("drawer-open")) {
+    document.documentElement.style.setProperty("--sbw", (innerWidth - document.documentElement.clientWidth) + "px");
+    document.body.classList.add("drawer-open");
+  }
+  $("#main").inert = true; $("#topbar").inert = true; $("#skip").inert = true;
+  if (anchor) { const b = $(`[data-cand="${anchor.id}"]`, el); if (b) el.scrollTop += b.getBoundingClientRect().top - anchor.top; }
+  const x = $("#exc", el);
+  if (x) {
+    // the passage comes into view clear of the pinned head above it and the pinned foot below it
+    const top = $(".dhead", el), foot = $(".dfoot", el);
+    x.style.scrollMarginTop = (top ? top.offsetHeight : 0) + 12 + "px";
+    x.style.scrollMarginBottom = (foot ? foot.offsetHeight : 0) + 12 + "px";
+    x.scrollIntoView({ block: "nearest" });
+  }
+}
+/* Closing the drawer: an entry it pushed is stepped back over, so Back never has a dead step and never leaves the
+   view; a drawer opened by an address has no entry of its own and is replaced. */
+function closePanel() {
+  if (history.state && history.state.drawer) { history.back(); return; }
+  S.panel = null; S.cand = null;
+  INS.commit();
+  afterDrawer();
+}
+/* The page is where it was when the drawer opened, and the control that opened it takes focus without moving the
+   page. A drawer opened by an address has no such control in hand: the same share is found again, and failing
+   that the view's title takes focus, so focus never falls to the page. */
+function afterDrawer() {
+  const code = opener ? opener.code : panelCode, kind = opener ? opener.kind : "";
+  opener = null;
+  const at = scrollAt; scrollAt = null;
+  let b = (kind && $(`${kind}[data-panel="${code}"]`)) || $(`.share[data-panel="${code}"]`) || $(`[data-panel="${code}"]`);
+  if (!b) { b = $("#view h1"); if (b) b.tabIndex = -1; }
+  if (b) b.focus({ preventScroll: true });
+  if (at !== null) window.scrollTo(0, at);
+}
+
+/* ---------- tooltip ---------- */
+function setupTip() {
+  const tip = $("#tip");
+  const show = el => {
+    const t = el.dataset.tip; if (!t) return;
+    tip.textContent = t; tip.hidden = false;
+    const r = el.getBoundingClientRect();
+    let x = r.left, y = r.bottom + 6;
+    const tw = tip.offsetWidth, th = tip.offsetHeight;
+    if (x + tw > innerWidth - 8) x = Math.max(8, innerWidth - 8 - tw);
+    if (y + th > innerHeight - 8) y = Math.max(8, r.top - th - 6);
+    tip.style.left = x + "px"; tip.style.top = y + "px";
+  };
+  const hide = () => { tip.hidden = true; };
+  document.addEventListener("pointerover", e => { const el = e.target.closest("[data-tip]"); if (el) show(el); });
+  document.addEventListener("pointerout", e => { if (e.target.closest("[data-tip]")) hide(); });
+  document.addEventListener("focusin", e => { const el = e.target.closest("[data-tip]"); if (el) show(el); });
+  document.addEventListener("click", e => {
+    const el = e.target.closest("[data-tip]");
+    if (el && !el.dataset.panel) show(el); else if (!el) hide();
+  });
+  document.addEventListener("focusout", hide);
+  document.addEventListener("scroll", hide, { passive: true });
+  window.addEventListener("scroll", () => { if (filtersOpen) positionFilters(); }, { passive: true });
+}
+
+/* ---------- wiring ---------- */
+function openPanel(code, from) {
+  const m = /^([a-z0-9-]+)\.(\d{4})\.([DR])$/.exec(code);
+  if (!m) return;
+  opener = { code, kind: from && from.matches && from.matches("g.pt") ? "g.pt" : ".share" };
+  const fresh = !S.panel;
+  if (fresh) scrollAt = window.scrollY;
+  S.panel = { ti: INS.TERM_BY_SLUG[m[1]], y: +m[2], p: m[3] }; S.cand = null;
+  openGroups = new Set(["use"]);
+  /* The drawer is a step in the history: Back closes it and stays on the view. The step carries where the page was,
+     so coming back to it from a definition puts the page there too. */
+  if (fresh) { history.pushState({ drawer: true, at: window.scrollY }, "", INS.addressFor()); INS.render({ focusPanel: true }); }
+  else INS.commit({ focusPanel: true });
+}
+/* An open drawer or filters sheet keeps Tab inside itself. */
+function trapTab(e) {
+  const box = S.panel ? $("#panel") : filtersOpen ? $("#filters") : null;
+  if (!box || box.hidden) return;
+  const f = $$('a[href], button:not([disabled]), select, input:not([disabled]), summary', box).filter(el => {
+    const d = el.closest("details");   // what a closed list holds, apart from its summary, is not reachable
+    return el.tabIndex >= 0 && el.offsetParent !== null && (!d || d.open || el.parentElement === d);
+  });
+  if (!f.length) return;
+  const first = f[0], last = f[f.length - 1], at = document.activeElement;
+  /* Focus on the title or the box itself sits before the first control: Shift+Tab from there wraps like it does from the first. */
+  if (!box.contains(at) || (e.shiftKey && f.indexOf(at) <= 0)) { e.preventDefault(); (e.shiftKey ? last : first).focus(); }
+  else if (!e.shiftKey && at === last) { e.preventDefault(); first.focus(); }
+}
+function setup() {
+  document.addEventListener("click", e => {
+    const t = e.target.closest("[data-year],[data-sort],[data-panel],[data-cand],[data-unfilter],[data-rm],#filtersBtn,#fDone,#fClear,#panelClose,#fscrim,#dscrim");
+    if (!t) { return; }
+    if (t.dataset.year) { S.year = +t.dataset.year; S.panel = null; S.cand = null; INS.commit({ push: true, focus: `[data-year="${S.year}"]` }); }
+    else if (t.dataset.sort) {
+      const k = t.dataset.sort;
+      if (S.sort === k) S.dir = S.dir === "desc" ? "asc" : "desc"; else { S.sort = k; S.dir = k === "name" ? "asc" : "desc"; }
+      INS.commit({ push: true, focus: `[data-sort="${k}"]` });
+    }
+    else if (t.dataset.panel) { e.preventDefault(); openPanel(t.dataset.panel, t); }
+    else if (t.dataset.cand) {
+      const id = t.dataset.cand, top = t.getBoundingClientRect().top;
+      S.cand = S.cand === id ? null : id; history.replaceState(history.state, "", INS.addressFor());
+      renderPanel({ id, top }).then(() => { const b = $(`#panel [data-cand="${id}"]`); if (b) { b.tabIndex = 0; b.focus({ preventScroll: true }); } });
+    }
+    else if (t.dataset.unfilter) { const [k, v] = t.dataset.unfilter.split(":"); S.f[k].delete(v); S.panel = null; S.cand = null; INS.commit({ push: true }); }
+    else if (t.dataset.rm) { const terms = S.terms.filter(i => i !== +t.dataset.rm); INS.go(INS.addressFor({ terms, panel: null })); }
+    else if (t.id === "filtersBtn") { filtersOpen ? closeFilters() : openFilters(t); }
+    else if (t.id === "fDone" || t.id === "fscrim") closeFilters();
+    else if (t.id === "fClear") { INS.GROUPS.forEach(g => S.f[g.key].clear()); S.panel = null; S.cand = null; INS.commit({ push: true }); }
+    else if (t.id === "panelClose" || t.id === "dscrim") closePanel();
+  });
+  document.addEventListener("keydown", e => {
+    if ((e.key === "Enter" || e.key === " ") && e.target.matches("g.pt")) { e.preventDefault(); openPanel(e.target.dataset.panel, e.target); return; }
+    if (e.key === "Tab") { trapTab(e); return; }
+    if (["ArrowDown", "ArrowUp", "Home", "End"].includes(e.key) && e.target.matches("#panel button.crow.can")) {
+      const names = $$("button.crow.can", e.target.closest("ul")), i = names.indexOf(e.target);
+      const j = e.key === "Home" ? 0 : e.key === "End" ? names.length - 1 : Math.max(0, Math.min(names.length - 1, i + (e.key === "ArrowDown" ? 1 : -1)));
+      e.preventDefault();
+      names.forEach(b => { b.tabIndex = -1; });
+      names[j].tabIndex = 0; names[j].focus();
+      return;
+    }
+    if (e.key !== "Escape") return;
+    /* A tooltip that stays under focus is dismissed first; what is open behind it closes on the next press. */
+    const tip = $("#tip"), tipShown = !tip.hidden;
+    tip.hidden = true;
+    if (tipShown && !S.panel && !filtersOpen && !$("#tabs").classList.contains("open")) return;
+    if ($("#tabs").classList.contains("open")) { closeMenu(); $("#menuBtn").focus(); return; }
+    if (filtersOpen) closeFilters();
+    else if (S.panel) closePanel();
+  });
+  $("#panel").addEventListener("toggle", e => {
+    const d = e.target;
+    if (d.matches && d.matches("details.cgrp")) { if (d.open) openGroups.add(d.dataset.k); else openGroups.delete(d.dataset.k); }
+  }, true);
+  document.addEventListener("change", e => {
+    const t = e.target;
+    if (t.matches("#filters input[type=checkbox]")) {
+      const set = S.f[t.dataset.g]; t.checked ? set.add(t.value) : set.delete(t.value);
+      S.panel = null; S.cand = null; INS.commit({ push: true, keepFilters: true });
+      const again = $(`#filters input[data-g="${t.dataset.g}"][value="${t.value}"]`); if (again) again.focus();
+    } else if (t.id === "stateSel") {
+      if (t.value) { S.f.state.add(t.value); S.panel = null; S.cand = null; INS.commit({ push: true, keepFilters: true }); const s = $("#stateSel"); if (s) s.focus(); }
+    } else if (t.id === "byTheme") { S.theme = t.checked; INS.commit({ push: true, focus: "#byTheme" }); }
+    else if (t.id === "rangeTg") { S.range = t.checked; INS.commit({ push: true, focus: "#rangeTg" }); }
+    else if (t.id === "sortSel") { S.sort = t.value === "gapr" ? "gap" : t.value; S.dir = t.value === "name" || t.value === "gapr" ? "asc" : "desc"; INS.commit({ push: true, focus: "#sortSel" }); }
+    else if (t.classList.contains("addsel")) {
+      if (t.value) INS.go(INS.addressFor({ terms: S.terms.concat([+t.value]), panel: null }));
+    }
+  });
+  document.addEventListener("input", e => {
+    if (e.target.id !== "termQ") return;
+    query = e.target.value;
+    $("#tablehost").innerHTML = tableWithFoot();
+  });
+}
+
+/* ---------- the explorer ---------- */
+INS.renderExplorer = (o = {}) => {
+  INS.buildCells();
+  const host = $("#view");
+  if (S.terms.length === 0) renderTable(host);
+  else if (S.terms.length === 1) renderTerm(host);
+  else renderTerms(host);
+  renderFilters();
+  if (filtersOpen) positionFilters();
+  renderPanel().then(() => {
+    if (o.focusPanel) { const h = $("#panelTitle"); if (h) h.focus(); }
+  });
+  if (o.focus) { const el = $(o.focus); if (el) el.focus(); }
+};
+
+/* ---------- the shell ---------- */
+INS.TABS.forEach(t => {
+  if (t.id === "explorer") return;
+  INS.views[t.id] = host => { host.innerHTML = `<h1 class="title">${esc(t.label)}</h1>`; };
+});
+function renderTabs() {
+  const here = INS.TABS.find(t => t.id === S.tab);
+  $("#menuLabel").textContent = here ? here.label : "Menu";
+  $("#tabs").innerHTML = INS.TABS.map(t => `<a class="tab" href="${t.id === "explorer" && INS.lastExplorer ? INS.lastExplorer : "#/" + t.path}"${t.id === S.tab ? ' aria-current="page"' : ""}>${esc(t.label)}</a>`).join("");
+}
+function closeMenu() { $("#tabs").classList.remove("open"); $("#scrim").hidden = true; $("#menuBtn").setAttribute("aria-expanded", "false"); }
+let focusTitle = false;   // a tab was just chosen: its view's title takes focus once the view is drawn
+function titleFocus() { const h = $("#view h1"); if (h) { h.tabIndex = -1; h.focus({ preventScroll: true }); } }
+
+INS.render = (o = {}) => {
+  const explorer = S.tab === "explorer";
+  lastKey = INS.addressFor({ panel: null });
+  renderTabs();
+  closeMenu();
+  if (!explorer && filtersOpen) closeFilters(false);
+  const tab = INS.TABS.find(t => t.id === S.tab);
+  if (explorer) INS.lastExplorer = INS.addressFor({ panel: null });
+  document.title = (explorer && S.terms.length === 1 ? INS.dn(S.terms[0]).replace(/[“”]/g, "") + " · " : explorer ? "" : tab.label + " · ") + "Campaign Website Language";
+  if (explorer) INS.renderExplorer(o);
+  else {
+    S.panel = null; S.cand = null;
+    renderPanel();
+    INS.views[S.tab]($("#view"));
+  }
+};
+
+function wire() {
+  $("#skip").addEventListener("click", e => {
+    e.preventDefault();
+    const h = $("#view h1"); if (h) { h.tabIndex = -1; h.focus(); }
+  });
+  $("#menuBtn").addEventListener("click", () => {
+    const open = !$("#tabs").classList.contains("open");
+    $("#tabs").classList.toggle("open", open);
+    $("#scrim").hidden = !open;
+    $("#menuBtn").setAttribute("aria-expanded", String(open));
+  });
+  $("#scrim").addEventListener("click", closeMenu);
+  /* Choosing a tab replaces the links it was chosen from, so the new view's title takes focus; the menu closes. */
+  $("#tabs").addEventListener("click", e => {
+    const a = e.target.closest("a.tab");
+    if (!a) return;
+    focusTitle = true;
+    closeMenu();
+    if (a.getAttribute("href") === location.hash) { e.preventDefault(); focusTitle = false; titleFocus(); }
+  });
+  window.addEventListener("hashchange", () => {
+    const before = lastKey, had = !!S.panel;
+    const a = document.activeElement, again = a && a.id ? "#" + a.id : a && a.dataset && a.dataset.year ? `[data-year="${a.dataset.year}"]` : "";
+    INS.readAddress();
+    const now = INS.addressFor({ panel: null });
+    const sameView = now === before;                                  // only the drawer changed: the page stays where it is
+    const samePath = now.split("?")[0] === before.split("?")[0];      // the same words, with another cycle, sort, grouping or filters
+    INS.render({ focusPanel: !!S.panel });
+    const st = history.state;
+    if (S.panel && !sameView && st && typeof st.at === "number") { scrollAt = st.at; window.scrollTo(0, st.at); }   // back to a drawer: the page as it was
+    else if (!samePath) window.scrollTo(0, 0);
+    if (had && !S.panel) { if (sameView) afterDrawer(); else if (!samePath) { opener = null; scrollAt = null; } }   // Back closed the drawer
+    // a new view, reached by a link or a tab, starts at its title, so focus is never left on the page behind
+    if ((focusTitle || !samePath) && !S.panel) titleFocus();
+    else if (samePath && !sameView && !S.panel && again) { const el = $(again); if (el) el.focus({ preventScroll: true }); }
+    focusTitle = false;
+  });
+  let rt, lastW = innerWidth;
+  window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { if (innerWidth !== lastW) { lastW = innerWidth; INS.render(); } }, 150); });
+}
+
+(async () => {
+  await INS.init();
+  setup(); setupTip(); wire();
+  INS.readAddress();
+  /* The charts measure each label in the page's own faces, so every face is loaded before the first drawing: a first load
+     lays a view out as a later one does. */
+  await Promise.all(["400", "500", "600", "700"].map(w => document.fonts.load(`${w} 16px "IBM Plex Sans"`)));
+  await document.fonts.ready;
+  INS.render({ focusPanel: !!S.panel });
+  document.documentElement.dataset.ready = "1";
+})();
+})();

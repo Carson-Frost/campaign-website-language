@@ -49,7 +49,8 @@ repeated full runs give byte-identical page text, results and tone sentences (SH
 All tools are in `tools/` and run from that directory with the project virtual environment
 (`artifacts/.venv/Scripts/python`; packages in `requirements.txt`). Every network fetch is cached
 under `artifacts/cache/`, so reruns are cheap and every collector resumes where it stopped.
-`artifacts/` is not in Git. Run the steps in this order.
+`artifacts/` is not in Git. The two `design/` steps run from the project root instead of `tools/`;
+see `design/README.md`. Run the steps in this order.
 
 | Step | Tool | Output |
 | --- | --- | --- |
@@ -72,6 +73,8 @@ under `artifacts/cache/`, so reruns are cheap and every collector resumes where 
 | Stable and changing words, question 1 of the analysis plan | `questions.py` | `results/term_classes.csv`, `results/term_changes.csv` |
 | Shares under the three windows | `windows.py` | `results/coverage_windows.csv`, `results/term_shares_windows.csv` |
 | Report page | `report.py` | `results/report.html` |
+| Site data | `design/mockups/build_data.py` | `artifacts/mockup-data/` |
+| The site, served on 127.0.0.1 | `design/mockups/serve.py --detach` | http://127.0.0.1:8765/ |
 | Sentiment and tone | `tone.py` | `artifacts/data/tone_sentences.jsonl`, `results/tone_scores.csv` |
 
 `bp_profiles.py` is run on the 2026 list and on `artifacts/data/bp_needed.csv`, the Ballotpedia pages
@@ -85,6 +88,18 @@ while the raw inputs are cached (`artifacts/cache/ccx` index blocks, `ccw` WARC 
 raises instead of fetching; the collector logs it as "retry later ... offline: not cached" and
 writes nothing for that candidate-year, so compare the status lines with the previous files. Then run
 `analyze.py`, `precision.py`, `check_language.py`, `report.py` and `tone.py`.
+
+## Public site
+
+`design/` holds the public site, the Instrument interface it is built in, and the four treatments it
+was chosen from. `design/README.md` has the two commands that build its data and serve it. The site
+reads only the tracked `results/` tables, through `design/mockups/build_data.py`.
+
+## Documents
+
+`docs/walkthrough.md` explains the whole study in plain words, with a glossary. `docs/literature.md`
+is the literature record: every source read, what it says, how it bears on the study, and whether its
+full text, only its abstract, or nothing was read.
 
 ## Tests
 
