@@ -156,6 +156,14 @@ const basisNote = y => {
   const out = lost[0] + lost[1] > 0 ? ` Not analyzed: ${nf(lost[0])} Democratic and ${nf(lost[1])} Republican. ${glossLink("not-analyzed", "Reasons for Not Analyzing")}.` : "";
   return `Analyzed: ${nf(g[0].n)} Democratic and ${nf(g[1].n)} Republican ${g[1].n === 1 ? "candidate" : "candidates"}.${out}`;
 };
+/* The basis of a view that draws every cycle: the four cycles summed, since no one cycle is the view's subject. */
+const basisAll = () => {
+  const n = p => YEARS.reduce((a, y) => a + INS.group(y, p).n, 0);
+  const lost = p => YEARS.reduce((a, y) => { const g = INS.group(y, p); return a + g.B - g.n; }, 0);
+  const d = n("D"), r = n("R"), ld = lost("D"), lr = lost("R");
+  const out = ld + lr > 0 ? ` Not analyzed: ${nf(ld)} Democratic and ${nf(lr)} Republican. ${glossLink("not-analyzed", "Reasons for Not Analyzing")}.` : "";
+  return `Analyzed across the four cycles: ${nf(d)} Democratic and ${nf(r)} Republican candidate-years.${out}`;
+};
 
 /* ---------- cells ---------- */
 const tipFor = (c, o = {}) => {
@@ -310,52 +318,47 @@ function trackW() {
   return INS.isPhone() ? Math.max(180, vw - 10) : Math.max(110, Math.min(430, vw - 450));
 }
 
-/* Every theme in one table, each under its own heading row, so the scale and the column heads are stated once and
-   stay in view. A row carries no Change column, because its track draws the change. */
+/* Every theme as a row of small charts, one per term, each drawing both parties across all four cycles. A reader
+   takes in a theme at a glance and never chooses a cycle, because every chart draws all of them. */
 function themesWithFoot() {
-  const fn = notebook(), y = S.year, f = tableFacts();
+  const fn = notebook(), y = S.year;
   const q = query.trim().toLowerCase();
   const all = INS.D.terms.map((t, i) => i);
   const shownIdx = q ? all.filter(ti => INS.dn(ti).toLowerCase().includes(q)) : all;
-  if (INS.PARTIES.every(p => !INS.group(y, p).n)) return emptyHTML();
+  if (INS.PARTIES.every(p => !INS.group(y, p).n)) return emptyHTML(YEARS);
   if (!shownIdx.length) return `<p class="nomatch">No term matches “${esc(query)}”.</p>`;
-  const w = trackW(), noGap = f.noGap, span = noGap ? 4 : 5;
-  const row = x => {
-    const dag = caveat(x.ti) && caveat(x.ti).dagger;
-    return `<tr><th scope="row" class="first"><a href="${INS.addressFor({ terms: [x.ti], panel: null })}">${esc(INS.dn(x.ti))}</a></th>
-      <td class="trackc">${INS.trackHasData(INS.trackData(x.ti)) ? INS.track(x.ti, w, TRACKH) : ""}</td>
-      <td class="tvc D"><span class="tag D" aria-hidden="true">Dem.</span>${shareBtn(x.d, { dagger: dag })}</td>
-      <td class="tvc R"><span class="tag R" aria-hidden="true">Rep.</span>${shareBtn(x.r, { dagger: dag })}</td>
-      ${noGap ? "" : `<td class="gapc"><span class="flab">Gap${noteMark(GAPMARK)}</span>${gapEl(x.g, x.d, x.r)}</td>`}</tr>`;
+  const vw = $("#view").clientWidth || innerWidth - 64;
+  const cols = innerWidth <= 760 ? 1 : innerWidth <= 980 ? 2 : 3;
+  const w = cols === 1 ? Math.max(260, vw) : Math.floor(vw / cols - 28);
+  const mo = ti => ({ mini: true, range: false, dagger: (caveat(ti) || {}).dagger });
+  const drawnAll = shownIdx.filter(ti => INS.lineHasData(INS.lineData(ti)));
+  /* One layout for the page, so a value sits in the same place in every chart. */
+  const oneLine = drawnAll.every(ti => INS.lineOneLine(ti, w, mo(ti)));
+  const card = (ti, hh) => {
+    const has = INS.lineHasData(INS.lineData(ti));
+    const cv = caveat(ti);
+    if (cv && cv.dagger && has && YEARS.some(yy => INS.PARTIES.some(p => cv.dagger({ y: yy, p })))) fn.mark(cv.mark, cv.long(esc(INS.dn(ti))));
+    return `<figure class="multiple"><figcaption><a href="${INS.addressFor({ terms: [ti], panel: null })}">${esc(INS.dn(ti))}${has ? markFor(ti) : ""}</a></figcaption>
+      ${has ? INS.lineChart(ti, w, Object.assign(mo(ti), { h: hh, oneLine })) : `<p class="nochart">Fewer than ten analyzed candidates in every group</p>`}</figure>`;
   };
-  let body = "";
-  INS.themesOf(shownIdx).forEach(t => {
-    const rows = sortRows(modelRows(t.terms), f.sort);
-    body += `<tr class="theme-row"><th colspan="${span}" scope="colgroup">${esc(cap(t.theme))}</th></tr>` + rows.map(row).join("");
-    rows.forEach(x => {
-      const cv = caveat(x.ti);
-      if (cv && cv.dagger && INS.PARTIES.some(p => cv.dagger({ y, p }))) fn.mark(cv.mark, cv.long(esc(INS.dn(x.ti))));
-    });
-  });
-  const g = INS.PARTIES.map(p => INS.group(y, p));
-  fn.add(basisNote(y) + " Select a value to list its candidates.");
-  fn.add("A track draws all four cycles on one 0 to 100% scale; the open mark is the newest.");
-  if (noGap) fn.add(`Fewer than ten analyzed candidates in a party, so its results are counts${g.some(x => !x.n) ? ", or a dash if none" : ""}, and a gap needs ten or more in both.`);
-  else fn.mark(GAPMARK, gapNote());
-  if (g.some(x => x.n >= TINY && x.n < SMALL)) fn.mark("*", starNote());
-  return `<table class="rank theme${noGap ? " nogap" : ""}${y === 2026 ? " y26" : ""}">
-    <thead><tr><th class="first" scope="col">Term</th>
-      <th class="trackc" scope="col"><span class="vh">2020 to 2026</span>${INS.trackScale(w, 14)}</th>
-      <th class="tvc D" scope="col">Democratic</th><th class="tvc R" scope="col">Republican</th>${noGap ? "" : `<th class="gapc" scope="col">Gap${noteMark(GAPMARK)}</th>`}</tr></thead>
-    <tbody>${body}</tbody></table>` + fn.html();
+  /* The charts of one theme share a height, so that theme reads as a grid; a theme whose terms need less room
+     is not held to the tallest theme on the page. */
+  const secs = INS.themesOf(shownIdx).map(t => {
+    const drawn = t.terms.filter(ti => INS.lineHasData(INS.lineData(ti)));
+    const hh = Math.max(0, ...drawn.map(ti => INS.lineChartHeight(ti, w, Object.assign(mo(ti), { oneLine }))));
+    return `<section class="themeblk"><h2>${esc(cap(t.theme))}</h2><div class="multiples">${t.terms.map(ti => card(ti, hh)).join("")}</div></section>`;
+  }).join("");
+  fn.add(basisAll());
+  fn.add("Each chart is one term across the four cycles. Select a term for its figures and the candidates behind them.");
+  if (drawnAll.some(ti => YEARS.some(yy => INS.PARTIES.some(p => INS.starFor(INS.cell(ti, yy, p)))))) fn.mark("*", starNote());
+  return secs + fn.html();
 }
 
 function controlsTable(f, none) {
   return `<div class="controls">
-    ${yearSeg()}
     <div class="find"><label class="vh" for="termQ">Term Search</label><input id="termQ" type="search" placeholder="Term Search" autocomplete="off" value="${esc(query)}"></div>
     ${filtersButton()}
-    ${none ? "" : `<div class="sortsel"><label class="vh" for="sortSel">Sort</label><select id="sortSel">${f.sorts.map(k => `<option value="${k}"${(f.sort === "gap" && S.dir === "asc" ? "gapr" : f.sort) === k ? " selected" : ""}>Sort: ${SORT_NAMES[k]}</option>`).join("")}</select></div>`}
+    <div class="chartkey"><span><i class="band" aria-hidden="true"></i>${glossLink("95-interval", "95% Interval")}</span></div>
   </div>`;
 }
 

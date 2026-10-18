@@ -1,7 +1,8 @@
 /* Instrument: charts. Inline SVG strings. A party is its color and its name; every mark is labelled with its value.
    The line chart follows the conventions of public-opinion trend charts: thick lines, open end markers, values at
    the points in the series color, the party named inside the chart beside its own line, a baseline with ticks and
-   no gridlines. The scale is 0 to 100% with its two end values named at the axis; the baseline is the zero of the
+   no gridlines. One scale is shared by every chart, from zero to the highest share any of them draws, with its two
+   end values named at the axis; the baseline is the zero of the
    scale. */
 (() => {
 "use strict";
@@ -54,8 +55,9 @@ const buildChart = (ti, W, o, H, small = false, edges = true, oneLine = true) =>
   const pw = W - m.l - m.r, ph = H - m.t - m.b;
   const X = i => m.l + inset + i * (pw - inset * 2) / 3;
   const base = m.t + ph;
-  // every chart is on the same 0 to 100% scale and the baseline is its zero
-  const Y = v => base - v * ph;
+  // every chart on the page is on one scale, which reaches the highest share drawn, and the baseline is its zero
+  const top = range ? 1 : INS.scaleTop();
+  const Y = v => base - (v / top) * ph;
   const id = "h" + Math.random().toString(36).slice(2, 7);
   const r = mini ? 4.5 : 6.5, sw = mini ? 3.2 : 4.4;
   const T = INS.TARGET / 2;
@@ -69,7 +71,7 @@ const buildChart = (ti, W, o, H, small = false, edges = true, oneLine = true) =>
   s += `<rect x="${hx.toFixed(1)}" y="${m.t}" width="${(m.l + pw - hx).toFixed(1)}" height="${ph}" fill="url(#${id})"/>`;
   // baseline with a tick and a label at each cycle, the date 2026 runs through under its label, and the scale's two ends
   s += `<line x1="${m.l}" x2="${m.l + pw}" y1="${base + 0.5}" y2="${base + 0.5}" stroke="#7B848E" stroke-width="1"/>`;
-  s += `<text class="ax" x="${m.l - 8}" y="${(Y(1) + 4.5).toFixed(1)}" text-anchor="end">100%</text><text class="ax" x="${m.l - 8}" y="${(base + ZY).toFixed(1)}" text-anchor="end">0%</text>`;
+  s += `<text class="ax" x="${m.l - 8}" y="${(Y(top) + 4.5).toFixed(1)}" text-anchor="end">${Math.round(top * 100)}%</text><text class="ax" x="${m.l - 8}" y="${(base + ZY).toFixed(1)}" text-anchor="end">0%</text>`;
   YEARS.forEach((y, i) => {
     s += `<line x1="${X(i)}" x2="${X(i)}" y1="${base}" y2="${base + 5}" stroke="#7B848E"/>`;
     const ty = base + (mini ? 19 : 23);
@@ -143,7 +145,7 @@ const buildChart = (ti, W, o, H, small = false, edges = true, oneLine = true) =>
   };
   // the scale's two end labels keep a clear row above and below them, so a value set at the left edge never stands in their column
   const AXPAD = 9;
-  placed.push({ x0: m.l - 8 - 36, x1: m.l - 8, t: Y(1) + 4.5 - 10 - AXPAD, b: Y(1) + 6.5 + AXPAD }, { x0: m.l - 8 - 22, x1: m.l - 8, t: base + ZY - 10 - AXPAD, b: base + ZY + 2 + AXPAD });
+  placed.push({ x0: m.l - 8 - 36, x1: m.l - 8, t: Y(top) + 4.5 - 10 - AXPAD, b: Y(top) + 6.5 + AXPAD }, { x0: m.l - 8 - 22, x1: m.l - 8, t: base + ZY - 10 - AXPAD, b: base + ZY + 2 + AXPAD });
   // the lines, interval outlines and markers a label must not cross, each sampled every 2 px
   const obs = [], dots = [];
   const addSeg = (ax, ay, bx, by, hw, kind, party) => {

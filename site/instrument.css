@@ -461,42 +461,13 @@ sup.fn { font-size: 13px; line-height: 0; margin-left: 2px; position: relative; 
 .cycles { margin-top: 28px; }
 
 /* ---------- the themes, the opening view ---------- */
-table.rank.theme { table-layout: auto; }
-.rank.theme th.first { width: 210px; padding-right: 16px; }
-.rank.theme td.trackc, .rank.theme th.trackc { width: auto; padding: 0 18px 0 0; }
-.rank.theme th.tvc, .rank.theme td.tvc { width: 92px; padding: 0 10px 0 0; text-align: right; white-space: nowrap; }
-.rank.theme thead th.tvc.D { color: var(--dem); }
-.rank.theme thead th.tvc.R { color: var(--rep); }
-.rank.theme thead th.trackc { padding-bottom: 2px; }
-.rank.theme td.tvc .share { font-weight: 500; }
-.rank.theme th.gapc, .rank.theme td.gapc { width: 92px; }
-
-/* The track: every cycle of one term on one 0 to 100% scale. The newest mark is open, the earlier ones small. */
-svg.track, svg.tscale { width: 100%; height: auto; overflow: visible; }
-.tgap { stroke: #D9DDE2; stroke-width: 3.5; stroke-linecap: round; }
-.ttrail { fill: none; stroke-width: 1.75; opacity: .5; stroke-linecap: round; }
-.ttrail.D { stroke: var(--dem); }
-.ttrail.R { stroke: var(--rep); }
-.tdot.D { fill: var(--dem); }
-.tdot.R { fill: var(--rep); }
-.tdot.now { stroke: var(--page); stroke-width: 2; }
-.tt { font: 500 11px var(--sans); fill: var(--muted); letter-spacing: .03em; }
-.rank.theme tbody tr:hover .tgap { stroke: #CBD1D8; }
-
-@media (max-width: 760px) {
-  /* A theme row stacks: the term and its gap, the track across the width, then the two parties' values. */
-  .rank.theme tbody tr { grid-template-columns: minmax(0, 1fr) auto; row-gap: 4px; padding: 10px 0 14px; }
-  .rank.theme tbody th.first { grid-column: 1; grid-row: 1; padding-right: 12px; }
-  .rank.theme tbody th.first a { padding: 6px 0; }
-  .rank.theme td.gapc { grid-column: 2; grid-row: 1; width: auto; background: none; text-align: right; align-self: center; }
-  .rank.theme td.trackc { grid-column: 1 / -1; grid-row: 2; padding: 2px 0 6px; }
-  .rank.theme td.tvc { grid-row: 3; width: auto; text-align: left; padding: 0; }
-  .rank.theme td.tvc.D { grid-column: 1; }
-  .rank.theme td.tvc.R { grid-column: 2; text-align: right; }
-  .rank.theme td.tvc .tag { display: inline; font-size: 13px; color: var(--sec); margin-right: 6px; }
-  .rank.theme td.tvc.D .tag { color: var(--dem); }
-  .rank.theme td.tvc.R .tag { color: var(--rep); }
-}
+/* A theme is a heading and its terms as small charts, each drawing both parties across every cycle. */
+.themeblk { margin: 0 0 44px; }
+#tablehost > .themeblk:first-child { margin-top: 30px; }
+.themeblk h2 { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--sec);
+  margin: 0 0 4px; padding-bottom: 9px; border-bottom: 1px solid var(--rule); }
+.themeblk .multiples { margin-top: 18px; }
+.nochart { color: var(--muted); font-size: 14px; text-align: center; margin: 24px 14px; }
 
 /* ---------- the definitions ---------- */
 /* Reached from the word it defines, never from a navigation bar. The entry asked for is marked. */

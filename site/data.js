@@ -131,6 +131,23 @@ INS.readAddress = () => {
   S.panel = pm && INS.TERM_BY_SLUG[pm[1]] !== undefined && INS.YEARS.includes(+pm[2]) ? { ti: INS.TERM_BY_SLUG[pm[1]], y: +pm[2], p: pm[3] } : null;
   S.cand = S.panel ? q.get("cand") : null;
 };
+/* The top of the scale every chart shares: the highest share or interval drawn anywhere under the filters in force,
+   rounded up to a tenth, so the charts stay comparable with one another while none is mostly empty. Recomputed
+   whenever the cells are rebuilt, which is whenever a filter changes. The possible range is left out, because it is
+   off by default and reaches far above the shares; a chart drawing it uses the full scale instead. */
+let scaleTop = 1;
+INS.setScaleTop = () => {
+  let m = 0;
+  INS.D.terms.forEach((t, ti) => INS.YEARS.forEach(y => INS.PARTIES.forEach(p => {
+    const c = INS.cell(ti, y, p);
+    if (c.n < INS.TINY) return;
+    if (c.share > m) m = c.share;
+    if (c.ci && c.ci[1] > m) m = c.ci[1];
+  })));
+  scaleTop = Math.min(1, Math.max(0.5, Math.ceil(m * 10 + 0.001) / 10));
+};
+INS.scaleTop = () => scaleTop;
+
 INS.showRange = () => S.range;
 
 INS.addressFor = (o = {}) => {
@@ -176,6 +193,7 @@ INS.buildCells = () => {
     if (c.status !== "no website") g.K++;
     if (c.status === "analyzed") { g.n++; g.an.push(c); c.terms.forEach(t => g.counts[t]++); }
   });
+  INS.setScaleTop();
 };
 INS.group = (y, p) => CELLS[y + p];
 
