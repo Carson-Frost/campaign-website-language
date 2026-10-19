@@ -199,6 +199,14 @@ function barCell(c, p, o = {}) {
 }
 /* A gap is weak, and set in italics, when its Gap Interval includes zero or its adjusted p-value is 0.05 or more. */
 const weakGap = g => g.ci[0] <= 0 && g.ci[1] >= 0 || (g.q !== null && g.q >= 0.05);
+/* The newest cycle's gap, when a gap that size turns up by chance: the overview marks the term, because a chart
+   of two lines alone invites a reader to read a difference the study cannot tell from nothing. */
+const LASTY = YEARS[YEARS.length - 1];
+function notDistinguishable(ti) {
+  const d = INS.cell(ti, LASTY, "D"), r = INS.cell(ti, LASTY, "R");
+  const g = INS.gapOf(d, r, ti, LASTY);
+  return !!(g && !g.tiny && weakGap(g));
+}
 /* The gap in the ranked table is a button: selecting it, or focusing it, shows its Gap Interval and adjusted p-value. */
 function gapEl(g, d, r) {
   if (!g) return `<span class="na" role="img" aria-label="not analyzed">—</span>`;
@@ -330,16 +338,20 @@ function themesWithFoot() {
   const vw = $("#view").clientWidth || innerWidth - 64;
   const cols = innerWidth <= 760 ? 1 : innerWidth <= 980 ? 2 : 3;
   const w = cols === 1 ? Math.max(260, vw) : Math.floor(vw / cols - 28);
-  const mo = ti => ({ mini: true, range: false, dagger: (caveat(ti) || {}).dagger });
+  const mo = ti => ({ mini: true, range: false, ci: false, dagger: (caveat(ti) || {}).dagger });
   const drawnAll = shownIdx.filter(ti => INS.lineHasData(INS.lineData(ti)));
+  let flagged = 0;
   /* One layout for the page, so a value sits in the same place in every chart. */
   const oneLine = drawnAll.every(ti => INS.lineOneLine(ti, w, mo(ti)));
   const card = (ti, hh) => {
     const has = INS.lineHasData(INS.lineData(ti));
     const cv = caveat(ti);
     if (cv && cv.dagger && has && YEARS.some(yy => INS.PARTIES.some(p => cv.dagger({ y: yy, p })))) fn.mark(cv.mark, cv.long(esc(INS.dn(ti))));
+    const flat = has && notDistinguishable(ti);
+    if (flat) flagged++;
     return `<figure class="multiple"><figcaption><a href="${INS.addressFor({ terms: [ti], panel: null })}">${esc(INS.dn(ti))}${has ? markFor(ti) : ""}</a></figcaption>
-      ${has ? INS.lineChart(ti, w, Object.assign(mo(ti), { h: hh, oneLine })) : `<p class="nochart">Fewer than ten analyzed candidates in every group</p>`}</figure>`;
+      ${has ? INS.lineChart(ti, w, Object.assign(mo(ti), { h: hh, oneLine })) : `<p class="nochart">Fewer than ten analyzed candidates in every group</p>`}
+      ${flat ? `<p class="flat">Parties not distinguishable in ${yl(LASTY)}</p>` : ""}</figure>`;
   };
   /* The charts of one theme share a height, so that theme reads as a grid; a theme whose terms need less room
      is not held to the tallest theme on the page. */
@@ -349,7 +361,8 @@ function themesWithFoot() {
     return `<section class="themeblk"><h2>${esc(cap(t.theme))}</h2><div class="multiples">${t.terms.map(ti => card(ti, hh)).join("")}</div></section>`;
   }).join("");
   fn.add(basisAll());
-  fn.add("Each chart is one term across the four cycles. Select a term for its figures and the candidates behind them.");
+  fn.add(`Each chart is one term across the four cycles. Select a term for its figures, its ${glossLink("95-interval", "95% Interval")}, its gap and the candidates behind them.`);
+  if (flagged) fn.add(`${nf(flagged)} of the ${nf(drawnAll.length)} terms drawn are marked not distinguishable: in ${yl(LASTY)} a gap that size turns up by chance often enough that the study cannot tell the parties apart on that term.`);
   if (drawnAll.some(ti => YEARS.some(yy => INS.PARTIES.some(p => INS.starFor(INS.cell(ti, yy, p)))))) fn.mark("*", starNote());
   return secs + fn.html();
 }
@@ -358,7 +371,6 @@ function controlsTable(f, none) {
   return `<div class="controls">
     <div class="find"><label class="vh" for="termQ">Term Search</label><input id="termQ" type="search" placeholder="Term Search" autocomplete="off" value="${esc(query)}"></div>
     ${filtersButton()}
-    <div class="chartkey"><span><i class="band" aria-hidden="true"></i>${glossLink("95-interval", "95% Interval")}</span></div>
   </div>`;
 }
 
@@ -447,7 +459,7 @@ function renderTerms(host) {
   const w = cols === 1 ? Math.max(260, vw) : Math.floor(vw / cols - 28);
   const shown = [];
   // the charts of one view share a height: the greatest any of them needs to keep its labels clear
-  const mo = ti => ({ mini: true, range: false, dagger: (caveat(ti) || {}).dagger });
+  const mo = ti => ({ mini: true, range: false, ci: false, dagger: (caveat(ti) || {}).dagger });
   const drawnTi = S.terms.filter(ti => INS.lineHasData(INS.lineData(ti)));
   const oneLine = drawnTi.every(ti => INS.lineOneLine(ti, w, mo(ti)));
   const hh = Math.max(0, ...drawnTi.map(ti => INS.lineChartHeight(ti, w, Object.assign(mo(ti), { oneLine }))));
@@ -468,7 +480,7 @@ function renderTerms(host) {
     <p class="sub">${shareDef(!shown.length ? "count" : smallCell(S.year) ? "mixed" : "share")}</p>
     <div class="controls">${filtersButton()}${compareSelect(S.terms)}</div>
     <div id="groupline">${groupLine()}</div>
-    ${shown.length ? `<div class="chartkey top"><span><i class="band" aria-hidden="true"></i>${glossLink("95-interval", "95% Interval")}</span></div>` : ""}
+
     <div class="multiples">${cards}</div>
     <div class="controls tight"><span class="seglab">Table Cycle</span>${yearSeg()}</div>
     <div id="tablehost">${tbl}</div>${fn.html()}`;

@@ -37,6 +37,9 @@ const textWidth = (t, px) => {
    another label, a scale label or the edge. */
 const buildChart = (ti, W, o, H, small = false, edges = true, oneLine = true) => {
   const data = INS.lineData(ti), mini = !!o.mini, range = !!o.range;
+  /* The interval is drawn where there is room to say what it is. A chart too small for that sentence draws the
+     lines alone, and the term's own view carries the interval, the gap and its test. */
+  const showCI = o.ci !== false;
   const narrow = W < 560;
   let bad = 0, soft = 0, far = 0;   // soft: a label on its own interval outline; far: how far a last value sits from its marker
   const valText = c => INS.pctOf(c.k, c.n) + INS.starFor(c) + (o.dagger && o.dagger(c) ? "†" : "");
@@ -99,7 +102,7 @@ const buildChart = (ti, W, o, H, small = false, edges = true, oneLine = true) =>
     });
   });
   // the 95% interval behind the lines: a pale fill inside two outlines in the party's color (at least 3 to 1 against the page)
-  INS.PARTIES.forEach(p => {
+  if (showCI) INS.PARTIES.forEach(p => {
     runs(p).forEach(run => {
       if (run.length > 1) {
         const up = run.map(({ c, i }) => `${X(i).toFixed(1)},${Y(c.ci[1]).toFixed(1)}`);
@@ -157,11 +160,11 @@ const buildChart = (ti, W, o, H, small = false, edges = true, oneLine = true) =>
     runs(p).forEach(run => {
       for (let k = 1; k < run.length; k++) {
         addSeg(X(run[k - 1].i), Y(run[k - 1].c.share), X(run[k].i), Y(run[k].c.share), sw / 2, "line", p);
-        if (edges) for (const e of [1, 0]) addSeg(X(run[k - 1].i), Y(run[k - 1].c.ci[e]), X(run[k].i), Y(run[k].c.ci[e]), 1, "edge", p);
+        if (edges && showCI) for (const e of [1, 0]) addSeg(X(run[k - 1].i), Y(run[k - 1].c.ci[e]), X(run[k].i), Y(run[k].c.ci[e]), 1, "edge", p);
       }
       run.forEach(({ c, i }) => {
         dots.push([X(i), Y(c.share)]);
-        if (run.length === 1) { addSeg(X(i), Y(c.ci[0]), X(i), Y(c.ci[1]), 1, "edge", p); addSeg(X(i) - 6, Y(c.ci[0]), X(i) + 6, Y(c.ci[0]), 1, "edge", p); addSeg(X(i) - 6, Y(c.ci[1]), X(i) + 6, Y(c.ci[1]), 1, "edge", p); }
+        if (run.length === 1 && showCI) { addSeg(X(i), Y(c.ci[0]), X(i), Y(c.ci[1]), 1, "edge", p); addSeg(X(i) - 6, Y(c.ci[0]), X(i) + 6, Y(c.ci[0]), 1, "edge", p); addSeg(X(i) - 6, Y(c.ci[1]), X(i) + 6, Y(c.ci[1]), 1, "edge", p); }
       });
     });
   });

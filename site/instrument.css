@@ -468,6 +468,12 @@ sup.fn { font-size: 13px; line-height: 0; margin-left: 2px; position: relative; 
   margin: 0 0 4px; padding-bottom: 9px; border-bottom: 1px solid var(--rule); }
 .themeblk .multiples { margin-top: 18px; }
 .nochart { color: var(--muted); font-size: 14px; text-align: center; margin: 24px 14px; }
+/* A term whose parties the study cannot tell apart in the newest cycle, marked where the chart would invite the
+   reader to read the difference anyway. */
+.multiple .flat { margin: 6px 0 0; text-align: center; font-size: 13px; line-height: 17px; color: var(--sec); }
+.multiple .flat::before { content: ""; display: inline-block; width: 13px; height: 13px; margin-right: 6px;
+  vertical-align: -2px; border: 1px solid #B3BAC2; border-radius: 50%;
+  background: repeating-linear-gradient(135deg, #B3BAC2 0 1px, transparent 1px 3px); }
 
 /* ---------- the definitions ---------- */
 /* Reached from the word it defines, never from a navigation bar. The entry asked for is marked. */
