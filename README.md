@@ -15,15 +15,15 @@ The project is three things:
 | | |
 | --- | --- |
 | `tools/` | The code that collected and cleaned the data, plus its tests. |
-| `results/` | The tracked result tables the study produced. |
-| `site/` | The site that presents them: one interface, grouped by theme. |
+| `results/` | The tracked result tables the project produced. |
+| `site/` | frontend interface showing the charts |
 
 ## The documents
 
 | | |
 | --- | --- |
 | [METHODS.md](METHODS.md) | The full method of record: every step, every standard it meets, every stated limitation. |
-| [GLOSSARY.md](GLOSSARY.md) | Plain-language definitions of every term the study uses. The site's own definitions are built from this file. |
+| [GLOSSARY.md](GLOSSARY.md) | Plain-language definitions of every term the project uses. The site's own definitions are built from this file. |
 | [TABLES.md](TABLES.md) | What each result table in `results/` holds, and what every column name means. |
 | [RELATED-WORK.md](RELATED-WORK.md) | The five studies closest to this one, how this one differs, and the full reference list. |
 
@@ -37,7 +37,7 @@ python site/serve.py --detach
 ```
 
 That serves http://127.0.0.1:8765/. `build_data.py` reads only the tracked `results/` tables and the
-study's own code, and writes the data the pages read into the ignored `artifacts/site-data/`, so a
+project's own code, and writes the data the pages read into the ignored `artifacts/site-data/`, so a
 result never exists in two places. `serve.py --detach` runs in the background and prints the address;
 it also offers the `results/` tables as downloads under `/files/`, with independent and third-party
 rows removed.
