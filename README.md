@@ -85,10 +85,9 @@ cheap and every collector resumes where it stopped. `artifacts/` is not in Git. 
 | Intervals, gap tests, adjusted p-values and bounds | `inference.py` |
 | Stable and changing words | `questions.py` |
 | Shares under the three collection windows | `windows.py` |
-| Sentiment and tone (built, not validated; no tone result is reported) | `tone.py` |
 
 Page text extraction is serial, because trafilatura shares one parser across threads, and repeated
-full runs give byte-identical page text, results and tone sentences (SHA-256).
+full runs give byte-identical page text and results (SHA-256).
 
 The page text can be rebuilt without the network, because `pages_*.jsonl` store only extracted text
 while the raw inputs stay cached. Move the old `pages_*.jsonl` aside, then run `cc.py 2020 2022 2024
@@ -101,14 +100,13 @@ sites and Ballotpedia change.
 From `tools/`:
 
 ```text
-python -m unittest test_terms test_pipeline test_inference test_questions test_tone
+python -m unittest test_terms test_pipeline test_inference test_questions
 ```
 
 `test_terms` checks the 57 patterns against every hand-coded match. `test_pipeline` checks party
 grouping, website handling, page choice, screening and exclusion rules, and share counting.
 `test_inference` checks intervals, the exact test, adjusted p-values and bounds against published or
-hand-worked values. None of those three needs collected data. `test_tone` needs the lexicons in
-`artifacts/lexicons/`.
+hand-worked values. None needs collected data.
 
 The term list is `tools/terms.py`. It was fixed before any results were examined, and six patterns
 were narrowed after the precision check.
@@ -118,6 +116,6 @@ were narrowed after the precision check.
 Findings are exploratory: they were chosen after looking at all 57 terms, so the site labels them so.
 Coverage is 66% to 77% of the ballot depending on year and party, and the missing candidate-years are
 not missing at random, since smaller campaigns are archived less. One text source means one source's
-crawl schedule. Tone is measured but not validated, so no tone result is reported.
+crawl schedule.
 
 `METHODS.md` is the full method of record.
