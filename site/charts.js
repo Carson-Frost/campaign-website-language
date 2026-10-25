@@ -407,6 +407,18 @@ const buildChart = (ti, W, o, H, small = false, edges = true, oneLine = true) =>
         labelSpec[p + i] = { x: X(i), y: yv, anchor: "middle" };
       });
     });
+    // Per-year collision: when both parties' labels at a year sit within one line of each other,
+    // shift them horizontally so they read side by side. Y stays, so the uniform-side choice holds.
+    YEARS.forEach((yy, i) => {
+      const d = data.D[i], R = data.R[i];
+      if (!drawn(d) || !drawn(R)) return;
+      const spD = labelSpec["D" + i], spR = labelSpec["R" + i];
+      if (!spD || !spR) return;
+      if (Math.abs(spD.y - spR.y) <= fs + 2) {
+        spD.x = X(i) - 2; spD.anchor = "end";
+        spR.x = X(i) + 2; spR.anchor = "start";
+      }
+    });
   }
   INS.PARTIES.forEach(p => {
     data[p].forEach((c, i) => {
