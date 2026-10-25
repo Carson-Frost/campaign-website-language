@@ -421,7 +421,7 @@ function themesWithFoot() {
     const cv = caveat(ti);
     const isIg = INS.D.terms[ti].theme === "Endorsements";
     if (cv && cv.dagger && has && YEARS.some(yy => INS.PARTIES.some(p => cv.dagger({ y: yy, p })))) fn.mark(cv.mark, cv.long(esc(INS.dn(ti))));
-    return `<figure class="multiple"><figcaption>${esc(INS.dn(ti))}${has ? markFor(ti) : ""}</figcaption>${isIg ? `<p class="ig-tag">Interest Group</p>` : ""}
+    return `<figure class="multiple"><figcaption>${esc(INS.dn(ti))}${has ? markFor(ti) : ""}</figcaption>
       ${has ? INS.lineChart(ti, w, Object.assign(mo(ti), { h: hhAll, oneLine })) : `<p class="nochart">Fewer than ten analyzed candidates in every group</p>`}</figure>`;
   };
   let secs;
