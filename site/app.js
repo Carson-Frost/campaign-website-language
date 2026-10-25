@@ -355,6 +355,22 @@ function searchChartBlock(entry) {
 function topicsList() {
   return INS.D.topics_list || [];
 }
+function sortPickerHTML() {
+  const opts = [["theme", "By Theme"], ["alpha", "Alphabetical"]];
+  const current = opts.find(([k]) => k === S.gridSort) || opts[0];
+  const items = opts.map(([k, lab]) => {
+    const on = k === S.gridSort;
+    return `<li role="option" aria-selected="${on}" data-gsort="${esc(k)}" tabindex="-1" class="cat-opt${on ? " on" : ""}">${esc(lab)}${on ? `<svg width="12" height="12" aria-hidden="true" class="cat-check"><path d="M1 6 L5 10 L11 2" stroke="currentColor" stroke-width="2" fill="none"/></svg>` : ""}</li>`;
+  }).join("");
+  return `<div class="cat-picker sort-picker">
+    <button type="button" class="cat-btn" id="sortBtn" aria-haspopup="listbox" aria-expanded="false" aria-controls="sortMenu">
+      <span class="cat-prefix">Sort:</span><span class="cat-current">${esc(current[1])}</span>
+      <svg width="12" height="8" aria-hidden="true" class="cat-caret"><path d="M1 1 L6 7 L11 1" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+    </button>
+    <ul class="cat-menu" id="sortMenu" role="listbox" aria-label="Sort order" hidden>${items}</ul>
+  </div>`;
+}
+
 function topicChipsHTML() {
   const picked = S.topics.size ? [...S.topics][0] : "";
   const list = [["", "All"]].concat(topicsList().map(t => [INS.slug(t), t]));
@@ -406,12 +422,21 @@ function themesWithFoot() {
     return `<figure class="multiple"><figcaption>${esc(INS.dn(ti))}${has ? markFor(ti) : ""}</figcaption>
       ${has ? INS.lineChart(ti, w, Object.assign(mo(ti), { h: hhAll, oneLine })) : `<p class="nochart">Fewer than ten analyzed candidates in every group</p>`}</figure>`;
   };
-  const secs = INS.themesOf(shownIdx).map(t => {
-    const sub = t.theme === "Endorsements" ? `<h3 class="theme-sub">Interest Groups</h3>` : "";
-    return `<section class="themeblk">${sub}<div class="multiples">${t.terms.map(card).join("")}</div></section>`;
-  }).join("");
-  fn.add(basisAll());
-  fn.add(`Each chart is one term across the four cycles. Select a term for its figures, its ${glossLink("95-interval", "95% Interval")}, its gap and the candidates behind them.`);
+  let secs;
+  if (S.gridSort === "alpha") {
+    const sorted = shownIdx.slice().sort((a, b) => INS.dn(a).localeCompare(INS.dn(b)));
+    secs = `<section class="themeblk"><div class="multiples">${sorted.map(card).join("")}</div></section>`;
+  } else {
+    const themeOrder = {};
+    shownIdx.forEach(ti => { const th = INS.D.terms[ti].theme; if (!(th in themeOrder)) themeOrder[th] = Object.keys(themeOrder).length; });
+    const byTheme = shownIdx.slice().sort((a, b) => themeOrder[INS.D.terms[a].theme] - themeOrder[INS.D.terms[b].theme]);
+    secs = INS.themesOf(byTheme).map(t => {
+      const head = t.theme === "Endorsements"
+        ? `<h3 class="theme-head">Interest Groups</h3>`
+        : `<h3 class="theme-head">${esc(t.theme)}</h3>`;
+      return `<section class="themeblk">${head}<div class="multiples">${t.terms.map(card).join("")}</div></section>`;
+    }).join("");
+  }
   if (drawnAll.some(ti => YEARS.some(yy => INS.PARTIES.some(p => INS.starFor(INS.cell(ti, yy, p)))))) fn.mark("*", starNote());
   return secs + fn.html();
 }
@@ -431,6 +456,7 @@ function renderTable(host) {
     ${none ? "" : `<p class="sub">${shareDef(f.counts ? "count" : smallCell(S.year) ? "mixed" : "share")}</p>`}
     <div class="toprow">
       <div id="topicshost">${showTabs ? topicChipsHTML() : ""}</div>
+      <div id="sorthost">${showTabs ? sortPickerHTML() : ""}</div>
       ${controlsTable(f, none)}
       <div class="chartkey parties" aria-label="Party key"><span><i class="psw d" aria-hidden="true"></i>Democratic</span><span><i class="psw r" aria-hidden="true"></i>Republican</span></div>
     </div>
@@ -730,9 +756,32 @@ function setup() {
       }
       return;
     }
+    const sbtn = e.target.closest("#sortBtn");
+    if (sbtn) {
+      e.preventDefault();
+      const m = $("#sortMenu");
+      if (!m) return;
+      const open = !m.hidden;
+      m.hidden = open;
+      sbtn.setAttribute("aria-expanded", String(!open));
+      if (!open) {
+        const cur = m.querySelector(".cat-opt.on") || m.querySelector(".cat-opt");
+        if (cur) cur.focus();
+      }
+      return;
+    }
     const opt = e.target.closest(".cat-opt");
     if (opt) {
       e.preventDefault();
+      if (opt.dataset.gsort) {
+        S.gridSort = opt.dataset.gsort;
+        S.panel = null; S.cand = null;
+        const m = $("#sortMenu"), b = $("#sortBtn");
+        if (m) m.hidden = true;
+        if (b) b.setAttribute("aria-expanded", "false");
+        INS.commit({ push: true, focus: "#sortBtn" });
+        return;
+      }
       const slug = opt.dataset.cat;
       S.topics = slug ? new Set([slug]) : new Set();
       S.panel = null; S.cand = null;
@@ -740,7 +789,12 @@ function setup() {
       INS.commit({ push: true, focus: "#catBtn" });
       return;
     }
-    if (!e.target.closest(".cat-picker")) closeCatMenu();
+    if (!e.target.closest(".cat-picker")) {
+      closeCatMenu();
+      const sm = $("#sortMenu"), sb = $("#sortBtn");
+      if (sm) sm.hidden = true;
+      if (sb) sb.setAttribute("aria-expanded", "false");
+    }
   });
   document.addEventListener("keydown", e => {
     if (e.key === "Escape" && (e.target.closest(".cat-picker") || !$("#catMenu")?.hidden)) {

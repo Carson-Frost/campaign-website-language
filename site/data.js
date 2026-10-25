@@ -71,6 +71,7 @@ const S = INS.S = {
   terms: [], year: INS.DEFAULT_YEAR, f: {}, range: false,
   sort: "prom", dir: "desc", panel: null, cand: null,
   topics: new Set(),  // selected topic slugs; empty set means the All chip is on
+  gridSort: "theme",  // "theme" groups the grid by theme with a header; "alpha" flattens to one A-Z grid
 };
 INS.D = null;
 INS.TERM_BY_SLUG = {};
@@ -132,6 +133,8 @@ INS.readAddress = () => {
   const topicsQ = (q.get("topics") || "").split(",").filter(Boolean);
   const known = new Set((INS.D && INS.D.topics_list || []).map(INS.slug));
   S.topics = new Set(topicsQ.filter(t => known.has(t)));
+  const gs = q.get("gridSort");
+  S.gridSort = (gs === "alpha" || gs === "theme") ? gs : "theme";
 };
 /* The top of the scale every chart shares: the highest share or interval drawn anywhere under the filters in force,
    rounded up to a tenth, so the charts stay comparable with one another while none is mostly empty. Recomputed
@@ -176,6 +179,8 @@ INS.addressFor = (o = {}) => {
     }
     const topics = o.topics !== undefined ? o.topics : S.topics;
     if (topics && topics.size) q.set("topics", [...topics].join(","));
+    const gs = o.gridSort !== undefined ? o.gridSort : S.gridSort;
+    if (gs && gs !== "theme") q.set("gridSort", gs);
   }
   const s = q.toString().replace(/%2C/g, ",");
   return "#" + path + (s ? "?" + s : "");

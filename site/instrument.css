@@ -472,9 +472,12 @@ button.crow:hover { background: var(--faint); }
 #tablehost > .themeblk:first-child { margin-top: 30px; }
 .themeblk h2 { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--sec);
   margin: 0 0 4px; padding-bottom: 9px; border-bottom: 1px solid var(--rule); }
-.themeblk .multiples { margin-top: 18px; }
-.theme-sub { margin: 24px 0 0; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--sec); border-top: 1px solid var(--rule); padding-top: 18px; }
-.theme-sub + .multiples { margin-top: 10px; }
+.themeblk .multiples { margin-top: 10px; }
+.theme-sub,
+.theme-head { margin: 24px 0 0; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--sec); border-top: 1px solid var(--rule); padding-top: 18px; }
+.theme-sub + .multiples,
+.theme-head + .multiples { margin-top: 10px; }
+#tablehost > .themeblk:first-child > .theme-head { border-top: 0; padding-top: 0; margin-top: 0; }
 .nochart { color: var(--muted); font-size: 14px; text-align: center; margin: 24px 14px; }
 
 /* Topic chips above the grid: plain text with a 2px underline on active chips. Multi-select; the All
