@@ -237,6 +237,7 @@ table.rank.cyc { table-layout: auto; }
   .multiple:nth-child(2n+1) { border-left: 0; padding-left: 0; }
 }
 .multiple figcaption { display: flex; justify-content: center; align-items: flex-start; position: relative; font-weight: 700; font-size: 16px; line-height: 21px; text-align: center; padding: 0 24px; margin-bottom: 8px; }
+.multiple .ig-tag { margin: -4px 0 4px; text-align: center; font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .multiple figcaption a { text-decoration: none; }
 .multiple figcaption a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .multiple .rm { position: absolute; right: -6px; top: -4px; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; color: var(--muted); }

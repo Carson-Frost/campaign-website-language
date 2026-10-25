@@ -373,7 +373,7 @@ function sortPickerHTML() {
 
 function topicChipsHTML() {
   const picked = S.topics.size ? [...S.topics][0] : "";
-  const list = [["", "All"]].concat(topicsList().map(t => [INS.slug(t), t]));
+  const list = [["", "All"]].concat(topicsList().map(t => [INS.slug(t), t])).concat([["interest-group", "Interest Group"]]);
   const current = list.find(([s]) => s === picked) || list[0];
   const items = list.map(([s, lab]) => {
     const on = s === picked;
@@ -389,6 +389,7 @@ function topicChipsHTML() {
 }
 function termMatchesTopics(ti) {
   if (S.topics.size === 0) return true;
+  if (S.topics.has("interest-group") && INS.D.terms[ti].theme === "Endorsements") return true;
   const topics = (INS.D.terms[ti].topics || []).map(INS.slug);
   return topics.some(t => S.topics.has(t));
 }
@@ -418,8 +419,9 @@ function themesWithFoot() {
   const card = ti => {
     const has = INS.lineHasData(INS.lineData(ti));
     const cv = caveat(ti);
+    const isIg = INS.D.terms[ti].theme === "Endorsements";
     if (cv && cv.dagger && has && YEARS.some(yy => INS.PARTIES.some(p => cv.dagger({ y: yy, p })))) fn.mark(cv.mark, cv.long(esc(INS.dn(ti))));
-    return `<figure class="multiple"><figcaption>${esc(INS.dn(ti))}${has ? markFor(ti) : ""}</figcaption>
+    return `<figure class="multiple"><figcaption>${esc(INS.dn(ti))}${has ? markFor(ti) : ""}</figcaption>${isIg ? `<p class="ig-tag">Interest Group</p>` : ""}
       ${has ? INS.lineChart(ti, w, Object.assign(mo(ti), { h: hhAll, oneLine })) : `<p class="nochart">Fewer than ten analyzed candidates in every group</p>`}</figure>`;
   };
   let secs;
@@ -449,10 +451,10 @@ function themesWithFoot() {
     secs = topics.map(topic => {
       const main = byTopic[topic].filter(ti => INS.D.terms[ti].theme !== "Endorsements").sort(byName);
       const groups = byTopic[topic].filter(ti => INS.D.terms[ti].theme === "Endorsements").sort(byName);
+      const ordered = main.concat(groups);
       return `<section class="themeblk">
         <h3 class="theme-head">${esc(topic)}</h3>
-        ${main.length ? `<div class="multiples">${main.map(card).join("")}</div>` : ""}
-        ${groups.length ? `<h3 class="theme-sub">Interest Groups</h3><div class="multiples">${groups.map(card).join("")}</div>` : ""}
+        ${ordered.length ? `<div class="multiples">${ordered.map(card).join("")}</div>` : ""}
       </section>`;
     }).join("");
   }
