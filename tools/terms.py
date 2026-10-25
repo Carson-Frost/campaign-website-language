@@ -49,6 +49,7 @@ EXTRACTION_ADDITIONS = [
     ("Programs / Policy", "renewable energy", r"\brenewable energy\b"),
     ("Programs / Policy", "foreign policy", r"\bforeign (?:policy|affairs)\b"),
     ("Programs / Policy", "school choice", r"\bschool choice\b"),
+    ("Programs / Policy", "data centers", r"\bdata centers?\b"),
 ]
 
 # Layer 4: interest-group endorsements. Each entry is a named organization that candidates mention
@@ -146,7 +147,8 @@ _TOPICS = {
     "Values": ["freedom", "liberty", "Constitution", "faith / God", "American dream",
                "bipartisan", "common sense", "Human Rights Campaign", "human rights"],
     "Veterans": ["veterans"],
-    "Other": ["artificial intelligence", "child care", "Supreme Court"],
+    "Other": ["child care", "Supreme Court"],
+    "AI": ["artificial intelligence", "data centers"],
 }
 
 TOPIC_MAP = {}

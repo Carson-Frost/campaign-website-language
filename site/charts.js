@@ -49,7 +49,7 @@ const buildChart = (ti, W, o, H, small = false, edges = true, oneLine = true) =>
   // the margin that line needs would leave the cycles too close, the name goes over its value, set apart from the other's.
   let inline = oneLine && !mini && W >= 640;
   const inset = mini ? 14 : W < 310 ? 14 : narrow ? 24 : 26;
-  let m = mini ? { l: 44, r: 84, t: 22, b: 44 } : inline ? { l: 56, r: 148, t: 28, b: 52 } : narrow ? { l: 44, r: 84, t: 28, b: 52 } : { l: 56, r: 84, t: 28, b: 52 };
+  let m = mini ? { l: 44, r: 14, t: 22, b: 44 } : inline ? { l: 56, r: 148, t: 28, b: 52 } : narrow ? { l: 44, r: 84, t: 28, b: 52 } : { l: 56, r: 84, t: 28, b: 52 };
   if (oneLine && !inline) {
     const lastCells = INS.PARTIES.map(p => { const ds = data[p].filter(drawn); return ds[ds.length - 1]; }).filter(Boolean);
     const need = lastCells.length ? Math.ceil(7 + 6.5 + 6 + Math.max(...lastCells.map(c => textWidth(valText(c), 13) + textWidth(" " + PNAME[c.p], nfs)))) : 0;
@@ -398,11 +398,11 @@ const buildChart = (ti, W, o, H, small = false, edges = true, oneLine = true) =>
     data[p].forEach((c, i) => {
       const sp = labelSpec[p + i];
       if (!drawn(c) || !sp) return;
-      s += `<text class="vl ${p}" x="${sp.x.toFixed(1)}" y="${sp.y.toFixed(1)}" text-anchor="${sp.anchor}">${valText(c)}${named[p + i] ? ` <tspan class="nm">${PNAME[p]}</tspan>` : ""}</text>`;
+      s += `<text class="vl ${p}" x="${sp.x.toFixed(1)}" y="${sp.y.toFixed(1)}" text-anchor="${sp.anchor}">${valText(c)}${!mini && named[p + i] ? ` <tspan class="nm">${PNAME[p]}</tspan>` : ""}</text>`;
     });
   });
 
-  INS.PARTIES.forEach(p => {
+  if (!mini) INS.PARTIES.forEach(p => {
     const sp = nameSpec[p];
     if (sp) s += `<text class="pl ${p}" x="${sp.x.toFixed(1)}" y="${sp.y.toFixed(1)}" text-anchor="${sp.anchor}">${PNAME[p]}</text>`;
   });

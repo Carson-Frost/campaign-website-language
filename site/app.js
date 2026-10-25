@@ -76,21 +76,16 @@ function renderFilters() {
   if (!filtersOpen) { el.innerHTML = ""; return; }
   const keep = $(".fscroll", el), at = keep ? keep.scrollTop : 0;   // a choice redraws the list; it stays where the reader was
   const group = g => {
-    const counts = optCounts(g);
-    const tot = INS.D.candidates.filter(c => c.status === "analyzed" && (S.terms.length ? true : c.year === S.year) && INS.match(c, g.key)).length;
-    const left = tot - counts.reduce((a, b) => a + b, 0);
-    const dead = counts.every(n => !n) && !g.opts.some(o => S.f[g.key].has(o.v));   // a group with nothing to choose in this cycle
-    return `<fieldset class="fgrp"${dead ? " disabled" : ""}><legend>${g.key === "seat" ? glossLink("close-or-safe-seat", g.label) : g.label}</legend>${g.opts.map((o, i) => `<label class="opt${counts[i] ? "" : " zero"}">
-      <input type="checkbox" data-g="${g.key}" value="${o.v}"${S.f[g.key].has(o.v) ? " checked" : counts[i] ? "" : " disabled"}><span class="box" aria-hidden="true"></span>
-      <span class="lab">${esc(o.label)}</span><span class="cnt">${nf(counts[i])}<span class="vh"> analyzed</span></span></label>`).join("")}${left > 0 && g.key !== "office" && g.key !== "inc" ? `<p class="fleft">${nf(left)} with no ${g.key === "seat" ? "seat rating" : "result"}</p>` : ""}</fieldset>`;
+    return `<fieldset class="fgrp"><legend>${g.key === "seat" ? glossLink("close-or-safe-seat", g.label) : g.label}</legend>${g.opts.map(o => `<label class="opt">
+      <input type="checkbox" data-g="${g.key}" value="${o.v}"${S.f[g.key].has(o.v) ? " checked" : ""}><span class="box" aria-hidden="true"></span>
+      <span class="lab">${esc(o.label)}</span></label>`).join("")}</fieldset>`;
   };
-  const sg = INS.GROUPS.find(g => g.key === "state"), sc = optCounts(sg);
+  const sg = INS.GROUPS.find(g => g.key === "state");
   const any = INS.filtered();
-  const years = S.terms.length === 0 ? yl(S.year) : "All Cycles";
-  el.innerHTML = `<div class="fscroll"><div class="fhead"><h2 id="fTitle">Filters</h2><span class="fnote">Analyzed Candidates in ${esc(years)}${INS.filtered() ? " Matching the Other Filters" : ""}</span></div>
+  el.innerHTML = `<div class="fscroll"><div class="fhead"><h2 id="fTitle">Filters</h2></div>
     <div class="fgrid">${["office", "inc", "seat", "won"].map(k => group(INS.GROUPS.find(g => g.key === k))).join("")}</div>
     <div class="fstate"><label for="stateSel">State</label>
-      <select id="stateSel"><option value="">Add State</option>${sg.opts.map((o, i) => (S.f.state.has(o.v) ? "" : `<option value="${o.v}">${esc(o.label)} (${sc[i]})</option>`)).join("")}</select></div></div>
+      <select id="stateSel"><option value="">Add State</option>${sg.opts.map(o => (S.f.state.has(o.v) ? "" : `<option value="${o.v}">${esc(o.label)}</option>`)).join("")}</select></div></div>
     <div class="ffoot"><button type="button" class="textbtn" id="fClear"${any ? "" : " disabled"}>Clear All</button><button type="button" class="btn dark" id="fDone">Done</button></div>`;
   const box = $(".fscroll", el); if (box) box.scrollTop = at;
 }
@@ -362,11 +357,19 @@ function topicsList() {
 }
 function topicChipsHTML() {
   const picked = S.topics.size ? [...S.topics][0] : "";
-  const opts = topicsList().map(t => {
-    const s = INS.slug(t);
-    return `<option value="${esc(s)}"${picked === s ? " selected" : ""}>${esc(t)}</option>`;
+  const list = [["", "All"]].concat(topicsList().map(t => [INS.slug(t), t]));
+  const current = list.find(([s]) => s === picked) || list[0];
+  const items = list.map(([s, lab]) => {
+    const on = s === picked;
+    return `<li role="option" aria-selected="${on}" data-cat="${esc(s)}" tabindex="-1" class="cat-opt${on ? " on" : ""}">${esc(lab)}${on ? `<svg width="12" height="12" aria-hidden="true" class="cat-check"><path d="M1 6 L5 10 L11 2" stroke="currentColor" stroke-width="2" fill="none"/></svg>` : ""}</li>`;
   }).join("");
-  return `<label class="cat-picker"><span class="cat-label">Category</span><select id="catPicker" aria-label="Category"><option value=""${picked ? "" : " selected"}>All</option>${opts}</select></label>`;
+  return `<div class="cat-picker">
+    <button type="button" class="cat-btn" id="catBtn" aria-haspopup="listbox" aria-expanded="false" aria-controls="catMenu">
+      <span class="cat-prefix">Category:</span><span class="cat-current">${esc(current[1])}</span>
+      <svg width="12" height="8" aria-hidden="true" class="cat-caret"><path d="M1 1 L6 7 L11 1" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+    </button>
+    <ul class="cat-menu" id="catMenu" role="listbox" aria-label="Category" hidden>${items}</ul>
+  </div>`;
 }
 function termMatchesTopics(ti) {
   if (S.topics.size === 0) return true;
@@ -389,7 +392,7 @@ function themesWithFoot() {
   }
   const vw = $("#view").clientWidth || innerWidth - 64;
   const cols = innerWidth <= 760 ? 1 : innerWidth <= 980 ? 2 : 3;
-  const w = cols === 1 ? Math.max(260, vw) : Math.floor(vw / cols - 28);
+  const w = cols === 1 ? Math.max(260, vw) : Math.floor(vw / cols - 14);
   const mo = ti => ({ mini: true, range: false, ci: false, dagger: (caveat(ti) || {}).dagger });
   const drawnAll = shownIdx.filter(ti => INS.lineHasData(INS.lineData(ti)));
   /* One layout for the page, so a value sits in the same place in every chart. */
@@ -400,7 +403,7 @@ function themesWithFoot() {
     const has = INS.lineHasData(INS.lineData(ti));
     const cv = caveat(ti);
     if (cv && cv.dagger && has && YEARS.some(yy => INS.PARTIES.some(p => cv.dagger({ y: yy, p })))) fn.mark(cv.mark, cv.long(esc(INS.dn(ti))));
-    return `<figure class="multiple"><figcaption><a href="${INS.addressFor({ terms: [ti], panel: null })}">${esc(INS.dn(ti))}${has ? markFor(ti) : ""}</a></figcaption>
+    return `<figure class="multiple"><figcaption>${esc(INS.dn(ti))}${has ? markFor(ti) : ""}</figcaption>
       ${has ? INS.lineChart(ti, w, Object.assign(mo(ti), { h: hhAll, oneLine })) : `<p class="nochart">Fewer than ten analyzed candidates in every group</p>`}</figure>`;
   };
   const secs = INS.themesOf(shownIdx).map(t => {
@@ -426,8 +429,11 @@ function renderTable(host) {
   const showTabs = !query.trim();
   host.innerHTML = `<h1 class="title">How has the language of congressional campaigns shifted across cycles?</h1>
     ${none ? "" : `<p class="sub">${shareDef(f.counts ? "count" : smallCell(S.year) ? "mixed" : "share")}</p>`}
-    <div id="topicshost">${showTabs ? topicChipsHTML() : ""}</div>
-    ${controlsTable(f, none)}
+    <div class="toprow">
+      <div id="topicshost">${showTabs ? topicChipsHTML() : ""}</div>
+      ${controlsTable(f, none)}
+      <div class="chartkey parties" aria-label="Party key"><span><i class="psw d" aria-hidden="true"></i>Democratic</span><span><i class="psw r" aria-hidden="true"></i>Republican</span></div>
+    </div>
     <div id="groupline">${groupLine()}</div>
     <div id="tablehost">${themesWithFoot()}</div>`;
 }
@@ -704,14 +710,58 @@ function trapTab(e) {
   else if (!e.shiftKey && at === last) { e.preventDefault(); first.focus(); }
 }
 function setup() {
-  document.addEventListener("change", e => {
-    if (e.target && e.target.id === "catPicker") {
-      const slug = e.target.value;
+  function closeCatMenu() {
+    const m = $("#catMenu"), b = $("#catBtn");
+    if (m) m.hidden = true;
+    if (b) b.setAttribute("aria-expanded", "false");
+  }
+  document.addEventListener("click", e => {
+    const btn = e.target.closest("#catBtn");
+    if (btn) {
+      e.preventDefault();
+      const m = $("#catMenu");
+      if (!m) return;
+      const open = !m.hidden;
+      m.hidden = open;
+      btn.setAttribute("aria-expanded", String(!open));
+      if (!open) {
+        const cur = m.querySelector(".cat-opt.on") || m.querySelector(".cat-opt");
+        if (cur) cur.focus();
+      }
+      return;
+    }
+    const opt = e.target.closest(".cat-opt");
+    if (opt) {
+      e.preventDefault();
+      const slug = opt.dataset.cat;
       S.topics = slug ? new Set([slug]) : new Set();
       S.panel = null; S.cand = null;
-      INS.commit({ push: true, focus: "#catPicker" });
+      closeCatMenu();
+      INS.commit({ push: true, focus: "#catBtn" });
+      return;
     }
+    if (!e.target.closest(".cat-picker")) closeCatMenu();
   });
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape" && (e.target.closest(".cat-picker") || !$("#catMenu")?.hidden)) {
+      closeCatMenu();
+      const b = $("#catBtn"); if (b) b.focus();
+      return;
+    }
+    if ((e.key === "ArrowDown" || e.key === "ArrowUp") && e.target.classList.contains("cat-opt")) {
+      e.preventDefault();
+      const opts = [...$("#catMenu").querySelectorAll(".cat-opt")];
+      const i = opts.indexOf(e.target);
+      const j = (i + (e.key === "ArrowDown" ? 1 : opts.length - 1)) % opts.length;
+      opts[j].focus();
+      return;
+    }
+    if ((e.key === "Enter" || e.key === " ") && e.target.classList.contains("cat-opt")) {
+      e.preventDefault();
+      e.target.click();
+      return;
+    }
+  }, true);
   document.addEventListener("click", e => {
     const t = e.target.closest("[data-year],[data-sort],[data-panel],[data-cand],[data-unfilter],[data-rm],#filtersBtn,#fDone,#fClear,#panelClose,#fscrim,#dscrim");
     if (!t) { return; }
@@ -789,9 +839,7 @@ function setup() {
 INS.renderExplorer = (o = {}) => {
   INS.buildCells();
   const host = $("#view");
-  if (S.terms.length === 0) renderTable(host);
-  else if (S.terms.length === 1) renderTerm(host);
-  else renderTerms(host);
+  renderTable(host);
   renderFilters();
   if (filtersOpen) positionFilters();
   renderPanel().then(() => {

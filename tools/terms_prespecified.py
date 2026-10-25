@@ -77,7 +77,7 @@ TERMS = [
     ("Programs / Policy", "housing", r"\bhousing\b"),
     ("Programs / Policy", "child care", r"\bchild ?care\b"),
     ("Programs / Policy", "artificial intelligence",
-     r"\bartificial intelligence\b(?! \(ai\) technology)(?<!degree in artificial intelligence)|(?-i:\bAI\b)(?!\) technology)"),
+     r"\bartificial intelligence\b(?! \(ai\) technology)(?<!degree in artificial intelligence)|(?-i:(?<![A-Za-z])(?:AI|A\.I\.?)(?![A-Za-z]))(?!\) technology)"),
 ]
 
 

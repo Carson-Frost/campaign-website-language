@@ -1,685 +1,1333 @@
 theme,term,year,office,party_group,candidates_using,candidates_analyzed,share
-Economy and class,working people,2026,All,Democratic,119,438,0.2717
-Economy and class,working people,2026,All,Independent,20,80,0.25
-Economy and class,working people,2026,All,Republican,19,407,0.0467
-Economy and class,working people,2026,All,Third party,14,100,0.14
-Economy and class,working people,2026,House,Democratic,109,410,0.2659
-Economy and class,working people,2026,House,Independent,16,63,0.254
-Economy and class,working people,2026,House,Republican,19,376,0.0505
-Economy and class,working people,2026,House,Third party,10,81,0.1235
-Economy and class,working people,2026,Senate,Democratic,10,28,0.3571
-Economy and class,working people,2026,Senate,Independent,4,17,0.2353
-Economy and class,working people,2026,Senate,Republican,0,31,0.0
-Economy and class,working people,2026,Senate,Third party,4,19,0.2105
-Economy and class,working families,2026,All,Democratic,255,438,0.5822
-Economy and class,working families,2026,All,Independent,29,80,0.3625
-Economy and class,working families,2026,All,Republican,138,407,0.3391
-Economy and class,working families,2026,All,Third party,21,100,0.21
-Economy and class,working families,2026,House,Democratic,239,410,0.5829
-Economy and class,working families,2026,House,Independent,25,63,0.3968
-Economy and class,working families,2026,House,Republican,125,376,0.3324
-Economy and class,working families,2026,House,Third party,17,81,0.2099
-Economy and class,working families,2026,Senate,Democratic,16,28,0.5714
-Economy and class,working families,2026,Senate,Independent,4,17,0.2353
-Economy and class,working families,2026,Senate,Republican,13,31,0.4194
-Economy and class,working families,2026,Senate,Third party,4,19,0.2105
-Economy and class,working class,2026,All,Democratic,97,438,0.2215
-Economy and class,working class,2026,All,Independent,21,80,0.2625
-Economy and class,working class,2026,All,Republican,29,407,0.0713
-Economy and class,working class,2026,All,Third party,13,100,0.13
-Economy and class,working class,2026,House,Democratic,92,410,0.2244
-Economy and class,working class,2026,House,Independent,17,63,0.2698
-Economy and class,working class,2026,House,Republican,27,376,0.0718
-Economy and class,working class,2026,House,Third party,6,81,0.0741
-Economy and class,working class,2026,Senate,Democratic,5,28,0.1786
-Economy and class,working class,2026,Senate,Independent,4,17,0.2353
-Economy and class,working class,2026,Senate,Republican,2,31,0.0645
-Economy and class,working class,2026,Senate,Third party,7,19,0.3684
-Economy and class,middle class,2026,All,Democratic,114,438,0.2603
-Economy and class,middle class,2026,All,Independent,18,80,0.225
-Economy and class,middle class,2026,All,Republican,44,407,0.1081
-Economy and class,middle class,2026,All,Third party,9,100,0.09
-Economy and class,middle class,2026,House,Democratic,108,410,0.2634
-Economy and class,middle class,2026,House,Independent,14,63,0.2222
-Economy and class,middle class,2026,House,Republican,39,376,0.1037
-Economy and class,middle class,2026,House,Third party,8,81,0.0988
-Economy and class,middle class,2026,Senate,Democratic,6,28,0.2143
-Economy and class,middle class,2026,Senate,Independent,4,17,0.2353
-Economy and class,middle class,2026,Senate,Republican,5,31,0.1613
-Economy and class,middle class,2026,Senate,Third party,1,19,0.0526
-Economy and class,hardworking,2026,All,Democratic,113,438,0.258
-Economy and class,hardworking,2026,All,Independent,16,80,0.2
-Economy and class,hardworking,2026,All,Republican,101,407,0.2482
-Economy and class,hardworking,2026,All,Third party,14,100,0.14
-Economy and class,hardworking,2026,House,Democratic,106,410,0.2585
-Economy and class,hardworking,2026,House,Independent,12,63,0.1905
-Economy and class,hardworking,2026,House,Republican,94,376,0.25
-Economy and class,hardworking,2026,House,Third party,11,81,0.1358
-Economy and class,hardworking,2026,Senate,Democratic,7,28,0.25
-Economy and class,hardworking,2026,Senate,Independent,4,17,0.2353
-Economy and class,hardworking,2026,Senate,Republican,7,31,0.2258
-Economy and class,hardworking,2026,Senate,Third party,3,19,0.1579
-Economy and class,small business,2026,All,Democratic,209,438,0.4772
-Economy and class,small business,2026,All,Independent,39,80,0.4875
-Economy and class,small business,2026,All,Republican,212,407,0.5209
-Economy and class,small business,2026,All,Third party,28,100,0.28
-Economy and class,small business,2026,House,Democratic,196,410,0.478
-Economy and class,small business,2026,House,Independent,33,63,0.5238
-Economy and class,small business,2026,House,Republican,197,376,0.5239
-Economy and class,small business,2026,House,Third party,23,81,0.284
-Economy and class,small business,2026,Senate,Democratic,13,28,0.4643
-Economy and class,small business,2026,Senate,Independent,6,17,0.3529
-Economy and class,small business,2026,Senate,Republican,15,31,0.4839
-Economy and class,small business,2026,Senate,Third party,5,19,0.2632
-Economy and class,inflation,2026,All,Democratic,42,438,0.0959
-Economy and class,inflation,2026,All,Independent,21,80,0.2625
-Economy and class,inflation,2026,All,Republican,118,407,0.2899
-Economy and class,inflation,2026,All,Third party,27,100,0.27
-Economy and class,inflation,2026,House,Democratic,37,410,0.0902
-Economy and class,inflation,2026,House,Independent,17,63,0.2698
-Economy and class,inflation,2026,House,Republican,109,376,0.2899
-Economy and class,inflation,2026,House,Third party,21,81,0.2593
-Economy and class,inflation,2026,Senate,Democratic,5,28,0.1786
-Economy and class,inflation,2026,Senate,Independent,4,17,0.2353
-Economy and class,inflation,2026,Senate,Republican,9,31,0.2903
-Economy and class,inflation,2026,Senate,Third party,6,19,0.3158
-Economy and class,cost of living,2026,All,Democratic,99,438,0.226
-Economy and class,cost of living,2026,All,Independent,19,80,0.2375
-Economy and class,cost of living,2026,All,Republican,69,407,0.1695
-Economy and class,cost of living,2026,All,Third party,17,100,0.17
-Economy and class,cost of living,2026,House,Democratic,94,410,0.2293
-Economy and class,cost of living,2026,House,Independent,18,63,0.2857
-Economy and class,cost of living,2026,House,Republican,66,376,0.1755
-Economy and class,cost of living,2026,House,Third party,16,81,0.1975
-Economy and class,cost of living,2026,Senate,Democratic,5,28,0.1786
-Economy and class,cost of living,2026,Senate,Independent,1,17,0.0588
-Economy and class,cost of living,2026,Senate,Republican,3,31,0.0968
-Economy and class,cost of living,2026,Senate,Third party,1,19,0.0526
-Economy and class,affordable / affordability,2026,All,Democratic,345,438,0.7877
-Economy and class,affordable / affordability,2026,All,Independent,42,80,0.525
-Economy and class,affordable / affordability,2026,All,Republican,187,407,0.4595
-Economy and class,affordable / affordability,2026,All,Third party,35,100,0.35
-Economy and class,affordable / affordability,2026,House,Democratic,325,410,0.7927
-Economy and class,affordable / affordability,2026,House,Independent,34,63,0.5397
-Economy and class,affordable / affordability,2026,House,Republican,174,376,0.4628
-Economy and class,affordable / affordability,2026,House,Third party,29,81,0.358
-Economy and class,affordable / affordability,2026,Senate,Democratic,20,28,0.7143
-Economy and class,affordable / affordability,2026,Senate,Independent,8,17,0.4706
-Economy and class,affordable / affordability,2026,Senate,Republican,13,31,0.4194
-Economy and class,affordable / affordability,2026,Senate,Third party,6,19,0.3158
-Economy and class,unions,2026,All,Democratic,218,438,0.4977
-Economy and class,unions,2026,All,Independent,20,80,0.25
-Economy and class,unions,2026,All,Republican,71,407,0.1744
-Economy and class,unions,2026,All,Third party,21,100,0.21
-Economy and class,unions,2026,House,Democratic,206,410,0.5024
-Economy and class,unions,2026,House,Independent,15,63,0.2381
-Economy and class,unions,2026,House,Republican,65,376,0.1729
-Economy and class,unions,2026,House,Third party,15,81,0.1852
-Economy and class,unions,2026,Senate,Democratic,12,28,0.4286
-Economy and class,unions,2026,Senate,Independent,5,17,0.2941
-Economy and class,unions,2026,Senate,Republican,6,31,0.1935
-Economy and class,unions,2026,Senate,Third party,6,19,0.3158
-Economy and class,billionaires,2026,All,Democratic,139,438,0.3174
-Economy and class,billionaires,2026,All,Independent,28,80,0.35
-Economy and class,billionaires,2026,All,Republican,6,407,0.0147
-Economy and class,billionaires,2026,All,Third party,18,100,0.18
-Economy and class,billionaires,2026,House,Democratic,126,410,0.3073
-Economy and class,billionaires,2026,House,Independent,23,63,0.3651
-Economy and class,billionaires,2026,House,Republican,6,376,0.016
-Economy and class,billionaires,2026,House,Third party,16,81,0.1975
-Economy and class,billionaires,2026,Senate,Democratic,13,28,0.4643
-Economy and class,billionaires,2026,Senate,Independent,5,17,0.2941
-Economy and class,billionaires,2026,Senate,Republican,0,31,0.0
-Economy and class,billionaires,2026,Senate,Third party,2,19,0.1053
-Economy and class,corporations / corporate,2026,All,Democratic,238,438,0.5434
-Economy and class,corporations / corporate,2026,All,Independent,41,80,0.5125
-Economy and class,corporations / corporate,2026,All,Republican,30,407,0.0737
-Economy and class,corporations / corporate,2026,All,Third party,42,100,0.42
-Economy and class,corporations / corporate,2026,House,Democratic,217,410,0.5293
-Economy and class,corporations / corporate,2026,House,Independent,35,63,0.5556
-Economy and class,corporations / corporate,2026,House,Republican,27,376,0.0718
-Economy and class,corporations / corporate,2026,House,Third party,32,81,0.3951
-Economy and class,corporations / corporate,2026,Senate,Democratic,21,28,0.75
-Economy and class,corporations / corporate,2026,Senate,Independent,6,17,0.3529
-Economy and class,corporations / corporate,2026,Senate,Republican,3,31,0.0968
-Economy and class,corporations / corporate,2026,Senate,Third party,10,19,0.5263
-Economy and class,Big Pharma,2026,All,Democratic,26,438,0.0594
-Economy and class,Big Pharma,2026,All,Independent,2,80,0.025
-Economy and class,Big Pharma,2026,All,Republican,6,407,0.0147
-Economy and class,Big Pharma,2026,All,Third party,3,100,0.03
-Economy and class,Big Pharma,2026,House,Democratic,22,410,0.0537
-Economy and class,Big Pharma,2026,House,Independent,1,63,0.0159
-Economy and class,Big Pharma,2026,House,Republican,5,376,0.0133
-Economy and class,Big Pharma,2026,House,Third party,3,81,0.037
-Economy and class,Big Pharma,2026,Senate,Democratic,4,28,0.1429
-Economy and class,Big Pharma,2026,Senate,Independent,1,17,0.0588
-Economy and class,Big Pharma,2026,Senate,Republican,1,31,0.0323
-Economy and class,Big Pharma,2026,Senate,Third party,0,19,0.0
-Economy and class,tariffs,2026,All,Democratic,115,438,0.2626
-Economy and class,tariffs,2026,All,Independent,17,80,0.2125
-Economy and class,tariffs,2026,All,Republican,14,407,0.0344
-Economy and class,tariffs,2026,All,Third party,13,100,0.13
-Economy and class,tariffs,2026,House,Democratic,102,410,0.2488
-Economy and class,tariffs,2026,House,Independent,16,63,0.254
-Economy and class,tariffs,2026,House,Republican,13,376,0.0346
-Economy and class,tariffs,2026,House,Third party,9,81,0.1111
-Economy and class,tariffs,2026,Senate,Democratic,13,28,0.4643
-Economy and class,tariffs,2026,Senate,Independent,1,17,0.0588
-Economy and class,tariffs,2026,Senate,Republican,1,31,0.0323
-Economy and class,tariffs,2026,Senate,Third party,4,19,0.2105
-Economy and class,tax cuts,2026,All,Democratic,47,438,0.1073
-Economy and class,tax cuts,2026,All,Independent,8,80,0.1
-Economy and class,tax cuts,2026,All,Republican,69,407,0.1695
-Economy and class,tax cuts,2026,All,Third party,4,100,0.04
-Economy and class,tax cuts,2026,House,Democratic,42,410,0.1024
-Economy and class,tax cuts,2026,House,Independent,7,63,0.1111
-Economy and class,tax cuts,2026,House,Republican,55,376,0.1463
-Economy and class,tax cuts,2026,House,Third party,1,81,0.0123
-Economy and class,tax cuts,2026,Senate,Democratic,5,28,0.1786
-Economy and class,tax cuts,2026,Senate,Independent,1,17,0.0588
-Economy and class,tax cuts,2026,Senate,Republican,14,31,0.4516
-Economy and class,tax cuts,2026,Senate,Third party,3,19,0.1579
-Opponents and politics,radical left,2026,All,Democratic,0,438,0.0
-Opponents and politics,radical left,2026,All,Independent,0,80,0.0
-Opponents and politics,radical left,2026,All,Republican,40,407,0.0983
-Opponents and politics,radical left,2026,All,Third party,1,100,0.01
-Opponents and politics,radical left,2026,House,Democratic,0,410,0.0
-Opponents and politics,radical left,2026,House,Independent,0,63,0.0
-Opponents and politics,radical left,2026,House,Republican,34,376,0.0904
-Opponents and politics,radical left,2026,House,Third party,0,81,0.0
-Opponents and politics,radical left,2026,Senate,Democratic,0,28,0.0
-Opponents and politics,radical left,2026,Senate,Independent,0,17,0.0
-Opponents and politics,radical left,2026,Senate,Republican,6,31,0.1935
-Opponents and politics,radical left,2026,Senate,Third party,1,19,0.0526
-Opponents and politics,socialism / socialist,2026,All,Democratic,11,438,0.0251
-Opponents and politics,socialism / socialist,2026,All,Independent,6,80,0.075
-Opponents and politics,socialism / socialist,2026,All,Republican,52,407,0.1278
-Opponents and politics,socialism / socialist,2026,All,Third party,11,100,0.11
-Opponents and politics,socialism / socialist,2026,House,Democratic,11,410,0.0268
-Opponents and politics,socialism / socialist,2026,House,Independent,3,63,0.0476
-Opponents and politics,socialism / socialist,2026,House,Republican,49,376,0.1303
-Opponents and politics,socialism / socialist,2026,House,Third party,10,81,0.1235
-Opponents and politics,socialism / socialist,2026,Senate,Democratic,0,28,0.0
-Opponents and politics,socialism / socialist,2026,Senate,Independent,3,17,0.1765
-Opponents and politics,socialism / socialist,2026,Senate,Republican,3,31,0.0968
-Opponents and politics,socialism / socialist,2026,Senate,Third party,1,19,0.0526
-Opponents and politics,woke,2026,All,Democratic,1,438,0.0023
-Opponents and politics,woke,2026,All,Independent,1,80,0.0125
-Opponents and politics,woke,2026,All,Republican,35,407,0.086
-Opponents and politics,woke,2026,All,Third party,0,100,0.0
-Opponents and politics,woke,2026,House,Democratic,1,410,0.0024
-Opponents and politics,woke,2026,House,Independent,1,63,0.0159
-Opponents and politics,woke,2026,House,Republican,30,376,0.0798
-Opponents and politics,woke,2026,House,Third party,0,81,0.0
-Opponents and politics,woke,2026,Senate,Democratic,0,28,0.0
-Opponents and politics,woke,2026,Senate,Independent,0,17,0.0
-Opponents and politics,woke,2026,Senate,Republican,5,31,0.1613
-Opponents and politics,woke,2026,Senate,Third party,0,19,0.0
-Opponents and politics,MAGA,2026,All,Democratic,39,438,0.089
-Opponents and politics,MAGA,2026,All,Independent,5,80,0.0625
-Opponents and politics,MAGA,2026,All,Republican,11,407,0.027
-Opponents and politics,MAGA,2026,All,Third party,2,100,0.02
-Opponents and politics,MAGA,2026,House,Democratic,35,410,0.0854
-Opponents and politics,MAGA,2026,House,Independent,5,63,0.0794
-Opponents and politics,MAGA,2026,House,Republican,11,376,0.0293
-Opponents and politics,MAGA,2026,House,Third party,2,81,0.0247
-Opponents and politics,MAGA,2026,Senate,Democratic,4,28,0.1429
-Opponents and politics,MAGA,2026,Senate,Independent,0,17,0.0
-Opponents and politics,MAGA,2026,Senate,Republican,0,31,0.0
-Opponents and politics,MAGA,2026,Senate,Third party,0,19,0.0
-Opponents and politics,extreme / extremist,2026,All,Democratic,120,438,0.274
-Opponents and politics,extreme / extremist,2026,All,Independent,14,80,0.175
-Opponents and politics,extreme / extremist,2026,All,Republican,34,407,0.0835
-Opponents and politics,extreme / extremist,2026,All,Third party,8,100,0.08
-Opponents and politics,extreme / extremist,2026,House,Democratic,112,410,0.2732
-Opponents and politics,extreme / extremist,2026,House,Independent,10,63,0.1587
-Opponents and politics,extreme / extremist,2026,House,Republican,30,376,0.0798
-Opponents and politics,extreme / extremist,2026,House,Third party,5,81,0.0617
-Opponents and politics,extreme / extremist,2026,Senate,Democratic,8,28,0.2857
-Opponents and politics,extreme / extremist,2026,Senate,Independent,4,17,0.2353
-Opponents and politics,extreme / extremist,2026,Senate,Republican,4,31,0.129
-Opponents and politics,extreme / extremist,2026,Senate,Third party,3,19,0.1579
-Opponents and politics,Trump,2026,All,Democratic,197,438,0.4498
-Opponents and politics,Trump,2026,All,Independent,12,80,0.15
-Opponents and politics,Trump,2026,All,Republican,185,407,0.4545
-Opponents and politics,Trump,2026,All,Third party,20,100,0.2
-Opponents and politics,Trump,2026,House,Democratic,182,410,0.4439
-Opponents and politics,Trump,2026,House,Independent,9,63,0.1429
-Opponents and politics,Trump,2026,House,Republican,162,376,0.4309
-Opponents and politics,Trump,2026,House,Third party,14,81,0.1728
-Opponents and politics,Trump,2026,Senate,Democratic,15,28,0.5357
-Opponents and politics,Trump,2026,Senate,Independent,3,17,0.1765
-Opponents and politics,Trump,2026,Senate,Republican,23,31,0.7419
-Opponents and politics,Trump,2026,Senate,Third party,6,19,0.3158
-Opponents and politics,Biden,2026,All,Democratic,39,438,0.089
-Opponents and politics,Biden,2026,All,Independent,5,80,0.0625
-Opponents and politics,Biden,2026,All,Republican,99,407,0.2432
-Opponents and politics,Biden,2026,All,Third party,4,100,0.04
-Opponents and politics,Biden,2026,House,Democratic,38,410,0.0927
-Opponents and politics,Biden,2026,House,Independent,4,63,0.0635
-Opponents and politics,Biden,2026,House,Republican,87,376,0.2314
-Opponents and politics,Biden,2026,House,Third party,3,81,0.037
-Opponents and politics,Biden,2026,Senate,Democratic,1,28,0.0357
-Opponents and politics,Biden,2026,Senate,Independent,1,17,0.0588
-Opponents and politics,Biden,2026,Senate,Republican,12,31,0.3871
-Opponents and politics,Biden,2026,Senate,Third party,1,19,0.0526
-Opponents and politics,career politicians,2026,All,Democratic,59,438,0.1347
-Opponents and politics,career politicians,2026,All,Independent,22,80,0.275
-Opponents and politics,career politicians,2026,All,Republican,69,407,0.1695
-Opponents and politics,career politicians,2026,All,Third party,14,100,0.14
-Opponents and politics,career politicians,2026,House,Democratic,53,410,0.1293
-Opponents and politics,career politicians,2026,House,Independent,16,63,0.254
-Opponents and politics,career politicians,2026,House,Republican,65,376,0.1729
-Opponents and politics,career politicians,2026,House,Third party,10,81,0.1235
-Opponents and politics,career politicians,2026,Senate,Democratic,6,28,0.2143
-Opponents and politics,career politicians,2026,Senate,Independent,6,17,0.3529
-Opponents and politics,career politicians,2026,Senate,Republican,4,31,0.129
-Opponents and politics,career politicians,2026,Senate,Third party,4,19,0.2105
-Opponents and politics,the swamp,2026,All,Democratic,4,438,0.0091
-Opponents and politics,the swamp,2026,All,Independent,2,80,0.025
-Opponents and politics,the swamp,2026,All,Republican,13,407,0.0319
-Opponents and politics,the swamp,2026,All,Third party,0,100,0.0
-Opponents and politics,the swamp,2026,House,Democratic,3,410,0.0073
-Opponents and politics,the swamp,2026,House,Independent,1,63,0.0159
-Opponents and politics,the swamp,2026,House,Republican,10,376,0.0266
-Opponents and politics,the swamp,2026,House,Third party,0,81,0.0
-Opponents and politics,the swamp,2026,Senate,Democratic,1,28,0.0357
-Opponents and politics,the swamp,2026,Senate,Independent,1,17,0.0588
-Opponents and politics,the swamp,2026,Senate,Republican,3,31,0.0968
-Opponents and politics,the swamp,2026,Senate,Third party,0,19,0.0
-Opponents and politics,elites,2026,All,Democratic,12,438,0.0274
-Opponents and politics,elites,2026,All,Independent,12,80,0.15
-Opponents and politics,elites,2026,All,Republican,27,407,0.0663
-Opponents and politics,elites,2026,All,Third party,7,100,0.07
-Opponents and politics,elites,2026,House,Democratic,11,410,0.0268
-Opponents and politics,elites,2026,House,Independent,7,63,0.1111
-Opponents and politics,elites,2026,House,Republican,24,376,0.0638
-Opponents and politics,elites,2026,House,Third party,5,81,0.0617
-Opponents and politics,elites,2026,Senate,Democratic,1,28,0.0357
-Opponents and politics,elites,2026,Senate,Independent,5,17,0.2941
-Opponents and politics,elites,2026,Senate,Republican,3,31,0.0968
-Opponents and politics,elites,2026,Senate,Third party,2,19,0.1053
-Opponents and politics,corruption,2026,All,Democratic,138,438,0.3151
-Opponents and politics,corruption,2026,All,Independent,34,80,0.425
-Opponents and politics,corruption,2026,All,Republican,58,407,0.1425
-Opponents and politics,corruption,2026,All,Third party,21,100,0.21
-Opponents and politics,corruption,2026,House,Democratic,121,410,0.2951
-Opponents and politics,corruption,2026,House,Independent,25,63,0.3968
-Opponents and politics,corruption,2026,House,Republican,52,376,0.1383
-Opponents and politics,corruption,2026,House,Third party,14,81,0.1728
-Opponents and politics,corruption,2026,Senate,Democratic,17,28,0.6071
-Opponents and politics,corruption,2026,Senate,Independent,9,17,0.5294
-Opponents and politics,corruption,2026,Senate,Republican,6,31,0.1935
-Opponents and politics,corruption,2026,Senate,Third party,7,19,0.3684
-Opponents and politics,bipartisan,2026,All,Democratic,152,438,0.347
-Opponents and politics,bipartisan,2026,All,Independent,14,80,0.175
-Opponents and politics,bipartisan,2026,All,Republican,60,407,0.1474
-Opponents and politics,bipartisan,2026,All,Third party,5,100,0.05
-Opponents and politics,bipartisan,2026,House,Democratic,143,410,0.3488
-Opponents and politics,bipartisan,2026,House,Independent,11,63,0.1746
-Opponents and politics,bipartisan,2026,House,Republican,55,376,0.1463
-Opponents and politics,bipartisan,2026,House,Third party,4,81,0.0494
-Opponents and politics,bipartisan,2026,Senate,Democratic,9,28,0.3214
-Opponents and politics,bipartisan,2026,Senate,Independent,3,17,0.1765
-Opponents and politics,bipartisan,2026,Senate,Republican,5,31,0.1613
-Opponents and politics,bipartisan,2026,Senate,Third party,1,19,0.0526
-Opponents and politics,common sense,2026,All,Democratic,116,438,0.2648
-Opponents and politics,common sense,2026,All,Independent,17,80,0.2125
-Opponents and politics,common sense,2026,All,Republican,130,407,0.3194
-Opponents and politics,common sense,2026,All,Third party,12,100,0.12
-Opponents and politics,common sense,2026,House,Democratic,108,410,0.2634
-Opponents and politics,common sense,2026,House,Independent,13,63,0.2063
-Opponents and politics,common sense,2026,House,Republican,118,376,0.3138
-Opponents and politics,common sense,2026,House,Third party,8,81,0.0988
-Opponents and politics,common sense,2026,Senate,Democratic,8,28,0.2857
-Opponents and politics,common sense,2026,Senate,Independent,4,17,0.2353
-Opponents and politics,common sense,2026,Senate,Republican,12,31,0.3871
-Opponents and politics,common sense,2026,Senate,Third party,4,19,0.2105
-Opponents and politics,term limits,2026,All,Democratic,49,438,0.1119
-Opponents and politics,term limits,2026,All,Independent,21,80,0.2625
-Opponents and politics,term limits,2026,All,Republican,42,407,0.1032
-Opponents and politics,term limits,2026,All,Third party,8,100,0.08
-Opponents and politics,term limits,2026,House,Democratic,44,410,0.1073
-Opponents and politics,term limits,2026,House,Independent,18,63,0.2857
-Opponents and politics,term limits,2026,House,Republican,41,376,0.109
-Opponents and politics,term limits,2026,House,Third party,6,81,0.0741
-Opponents and politics,term limits,2026,Senate,Democratic,5,28,0.1786
-Opponents and politics,term limits,2026,Senate,Independent,3,17,0.1765
-Opponents and politics,term limits,2026,Senate,Republican,1,31,0.0323
-Opponents and politics,term limits,2026,Senate,Third party,2,19,0.1053
-Rights and values,freedom,2026,All,Democratic,222,438,0.5068
-Rights and values,freedom,2026,All,Independent,37,80,0.4625
-Rights and values,freedom,2026,All,Republican,205,407,0.5037
-Rights and values,freedom,2026,All,Third party,53,100,0.53
-Rights and values,freedom,2026,House,Democratic,209,410,0.5098
-Rights and values,freedom,2026,House,Independent,29,63,0.4603
-Rights and values,freedom,2026,House,Republican,190,376,0.5053
-Rights and values,freedom,2026,House,Third party,43,81,0.5309
-Rights and values,freedom,2026,Senate,Democratic,13,28,0.4643
-Rights and values,freedom,2026,Senate,Independent,8,17,0.4706
-Rights and values,freedom,2026,Senate,Republican,15,31,0.4839
-Rights and values,freedom,2026,Senate,Third party,10,19,0.5263
-Rights and values,liberty,2026,All,Democratic,30,438,0.0685
-Rights and values,liberty,2026,All,Independent,27,80,0.3375
-Rights and values,liberty,2026,All,Republican,90,407,0.2211
-Rights and values,liberty,2026,All,Third party,46,100,0.46
-Rights and values,liberty,2026,House,Democratic,28,410,0.0683
-Rights and values,liberty,2026,House,Independent,19,63,0.3016
-Rights and values,liberty,2026,House,Republican,82,376,0.2181
-Rights and values,liberty,2026,House,Third party,40,81,0.4938
-Rights and values,liberty,2026,Senate,Democratic,2,28,0.0714
-Rights and values,liberty,2026,Senate,Independent,8,17,0.4706
-Rights and values,liberty,2026,Senate,Republican,8,31,0.2581
-Rights and values,liberty,2026,Senate,Third party,6,19,0.3158
-Rights and values,democracy,2026,All,Democratic,207,438,0.4726
-Rights and values,democracy,2026,All,Independent,23,80,0.2875
-Rights and values,democracy,2026,All,Republican,33,407,0.0811
-Rights and values,democracy,2026,All,Third party,26,100,0.26
-Rights and values,democracy,2026,House,Democratic,197,410,0.4805
-Rights and values,democracy,2026,House,Independent,19,63,0.3016
-Rights and values,democracy,2026,House,Republican,31,376,0.0824
-Rights and values,democracy,2026,House,Third party,19,81,0.2346
-Rights and values,democracy,2026,Senate,Democratic,10,28,0.3571
-Rights and values,democracy,2026,Senate,Independent,4,17,0.2353
-Rights and values,democracy,2026,Senate,Republican,2,31,0.0645
-Rights and values,democracy,2026,Senate,Third party,7,19,0.3684
-Rights and values,Constitution,2026,All,Democratic,149,438,0.3402
-Rights and values,Constitution,2026,All,Independent,44,80,0.55
-Rights and values,Constitution,2026,All,Republican,165,407,0.4054
-Rights and values,Constitution,2026,All,Third party,47,100,0.47
-Rights and values,Constitution,2026,House,Democratic,136,410,0.3317
-Rights and values,Constitution,2026,House,Independent,33,63,0.5238
-Rights and values,Constitution,2026,House,Republican,153,376,0.4069
-Rights and values,Constitution,2026,House,Third party,35,81,0.4321
-Rights and values,Constitution,2026,Senate,Democratic,13,28,0.4643
-Rights and values,Constitution,2026,Senate,Independent,11,17,0.6471
-Rights and values,Constitution,2026,Senate,Republican,12,31,0.3871
-Rights and values,Constitution,2026,Senate,Third party,12,19,0.6316
-Rights and values,Second Amendment,2026,All,Democratic,30,438,0.0685
-Rights and values,Second Amendment,2026,All,Independent,15,80,0.1875
-Rights and values,Second Amendment,2026,All,Republican,145,407,0.3563
-Rights and values,Second Amendment,2026,All,Third party,16,100,0.16
-Rights and values,Second Amendment,2026,House,Democratic,29,410,0.0707
-Rights and values,Second Amendment,2026,House,Independent,13,63,0.2063
-Rights and values,Second Amendment,2026,House,Republican,133,376,0.3537
-Rights and values,Second Amendment,2026,House,Third party,11,81,0.1358
-Rights and values,Second Amendment,2026,Senate,Democratic,1,28,0.0357
-Rights and values,Second Amendment,2026,Senate,Independent,2,17,0.1176
-Rights and values,Second Amendment,2026,Senate,Republican,12,31,0.3871
-Rights and values,Second Amendment,2026,Senate,Third party,5,19,0.2632
-Rights and values,faith / God,2026,All,Democratic,86,438,0.1963
-Rights and values,faith / God,2026,All,Independent,27,80,0.3375
-Rights and values,faith / God,2026,All,Republican,170,407,0.4177
-Rights and values,faith / God,2026,All,Third party,22,100,0.22
-Rights and values,faith / God,2026,House,Democratic,81,410,0.1976
-Rights and values,faith / God,2026,House,Independent,22,63,0.3492
-Rights and values,faith / God,2026,House,Republican,159,376,0.4229
-Rights and values,faith / God,2026,House,Third party,18,81,0.2222
-Rights and values,faith / God,2026,Senate,Democratic,5,28,0.1786
-Rights and values,faith / God,2026,Senate,Independent,5,17,0.2941
-Rights and values,faith / God,2026,Senate,Republican,11,31,0.3548
-Rights and values,faith / God,2026,Senate,Third party,4,19,0.2105
-Rights and values,parental rights,2026,All,Democratic,0,438,0.0
-Rights and values,parental rights,2026,All,Independent,2,80,0.025
-Rights and values,parental rights,2026,All,Republican,59,407,0.145
-Rights and values,parental rights,2026,All,Third party,2,100,0.02
-Rights and values,parental rights,2026,House,Democratic,0,410,0.0
-Rights and values,parental rights,2026,House,Independent,0,63,0.0
-Rights and values,parental rights,2026,House,Republican,51,376,0.1356
-Rights and values,parental rights,2026,House,Third party,2,81,0.0247
-Rights and values,parental rights,2026,Senate,Democratic,0,28,0.0
-Rights and values,parental rights,2026,Senate,Independent,2,17,0.1176
-Rights and values,parental rights,2026,Senate,Republican,8,31,0.2581
-Rights and values,parental rights,2026,Senate,Third party,0,19,0.0
-Rights and values,abortion,2026,All,Democratic,112,438,0.2557
-Rights and values,abortion,2026,All,Independent,15,80,0.1875
-Rights and values,abortion,2026,All,Republican,59,407,0.145
-Rights and values,abortion,2026,All,Third party,15,100,0.15
-Rights and values,abortion,2026,House,Democratic,105,410,0.2561
-Rights and values,abortion,2026,House,Independent,12,63,0.1905
-Rights and values,abortion,2026,House,Republican,54,376,0.1436
-Rights and values,abortion,2026,House,Third party,12,81,0.1481
-Rights and values,abortion,2026,Senate,Democratic,7,28,0.25
-Rights and values,abortion,2026,Senate,Independent,3,17,0.1765
-Rights and values,abortion,2026,Senate,Republican,5,31,0.1613
-Rights and values,abortion,2026,Senate,Third party,3,19,0.1579
-Rights and values,reproductive freedom / rights,2026,All,Democratic,156,438,0.3562
-Rights and values,reproductive freedom / rights,2026,All,Independent,5,80,0.0625
-Rights and values,reproductive freedom / rights,2026,All,Republican,2,407,0.0049
-Rights and values,reproductive freedom / rights,2026,All,Third party,7,100,0.07
-Rights and values,reproductive freedom / rights,2026,House,Democratic,145,410,0.3537
-Rights and values,reproductive freedom / rights,2026,House,Independent,4,63,0.0635
-Rights and values,reproductive freedom / rights,2026,House,Republican,2,376,0.0053
-Rights and values,reproductive freedom / rights,2026,House,Third party,6,81,0.0741
-Rights and values,reproductive freedom / rights,2026,Senate,Democratic,11,28,0.3929
-Rights and values,reproductive freedom / rights,2026,Senate,Independent,1,17,0.0588
-Rights and values,reproductive freedom / rights,2026,Senate,Republican,0,31,0.0
-Rights and values,reproductive freedom / rights,2026,Senate,Third party,1,19,0.0526
-Rights and values,pro-life / unborn,2026,All,Democratic,3,438,0.0068
-Rights and values,pro-life / unborn,2026,All,Independent,8,80,0.1
-Rights and values,pro-life / unborn,2026,All,Republican,108,407,0.2654
-Rights and values,pro-life / unborn,2026,All,Third party,6,100,0.06
-Rights and values,pro-life / unborn,2026,House,Democratic,3,410,0.0073
-Rights and values,pro-life / unborn,2026,House,Independent,7,63,0.1111
-Rights and values,pro-life / unborn,2026,House,Republican,102,376,0.2713
-Rights and values,pro-life / unborn,2026,House,Third party,6,81,0.0741
-Rights and values,pro-life / unborn,2026,Senate,Democratic,0,28,0.0
-Rights and values,pro-life / unborn,2026,Senate,Independent,1,17,0.0588
-Rights and values,pro-life / unborn,2026,Senate,Republican,6,31,0.1935
-Rights and values,pro-life / unborn,2026,Senate,Third party,0,19,0.0
-Rights and values,election integrity,2026,All,Democratic,4,438,0.0091
-Rights and values,election integrity,2026,All,Independent,3,80,0.0375
-Rights and values,election integrity,2026,All,Republican,39,407,0.0958
-Rights and values,election integrity,2026,All,Third party,3,100,0.03
-Rights and values,election integrity,2026,House,Democratic,4,410,0.0098
-Rights and values,election integrity,2026,House,Independent,3,63,0.0476
-Rights and values,election integrity,2026,House,Republican,34,376,0.0904
-Rights and values,election integrity,2026,House,Third party,2,81,0.0247
-Rights and values,election integrity,2026,Senate,Democratic,0,28,0.0
-Rights and values,election integrity,2026,Senate,Independent,0,17,0.0
-Rights and values,election integrity,2026,Senate,Republican,5,31,0.1613
-Rights and values,election integrity,2026,Senate,Third party,1,19,0.0526
-Security and immigration,border,2026,All,Democratic,121,438,0.2763
-Security and immigration,border,2026,All,Independent,23,80,0.2875
-Security and immigration,border,2026,All,Republican,255,407,0.6265
-Security and immigration,border,2026,All,Third party,29,100,0.29
-Security and immigration,border,2026,House,Democratic,115,410,0.2805
-Security and immigration,border,2026,House,Independent,19,63,0.3016
-Security and immigration,border,2026,House,Republican,236,376,0.6277
-Security and immigration,border,2026,House,Third party,23,81,0.284
-Security and immigration,border,2026,Senate,Democratic,6,28,0.2143
-Security and immigration,border,2026,Senate,Independent,4,17,0.2353
-Security and immigration,border,2026,Senate,Republican,19,31,0.6129
-Security and immigration,border,2026,Senate,Third party,6,19,0.3158
-Security and immigration,illegal immigration / aliens,2026,All,Democratic,9,438,0.0205
-Security and immigration,illegal immigration / aliens,2026,All,Independent,5,80,0.0625
-Security and immigration,illegal immigration / aliens,2026,All,Republican,110,407,0.2703
-Security and immigration,illegal immigration / aliens,2026,All,Third party,5,100,0.05
-Security and immigration,illegal immigration / aliens,2026,House,Democratic,9,410,0.022
-Security and immigration,illegal immigration / aliens,2026,House,Independent,4,63,0.0635
-Security and immigration,illegal immigration / aliens,2026,House,Republican,98,376,0.2606
-Security and immigration,illegal immigration / aliens,2026,House,Third party,5,81,0.0617
-Security and immigration,illegal immigration / aliens,2026,Senate,Democratic,0,28,0.0
-Security and immigration,illegal immigration / aliens,2026,Senate,Independent,1,17,0.0588
-Security and immigration,illegal immigration / aliens,2026,Senate,Republican,12,31,0.3871
-Security and immigration,illegal immigration / aliens,2026,Senate,Third party,0,19,0.0
-Security and immigration,open borders,2026,All,Democratic,4,438,0.0091
-Security and immigration,open borders,2026,All,Independent,3,80,0.0375
-Security and immigration,open borders,2026,All,Republican,29,407,0.0713
-Security and immigration,open borders,2026,All,Third party,4,100,0.04
-Security and immigration,open borders,2026,House,Democratic,4,410,0.0098
-Security and immigration,open borders,2026,House,Independent,2,63,0.0317
-Security and immigration,open borders,2026,House,Republican,26,376,0.0691
-Security and immigration,open borders,2026,House,Third party,3,81,0.037
-Security and immigration,open borders,2026,Senate,Democratic,0,28,0.0
-Security and immigration,open borders,2026,Senate,Independent,1,17,0.0588
-Security and immigration,open borders,2026,Senate,Republican,3,31,0.0968
-Security and immigration,open borders,2026,Senate,Third party,1,19,0.0526
-Security and immigration,fentanyl,2026,All,Democratic,25,438,0.0571
-Security and immigration,fentanyl,2026,All,Independent,6,80,0.075
-Security and immigration,fentanyl,2026,All,Republican,77,407,0.1892
-Security and immigration,fentanyl,2026,All,Third party,5,100,0.05
-Security and immigration,fentanyl,2026,House,Democratic,24,410,0.0585
-Security and immigration,fentanyl,2026,House,Independent,6,63,0.0952
-Security and immigration,fentanyl,2026,House,Republican,68,376,0.1809
-Security and immigration,fentanyl,2026,House,Third party,4,81,0.0494
-Security and immigration,fentanyl,2026,Senate,Democratic,1,28,0.0357
-Security and immigration,fentanyl,2026,Senate,Independent,0,17,0.0
-Security and immigration,fentanyl,2026,Senate,Republican,9,31,0.2903
-Security and immigration,fentanyl,2026,Senate,Third party,1,19,0.0526
-Security and immigration,cartels,2026,All,Democratic,8,438,0.0183
-Security and immigration,cartels,2026,All,Independent,3,80,0.0375
-Security and immigration,cartels,2026,All,Republican,38,407,0.0934
-Security and immigration,cartels,2026,All,Third party,8,100,0.08
-Security and immigration,cartels,2026,House,Democratic,8,410,0.0195
-Security and immigration,cartels,2026,House,Independent,3,63,0.0476
-Security and immigration,cartels,2026,House,Republican,33,376,0.0878
-Security and immigration,cartels,2026,House,Third party,5,81,0.0617
-Security and immigration,cartels,2026,Senate,Democratic,0,28,0.0
-Security and immigration,cartels,2026,Senate,Independent,0,17,0.0
-Security and immigration,cartels,2026,Senate,Republican,5,31,0.1613
-Security and immigration,cartels,2026,Senate,Third party,3,19,0.1579
-Security and immigration,law enforcement / police,2026,All,Democratic,137,438,0.3128
-Security and immigration,law enforcement / police,2026,All,Independent,22,80,0.275
-Security and immigration,law enforcement / police,2026,All,Republican,217,407,0.5332
-Security and immigration,law enforcement / police,2026,All,Third party,30,100,0.3
-Security and immigration,law enforcement / police,2026,House,Democratic,127,410,0.3098
-Security and immigration,law enforcement / police,2026,House,Independent,16,63,0.254
-Security and immigration,law enforcement / police,2026,House,Republican,197,376,0.5239
-Security and immigration,law enforcement / police,2026,House,Third party,24,81,0.2963
-Security and immigration,law enforcement / police,2026,Senate,Democratic,10,28,0.3571
-Security and immigration,law enforcement / police,2026,Senate,Independent,6,17,0.3529
-Security and immigration,law enforcement / police,2026,Senate,Republican,20,31,0.6452
-Security and immigration,law enforcement / police,2026,Senate,Third party,6,19,0.3158
-Security and immigration,China,2026,All,Democratic,39,438,0.089
-Security and immigration,China,2026,All,Independent,12,80,0.15
-Security and immigration,China,2026,All,Republican,81,407,0.199
-Security and immigration,China,2026,All,Third party,10,100,0.1
-Security and immigration,China,2026,House,Democratic,33,410,0.0805
-Security and immigration,China,2026,House,Independent,12,63,0.1905
-Security and immigration,China,2026,House,Republican,74,376,0.1968
-Security and immigration,China,2026,House,Third party,7,81,0.0864
-Security and immigration,China,2026,Senate,Democratic,6,28,0.2143
-Security and immigration,China,2026,Senate,Independent,0,17,0.0
-Security and immigration,China,2026,Senate,Republican,7,31,0.2258
-Security and immigration,China,2026,Senate,Third party,3,19,0.1579
-Programs and policy,Social Security,2026,All,Democratic,176,438,0.4018
-Programs and policy,Social Security,2026,All,Independent,23,80,0.2875
-Programs and policy,Social Security,2026,All,Republican,92,407,0.226
-Programs and policy,Social Security,2026,All,Third party,23,100,0.23
-Programs and policy,Social Security,2026,House,Democratic,167,410,0.4073
-Programs and policy,Social Security,2026,House,Independent,22,63,0.3492
-Programs and policy,Social Security,2026,House,Republican,83,376,0.2207
-Programs and policy,Social Security,2026,House,Third party,17,81,0.2099
-Programs and policy,Social Security,2026,Senate,Democratic,9,28,0.3214
-Programs and policy,Social Security,2026,Senate,Independent,1,17,0.0588
-Programs and policy,Social Security,2026,Senate,Republican,9,31,0.2903
-Programs and policy,Social Security,2026,Senate,Third party,6,19,0.3158
-Programs and policy,Medicare,2026,All,Democratic,234,438,0.5342
-Programs and policy,Medicare,2026,All,Independent,24,80,0.3
-Programs and policy,Medicare,2026,All,Republican,72,407,0.1769
-Programs and policy,Medicare,2026,All,Third party,27,100,0.27
-Programs and policy,Medicare,2026,House,Democratic,220,410,0.5366
-Programs and policy,Medicare,2026,House,Independent,23,63,0.3651
-Programs and policy,Medicare,2026,House,Republican,65,376,0.1729
-Programs and policy,Medicare,2026,House,Third party,22,81,0.2716
-Programs and policy,Medicare,2026,Senate,Democratic,14,28,0.5
-Programs and policy,Medicare,2026,Senate,Independent,1,17,0.0588
-Programs and policy,Medicare,2026,Senate,Republican,7,31,0.2258
-Programs and policy,Medicare,2026,Senate,Third party,5,19,0.2632
-Programs and policy,veterans,2026,All,Democratic,247,438,0.5639
-Programs and policy,veterans,2026,All,Independent,28,80,0.35
-Programs and policy,veterans,2026,All,Republican,205,407,0.5037
-Programs and policy,veterans,2026,All,Third party,35,100,0.35
-Programs and policy,veterans,2026,House,Democratic,234,410,0.5707
-Programs and policy,veterans,2026,House,Independent,22,63,0.3492
-Programs and policy,veterans,2026,House,Republican,190,376,0.5053
-Programs and policy,veterans,2026,House,Third party,25,81,0.3086
-Programs and policy,veterans,2026,Senate,Democratic,13,28,0.4643
-Programs and policy,veterans,2026,Senate,Independent,6,17,0.3529
-Programs and policy,veterans,2026,Senate,Republican,15,31,0.4839
-Programs and policy,veterans,2026,Senate,Third party,10,19,0.5263
-Programs and policy,health care,2026,All,Democratic,388,438,0.8858
-Programs and policy,health care,2026,All,Independent,60,80,0.75
-Programs and policy,health care,2026,All,Republican,198,407,0.4865
-Programs and policy,health care,2026,All,Third party,50,100,0.5
-Programs and policy,health care,2026,House,Democratic,361,410,0.8805
-Programs and policy,health care,2026,House,Independent,48,63,0.7619
-Programs and policy,health care,2026,House,Republican,179,376,0.4761
-Programs and policy,health care,2026,House,Third party,39,81,0.4815
-Programs and policy,health care,2026,Senate,Democratic,27,28,0.9643
-Programs and policy,health care,2026,Senate,Independent,12,17,0.7059
-Programs and policy,health care,2026,Senate,Republican,19,31,0.6129
-Programs and policy,health care,2026,Senate,Third party,11,19,0.5789
-Programs and policy,climate,2026,All,Democratic,155,438,0.3539
-Programs and policy,climate,2026,All,Independent,11,80,0.1375
-Programs and policy,climate,2026,All,Republican,16,407,0.0393
-Programs and policy,climate,2026,All,Third party,15,100,0.15
-Programs and policy,climate,2026,House,Democratic,145,410,0.3537
-Programs and policy,climate,2026,House,Independent,8,63,0.127
-Programs and policy,climate,2026,House,Republican,16,376,0.0426
-Programs and policy,climate,2026,House,Third party,11,81,0.1358
-Programs and policy,climate,2026,Senate,Democratic,10,28,0.3571
-Programs and policy,climate,2026,Senate,Independent,3,17,0.1765
-Programs and policy,climate,2026,Senate,Republican,0,31,0.0
-Programs and policy,climate,2026,Senate,Third party,4,19,0.2105
-Programs and policy,clean energy,2026,All,Democratic,98,438,0.2237
-Programs and policy,clean energy,2026,All,Independent,6,80,0.075
-Programs and policy,clean energy,2026,All,Republican,7,407,0.0172
-Programs and policy,clean energy,2026,All,Third party,6,100,0.06
-Programs and policy,clean energy,2026,House,Democratic,93,410,0.2268
-Programs and policy,clean energy,2026,House,Independent,6,63,0.0952
-Programs and policy,clean energy,2026,House,Republican,7,376,0.0186
-Programs and policy,clean energy,2026,House,Third party,4,81,0.0494
-Programs and policy,clean energy,2026,Senate,Democratic,5,28,0.1786
-Programs and policy,clean energy,2026,Senate,Independent,0,17,0.0
-Programs and policy,clean energy,2026,Senate,Republican,0,31,0.0
-Programs and policy,clean energy,2026,Senate,Third party,2,19,0.1053
-Programs and policy,energy independence / dominance,2026,All,Democratic,12,438,0.0274
-Programs and policy,energy independence / dominance,2026,All,Independent,5,80,0.0625
-Programs and policy,energy independence / dominance,2026,All,Republican,88,407,0.2162
-Programs and policy,energy independence / dominance,2026,All,Third party,7,100,0.07
-Programs and policy,energy independence / dominance,2026,House,Democratic,10,410,0.0244
-Programs and policy,energy independence / dominance,2026,House,Independent,3,63,0.0476
-Programs and policy,energy independence / dominance,2026,House,Republican,81,376,0.2154
-Programs and policy,energy independence / dominance,2026,House,Third party,7,81,0.0864
-Programs and policy,energy independence / dominance,2026,Senate,Democratic,2,28,0.0714
-Programs and policy,energy independence / dominance,2026,Senate,Independent,2,17,0.1176
-Programs and policy,energy independence / dominance,2026,Senate,Republican,7,31,0.2258
-Programs and policy,energy independence / dominance,2026,Senate,Third party,0,19,0.0
-Programs and policy,housing,2026,All,Democratic,291,438,0.6644
-Programs and policy,housing,2026,All,Independent,44,80,0.55
-Programs and policy,housing,2026,All,Republican,116,407,0.285
-Programs and policy,housing,2026,All,Third party,33,100,0.33
-Programs and policy,housing,2026,House,Democratic,269,410,0.6561
-Programs and policy,housing,2026,House,Independent,37,63,0.5873
-Programs and policy,housing,2026,House,Republican,108,376,0.2872
-Programs and policy,housing,2026,House,Third party,25,81,0.3086
-Programs and policy,housing,2026,Senate,Democratic,22,28,0.7857
-Programs and policy,housing,2026,Senate,Independent,7,17,0.4118
-Programs and policy,housing,2026,Senate,Republican,8,31,0.2581
-Programs and policy,housing,2026,Senate,Third party,8,19,0.4211
-Programs and policy,child care,2026,All,Democratic,142,438,0.3242
-Programs and policy,child care,2026,All,Independent,12,80,0.15
-Programs and policy,child care,2026,All,Republican,21,407,0.0516
-Programs and policy,child care,2026,All,Third party,13,100,0.13
-Programs and policy,child care,2026,House,Democratic,132,410,0.322
-Programs and policy,child care,2026,House,Independent,12,63,0.1905
-Programs and policy,child care,2026,House,Republican,18,376,0.0479
-Programs and policy,child care,2026,House,Third party,10,81,0.1235
-Programs and policy,child care,2026,Senate,Democratic,10,28,0.3571
-Programs and policy,child care,2026,Senate,Independent,0,17,0.0
-Programs and policy,child care,2026,Senate,Republican,3,31,0.0968
-Programs and policy,child care,2026,Senate,Third party,3,19,0.1579
-Programs and policy,artificial intelligence,2026,All,Democratic,92,438,0.21
-Programs and policy,artificial intelligence,2026,All,Independent,31,80,0.3875
-Programs and policy,artificial intelligence,2026,All,Republican,41,407,0.1007
-Programs and policy,artificial intelligence,2026,All,Third party,17,100,0.17
-Programs and policy,artificial intelligence,2026,House,Democratic,81,410,0.1976
-Programs and policy,artificial intelligence,2026,House,Independent,25,63,0.3968
-Programs and policy,artificial intelligence,2026,House,Republican,40,376,0.1064
-Programs and policy,artificial intelligence,2026,House,Third party,15,81,0.1852
-Programs and policy,artificial intelligence,2026,Senate,Democratic,11,28,0.3929
-Programs and policy,artificial intelligence,2026,Senate,Independent,6,17,0.3529
-Programs and policy,artificial intelligence,2026,Senate,Republican,1,31,0.0323
-Programs and policy,artificial intelligence,2026,Senate,Third party,2,19,0.1053
+Economy / Class,working people,2026,All,Democratic,119,438,0.2717
+Economy / Class,working people,2026,All,Independent,20,80,0.25
+Economy / Class,working people,2026,All,Republican,19,407,0.0467
+Economy / Class,working people,2026,All,Third party,14,100,0.14
+Economy / Class,working people,2026,House,Democratic,109,410,0.2659
+Economy / Class,working people,2026,House,Independent,16,63,0.254
+Economy / Class,working people,2026,House,Republican,19,376,0.0505
+Economy / Class,working people,2026,House,Third party,10,81,0.1235
+Economy / Class,working people,2026,Senate,Democratic,10,28,0.3571
+Economy / Class,working people,2026,Senate,Independent,4,17,0.2353
+Economy / Class,working people,2026,Senate,Republican,0,31,0.0
+Economy / Class,working people,2026,Senate,Third party,4,19,0.2105
+Economy / Class,working families,2026,All,Democratic,255,438,0.5822
+Economy / Class,working families,2026,All,Independent,29,80,0.3625
+Economy / Class,working families,2026,All,Republican,138,407,0.3391
+Economy / Class,working families,2026,All,Third party,21,100,0.21
+Economy / Class,working families,2026,House,Democratic,239,410,0.5829
+Economy / Class,working families,2026,House,Independent,25,63,0.3968
+Economy / Class,working families,2026,House,Republican,125,376,0.3324
+Economy / Class,working families,2026,House,Third party,17,81,0.2099
+Economy / Class,working families,2026,Senate,Democratic,16,28,0.5714
+Economy / Class,working families,2026,Senate,Independent,4,17,0.2353
+Economy / Class,working families,2026,Senate,Republican,13,31,0.4194
+Economy / Class,working families,2026,Senate,Third party,4,19,0.2105
+Economy / Class,working class,2026,All,Democratic,97,438,0.2215
+Economy / Class,working class,2026,All,Independent,21,80,0.2625
+Economy / Class,working class,2026,All,Republican,29,407,0.0713
+Economy / Class,working class,2026,All,Third party,13,100,0.13
+Economy / Class,working class,2026,House,Democratic,92,410,0.2244
+Economy / Class,working class,2026,House,Independent,17,63,0.2698
+Economy / Class,working class,2026,House,Republican,27,376,0.0718
+Economy / Class,working class,2026,House,Third party,6,81,0.0741
+Economy / Class,working class,2026,Senate,Democratic,5,28,0.1786
+Economy / Class,working class,2026,Senate,Independent,4,17,0.2353
+Economy / Class,working class,2026,Senate,Republican,2,31,0.0645
+Economy / Class,working class,2026,Senate,Third party,7,19,0.3684
+Economy / Class,middle class,2026,All,Democratic,114,438,0.2603
+Economy / Class,middle class,2026,All,Independent,18,80,0.225
+Economy / Class,middle class,2026,All,Republican,44,407,0.1081
+Economy / Class,middle class,2026,All,Third party,9,100,0.09
+Economy / Class,middle class,2026,House,Democratic,108,410,0.2634
+Economy / Class,middle class,2026,House,Independent,14,63,0.2222
+Economy / Class,middle class,2026,House,Republican,39,376,0.1037
+Economy / Class,middle class,2026,House,Third party,8,81,0.0988
+Economy / Class,middle class,2026,Senate,Democratic,6,28,0.2143
+Economy / Class,middle class,2026,Senate,Independent,4,17,0.2353
+Economy / Class,middle class,2026,Senate,Republican,5,31,0.1613
+Economy / Class,middle class,2026,Senate,Third party,1,19,0.0526
+Economy / Class,hardworking,2026,All,Democratic,113,438,0.258
+Economy / Class,hardworking,2026,All,Independent,16,80,0.2
+Economy / Class,hardworking,2026,All,Republican,101,407,0.2482
+Economy / Class,hardworking,2026,All,Third party,14,100,0.14
+Economy / Class,hardworking,2026,House,Democratic,106,410,0.2585
+Economy / Class,hardworking,2026,House,Independent,12,63,0.1905
+Economy / Class,hardworking,2026,House,Republican,94,376,0.25
+Economy / Class,hardworking,2026,House,Third party,11,81,0.1358
+Economy / Class,hardworking,2026,Senate,Democratic,7,28,0.25
+Economy / Class,hardworking,2026,Senate,Independent,4,17,0.2353
+Economy / Class,hardworking,2026,Senate,Republican,7,31,0.2258
+Economy / Class,hardworking,2026,Senate,Third party,3,19,0.1579
+Economy / Class,small business,2026,All,Democratic,209,438,0.4772
+Economy / Class,small business,2026,All,Independent,39,80,0.4875
+Economy / Class,small business,2026,All,Republican,212,407,0.5209
+Economy / Class,small business,2026,All,Third party,28,100,0.28
+Economy / Class,small business,2026,House,Democratic,196,410,0.478
+Economy / Class,small business,2026,House,Independent,33,63,0.5238
+Economy / Class,small business,2026,House,Republican,197,376,0.5239
+Economy / Class,small business,2026,House,Third party,23,81,0.284
+Economy / Class,small business,2026,Senate,Democratic,13,28,0.4643
+Economy / Class,small business,2026,Senate,Independent,6,17,0.3529
+Economy / Class,small business,2026,Senate,Republican,15,31,0.4839
+Economy / Class,small business,2026,Senate,Third party,5,19,0.2632
+Economy / Class,inflation,2026,All,Democratic,42,438,0.0959
+Economy / Class,inflation,2026,All,Independent,21,80,0.2625
+Economy / Class,inflation,2026,All,Republican,118,407,0.2899
+Economy / Class,inflation,2026,All,Third party,27,100,0.27
+Economy / Class,inflation,2026,House,Democratic,37,410,0.0902
+Economy / Class,inflation,2026,House,Independent,17,63,0.2698
+Economy / Class,inflation,2026,House,Republican,109,376,0.2899
+Economy / Class,inflation,2026,House,Third party,21,81,0.2593
+Economy / Class,inflation,2026,Senate,Democratic,5,28,0.1786
+Economy / Class,inflation,2026,Senate,Independent,4,17,0.2353
+Economy / Class,inflation,2026,Senate,Republican,9,31,0.2903
+Economy / Class,inflation,2026,Senate,Third party,6,19,0.3158
+Economy / Class,cost of living,2026,All,Democratic,99,438,0.226
+Economy / Class,cost of living,2026,All,Independent,19,80,0.2375
+Economy / Class,cost of living,2026,All,Republican,69,407,0.1695
+Economy / Class,cost of living,2026,All,Third party,17,100,0.17
+Economy / Class,cost of living,2026,House,Democratic,94,410,0.2293
+Economy / Class,cost of living,2026,House,Independent,18,63,0.2857
+Economy / Class,cost of living,2026,House,Republican,66,376,0.1755
+Economy / Class,cost of living,2026,House,Third party,16,81,0.1975
+Economy / Class,cost of living,2026,Senate,Democratic,5,28,0.1786
+Economy / Class,cost of living,2026,Senate,Independent,1,17,0.0588
+Economy / Class,cost of living,2026,Senate,Republican,3,31,0.0968
+Economy / Class,cost of living,2026,Senate,Third party,1,19,0.0526
+Economy / Class,affordable / affordability,2026,All,Democratic,345,438,0.7877
+Economy / Class,affordable / affordability,2026,All,Independent,42,80,0.525
+Economy / Class,affordable / affordability,2026,All,Republican,187,407,0.4595
+Economy / Class,affordable / affordability,2026,All,Third party,35,100,0.35
+Economy / Class,affordable / affordability,2026,House,Democratic,325,410,0.7927
+Economy / Class,affordable / affordability,2026,House,Independent,34,63,0.5397
+Economy / Class,affordable / affordability,2026,House,Republican,174,376,0.4628
+Economy / Class,affordable / affordability,2026,House,Third party,29,81,0.358
+Economy / Class,affordable / affordability,2026,Senate,Democratic,20,28,0.7143
+Economy / Class,affordable / affordability,2026,Senate,Independent,8,17,0.4706
+Economy / Class,affordable / affordability,2026,Senate,Republican,13,31,0.4194
+Economy / Class,affordable / affordability,2026,Senate,Third party,6,19,0.3158
+Economy / Class,unions,2026,All,Democratic,218,438,0.4977
+Economy / Class,unions,2026,All,Independent,20,80,0.25
+Economy / Class,unions,2026,All,Republican,71,407,0.1744
+Economy / Class,unions,2026,All,Third party,21,100,0.21
+Economy / Class,unions,2026,House,Democratic,206,410,0.5024
+Economy / Class,unions,2026,House,Independent,15,63,0.2381
+Economy / Class,unions,2026,House,Republican,65,376,0.1729
+Economy / Class,unions,2026,House,Third party,15,81,0.1852
+Economy / Class,unions,2026,Senate,Democratic,12,28,0.4286
+Economy / Class,unions,2026,Senate,Independent,5,17,0.2941
+Economy / Class,unions,2026,Senate,Republican,6,31,0.1935
+Economy / Class,unions,2026,Senate,Third party,6,19,0.3158
+Economy / Class,billionaires,2026,All,Democratic,139,438,0.3174
+Economy / Class,billionaires,2026,All,Independent,28,80,0.35
+Economy / Class,billionaires,2026,All,Republican,6,407,0.0147
+Economy / Class,billionaires,2026,All,Third party,18,100,0.18
+Economy / Class,billionaires,2026,House,Democratic,126,410,0.3073
+Economy / Class,billionaires,2026,House,Independent,23,63,0.3651
+Economy / Class,billionaires,2026,House,Republican,6,376,0.016
+Economy / Class,billionaires,2026,House,Third party,16,81,0.1975
+Economy / Class,billionaires,2026,Senate,Democratic,13,28,0.4643
+Economy / Class,billionaires,2026,Senate,Independent,5,17,0.2941
+Economy / Class,billionaires,2026,Senate,Republican,0,31,0.0
+Economy / Class,billionaires,2026,Senate,Third party,2,19,0.1053
+Economy / Class,corporations / corporate,2026,All,Democratic,238,438,0.5434
+Economy / Class,corporations / corporate,2026,All,Independent,41,80,0.5125
+Economy / Class,corporations / corporate,2026,All,Republican,30,407,0.0737
+Economy / Class,corporations / corporate,2026,All,Third party,42,100,0.42
+Economy / Class,corporations / corporate,2026,House,Democratic,217,410,0.5293
+Economy / Class,corporations / corporate,2026,House,Independent,35,63,0.5556
+Economy / Class,corporations / corporate,2026,House,Republican,27,376,0.0718
+Economy / Class,corporations / corporate,2026,House,Third party,32,81,0.3951
+Economy / Class,corporations / corporate,2026,Senate,Democratic,21,28,0.75
+Economy / Class,corporations / corporate,2026,Senate,Independent,6,17,0.3529
+Economy / Class,corporations / corporate,2026,Senate,Republican,3,31,0.0968
+Economy / Class,corporations / corporate,2026,Senate,Third party,10,19,0.5263
+Economy / Class,Big Pharma,2026,All,Democratic,26,438,0.0594
+Economy / Class,Big Pharma,2026,All,Independent,2,80,0.025
+Economy / Class,Big Pharma,2026,All,Republican,6,407,0.0147
+Economy / Class,Big Pharma,2026,All,Third party,3,100,0.03
+Economy / Class,Big Pharma,2026,House,Democratic,22,410,0.0537
+Economy / Class,Big Pharma,2026,House,Independent,1,63,0.0159
+Economy / Class,Big Pharma,2026,House,Republican,5,376,0.0133
+Economy / Class,Big Pharma,2026,House,Third party,3,81,0.037
+Economy / Class,Big Pharma,2026,Senate,Democratic,4,28,0.1429
+Economy / Class,Big Pharma,2026,Senate,Independent,1,17,0.0588
+Economy / Class,Big Pharma,2026,Senate,Republican,1,31,0.0323
+Economy / Class,Big Pharma,2026,Senate,Third party,0,19,0.0
+Economy / Class,tariffs,2026,All,Democratic,115,438,0.2626
+Economy / Class,tariffs,2026,All,Independent,17,80,0.2125
+Economy / Class,tariffs,2026,All,Republican,14,407,0.0344
+Economy / Class,tariffs,2026,All,Third party,13,100,0.13
+Economy / Class,tariffs,2026,House,Democratic,102,410,0.2488
+Economy / Class,tariffs,2026,House,Independent,16,63,0.254
+Economy / Class,tariffs,2026,House,Republican,13,376,0.0346
+Economy / Class,tariffs,2026,House,Third party,9,81,0.1111
+Economy / Class,tariffs,2026,Senate,Democratic,13,28,0.4643
+Economy / Class,tariffs,2026,Senate,Independent,1,17,0.0588
+Economy / Class,tariffs,2026,Senate,Republican,1,31,0.0323
+Economy / Class,tariffs,2026,Senate,Third party,4,19,0.2105
+Economy / Class,tax cuts,2026,All,Democratic,47,438,0.1073
+Economy / Class,tax cuts,2026,All,Independent,8,80,0.1
+Economy / Class,tax cuts,2026,All,Republican,69,407,0.1695
+Economy / Class,tax cuts,2026,All,Third party,4,100,0.04
+Economy / Class,tax cuts,2026,House,Democratic,42,410,0.1024
+Economy / Class,tax cuts,2026,House,Independent,7,63,0.1111
+Economy / Class,tax cuts,2026,House,Republican,55,376,0.1463
+Economy / Class,tax cuts,2026,House,Third party,1,81,0.0123
+Economy / Class,tax cuts,2026,Senate,Democratic,5,28,0.1786
+Economy / Class,tax cuts,2026,Senate,Independent,1,17,0.0588
+Economy / Class,tax cuts,2026,Senate,Republican,14,31,0.4516
+Economy / Class,tax cuts,2026,Senate,Third party,3,19,0.1579
+Opponents / Politics,radical left,2026,All,Democratic,0,438,0.0
+Opponents / Politics,radical left,2026,All,Independent,0,80,0.0
+Opponents / Politics,radical left,2026,All,Republican,40,407,0.0983
+Opponents / Politics,radical left,2026,All,Third party,1,100,0.01
+Opponents / Politics,radical left,2026,House,Democratic,0,410,0.0
+Opponents / Politics,radical left,2026,House,Independent,0,63,0.0
+Opponents / Politics,radical left,2026,House,Republican,34,376,0.0904
+Opponents / Politics,radical left,2026,House,Third party,0,81,0.0
+Opponents / Politics,radical left,2026,Senate,Democratic,0,28,0.0
+Opponents / Politics,radical left,2026,Senate,Independent,0,17,0.0
+Opponents / Politics,radical left,2026,Senate,Republican,6,31,0.1935
+Opponents / Politics,radical left,2026,Senate,Third party,1,19,0.0526
+Opponents / Politics,socialism / socialist,2026,All,Democratic,11,438,0.0251
+Opponents / Politics,socialism / socialist,2026,All,Independent,6,80,0.075
+Opponents / Politics,socialism / socialist,2026,All,Republican,52,407,0.1278
+Opponents / Politics,socialism / socialist,2026,All,Third party,11,100,0.11
+Opponents / Politics,socialism / socialist,2026,House,Democratic,11,410,0.0268
+Opponents / Politics,socialism / socialist,2026,House,Independent,3,63,0.0476
+Opponents / Politics,socialism / socialist,2026,House,Republican,49,376,0.1303
+Opponents / Politics,socialism / socialist,2026,House,Third party,10,81,0.1235
+Opponents / Politics,socialism / socialist,2026,Senate,Democratic,0,28,0.0
+Opponents / Politics,socialism / socialist,2026,Senate,Independent,3,17,0.1765
+Opponents / Politics,socialism / socialist,2026,Senate,Republican,3,31,0.0968
+Opponents / Politics,socialism / socialist,2026,Senate,Third party,1,19,0.0526
+Opponents / Politics,woke,2026,All,Democratic,1,438,0.0023
+Opponents / Politics,woke,2026,All,Independent,1,80,0.0125
+Opponents / Politics,woke,2026,All,Republican,35,407,0.086
+Opponents / Politics,woke,2026,All,Third party,0,100,0.0
+Opponents / Politics,woke,2026,House,Democratic,1,410,0.0024
+Opponents / Politics,woke,2026,House,Independent,1,63,0.0159
+Opponents / Politics,woke,2026,House,Republican,30,376,0.0798
+Opponents / Politics,woke,2026,House,Third party,0,81,0.0
+Opponents / Politics,woke,2026,Senate,Democratic,0,28,0.0
+Opponents / Politics,woke,2026,Senate,Independent,0,17,0.0
+Opponents / Politics,woke,2026,Senate,Republican,5,31,0.1613
+Opponents / Politics,woke,2026,Senate,Third party,0,19,0.0
+Opponents / Politics,MAGA,2026,All,Democratic,39,438,0.089
+Opponents / Politics,MAGA,2026,All,Independent,5,80,0.0625
+Opponents / Politics,MAGA,2026,All,Republican,11,407,0.027
+Opponents / Politics,MAGA,2026,All,Third party,2,100,0.02
+Opponents / Politics,MAGA,2026,House,Democratic,35,410,0.0854
+Opponents / Politics,MAGA,2026,House,Independent,5,63,0.0794
+Opponents / Politics,MAGA,2026,House,Republican,11,376,0.0293
+Opponents / Politics,MAGA,2026,House,Third party,2,81,0.0247
+Opponents / Politics,MAGA,2026,Senate,Democratic,4,28,0.1429
+Opponents / Politics,MAGA,2026,Senate,Independent,0,17,0.0
+Opponents / Politics,MAGA,2026,Senate,Republican,0,31,0.0
+Opponents / Politics,MAGA,2026,Senate,Third party,0,19,0.0
+Opponents / Politics,extreme / extremist,2026,All,Democratic,120,438,0.274
+Opponents / Politics,extreme / extremist,2026,All,Independent,14,80,0.175
+Opponents / Politics,extreme / extremist,2026,All,Republican,34,407,0.0835
+Opponents / Politics,extreme / extremist,2026,All,Third party,8,100,0.08
+Opponents / Politics,extreme / extremist,2026,House,Democratic,112,410,0.2732
+Opponents / Politics,extreme / extremist,2026,House,Independent,10,63,0.1587
+Opponents / Politics,extreme / extremist,2026,House,Republican,30,376,0.0798
+Opponents / Politics,extreme / extremist,2026,House,Third party,5,81,0.0617
+Opponents / Politics,extreme / extremist,2026,Senate,Democratic,8,28,0.2857
+Opponents / Politics,extreme / extremist,2026,Senate,Independent,4,17,0.2353
+Opponents / Politics,extreme / extremist,2026,Senate,Republican,4,31,0.129
+Opponents / Politics,extreme / extremist,2026,Senate,Third party,3,19,0.1579
+Opponents / Politics,Trump,2026,All,Democratic,197,438,0.4498
+Opponents / Politics,Trump,2026,All,Independent,12,80,0.15
+Opponents / Politics,Trump,2026,All,Republican,185,407,0.4545
+Opponents / Politics,Trump,2026,All,Third party,20,100,0.2
+Opponents / Politics,Trump,2026,House,Democratic,182,410,0.4439
+Opponents / Politics,Trump,2026,House,Independent,9,63,0.1429
+Opponents / Politics,Trump,2026,House,Republican,162,376,0.4309
+Opponents / Politics,Trump,2026,House,Third party,14,81,0.1728
+Opponents / Politics,Trump,2026,Senate,Democratic,15,28,0.5357
+Opponents / Politics,Trump,2026,Senate,Independent,3,17,0.1765
+Opponents / Politics,Trump,2026,Senate,Republican,23,31,0.7419
+Opponents / Politics,Trump,2026,Senate,Third party,6,19,0.3158
+Opponents / Politics,Biden,2026,All,Democratic,39,438,0.089
+Opponents / Politics,Biden,2026,All,Independent,5,80,0.0625
+Opponents / Politics,Biden,2026,All,Republican,99,407,0.2432
+Opponents / Politics,Biden,2026,All,Third party,4,100,0.04
+Opponents / Politics,Biden,2026,House,Democratic,38,410,0.0927
+Opponents / Politics,Biden,2026,House,Independent,4,63,0.0635
+Opponents / Politics,Biden,2026,House,Republican,87,376,0.2314
+Opponents / Politics,Biden,2026,House,Third party,3,81,0.037
+Opponents / Politics,Biden,2026,Senate,Democratic,1,28,0.0357
+Opponents / Politics,Biden,2026,Senate,Independent,1,17,0.0588
+Opponents / Politics,Biden,2026,Senate,Republican,12,31,0.3871
+Opponents / Politics,Biden,2026,Senate,Third party,1,19,0.0526
+Opponents / Politics,career politicians,2026,All,Democratic,59,438,0.1347
+Opponents / Politics,career politicians,2026,All,Independent,22,80,0.275
+Opponents / Politics,career politicians,2026,All,Republican,69,407,0.1695
+Opponents / Politics,career politicians,2026,All,Third party,14,100,0.14
+Opponents / Politics,career politicians,2026,House,Democratic,53,410,0.1293
+Opponents / Politics,career politicians,2026,House,Independent,16,63,0.254
+Opponents / Politics,career politicians,2026,House,Republican,65,376,0.1729
+Opponents / Politics,career politicians,2026,House,Third party,10,81,0.1235
+Opponents / Politics,career politicians,2026,Senate,Democratic,6,28,0.2143
+Opponents / Politics,career politicians,2026,Senate,Independent,6,17,0.3529
+Opponents / Politics,career politicians,2026,Senate,Republican,4,31,0.129
+Opponents / Politics,career politicians,2026,Senate,Third party,4,19,0.2105
+Opponents / Politics,the swamp,2026,All,Democratic,4,438,0.0091
+Opponents / Politics,the swamp,2026,All,Independent,2,80,0.025
+Opponents / Politics,the swamp,2026,All,Republican,13,407,0.0319
+Opponents / Politics,the swamp,2026,All,Third party,0,100,0.0
+Opponents / Politics,the swamp,2026,House,Democratic,3,410,0.0073
+Opponents / Politics,the swamp,2026,House,Independent,1,63,0.0159
+Opponents / Politics,the swamp,2026,House,Republican,10,376,0.0266
+Opponents / Politics,the swamp,2026,House,Third party,0,81,0.0
+Opponents / Politics,the swamp,2026,Senate,Democratic,1,28,0.0357
+Opponents / Politics,the swamp,2026,Senate,Independent,1,17,0.0588
+Opponents / Politics,the swamp,2026,Senate,Republican,3,31,0.0968
+Opponents / Politics,the swamp,2026,Senate,Third party,0,19,0.0
+Opponents / Politics,elites,2026,All,Democratic,12,438,0.0274
+Opponents / Politics,elites,2026,All,Independent,12,80,0.15
+Opponents / Politics,elites,2026,All,Republican,27,407,0.0663
+Opponents / Politics,elites,2026,All,Third party,7,100,0.07
+Opponents / Politics,elites,2026,House,Democratic,11,410,0.0268
+Opponents / Politics,elites,2026,House,Independent,7,63,0.1111
+Opponents / Politics,elites,2026,House,Republican,24,376,0.0638
+Opponents / Politics,elites,2026,House,Third party,5,81,0.0617
+Opponents / Politics,elites,2026,Senate,Democratic,1,28,0.0357
+Opponents / Politics,elites,2026,Senate,Independent,5,17,0.2941
+Opponents / Politics,elites,2026,Senate,Republican,3,31,0.0968
+Opponents / Politics,elites,2026,Senate,Third party,2,19,0.1053
+Opponents / Politics,corruption,2026,All,Democratic,138,438,0.3151
+Opponents / Politics,corruption,2026,All,Independent,34,80,0.425
+Opponents / Politics,corruption,2026,All,Republican,58,407,0.1425
+Opponents / Politics,corruption,2026,All,Third party,21,100,0.21
+Opponents / Politics,corruption,2026,House,Democratic,121,410,0.2951
+Opponents / Politics,corruption,2026,House,Independent,25,63,0.3968
+Opponents / Politics,corruption,2026,House,Republican,52,376,0.1383
+Opponents / Politics,corruption,2026,House,Third party,14,81,0.1728
+Opponents / Politics,corruption,2026,Senate,Democratic,17,28,0.6071
+Opponents / Politics,corruption,2026,Senate,Independent,9,17,0.5294
+Opponents / Politics,corruption,2026,Senate,Republican,6,31,0.1935
+Opponents / Politics,corruption,2026,Senate,Third party,7,19,0.3684
+Opponents / Politics,bipartisan,2026,All,Democratic,152,438,0.347
+Opponents / Politics,bipartisan,2026,All,Independent,14,80,0.175
+Opponents / Politics,bipartisan,2026,All,Republican,60,407,0.1474
+Opponents / Politics,bipartisan,2026,All,Third party,5,100,0.05
+Opponents / Politics,bipartisan,2026,House,Democratic,143,410,0.3488
+Opponents / Politics,bipartisan,2026,House,Independent,11,63,0.1746
+Opponents / Politics,bipartisan,2026,House,Republican,55,376,0.1463
+Opponents / Politics,bipartisan,2026,House,Third party,4,81,0.0494
+Opponents / Politics,bipartisan,2026,Senate,Democratic,9,28,0.3214
+Opponents / Politics,bipartisan,2026,Senate,Independent,3,17,0.1765
+Opponents / Politics,bipartisan,2026,Senate,Republican,5,31,0.1613
+Opponents / Politics,bipartisan,2026,Senate,Third party,1,19,0.0526
+Opponents / Politics,common sense,2026,All,Democratic,116,438,0.2648
+Opponents / Politics,common sense,2026,All,Independent,17,80,0.2125
+Opponents / Politics,common sense,2026,All,Republican,130,407,0.3194
+Opponents / Politics,common sense,2026,All,Third party,12,100,0.12
+Opponents / Politics,common sense,2026,House,Democratic,108,410,0.2634
+Opponents / Politics,common sense,2026,House,Independent,13,63,0.2063
+Opponents / Politics,common sense,2026,House,Republican,118,376,0.3138
+Opponents / Politics,common sense,2026,House,Third party,8,81,0.0988
+Opponents / Politics,common sense,2026,Senate,Democratic,8,28,0.2857
+Opponents / Politics,common sense,2026,Senate,Independent,4,17,0.2353
+Opponents / Politics,common sense,2026,Senate,Republican,12,31,0.3871
+Opponents / Politics,common sense,2026,Senate,Third party,4,19,0.2105
+Opponents / Politics,term limits,2026,All,Democratic,49,438,0.1119
+Opponents / Politics,term limits,2026,All,Independent,21,80,0.2625
+Opponents / Politics,term limits,2026,All,Republican,42,407,0.1032
+Opponents / Politics,term limits,2026,All,Third party,8,100,0.08
+Opponents / Politics,term limits,2026,House,Democratic,44,410,0.1073
+Opponents / Politics,term limits,2026,House,Independent,18,63,0.2857
+Opponents / Politics,term limits,2026,House,Republican,41,376,0.109
+Opponents / Politics,term limits,2026,House,Third party,6,81,0.0741
+Opponents / Politics,term limits,2026,Senate,Democratic,5,28,0.1786
+Opponents / Politics,term limits,2026,Senate,Independent,3,17,0.1765
+Opponents / Politics,term limits,2026,Senate,Republican,1,31,0.0323
+Opponents / Politics,term limits,2026,Senate,Third party,2,19,0.1053
+Rights / Values,freedom,2026,All,Democratic,222,438,0.5068
+Rights / Values,freedom,2026,All,Independent,37,80,0.4625
+Rights / Values,freedom,2026,All,Republican,205,407,0.5037
+Rights / Values,freedom,2026,All,Third party,53,100,0.53
+Rights / Values,freedom,2026,House,Democratic,209,410,0.5098
+Rights / Values,freedom,2026,House,Independent,29,63,0.4603
+Rights / Values,freedom,2026,House,Republican,190,376,0.5053
+Rights / Values,freedom,2026,House,Third party,43,81,0.5309
+Rights / Values,freedom,2026,Senate,Democratic,13,28,0.4643
+Rights / Values,freedom,2026,Senate,Independent,8,17,0.4706
+Rights / Values,freedom,2026,Senate,Republican,15,31,0.4839
+Rights / Values,freedom,2026,Senate,Third party,10,19,0.5263
+Rights / Values,liberty,2026,All,Democratic,30,438,0.0685
+Rights / Values,liberty,2026,All,Independent,27,80,0.3375
+Rights / Values,liberty,2026,All,Republican,90,407,0.2211
+Rights / Values,liberty,2026,All,Third party,46,100,0.46
+Rights / Values,liberty,2026,House,Democratic,28,410,0.0683
+Rights / Values,liberty,2026,House,Independent,19,63,0.3016
+Rights / Values,liberty,2026,House,Republican,82,376,0.2181
+Rights / Values,liberty,2026,House,Third party,40,81,0.4938
+Rights / Values,liberty,2026,Senate,Democratic,2,28,0.0714
+Rights / Values,liberty,2026,Senate,Independent,8,17,0.4706
+Rights / Values,liberty,2026,Senate,Republican,8,31,0.2581
+Rights / Values,liberty,2026,Senate,Third party,6,19,0.3158
+Rights / Values,democracy,2026,All,Democratic,207,438,0.4726
+Rights / Values,democracy,2026,All,Independent,23,80,0.2875
+Rights / Values,democracy,2026,All,Republican,33,407,0.0811
+Rights / Values,democracy,2026,All,Third party,26,100,0.26
+Rights / Values,democracy,2026,House,Democratic,197,410,0.4805
+Rights / Values,democracy,2026,House,Independent,19,63,0.3016
+Rights / Values,democracy,2026,House,Republican,31,376,0.0824
+Rights / Values,democracy,2026,House,Third party,19,81,0.2346
+Rights / Values,democracy,2026,Senate,Democratic,10,28,0.3571
+Rights / Values,democracy,2026,Senate,Independent,4,17,0.2353
+Rights / Values,democracy,2026,Senate,Republican,2,31,0.0645
+Rights / Values,democracy,2026,Senate,Third party,7,19,0.3684
+Rights / Values,Constitution,2026,All,Democratic,149,438,0.3402
+Rights / Values,Constitution,2026,All,Independent,44,80,0.55
+Rights / Values,Constitution,2026,All,Republican,165,407,0.4054
+Rights / Values,Constitution,2026,All,Third party,47,100,0.47
+Rights / Values,Constitution,2026,House,Democratic,136,410,0.3317
+Rights / Values,Constitution,2026,House,Independent,33,63,0.5238
+Rights / Values,Constitution,2026,House,Republican,153,376,0.4069
+Rights / Values,Constitution,2026,House,Third party,35,81,0.4321
+Rights / Values,Constitution,2026,Senate,Democratic,13,28,0.4643
+Rights / Values,Constitution,2026,Senate,Independent,11,17,0.6471
+Rights / Values,Constitution,2026,Senate,Republican,12,31,0.3871
+Rights / Values,Constitution,2026,Senate,Third party,12,19,0.6316
+Rights / Values,Second Amendment,2026,All,Democratic,30,438,0.0685
+Rights / Values,Second Amendment,2026,All,Independent,15,80,0.1875
+Rights / Values,Second Amendment,2026,All,Republican,145,407,0.3563
+Rights / Values,Second Amendment,2026,All,Third party,16,100,0.16
+Rights / Values,Second Amendment,2026,House,Democratic,29,410,0.0707
+Rights / Values,Second Amendment,2026,House,Independent,13,63,0.2063
+Rights / Values,Second Amendment,2026,House,Republican,133,376,0.3537
+Rights / Values,Second Amendment,2026,House,Third party,11,81,0.1358
+Rights / Values,Second Amendment,2026,Senate,Democratic,1,28,0.0357
+Rights / Values,Second Amendment,2026,Senate,Independent,2,17,0.1176
+Rights / Values,Second Amendment,2026,Senate,Republican,12,31,0.3871
+Rights / Values,Second Amendment,2026,Senate,Third party,5,19,0.2632
+Rights / Values,faith / God,2026,All,Democratic,86,438,0.1963
+Rights / Values,faith / God,2026,All,Independent,27,80,0.3375
+Rights / Values,faith / God,2026,All,Republican,170,407,0.4177
+Rights / Values,faith / God,2026,All,Third party,22,100,0.22
+Rights / Values,faith / God,2026,House,Democratic,81,410,0.1976
+Rights / Values,faith / God,2026,House,Independent,22,63,0.3492
+Rights / Values,faith / God,2026,House,Republican,159,376,0.4229
+Rights / Values,faith / God,2026,House,Third party,18,81,0.2222
+Rights / Values,faith / God,2026,Senate,Democratic,5,28,0.1786
+Rights / Values,faith / God,2026,Senate,Independent,5,17,0.2941
+Rights / Values,faith / God,2026,Senate,Republican,11,31,0.3548
+Rights / Values,faith / God,2026,Senate,Third party,4,19,0.2105
+Rights / Values,parental rights,2026,All,Democratic,0,438,0.0
+Rights / Values,parental rights,2026,All,Independent,2,80,0.025
+Rights / Values,parental rights,2026,All,Republican,59,407,0.145
+Rights / Values,parental rights,2026,All,Third party,2,100,0.02
+Rights / Values,parental rights,2026,House,Democratic,0,410,0.0
+Rights / Values,parental rights,2026,House,Independent,0,63,0.0
+Rights / Values,parental rights,2026,House,Republican,51,376,0.1356
+Rights / Values,parental rights,2026,House,Third party,2,81,0.0247
+Rights / Values,parental rights,2026,Senate,Democratic,0,28,0.0
+Rights / Values,parental rights,2026,Senate,Independent,2,17,0.1176
+Rights / Values,parental rights,2026,Senate,Republican,8,31,0.2581
+Rights / Values,parental rights,2026,Senate,Third party,0,19,0.0
+Rights / Values,abortion,2026,All,Democratic,112,438,0.2557
+Rights / Values,abortion,2026,All,Independent,15,80,0.1875
+Rights / Values,abortion,2026,All,Republican,59,407,0.145
+Rights / Values,abortion,2026,All,Third party,15,100,0.15
+Rights / Values,abortion,2026,House,Democratic,105,410,0.2561
+Rights / Values,abortion,2026,House,Independent,12,63,0.1905
+Rights / Values,abortion,2026,House,Republican,54,376,0.1436
+Rights / Values,abortion,2026,House,Third party,12,81,0.1481
+Rights / Values,abortion,2026,Senate,Democratic,7,28,0.25
+Rights / Values,abortion,2026,Senate,Independent,3,17,0.1765
+Rights / Values,abortion,2026,Senate,Republican,5,31,0.1613
+Rights / Values,abortion,2026,Senate,Third party,3,19,0.1579
+Rights / Values,reproductive freedom / rights,2026,All,Democratic,156,438,0.3562
+Rights / Values,reproductive freedom / rights,2026,All,Independent,5,80,0.0625
+Rights / Values,reproductive freedom / rights,2026,All,Republican,2,407,0.0049
+Rights / Values,reproductive freedom / rights,2026,All,Third party,7,100,0.07
+Rights / Values,reproductive freedom / rights,2026,House,Democratic,145,410,0.3537
+Rights / Values,reproductive freedom / rights,2026,House,Independent,4,63,0.0635
+Rights / Values,reproductive freedom / rights,2026,House,Republican,2,376,0.0053
+Rights / Values,reproductive freedom / rights,2026,House,Third party,6,81,0.0741
+Rights / Values,reproductive freedom / rights,2026,Senate,Democratic,11,28,0.3929
+Rights / Values,reproductive freedom / rights,2026,Senate,Independent,1,17,0.0588
+Rights / Values,reproductive freedom / rights,2026,Senate,Republican,0,31,0.0
+Rights / Values,reproductive freedom / rights,2026,Senate,Third party,1,19,0.0526
+Rights / Values,pro-life / unborn,2026,All,Democratic,3,438,0.0068
+Rights / Values,pro-life / unborn,2026,All,Independent,8,80,0.1
+Rights / Values,pro-life / unborn,2026,All,Republican,108,407,0.2654
+Rights / Values,pro-life / unborn,2026,All,Third party,6,100,0.06
+Rights / Values,pro-life / unborn,2026,House,Democratic,3,410,0.0073
+Rights / Values,pro-life / unborn,2026,House,Independent,7,63,0.1111
+Rights / Values,pro-life / unborn,2026,House,Republican,102,376,0.2713
+Rights / Values,pro-life / unborn,2026,House,Third party,6,81,0.0741
+Rights / Values,pro-life / unborn,2026,Senate,Democratic,0,28,0.0
+Rights / Values,pro-life / unborn,2026,Senate,Independent,1,17,0.0588
+Rights / Values,pro-life / unborn,2026,Senate,Republican,6,31,0.1935
+Rights / Values,pro-life / unborn,2026,Senate,Third party,0,19,0.0
+Rights / Values,election integrity,2026,All,Democratic,4,438,0.0091
+Rights / Values,election integrity,2026,All,Independent,3,80,0.0375
+Rights / Values,election integrity,2026,All,Republican,39,407,0.0958
+Rights / Values,election integrity,2026,All,Third party,3,100,0.03
+Rights / Values,election integrity,2026,House,Democratic,4,410,0.0098
+Rights / Values,election integrity,2026,House,Independent,3,63,0.0476
+Rights / Values,election integrity,2026,House,Republican,34,376,0.0904
+Rights / Values,election integrity,2026,House,Third party,2,81,0.0247
+Rights / Values,election integrity,2026,Senate,Democratic,0,28,0.0
+Rights / Values,election integrity,2026,Senate,Independent,0,17,0.0
+Rights / Values,election integrity,2026,Senate,Republican,5,31,0.1613
+Rights / Values,election integrity,2026,Senate,Third party,1,19,0.0526
+Security / Immigration,border,2026,All,Democratic,121,438,0.2763
+Security / Immigration,border,2026,All,Independent,23,80,0.2875
+Security / Immigration,border,2026,All,Republican,255,407,0.6265
+Security / Immigration,border,2026,All,Third party,29,100,0.29
+Security / Immigration,border,2026,House,Democratic,115,410,0.2805
+Security / Immigration,border,2026,House,Independent,19,63,0.3016
+Security / Immigration,border,2026,House,Republican,236,376,0.6277
+Security / Immigration,border,2026,House,Third party,23,81,0.284
+Security / Immigration,border,2026,Senate,Democratic,6,28,0.2143
+Security / Immigration,border,2026,Senate,Independent,4,17,0.2353
+Security / Immigration,border,2026,Senate,Republican,19,31,0.6129
+Security / Immigration,border,2026,Senate,Third party,6,19,0.3158
+Security / Immigration,illegal immigration / aliens,2026,All,Democratic,9,438,0.0205
+Security / Immigration,illegal immigration / aliens,2026,All,Independent,5,80,0.0625
+Security / Immigration,illegal immigration / aliens,2026,All,Republican,110,407,0.2703
+Security / Immigration,illegal immigration / aliens,2026,All,Third party,5,100,0.05
+Security / Immigration,illegal immigration / aliens,2026,House,Democratic,9,410,0.022
+Security / Immigration,illegal immigration / aliens,2026,House,Independent,4,63,0.0635
+Security / Immigration,illegal immigration / aliens,2026,House,Republican,98,376,0.2606
+Security / Immigration,illegal immigration / aliens,2026,House,Third party,5,81,0.0617
+Security / Immigration,illegal immigration / aliens,2026,Senate,Democratic,0,28,0.0
+Security / Immigration,illegal immigration / aliens,2026,Senate,Independent,1,17,0.0588
+Security / Immigration,illegal immigration / aliens,2026,Senate,Republican,12,31,0.3871
+Security / Immigration,illegal immigration / aliens,2026,Senate,Third party,0,19,0.0
+Security / Immigration,open borders,2026,All,Democratic,4,438,0.0091
+Security / Immigration,open borders,2026,All,Independent,3,80,0.0375
+Security / Immigration,open borders,2026,All,Republican,29,407,0.0713
+Security / Immigration,open borders,2026,All,Third party,4,100,0.04
+Security / Immigration,open borders,2026,House,Democratic,4,410,0.0098
+Security / Immigration,open borders,2026,House,Independent,2,63,0.0317
+Security / Immigration,open borders,2026,House,Republican,26,376,0.0691
+Security / Immigration,open borders,2026,House,Third party,3,81,0.037
+Security / Immigration,open borders,2026,Senate,Democratic,0,28,0.0
+Security / Immigration,open borders,2026,Senate,Independent,1,17,0.0588
+Security / Immigration,open borders,2026,Senate,Republican,3,31,0.0968
+Security / Immigration,open borders,2026,Senate,Third party,1,19,0.0526
+Security / Immigration,fentanyl,2026,All,Democratic,25,438,0.0571
+Security / Immigration,fentanyl,2026,All,Independent,6,80,0.075
+Security / Immigration,fentanyl,2026,All,Republican,77,407,0.1892
+Security / Immigration,fentanyl,2026,All,Third party,5,100,0.05
+Security / Immigration,fentanyl,2026,House,Democratic,24,410,0.0585
+Security / Immigration,fentanyl,2026,House,Independent,6,63,0.0952
+Security / Immigration,fentanyl,2026,House,Republican,68,376,0.1809
+Security / Immigration,fentanyl,2026,House,Third party,4,81,0.0494
+Security / Immigration,fentanyl,2026,Senate,Democratic,1,28,0.0357
+Security / Immigration,fentanyl,2026,Senate,Independent,0,17,0.0
+Security / Immigration,fentanyl,2026,Senate,Republican,9,31,0.2903
+Security / Immigration,fentanyl,2026,Senate,Third party,1,19,0.0526
+Security / Immigration,cartels,2026,All,Democratic,8,438,0.0183
+Security / Immigration,cartels,2026,All,Independent,3,80,0.0375
+Security / Immigration,cartels,2026,All,Republican,38,407,0.0934
+Security / Immigration,cartels,2026,All,Third party,8,100,0.08
+Security / Immigration,cartels,2026,House,Democratic,8,410,0.0195
+Security / Immigration,cartels,2026,House,Independent,3,63,0.0476
+Security / Immigration,cartels,2026,House,Republican,33,376,0.0878
+Security / Immigration,cartels,2026,House,Third party,5,81,0.0617
+Security / Immigration,cartels,2026,Senate,Democratic,0,28,0.0
+Security / Immigration,cartels,2026,Senate,Independent,0,17,0.0
+Security / Immigration,cartels,2026,Senate,Republican,5,31,0.1613
+Security / Immigration,cartels,2026,Senate,Third party,3,19,0.1579
+Security / Immigration,law enforcement / police,2026,All,Democratic,137,438,0.3128
+Security / Immigration,law enforcement / police,2026,All,Independent,22,80,0.275
+Security / Immigration,law enforcement / police,2026,All,Republican,217,407,0.5332
+Security / Immigration,law enforcement / police,2026,All,Third party,30,100,0.3
+Security / Immigration,law enforcement / police,2026,House,Democratic,127,410,0.3098
+Security / Immigration,law enforcement / police,2026,House,Independent,16,63,0.254
+Security / Immigration,law enforcement / police,2026,House,Republican,197,376,0.5239
+Security / Immigration,law enforcement / police,2026,House,Third party,24,81,0.2963
+Security / Immigration,law enforcement / police,2026,Senate,Democratic,10,28,0.3571
+Security / Immigration,law enforcement / police,2026,Senate,Independent,6,17,0.3529
+Security / Immigration,law enforcement / police,2026,Senate,Republican,20,31,0.6452
+Security / Immigration,law enforcement / police,2026,Senate,Third party,6,19,0.3158
+Security / Immigration,China,2026,All,Democratic,39,438,0.089
+Security / Immigration,China,2026,All,Independent,12,80,0.15
+Security / Immigration,China,2026,All,Republican,81,407,0.199
+Security / Immigration,China,2026,All,Third party,10,100,0.1
+Security / Immigration,China,2026,House,Democratic,33,410,0.0805
+Security / Immigration,China,2026,House,Independent,12,63,0.1905
+Security / Immigration,China,2026,House,Republican,74,376,0.1968
+Security / Immigration,China,2026,House,Third party,7,81,0.0864
+Security / Immigration,China,2026,Senate,Democratic,6,28,0.2143
+Security / Immigration,China,2026,Senate,Independent,0,17,0.0
+Security / Immigration,China,2026,Senate,Republican,7,31,0.2258
+Security / Immigration,China,2026,Senate,Third party,3,19,0.1579
+Programs / Policy,Social Security,2026,All,Democratic,176,438,0.4018
+Programs / Policy,Social Security,2026,All,Independent,23,80,0.2875
+Programs / Policy,Social Security,2026,All,Republican,92,407,0.226
+Programs / Policy,Social Security,2026,All,Third party,23,100,0.23
+Programs / Policy,Social Security,2026,House,Democratic,167,410,0.4073
+Programs / Policy,Social Security,2026,House,Independent,22,63,0.3492
+Programs / Policy,Social Security,2026,House,Republican,83,376,0.2207
+Programs / Policy,Social Security,2026,House,Third party,17,81,0.2099
+Programs / Policy,Social Security,2026,Senate,Democratic,9,28,0.3214
+Programs / Policy,Social Security,2026,Senate,Independent,1,17,0.0588
+Programs / Policy,Social Security,2026,Senate,Republican,9,31,0.2903
+Programs / Policy,Social Security,2026,Senate,Third party,6,19,0.3158
+Programs / Policy,Medicare,2026,All,Democratic,234,438,0.5342
+Programs / Policy,Medicare,2026,All,Independent,24,80,0.3
+Programs / Policy,Medicare,2026,All,Republican,72,407,0.1769
+Programs / Policy,Medicare,2026,All,Third party,27,100,0.27
+Programs / Policy,Medicare,2026,House,Democratic,220,410,0.5366
+Programs / Policy,Medicare,2026,House,Independent,23,63,0.3651
+Programs / Policy,Medicare,2026,House,Republican,65,376,0.1729
+Programs / Policy,Medicare,2026,House,Third party,22,81,0.2716
+Programs / Policy,Medicare,2026,Senate,Democratic,14,28,0.5
+Programs / Policy,Medicare,2026,Senate,Independent,1,17,0.0588
+Programs / Policy,Medicare,2026,Senate,Republican,7,31,0.2258
+Programs / Policy,Medicare,2026,Senate,Third party,5,19,0.2632
+Programs / Policy,veterans,2026,All,Democratic,247,438,0.5639
+Programs / Policy,veterans,2026,All,Independent,28,80,0.35
+Programs / Policy,veterans,2026,All,Republican,205,407,0.5037
+Programs / Policy,veterans,2026,All,Third party,35,100,0.35
+Programs / Policy,veterans,2026,House,Democratic,234,410,0.5707
+Programs / Policy,veterans,2026,House,Independent,22,63,0.3492
+Programs / Policy,veterans,2026,House,Republican,190,376,0.5053
+Programs / Policy,veterans,2026,House,Third party,25,81,0.3086
+Programs / Policy,veterans,2026,Senate,Democratic,13,28,0.4643
+Programs / Policy,veterans,2026,Senate,Independent,6,17,0.3529
+Programs / Policy,veterans,2026,Senate,Republican,15,31,0.4839
+Programs / Policy,veterans,2026,Senate,Third party,10,19,0.5263
+Programs / Policy,health care,2026,All,Democratic,388,438,0.8858
+Programs / Policy,health care,2026,All,Independent,60,80,0.75
+Programs / Policy,health care,2026,All,Republican,198,407,0.4865
+Programs / Policy,health care,2026,All,Third party,50,100,0.5
+Programs / Policy,health care,2026,House,Democratic,361,410,0.8805
+Programs / Policy,health care,2026,House,Independent,48,63,0.7619
+Programs / Policy,health care,2026,House,Republican,179,376,0.4761
+Programs / Policy,health care,2026,House,Third party,39,81,0.4815
+Programs / Policy,health care,2026,Senate,Democratic,27,28,0.9643
+Programs / Policy,health care,2026,Senate,Independent,12,17,0.7059
+Programs / Policy,health care,2026,Senate,Republican,19,31,0.6129
+Programs / Policy,health care,2026,Senate,Third party,11,19,0.5789
+Programs / Policy,climate,2026,All,Democratic,155,438,0.3539
+Programs / Policy,climate,2026,All,Independent,11,80,0.1375
+Programs / Policy,climate,2026,All,Republican,16,407,0.0393
+Programs / Policy,climate,2026,All,Third party,15,100,0.15
+Programs / Policy,climate,2026,House,Democratic,145,410,0.3537
+Programs / Policy,climate,2026,House,Independent,8,63,0.127
+Programs / Policy,climate,2026,House,Republican,16,376,0.0426
+Programs / Policy,climate,2026,House,Third party,11,81,0.1358
+Programs / Policy,climate,2026,Senate,Democratic,10,28,0.3571
+Programs / Policy,climate,2026,Senate,Independent,3,17,0.1765
+Programs / Policy,climate,2026,Senate,Republican,0,31,0.0
+Programs / Policy,climate,2026,Senate,Third party,4,19,0.2105
+Programs / Policy,clean energy,2026,All,Democratic,98,438,0.2237
+Programs / Policy,clean energy,2026,All,Independent,6,80,0.075
+Programs / Policy,clean energy,2026,All,Republican,7,407,0.0172
+Programs / Policy,clean energy,2026,All,Third party,6,100,0.06
+Programs / Policy,clean energy,2026,House,Democratic,93,410,0.2268
+Programs / Policy,clean energy,2026,House,Independent,6,63,0.0952
+Programs / Policy,clean energy,2026,House,Republican,7,376,0.0186
+Programs / Policy,clean energy,2026,House,Third party,4,81,0.0494
+Programs / Policy,clean energy,2026,Senate,Democratic,5,28,0.1786
+Programs / Policy,clean energy,2026,Senate,Independent,0,17,0.0
+Programs / Policy,clean energy,2026,Senate,Republican,0,31,0.0
+Programs / Policy,clean energy,2026,Senate,Third party,2,19,0.1053
+Programs / Policy,energy independence / dominance,2026,All,Democratic,12,438,0.0274
+Programs / Policy,energy independence / dominance,2026,All,Independent,5,80,0.0625
+Programs / Policy,energy independence / dominance,2026,All,Republican,88,407,0.2162
+Programs / Policy,energy independence / dominance,2026,All,Third party,7,100,0.07
+Programs / Policy,energy independence / dominance,2026,House,Democratic,10,410,0.0244
+Programs / Policy,energy independence / dominance,2026,House,Independent,3,63,0.0476
+Programs / Policy,energy independence / dominance,2026,House,Republican,81,376,0.2154
+Programs / Policy,energy independence / dominance,2026,House,Third party,7,81,0.0864
+Programs / Policy,energy independence / dominance,2026,Senate,Democratic,2,28,0.0714
+Programs / Policy,energy independence / dominance,2026,Senate,Independent,2,17,0.1176
+Programs / Policy,energy independence / dominance,2026,Senate,Republican,7,31,0.2258
+Programs / Policy,energy independence / dominance,2026,Senate,Third party,0,19,0.0
+Programs / Policy,housing,2026,All,Democratic,291,438,0.6644
+Programs / Policy,housing,2026,All,Independent,44,80,0.55
+Programs / Policy,housing,2026,All,Republican,116,407,0.285
+Programs / Policy,housing,2026,All,Third party,33,100,0.33
+Programs / Policy,housing,2026,House,Democratic,269,410,0.6561
+Programs / Policy,housing,2026,House,Independent,37,63,0.5873
+Programs / Policy,housing,2026,House,Republican,108,376,0.2872
+Programs / Policy,housing,2026,House,Third party,25,81,0.3086
+Programs / Policy,housing,2026,Senate,Democratic,22,28,0.7857
+Programs / Policy,housing,2026,Senate,Independent,7,17,0.4118
+Programs / Policy,housing,2026,Senate,Republican,8,31,0.2581
+Programs / Policy,housing,2026,Senate,Third party,8,19,0.4211
+Programs / Policy,child care,2026,All,Democratic,142,438,0.3242
+Programs / Policy,child care,2026,All,Independent,12,80,0.15
+Programs / Policy,child care,2026,All,Republican,21,407,0.0516
+Programs / Policy,child care,2026,All,Third party,13,100,0.13
+Programs / Policy,child care,2026,House,Democratic,132,410,0.322
+Programs / Policy,child care,2026,House,Independent,12,63,0.1905
+Programs / Policy,child care,2026,House,Republican,18,376,0.0479
+Programs / Policy,child care,2026,House,Third party,10,81,0.1235
+Programs / Policy,child care,2026,Senate,Democratic,10,28,0.3571
+Programs / Policy,child care,2026,Senate,Independent,0,17,0.0
+Programs / Policy,child care,2026,Senate,Republican,3,31,0.0968
+Programs / Policy,child care,2026,Senate,Third party,3,19,0.1579
+Programs / Policy,artificial intelligence,2026,All,Democratic,94,438,0.2146
+Programs / Policy,artificial intelligence,2026,All,Independent,31,80,0.3875
+Programs / Policy,artificial intelligence,2026,All,Republican,43,407,0.1057
+Programs / Policy,artificial intelligence,2026,All,Third party,17,100,0.17
+Programs / Policy,artificial intelligence,2026,House,Democratic,82,410,0.2
+Programs / Policy,artificial intelligence,2026,House,Independent,25,63,0.3968
+Programs / Policy,artificial intelligence,2026,House,Republican,41,376,0.109
+Programs / Policy,artificial intelligence,2026,House,Third party,15,81,0.1852
+Programs / Policy,artificial intelligence,2026,Senate,Democratic,12,28,0.4286
+Programs / Policy,artificial intelligence,2026,Senate,Independent,6,17,0.3529
+Programs / Policy,artificial intelligence,2026,Senate,Republican,2,31,0.0645
+Programs / Policy,artificial intelligence,2026,Senate,Third party,2,19,0.1053
+Abortion,pro-choice,2026,All,Democratic,30,438,0.0685
+Abortion,pro-choice,2026,All,Independent,5,80,0.0625
+Abortion,pro-choice,2026,All,Republican,0,407,0.0
+Abortion,pro-choice,2026,All,Third party,4,100,0.04
+Abortion,pro-choice,2026,House,Democratic,30,410,0.0732
+Abortion,pro-choice,2026,House,Independent,4,63,0.0635
+Abortion,pro-choice,2026,House,Republican,0,376,0.0
+Abortion,pro-choice,2026,House,Third party,4,81,0.0494
+Abortion,pro-choice,2026,Senate,Democratic,0,28,0.0
+Abortion,pro-choice,2026,Senate,Independent,1,17,0.0588
+Abortion,pro-choice,2026,Senate,Republican,0,31,0.0
+Abortion,pro-choice,2026,Senate,Third party,0,19,0.0
+Abortion,a woman's right to choose,2026,All,Democratic,33,438,0.0753
+Abortion,a woman's right to choose,2026,All,Independent,3,80,0.0375
+Abortion,a woman's right to choose,2026,All,Republican,1,407,0.0025
+Abortion,a woman's right to choose,2026,All,Third party,0,100,0.0
+Abortion,a woman's right to choose,2026,House,Democratic,29,410,0.0707
+Abortion,a woman's right to choose,2026,House,Independent,3,63,0.0476
+Abortion,a woman's right to choose,2026,House,Republican,1,376,0.0027
+Abortion,a woman's right to choose,2026,House,Third party,0,81,0.0
+Abortion,a woman's right to choose,2026,Senate,Democratic,4,28,0.1429
+Abortion,a woman's right to choose,2026,Senate,Independent,0,17,0.0
+Abortion,a woman's right to choose,2026,Senate,Republican,0,31,0.0
+Abortion,a woman's right to choose,2026,Senate,Third party,0,19,0.0
+Abortion,bodily autonomy,2026,All,Democratic,11,438,0.0251
+Abortion,bodily autonomy,2026,All,Independent,0,80,0.0
+Abortion,bodily autonomy,2026,All,Republican,1,407,0.0025
+Abortion,bodily autonomy,2026,All,Third party,3,100,0.03
+Abortion,bodily autonomy,2026,House,Democratic,11,410,0.0268
+Abortion,bodily autonomy,2026,House,Independent,0,63,0.0
+Abortion,bodily autonomy,2026,House,Republican,1,376,0.0027
+Abortion,bodily autonomy,2026,House,Third party,3,81,0.037
+Abortion,bodily autonomy,2026,Senate,Democratic,0,28,0.0
+Abortion,bodily autonomy,2026,Senate,Independent,0,17,0.0
+Abortion,bodily autonomy,2026,Senate,Republican,0,31,0.0
+Abortion,bodily autonomy,2026,Senate,Third party,0,19,0.0
+Abortion,Roe v. Wade / Dobbs,2026,All,Democratic,71,438,0.1621
+Abortion,Roe v. Wade / Dobbs,2026,All,Independent,5,80,0.0625
+Abortion,Roe v. Wade / Dobbs,2026,All,Republican,6,407,0.0147
+Abortion,Roe v. Wade / Dobbs,2026,All,Third party,6,100,0.06
+Abortion,Roe v. Wade / Dobbs,2026,House,Democratic,65,410,0.1585
+Abortion,Roe v. Wade / Dobbs,2026,House,Independent,5,63,0.0794
+Abortion,Roe v. Wade / Dobbs,2026,House,Republican,5,376,0.0133
+Abortion,Roe v. Wade / Dobbs,2026,House,Third party,4,81,0.0494
+Abortion,Roe v. Wade / Dobbs,2026,Senate,Democratic,6,28,0.2143
+Abortion,Roe v. Wade / Dobbs,2026,Senate,Independent,0,17,0.0
+Abortion,Roe v. Wade / Dobbs,2026,Senate,Republican,1,31,0.0323
+Abortion,Roe v. Wade / Dobbs,2026,Senate,Third party,2,19,0.1053
+Abortion,abortion ban,2026,All,Democratic,24,438,0.0548
+Abortion,abortion ban,2026,All,Independent,1,80,0.0125
+Abortion,abortion ban,2026,All,Republican,0,407,0.0
+Abortion,abortion ban,2026,All,Third party,1,100,0.01
+Abortion,abortion ban,2026,House,Democratic,23,410,0.0561
+Abortion,abortion ban,2026,House,Independent,1,63,0.0159
+Abortion,abortion ban,2026,House,Republican,0,376,0.0
+Abortion,abortion ban,2026,House,Third party,1,81,0.0123
+Abortion,abortion ban,2026,Senate,Democratic,1,28,0.0357
+Abortion,abortion ban,2026,Senate,Independent,0,17,0.0
+Abortion,abortion ban,2026,Senate,Republican,0,31,0.0
+Abortion,abortion ban,2026,Senate,Third party,0,19,0.0
+Abortion,pro-abortion,2026,All,Democratic,0,438,0.0
+Abortion,pro-abortion,2026,All,Independent,0,80,0.0
+Abortion,pro-abortion,2026,All,Republican,2,407,0.0049
+Abortion,pro-abortion,2026,All,Third party,0,100,0.0
+Abortion,pro-abortion,2026,House,Democratic,0,410,0.0
+Abortion,pro-abortion,2026,House,Independent,0,63,0.0
+Abortion,pro-abortion,2026,House,Republican,2,376,0.0053
+Abortion,pro-abortion,2026,House,Third party,0,81,0.0
+Abortion,pro-abortion,2026,Senate,Democratic,0,28,0.0
+Abortion,pro-abortion,2026,Senate,Independent,0,17,0.0
+Abortion,pro-abortion,2026,Senate,Republican,0,31,0.0
+Abortion,pro-abortion,2026,Senate,Third party,0,19,0.0
+Abortion,partial-birth / late-term abortion,2026,All,Democratic,0,438,0.0
+Abortion,partial-birth / late-term abortion,2026,All,Independent,0,80,0.0
+Abortion,partial-birth / late-term abortion,2026,All,Republican,6,407,0.0147
+Abortion,partial-birth / late-term abortion,2026,All,Third party,0,100,0.0
+Abortion,partial-birth / late-term abortion,2026,House,Democratic,0,410,0.0
+Abortion,partial-birth / late-term abortion,2026,House,Independent,0,63,0.0
+Abortion,partial-birth / late-term abortion,2026,House,Republican,5,376,0.0133
+Abortion,partial-birth / late-term abortion,2026,House,Third party,0,81,0.0
+Abortion,partial-birth / late-term abortion,2026,Senate,Democratic,0,28,0.0
+Abortion,partial-birth / late-term abortion,2026,Senate,Independent,0,17,0.0
+Abortion,partial-birth / late-term abortion,2026,Senate,Republican,1,31,0.0323
+Abortion,partial-birth / late-term abortion,2026,Senate,Third party,0,19,0.0
+Abortion,right to life / sanctity of life,2026,All,Democratic,2,438,0.0046
+Abortion,right to life / sanctity of life,2026,All,Independent,2,80,0.025
+Abortion,right to life / sanctity of life,2026,All,Republican,70,407,0.172
+Abortion,right to life / sanctity of life,2026,All,Third party,5,100,0.05
+Abortion,right to life / sanctity of life,2026,House,Democratic,2,410,0.0049
+Abortion,right to life / sanctity of life,2026,House,Independent,2,63,0.0317
+Abortion,right to life / sanctity of life,2026,House,Republican,67,376,0.1782
+Abortion,right to life / sanctity of life,2026,House,Third party,5,81,0.0617
+Abortion,right to life / sanctity of life,2026,Senate,Democratic,0,28,0.0
+Abortion,right to life / sanctity of life,2026,Senate,Independent,0,17,0.0
+Abortion,right to life / sanctity of life,2026,Senate,Republican,3,31,0.0968
+Abortion,right to life / sanctity of life,2026,Senate,Third party,0,19,0.0
+Economy / Class,Minimum wage,2026,All,Democratic,95,438,0.2169
+Economy / Class,Minimum wage,2026,All,Independent,9,80,0.1125
+Economy / Class,Minimum wage,2026,All,Republican,4,407,0.0098
+Economy / Class,Minimum wage,2026,All,Third party,14,100,0.14
+Economy / Class,Minimum wage,2026,House,Democratic,88,410,0.2146
+Economy / Class,Minimum wage,2026,House,Independent,9,63,0.1429
+Economy / Class,Minimum wage,2026,House,Republican,4,376,0.0106
+Economy / Class,Minimum wage,2026,House,Third party,12,81,0.1481
+Economy / Class,Minimum wage,2026,Senate,Democratic,7,28,0.25
+Economy / Class,Minimum wage,2026,Senate,Independent,0,17,0.0
+Economy / Class,Minimum wage,2026,Senate,Republican,0,31,0.0
+Economy / Class,Minimum wage,2026,Senate,Third party,2,19,0.1053
+Programs / Policy,Prescription drugs,2026,All,Democratic,134,438,0.3059
+Programs / Policy,Prescription drugs,2026,All,Independent,7,80,0.0875
+Programs / Policy,Prescription drugs,2026,All,Republican,36,407,0.0885
+Programs / Policy,Prescription drugs,2026,All,Third party,5,100,0.05
+Programs / Policy,Prescription drugs,2026,House,Democratic,122,410,0.2976
+Programs / Policy,Prescription drugs,2026,House,Independent,7,63,0.1111
+Programs / Policy,Prescription drugs,2026,House,Republican,30,376,0.0798
+Programs / Policy,Prescription drugs,2026,House,Third party,3,81,0.037
+Programs / Policy,Prescription drugs,2026,Senate,Democratic,12,28,0.4286
+Programs / Policy,Prescription drugs,2026,Senate,Independent,0,17,0.0
+Programs / Policy,Prescription drugs,2026,Senate,Republican,6,31,0.1935
+Programs / Policy,Prescription drugs,2026,Senate,Third party,2,19,0.1053
+Programs / Policy,Rural communities,2026,All,Democratic,174,438,0.3973
+Programs / Policy,Rural communities,2026,All,Independent,23,80,0.2875
+Programs / Policy,Rural communities,2026,All,Republican,104,407,0.2555
+Programs / Policy,Rural communities,2026,All,Third party,16,100,0.16
+Programs / Policy,Rural communities,2026,House,Democratic,158,410,0.3854
+Programs / Policy,Rural communities,2026,House,Independent,19,63,0.3016
+Programs / Policy,Rural communities,2026,House,Republican,92,376,0.2447
+Programs / Policy,Rural communities,2026,House,Third party,11,81,0.1358
+Programs / Policy,Rural communities,2026,Senate,Democratic,16,28,0.5714
+Programs / Policy,Rural communities,2026,Senate,Independent,4,17,0.2353
+Programs / Policy,Rural communities,2026,Senate,Republican,12,31,0.3871
+Programs / Policy,Rural communities,2026,Senate,Third party,5,19,0.2632
+Opponents / Politics,Republican Party,2026,All,Democratic,206,438,0.4703
+Opponents / Politics,Republican Party,2026,All,Independent,34,80,0.425
+Opponents / Politics,Republican Party,2026,All,Republican,237,407,0.5823
+Opponents / Politics,Republican Party,2026,All,Third party,40,100,0.4
+Opponents / Politics,Republican Party,2026,House,Democratic,193,410,0.4707
+Opponents / Politics,Republican Party,2026,House,Independent,26,63,0.4127
+Opponents / Politics,Republican Party,2026,House,Republican,218,376,0.5798
+Opponents / Politics,Republican Party,2026,House,Third party,31,81,0.3827
+Opponents / Politics,Republican Party,2026,Senate,Democratic,13,28,0.4643
+Opponents / Politics,Republican Party,2026,Senate,Independent,8,17,0.4706
+Opponents / Politics,Republican Party,2026,Senate,Republican,19,31,0.6129
+Opponents / Politics,Republican Party,2026,Senate,Third party,9,19,0.4737
+Opponents / Politics,Democratic Party,2026,All,Democratic,329,438,0.7511
+Opponents / Politics,Democratic Party,2026,All,Independent,35,80,0.4375
+Opponents / Politics,Democratic Party,2026,All,Republican,145,407,0.3563
+Opponents / Politics,Democratic Party,2026,All,Third party,48,100,0.48
+Opponents / Politics,Democratic Party,2026,House,Democratic,308,410,0.7512
+Opponents / Politics,Democratic Party,2026,House,Independent,26,63,0.4127
+Opponents / Politics,Democratic Party,2026,House,Republican,130,376,0.3457
+Opponents / Politics,Democratic Party,2026,House,Third party,39,81,0.4815
+Opponents / Politics,Democratic Party,2026,Senate,Democratic,21,28,0.75
+Opponents / Politics,Democratic Party,2026,Senate,Independent,9,17,0.5294
+Opponents / Politics,Democratic Party,2026,Senate,Republican,15,31,0.4839
+Opponents / Politics,Democratic Party,2026,Senate,Third party,9,19,0.4737
+Economy / Class,economic growth,2026,All,Democratic,44,438,0.1005
+Economy / Class,economic growth,2026,All,Independent,8,80,0.1
+Economy / Class,economic growth,2026,All,Republican,71,407,0.1744
+Economy / Class,economic growth,2026,All,Third party,6,100,0.06
+Economy / Class,economic growth,2026,House,Democratic,44,410,0.1073
+Economy / Class,economic growth,2026,House,Independent,7,63,0.1111
+Economy / Class,economic growth,2026,House,Republican,67,376,0.1782
+Economy / Class,economic growth,2026,House,Third party,4,81,0.0494
+Economy / Class,economic growth,2026,Senate,Democratic,0,28,0.0
+Economy / Class,economic growth,2026,Senate,Independent,1,17,0.0588
+Economy / Class,economic growth,2026,Senate,Republican,4,31,0.129
+Economy / Class,economic growth,2026,Senate,Third party,2,19,0.1053
+Economy / Class,special interests,2026,All,Democratic,95,438,0.2169
+Economy / Class,special interests,2026,All,Independent,18,80,0.225
+Economy / Class,special interests,2026,All,Republican,39,407,0.0958
+Economy / Class,special interests,2026,All,Third party,13,100,0.13
+Economy / Class,special interests,2026,House,Democratic,86,410,0.2098
+Economy / Class,special interests,2026,House,Independent,13,63,0.2063
+Economy / Class,special interests,2026,House,Republican,37,376,0.0984
+Economy / Class,special interests,2026,House,Third party,9,81,0.1111
+Economy / Class,special interests,2026,Senate,Democratic,9,28,0.3214
+Economy / Class,special interests,2026,Senate,Independent,5,17,0.2941
+Economy / Class,special interests,2026,Senate,Republican,2,31,0.0645
+Economy / Class,special interests,2026,Senate,Third party,4,19,0.2105
+Economy / Class,Citizens United,2026,All,Democratic,94,438,0.2146
+Economy / Class,Citizens United,2026,All,Independent,12,80,0.15
+Economy / Class,Citizens United,2026,All,Republican,1,407,0.0025
+Economy / Class,Citizens United,2026,All,Third party,8,100,0.08
+Economy / Class,Citizens United,2026,House,Democratic,86,410,0.2098
+Economy / Class,Citizens United,2026,House,Independent,8,63,0.127
+Economy / Class,Citizens United,2026,House,Republican,1,376,0.0027
+Economy / Class,Citizens United,2026,House,Third party,4,81,0.0494
+Economy / Class,Citizens United,2026,Senate,Democratic,8,28,0.2857
+Economy / Class,Citizens United,2026,Senate,Independent,4,17,0.2353
+Economy / Class,Citizens United,2026,Senate,Republican,0,31,0.0
+Economy / Class,Citizens United,2026,Senate,Third party,4,19,0.2105
+Economy / Class,future generations,2026,All,Democratic,63,438,0.1438
+Economy / Class,future generations,2026,All,Independent,6,80,0.075
+Economy / Class,future generations,2026,All,Republican,61,407,0.1499
+Economy / Class,future generations,2026,All,Third party,20,100,0.2
+Economy / Class,future generations,2026,House,Democratic,61,410,0.1488
+Economy / Class,future generations,2026,House,Independent,4,63,0.0635
+Economy / Class,future generations,2026,House,Republican,58,376,0.1543
+Economy / Class,future generations,2026,House,Third party,16,81,0.1975
+Economy / Class,future generations,2026,Senate,Democratic,2,28,0.0714
+Economy / Class,future generations,2026,Senate,Independent,2,17,0.1176
+Economy / Class,future generations,2026,Senate,Republican,3,31,0.0968
+Economy / Class,future generations,2026,Senate,Third party,4,19,0.2105
+Opponents / Politics,elected officials,2026,All,Democratic,113,438,0.258
+Opponents / Politics,elected officials,2026,All,Independent,18,80,0.225
+Opponents / Politics,elected officials,2026,All,Republican,49,407,0.1204
+Opponents / Politics,elected officials,2026,All,Third party,9,100,0.09
+Opponents / Politics,elected officials,2026,House,Democratic,107,410,0.261
+Opponents / Politics,elected officials,2026,House,Independent,17,63,0.2698
+Opponents / Politics,elected officials,2026,House,Republican,47,376,0.125
+Opponents / Politics,elected officials,2026,House,Third party,7,81,0.0864
+Opponents / Politics,elected officials,2026,Senate,Democratic,6,28,0.2143
+Opponents / Politics,elected officials,2026,Senate,Independent,1,17,0.0588
+Opponents / Politics,elected officials,2026,Senate,Republican,2,31,0.0645
+Opponents / Politics,elected officials,2026,Senate,Third party,2,19,0.1053
+Rights / Values,civil rights,2026,All,Democratic,96,438,0.2192
+Rights / Values,civil rights,2026,All,Independent,11,80,0.1375
+Rights / Values,civil rights,2026,All,Republican,7,407,0.0172
+Rights / Values,civil rights,2026,All,Third party,10,100,0.1
+Rights / Values,civil rights,2026,House,Democratic,89,410,0.2171
+Rights / Values,civil rights,2026,House,Independent,10,63,0.1587
+Rights / Values,civil rights,2026,House,Republican,6,376,0.016
+Rights / Values,civil rights,2026,House,Third party,8,81,0.0988
+Rights / Values,civil rights,2026,Senate,Democratic,7,28,0.25
+Rights / Values,civil rights,2026,Senate,Independent,1,17,0.0588
+Rights / Values,civil rights,2026,Senate,Republican,1,31,0.0323
+Rights / Values,civil rights,2026,Senate,Third party,2,19,0.1053
+Rights / Values,voting rights,2026,All,Democratic,108,438,0.2466
+Rights / Values,voting rights,2026,All,Independent,7,80,0.0875
+Rights / Values,voting rights,2026,All,Republican,2,407,0.0049
+Rights / Values,voting rights,2026,All,Third party,5,100,0.05
+Rights / Values,voting rights,2026,House,Democratic,100,410,0.2439
+Rights / Values,voting rights,2026,House,Independent,7,63,0.1111
+Rights / Values,voting rights,2026,House,Republican,2,376,0.0053
+Rights / Values,voting rights,2026,House,Third party,2,81,0.0247
+Rights / Values,voting rights,2026,Senate,Democratic,8,28,0.2857
+Rights / Values,voting rights,2026,Senate,Independent,0,17,0.0
+Rights / Values,voting rights,2026,Senate,Republican,0,31,0.0
+Rights / Values,voting rights,2026,Senate,Third party,3,19,0.1579
+Rights / Values,human rights,2026,All,Democratic,86,438,0.1963
+Rights / Values,human rights,2026,All,Independent,9,80,0.1125
+Rights / Values,human rights,2026,All,Republican,11,407,0.027
+Rights / Values,human rights,2026,All,Third party,15,100,0.15
+Rights / Values,human rights,2026,House,Democratic,79,410,0.1927
+Rights / Values,human rights,2026,House,Independent,8,63,0.127
+Rights / Values,human rights,2026,House,Republican,10,376,0.0266
+Rights / Values,human rights,2026,House,Third party,14,81,0.1728
+Rights / Values,human rights,2026,Senate,Democratic,7,28,0.25
+Rights / Values,human rights,2026,Senate,Independent,1,17,0.0588
+Rights / Values,human rights,2026,Senate,Republican,1,31,0.0323
+Rights / Values,human rights,2026,Senate,Third party,1,19,0.0526
+Rights / Values,bear arms,2026,All,Democratic,8,438,0.0183
+Rights / Values,bear arms,2026,All,Independent,8,80,0.1
+Rights / Values,bear arms,2026,All,Republican,61,407,0.1499
+Rights / Values,bear arms,2026,All,Third party,12,100,0.12
+Rights / Values,bear arms,2026,House,Democratic,8,410,0.0195
+Rights / Values,bear arms,2026,House,Independent,7,63,0.1111
+Rights / Values,bear arms,2026,House,Republican,56,376,0.1489
+Rights / Values,bear arms,2026,House,Third party,8,81,0.0988
+Rights / Values,bear arms,2026,Senate,Democratic,0,28,0.0
+Rights / Values,bear arms,2026,Senate,Independent,1,17,0.0588
+Rights / Values,bear arms,2026,Senate,Republican,5,31,0.1613
+Rights / Values,bear arms,2026,Senate,Third party,4,19,0.2105
+Rights / Values,American dream,2026,All,Democratic,87,438,0.1986
+Rights / Values,American dream,2026,All,Independent,14,80,0.175
+Rights / Values,American dream,2026,All,Republican,106,407,0.2604
+Rights / Values,American dream,2026,All,Third party,6,100,0.06
+Rights / Values,American dream,2026,House,Democratic,84,410,0.2049
+Rights / Values,American dream,2026,House,Independent,11,63,0.1746
+Rights / Values,American dream,2026,House,Republican,96,376,0.2553
+Rights / Values,American dream,2026,House,Third party,4,81,0.0494
+Rights / Values,American dream,2026,Senate,Democratic,3,28,0.1071
+Rights / Values,American dream,2026,Senate,Independent,3,17,0.1765
+Rights / Values,American dream,2026,Senate,Republican,10,31,0.3226
+Rights / Values,American dream,2026,Senate,Third party,2,19,0.1053
+Rights / Values,Supreme Court,2026,All,Democratic,88,438,0.2009
+Rights / Values,Supreme Court,2026,All,Independent,17,80,0.2125
+Rights / Values,Supreme Court,2026,All,Republican,28,407,0.0688
+Rights / Values,Supreme Court,2026,All,Third party,12,100,0.12
+Rights / Values,Supreme Court,2026,House,Democratic,81,410,0.1976
+Rights / Values,Supreme Court,2026,House,Independent,13,63,0.2063
+Rights / Values,Supreme Court,2026,House,Republican,24,376,0.0638
+Rights / Values,Supreme Court,2026,House,Third party,9,81,0.1111
+Rights / Values,Supreme Court,2026,Senate,Democratic,7,28,0.25
+Rights / Values,Supreme Court,2026,Senate,Independent,4,17,0.2353
+Rights / Values,Supreme Court,2026,Senate,Republican,4,31,0.129
+Rights / Values,Supreme Court,2026,Senate,Third party,3,19,0.1579
+Security / Immigration,national security,2026,All,Democratic,71,438,0.1621
+Security / Immigration,national security,2026,All,Independent,14,80,0.175
+Security / Immigration,national security,2026,All,Republican,122,407,0.2998
+Security / Immigration,national security,2026,All,Third party,16,100,0.16
+Security / Immigration,national security,2026,House,Democratic,66,410,0.161
+Security / Immigration,national security,2026,House,Independent,12,63,0.1905
+Security / Immigration,national security,2026,House,Republican,111,376,0.2952
+Security / Immigration,national security,2026,House,Third party,12,81,0.1481
+Security / Immigration,national security,2026,Senate,Democratic,5,28,0.1786
+Security / Immigration,national security,2026,Senate,Independent,2,17,0.1176
+Security / Immigration,national security,2026,Senate,Republican,11,31,0.3548
+Security / Immigration,national security,2026,Senate,Third party,4,19,0.2105
+Security / Immigration,gun violence,2026,All,Democratic,97,438,0.2215
+Security / Immigration,gun violence,2026,All,Independent,3,80,0.0375
+Security / Immigration,gun violence,2026,All,Republican,4,407,0.0098
+Security / Immigration,gun violence,2026,All,Third party,5,100,0.05
+Security / Immigration,gun violence,2026,House,Democratic,90,410,0.2195
+Security / Immigration,gun violence,2026,House,Independent,3,63,0.0476
+Security / Immigration,gun violence,2026,House,Republican,4,376,0.0106
+Security / Immigration,gun violence,2026,House,Third party,5,81,0.0617
+Security / Immigration,gun violence,2026,Senate,Democratic,7,28,0.25
+Security / Immigration,gun violence,2026,Senate,Independent,0,17,0.0
+Security / Immigration,gun violence,2026,Senate,Republican,0,31,0.0
+Security / Immigration,gun violence,2026,Senate,Third party,0,19,0.0
+Security / Immigration,background checks,2026,All,Democratic,55,438,0.1256
+Security / Immigration,background checks,2026,All,Independent,3,80,0.0375
+Security / Immigration,background checks,2026,All,Republican,7,407,0.0172
+Security / Immigration,background checks,2026,All,Third party,5,100,0.05
+Security / Immigration,background checks,2026,House,Democratic,52,410,0.1268
+Security / Immigration,background checks,2026,House,Independent,3,63,0.0476
+Security / Immigration,background checks,2026,House,Republican,7,376,0.0186
+Security / Immigration,background checks,2026,House,Third party,5,81,0.0617
+Security / Immigration,background checks,2026,Senate,Democratic,3,28,0.1071
+Security / Immigration,background checks,2026,Senate,Independent,0,17,0.0
+Security / Immigration,background checks,2026,Senate,Republican,0,31,0.0
+Security / Immigration,background checks,2026,Senate,Third party,0,19,0.0
+Security / Immigration,criminal justice,2026,All,Democratic,42,438,0.0959
+Security / Immigration,criminal justice,2026,All,Independent,2,80,0.025
+Security / Immigration,criminal justice,2026,All,Republican,12,407,0.0295
+Security / Immigration,criminal justice,2026,All,Third party,10,100,0.1
+Security / Immigration,criminal justice,2026,House,Democratic,38,410,0.0927
+Security / Immigration,criminal justice,2026,House,Independent,2,63,0.0317
+Security / Immigration,criminal justice,2026,House,Republican,10,376,0.0266
+Security / Immigration,criminal justice,2026,House,Third party,7,81,0.0864
+Security / Immigration,criminal justice,2026,Senate,Democratic,4,28,0.1429
+Security / Immigration,criminal justice,2026,Senate,Independent,0,17,0.0
+Security / Immigration,criminal justice,2026,Senate,Republican,2,31,0.0645
+Security / Immigration,criminal justice,2026,Senate,Third party,3,19,0.1579
+Security / Immigration,public safety,2026,All,Democratic,102,438,0.2329
+Security / Immigration,public safety,2026,All,Independent,13,80,0.1625
+Security / Immigration,public safety,2026,All,Republican,103,407,0.2531
+Security / Immigration,public safety,2026,All,Third party,12,100,0.12
+Security / Immigration,public safety,2026,House,Democratic,99,410,0.2415
+Security / Immigration,public safety,2026,House,Independent,13,63,0.2063
+Security / Immigration,public safety,2026,House,Republican,95,376,0.2527
+Security / Immigration,public safety,2026,House,Third party,10,81,0.1235
+Security / Immigration,public safety,2026,Senate,Democratic,3,28,0.1071
+Security / Immigration,public safety,2026,Senate,Independent,0,17,0.0
+Security / Immigration,public safety,2026,Senate,Republican,8,31,0.2581
+Security / Immigration,public safety,2026,Senate,Third party,2,19,0.1053
+Programs / Policy,mental health,2026,All,Democratic,147,438,0.3356
+Programs / Policy,mental health,2026,All,Independent,20,80,0.25
+Programs / Policy,mental health,2026,All,Republican,56,407,0.1376
+Programs / Policy,mental health,2026,All,Third party,15,100,0.15
+Programs / Policy,mental health,2026,House,Democratic,137,410,0.3341
+Programs / Policy,mental health,2026,House,Independent,18,63,0.2857
+Programs / Policy,mental health,2026,House,Republican,50,376,0.133
+Programs / Policy,mental health,2026,House,Third party,13,81,0.1605
+Programs / Policy,mental health,2026,Senate,Democratic,10,28,0.3571
+Programs / Policy,mental health,2026,Senate,Independent,2,17,0.1176
+Programs / Policy,mental health,2026,Senate,Republican,6,31,0.1935
+Programs / Policy,mental health,2026,Senate,Third party,2,19,0.1053
+Programs / Policy,health insurance,2026,All,Democratic,73,438,0.1667
+Programs / Policy,health insurance,2026,All,Independent,8,80,0.1
+Programs / Policy,health insurance,2026,All,Republican,23,407,0.0565
+Programs / Policy,health insurance,2026,All,Third party,6,100,0.06
+Programs / Policy,health insurance,2026,House,Democratic,69,410,0.1683
+Programs / Policy,health insurance,2026,House,Independent,7,63,0.1111
+Programs / Policy,health insurance,2026,House,Republican,21,376,0.0559
+Programs / Policy,health insurance,2026,House,Third party,4,81,0.0494
+Programs / Policy,health insurance,2026,Senate,Democratic,4,28,0.1429
+Programs / Policy,health insurance,2026,Senate,Independent,1,17,0.0588
+Programs / Policy,health insurance,2026,Senate,Republican,2,31,0.0645
+Programs / Policy,health insurance,2026,Senate,Third party,2,19,0.1053
+Programs / Policy,public schools,2026,All,Democratic,191,438,0.4361
+Programs / Policy,public schools,2026,All,Independent,17,80,0.2125
+Programs / Policy,public schools,2026,All,Republican,42,407,0.1032
+Programs / Policy,public schools,2026,All,Third party,15,100,0.15
+Programs / Policy,public schools,2026,House,Democratic,178,410,0.4341
+Programs / Policy,public schools,2026,House,Independent,13,63,0.2063
+Programs / Policy,public schools,2026,House,Republican,40,376,0.1064
+Programs / Policy,public schools,2026,House,Third party,10,81,0.1235
+Programs / Policy,public schools,2026,Senate,Democratic,13,28,0.4643
+Programs / Policy,public schools,2026,Senate,Independent,4,17,0.2353
+Programs / Policy,public schools,2026,Senate,Republican,2,31,0.0645
+Programs / Policy,public schools,2026,Senate,Third party,5,19,0.2632
+Programs / Policy,renewable energy,2026,All,Democratic,49,438,0.1119
+Programs / Policy,renewable energy,2026,All,Independent,5,80,0.0625
+Programs / Policy,renewable energy,2026,All,Republican,8,407,0.0197
+Programs / Policy,renewable energy,2026,All,Third party,8,100,0.08
+Programs / Policy,renewable energy,2026,House,Democratic,46,410,0.1122
+Programs / Policy,renewable energy,2026,House,Independent,2,63,0.0317
+Programs / Policy,renewable energy,2026,House,Republican,8,376,0.0213
+Programs / Policy,renewable energy,2026,House,Third party,6,81,0.0741
+Programs / Policy,renewable energy,2026,Senate,Democratic,3,28,0.1071
+Programs / Policy,renewable energy,2026,Senate,Independent,3,17,0.1765
+Programs / Policy,renewable energy,2026,Senate,Republican,0,31,0.0
+Programs / Policy,renewable energy,2026,Senate,Third party,2,19,0.1053
+Programs / Policy,foreign policy,2026,All,Democratic,76,438,0.1735
+Programs / Policy,foreign policy,2026,All,Independent,11,80,0.1375
+Programs / Policy,foreign policy,2026,All,Republican,36,407,0.0885
+Programs / Policy,foreign policy,2026,All,Third party,28,100,0.28
+Programs / Policy,foreign policy,2026,House,Democratic,70,410,0.1707
+Programs / Policy,foreign policy,2026,House,Independent,8,63,0.127
+Programs / Policy,foreign policy,2026,House,Republican,33,376,0.0878
+Programs / Policy,foreign policy,2026,House,Third party,22,81,0.2716
+Programs / Policy,foreign policy,2026,Senate,Democratic,6,28,0.2143
+Programs / Policy,foreign policy,2026,Senate,Independent,3,17,0.1765
+Programs / Policy,foreign policy,2026,Senate,Republican,3,31,0.0968
+Programs / Policy,foreign policy,2026,Senate,Third party,6,19,0.3158
+Programs / Policy,school choice,2026,All,Democratic,1,438,0.0023
+Programs / Policy,school choice,2026,All,Independent,0,80,0.0
+Programs / Policy,school choice,2026,All,Republican,46,407,0.113
+Programs / Policy,school choice,2026,All,Third party,3,100,0.03
+Programs / Policy,school choice,2026,House,Democratic,1,410,0.0024
+Programs / Policy,school choice,2026,House,Independent,0,63,0.0
+Programs / Policy,school choice,2026,House,Republican,42,376,0.1117
+Programs / Policy,school choice,2026,House,Third party,2,81,0.0247
+Programs / Policy,school choice,2026,Senate,Democratic,0,28,0.0
+Programs / Policy,school choice,2026,Senate,Independent,0,17,0.0
+Programs / Policy,school choice,2026,Senate,Republican,4,31,0.129
+Programs / Policy,school choice,2026,Senate,Third party,1,19,0.0526
+Programs / Policy,data centers,2026,All,Democratic,83,438,0.1895
+Programs / Policy,data centers,2026,All,Independent,22,80,0.275
+Programs / Policy,data centers,2026,All,Republican,14,407,0.0344
+Programs / Policy,data centers,2026,All,Third party,16,100,0.16
+Programs / Policy,data centers,2026,House,Democratic,76,410,0.1854
+Programs / Policy,data centers,2026,House,Independent,17,63,0.2698
+Programs / Policy,data centers,2026,House,Republican,13,376,0.0346
+Programs / Policy,data centers,2026,House,Third party,13,81,0.1605
+Programs / Policy,data centers,2026,Senate,Democratic,7,28,0.25
+Programs / Policy,data centers,2026,Senate,Independent,5,17,0.2941
+Programs / Policy,data centers,2026,Senate,Republican,1,31,0.0323
+Programs / Policy,data centers,2026,Senate,Third party,3,19,0.1579
+Endorsements,Planned Parenthood,2026,All,Democratic,84,438,0.1918
+Endorsements,Planned Parenthood,2026,All,Independent,4,80,0.05
+Endorsements,Planned Parenthood,2026,All,Republican,10,407,0.0246
+Endorsements,Planned Parenthood,2026,All,Third party,1,100,0.01
+Endorsements,Planned Parenthood,2026,House,Democratic,78,410,0.1902
+Endorsements,Planned Parenthood,2026,House,Independent,3,63,0.0476
+Endorsements,Planned Parenthood,2026,House,Republican,10,376,0.0266
+Endorsements,Planned Parenthood,2026,House,Third party,1,81,0.0123
+Endorsements,Planned Parenthood,2026,Senate,Democratic,6,28,0.2143
+Endorsements,Planned Parenthood,2026,Senate,Independent,1,17,0.0588
+Endorsements,Planned Parenthood,2026,Senate,Republican,0,31,0.0
+Endorsements,Planned Parenthood,2026,Senate,Third party,0,19,0.0
+Endorsements,NRA,2026,All,Democratic,14,438,0.032
+Endorsements,NRA,2026,All,Independent,1,80,0.0125
+Endorsements,NRA,2026,All,Republican,49,407,0.1204
+Endorsements,NRA,2026,All,Third party,2,100,0.02
+Endorsements,NRA,2026,House,Democratic,13,410,0.0317
+Endorsements,NRA,2026,House,Independent,1,63,0.0159
+Endorsements,NRA,2026,House,Republican,41,376,0.109
+Endorsements,NRA,2026,House,Third party,2,81,0.0247
+Endorsements,NRA,2026,Senate,Democratic,1,28,0.0357
+Endorsements,NRA,2026,Senate,Independent,0,17,0.0
+Endorsements,NRA,2026,Senate,Republican,8,31,0.2581
+Endorsements,NRA,2026,Senate,Third party,0,19,0.0
+Endorsements,AFL-CIO,2026,All,Democratic,71,438,0.1621
+Endorsements,AFL-CIO,2026,All,Independent,2,80,0.025
+Endorsements,AFL-CIO,2026,All,Republican,3,407,0.0074
+Endorsements,AFL-CIO,2026,All,Third party,0,100,0.0
+Endorsements,AFL-CIO,2026,House,Democratic,68,410,0.1659
+Endorsements,AFL-CIO,2026,House,Independent,1,63,0.0159
+Endorsements,AFL-CIO,2026,House,Republican,3,376,0.008
+Endorsements,AFL-CIO,2026,House,Third party,0,81,0.0
+Endorsements,AFL-CIO,2026,Senate,Democratic,3,28,0.1071
+Endorsements,AFL-CIO,2026,Senate,Independent,1,17,0.0588
+Endorsements,AFL-CIO,2026,Senate,Republican,0,31,0.0
+Endorsements,AFL-CIO,2026,Senate,Third party,0,19,0.0
+Endorsements,Chamber of Commerce,2026,All,Democratic,22,438,0.0502
+Endorsements,Chamber of Commerce,2026,All,Independent,2,80,0.025
+Endorsements,Chamber of Commerce,2026,All,Republican,34,407,0.0835
+Endorsements,Chamber of Commerce,2026,All,Third party,0,100,0.0
+Endorsements,Chamber of Commerce,2026,House,Democratic,22,410,0.0537
+Endorsements,Chamber of Commerce,2026,House,Independent,1,63,0.0159
+Endorsements,Chamber of Commerce,2026,House,Republican,26,376,0.0691
+Endorsements,Chamber of Commerce,2026,House,Third party,0,81,0.0
+Endorsements,Chamber of Commerce,2026,Senate,Democratic,0,28,0.0
+Endorsements,Chamber of Commerce,2026,Senate,Independent,1,17,0.0588
+Endorsements,Chamber of Commerce,2026,Senate,Republican,8,31,0.2581
+Endorsements,Chamber of Commerce,2026,Senate,Third party,0,19,0.0
+Endorsements,Sierra Club,2026,All,Democratic,41,438,0.0936
+Endorsements,Sierra Club,2026,All,Independent,1,80,0.0125
+Endorsements,Sierra Club,2026,All,Republican,0,407,0.0
+Endorsements,Sierra Club,2026,All,Third party,1,100,0.01
+Endorsements,Sierra Club,2026,House,Democratic,40,410,0.0976
+Endorsements,Sierra Club,2026,House,Independent,1,63,0.0159
+Endorsements,Sierra Club,2026,House,Republican,0,376,0.0
+Endorsements,Sierra Club,2026,House,Third party,1,81,0.0123
+Endorsements,Sierra Club,2026,Senate,Democratic,1,28,0.0357
+Endorsements,Sierra Club,2026,Senate,Independent,0,17,0.0
+Endorsements,Sierra Club,2026,Senate,Republican,0,31,0.0
+Endorsements,Sierra Club,2026,Senate,Third party,0,19,0.0
+Endorsements,League of Conservation Voters,2026,All,Democratic,51,438,0.1164
+Endorsements,League of Conservation Voters,2026,All,Independent,0,80,0.0
+Endorsements,League of Conservation Voters,2026,All,Republican,0,407,0.0
+Endorsements,League of Conservation Voters,2026,All,Third party,0,100,0.0
+Endorsements,League of Conservation Voters,2026,House,Democratic,50,410,0.122
+Endorsements,League of Conservation Voters,2026,House,Independent,0,63,0.0
+Endorsements,League of Conservation Voters,2026,House,Republican,0,376,0.0
+Endorsements,League of Conservation Voters,2026,House,Third party,0,81,0.0
+Endorsements,League of Conservation Voters,2026,Senate,Democratic,1,28,0.0357
+Endorsements,League of Conservation Voters,2026,Senate,Independent,0,17,0.0
+Endorsements,League of Conservation Voters,2026,Senate,Republican,0,31,0.0
+Endorsements,League of Conservation Voters,2026,Senate,Third party,0,19,0.0
+Endorsements,NARAL,2026,All,Democratic,39,438,0.089
+Endorsements,NARAL,2026,All,Independent,1,80,0.0125
+Endorsements,NARAL,2026,All,Republican,0,407,0.0
+Endorsements,NARAL,2026,All,Third party,0,100,0.0
+Endorsements,NARAL,2026,House,Democratic,36,410,0.0878
+Endorsements,NARAL,2026,House,Independent,0,63,0.0
+Endorsements,NARAL,2026,House,Republican,0,376,0.0
+Endorsements,NARAL,2026,House,Third party,0,81,0.0
+Endorsements,NARAL,2026,Senate,Democratic,3,28,0.1071
+Endorsements,NARAL,2026,Senate,Independent,1,17,0.0588
+Endorsements,NARAL,2026,Senate,Republican,0,31,0.0
+Endorsements,NARAL,2026,Senate,Third party,0,19,0.0
+Endorsements,Moms Demand Action,2026,All,Democratic,42,438,0.0959
+Endorsements,Moms Demand Action,2026,All,Independent,0,80,0.0
+Endorsements,Moms Demand Action,2026,All,Republican,0,407,0.0
+Endorsements,Moms Demand Action,2026,All,Third party,2,100,0.02
+Endorsements,Moms Demand Action,2026,House,Democratic,40,410,0.0976
+Endorsements,Moms Demand Action,2026,House,Independent,0,63,0.0
+Endorsements,Moms Demand Action,2026,House,Republican,0,376,0.0
+Endorsements,Moms Demand Action,2026,House,Third party,2,81,0.0247
+Endorsements,Moms Demand Action,2026,Senate,Democratic,2,28,0.0714
+Endorsements,Moms Demand Action,2026,Senate,Independent,0,17,0.0
+Endorsements,Moms Demand Action,2026,Senate,Republican,0,31,0.0
+Endorsements,Moms Demand Action,2026,Senate,Third party,0,19,0.0
+Endorsements,Teamsters,2026,All,Democratic,45,438,0.1027
+Endorsements,Teamsters,2026,All,Independent,2,80,0.025
+Endorsements,Teamsters,2026,All,Republican,3,407,0.0074
+Endorsements,Teamsters,2026,All,Third party,0,100,0.0
+Endorsements,Teamsters,2026,House,Democratic,44,410,0.1073
+Endorsements,Teamsters,2026,House,Independent,1,63,0.0159
+Endorsements,Teamsters,2026,House,Republican,3,376,0.008
+Endorsements,Teamsters,2026,House,Third party,0,81,0.0
+Endorsements,Teamsters,2026,Senate,Democratic,1,28,0.0357
+Endorsements,Teamsters,2026,Senate,Independent,1,17,0.0588
+Endorsements,Teamsters,2026,Senate,Republican,0,31,0.0
+Endorsements,Teamsters,2026,Senate,Third party,0,19,0.0
+Endorsements,Teachers unions (NEA/AFT),2026,All,Democratic,36,438,0.0822
+Endorsements,Teachers unions (NEA/AFT),2026,All,Independent,1,80,0.0125
+Endorsements,Teachers unions (NEA/AFT),2026,All,Republican,1,407,0.0025
+Endorsements,Teachers unions (NEA/AFT),2026,All,Third party,0,100,0.0
+Endorsements,Teachers unions (NEA/AFT),2026,House,Democratic,34,410,0.0829
+Endorsements,Teachers unions (NEA/AFT),2026,House,Independent,1,63,0.0159
+Endorsements,Teachers unions (NEA/AFT),2026,House,Republican,1,376,0.0027
+Endorsements,Teachers unions (NEA/AFT),2026,House,Third party,0,81,0.0
+Endorsements,Teachers unions (NEA/AFT),2026,Senate,Democratic,2,28,0.0714
+Endorsements,Teachers unions (NEA/AFT),2026,Senate,Independent,0,17,0.0
+Endorsements,Teachers unions (NEA/AFT),2026,Senate,Republican,0,31,0.0
+Endorsements,Teachers unions (NEA/AFT),2026,Senate,Third party,0,19,0.0
+Endorsements,SEIU,2026,All,Democratic,46,438,0.105
+Endorsements,SEIU,2026,All,Independent,1,80,0.0125
+Endorsements,SEIU,2026,All,Republican,2,407,0.0049
+Endorsements,SEIU,2026,All,Third party,0,100,0.0
+Endorsements,SEIU,2026,House,Democratic,43,410,0.1049
+Endorsements,SEIU,2026,House,Independent,0,63,0.0
+Endorsements,SEIU,2026,House,Republican,1,376,0.0027
+Endorsements,SEIU,2026,House,Third party,0,81,0.0
+Endorsements,SEIU,2026,Senate,Democratic,3,28,0.1071
+Endorsements,SEIU,2026,Senate,Independent,1,17,0.0588
+Endorsements,SEIU,2026,Senate,Republican,1,31,0.0323
+Endorsements,SEIU,2026,Senate,Third party,0,19,0.0
+Endorsements,Giffords,2026,All,Democratic,31,438,0.0708
+Endorsements,Giffords,2026,All,Independent,0,80,0.0
+Endorsements,Giffords,2026,All,Republican,0,407,0.0
+Endorsements,Giffords,2026,All,Third party,0,100,0.0
+Endorsements,Giffords,2026,House,Democratic,29,410,0.0707
+Endorsements,Giffords,2026,House,Independent,0,63,0.0
+Endorsements,Giffords,2026,House,Republican,0,376,0.0
+Endorsements,Giffords,2026,House,Third party,0,81,0.0
+Endorsements,Giffords,2026,Senate,Democratic,2,28,0.0714
+Endorsements,Giffords,2026,Senate,Independent,0,17,0.0
+Endorsements,Giffords,2026,Senate,Republican,0,31,0.0
+Endorsements,Giffords,2026,Senate,Third party,0,19,0.0
+Endorsements,AFSCME,2026,All,Democratic,35,438,0.0799
+Endorsements,AFSCME,2026,All,Independent,0,80,0.0
+Endorsements,AFSCME,2026,All,Republican,0,407,0.0
+Endorsements,AFSCME,2026,All,Third party,1,100,0.01
+Endorsements,AFSCME,2026,House,Democratic,31,410,0.0756
+Endorsements,AFSCME,2026,House,Independent,0,63,0.0
+Endorsements,AFSCME,2026,House,Republican,0,376,0.0
+Endorsements,AFSCME,2026,House,Third party,0,81,0.0
+Endorsements,AFSCME,2026,Senate,Democratic,4,28,0.1429
+Endorsements,AFSCME,2026,Senate,Independent,0,17,0.0
+Endorsements,AFSCME,2026,Senate,Republican,0,31,0.0
+Endorsements,AFSCME,2026,Senate,Third party,1,19,0.0526
+Endorsements,UAW,2026,All,Democratic,37,438,0.0845
+Endorsements,UAW,2026,All,Independent,1,80,0.0125
+Endorsements,UAW,2026,All,Republican,0,407,0.0
+Endorsements,UAW,2026,All,Third party,0,100,0.0
+Endorsements,UAW,2026,House,Democratic,35,410,0.0854
+Endorsements,UAW,2026,House,Independent,1,63,0.0159
+Endorsements,UAW,2026,House,Republican,0,376,0.0
+Endorsements,UAW,2026,House,Third party,0,81,0.0
+Endorsements,UAW,2026,Senate,Democratic,2,28,0.0714
+Endorsements,UAW,2026,Senate,Independent,0,17,0.0
+Endorsements,UAW,2026,Senate,Republican,0,31,0.0
+Endorsements,UAW,2026,Senate,Third party,0,19,0.0
+Endorsements,Human Rights Campaign,2026,All,Democratic,25,438,0.0571
+Endorsements,Human Rights Campaign,2026,All,Independent,0,80,0.0
+Endorsements,Human Rights Campaign,2026,All,Republican,0,407,0.0
+Endorsements,Human Rights Campaign,2026,All,Third party,0,100,0.0
+Endorsements,Human Rights Campaign,2026,House,Democratic,22,410,0.0537
+Endorsements,Human Rights Campaign,2026,House,Independent,0,63,0.0
+Endorsements,Human Rights Campaign,2026,House,Republican,0,376,0.0
+Endorsements,Human Rights Campaign,2026,House,Third party,0,81,0.0
+Endorsements,Human Rights Campaign,2026,Senate,Democratic,3,28,0.1071
+Endorsements,Human Rights Campaign,2026,Senate,Independent,0,17,0.0
+Endorsements,Human Rights Campaign,2026,Senate,Republican,0,31,0.0
+Endorsements,Human Rights Campaign,2026,Senate,Third party,0,19,0.0
+Endorsements,National Right to Life,2026,All,Democratic,0,438,0.0
+Endorsements,National Right to Life,2026,All,Independent,0,80,0.0
+Endorsements,National Right to Life,2026,All,Republican,12,407,0.0295
+Endorsements,National Right to Life,2026,All,Third party,0,100,0.0
+Endorsements,National Right to Life,2026,House,Democratic,0,410,0.0
+Endorsements,National Right to Life,2026,House,Independent,0,63,0.0
+Endorsements,National Right to Life,2026,House,Republican,12,376,0.0319
+Endorsements,National Right to Life,2026,House,Third party,0,81,0.0
+Endorsements,National Right to Life,2026,Senate,Democratic,0,28,0.0
+Endorsements,National Right to Life,2026,Senate,Independent,0,17,0.0
+Endorsements,National Right to Life,2026,Senate,Republican,0,31,0.0
+Endorsements,National Right to Life,2026,Senate,Third party,0,19,0.0
+Endorsements,Susan B. Anthony List,2026,All,Democratic,1,438,0.0023
+Endorsements,Susan B. Anthony List,2026,All,Independent,0,80,0.0
+Endorsements,Susan B. Anthony List,2026,All,Republican,15,407,0.0369
+Endorsements,Susan B. Anthony List,2026,All,Third party,0,100,0.0
+Endorsements,Susan B. Anthony List,2026,House,Democratic,1,410,0.0024
+Endorsements,Susan B. Anthony List,2026,House,Independent,0,63,0.0
+Endorsements,Susan B. Anthony List,2026,House,Republican,14,376,0.0372
+Endorsements,Susan B. Anthony List,2026,House,Third party,0,81,0.0
+Endorsements,Susan B. Anthony List,2026,Senate,Democratic,0,28,0.0
+Endorsements,Susan B. Anthony List,2026,Senate,Independent,0,17,0.0
+Endorsements,Susan B. Anthony List,2026,Senate,Republican,1,31,0.0323
+Endorsements,Susan B. Anthony List,2026,Senate,Third party,0,19,0.0
+Endorsements,AIPAC,2026,All,Democratic,26,438,0.0594
+Endorsements,AIPAC,2026,All,Independent,5,80,0.0625
+Endorsements,AIPAC,2026,All,Republican,4,407,0.0098
+Endorsements,AIPAC,2026,All,Third party,9,100,0.09
+Endorsements,AIPAC,2026,House,Democratic,25,410,0.061
+Endorsements,AIPAC,2026,House,Independent,4,63,0.0635
+Endorsements,AIPAC,2026,House,Republican,4,376,0.0106
+Endorsements,AIPAC,2026,House,Third party,8,81,0.0988
+Endorsements,AIPAC,2026,Senate,Democratic,1,28,0.0357
+Endorsements,AIPAC,2026,Senate,Independent,1,17,0.0588
+Endorsements,AIPAC,2026,Senate,Republican,0,31,0.0
+Endorsements,AIPAC,2026,Senate,Third party,1,19,0.0526
