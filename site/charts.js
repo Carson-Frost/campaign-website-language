@@ -394,6 +394,20 @@ const buildChart = (ti, W, o, H, small = false, edges = true, oneLine = true) =>
     const dm = Y(data.D[i].share) - Y(data.R[i].share);
     if (Math.abs(dm) >= 1.5 && Math.sign(ctr["D" + i] - ctr["R" + i]) !== Math.sign(dm)) wrong++;
   });
+  if (mini) {
+    INS.PARTIES.forEach(p => {
+      const cells = data[p].map((c, i) => ({ c, i })).filter(({ c }) => drawn(c));
+      if (!cells.length) return;
+      const maxShare = Math.max(...cells.map(({ c }) => c.share));
+      const topRoom = Y(maxShare) - (r + 5) - fs - m.t;
+      const putAbove = topRoom >= 0;
+      cells.forEach(({ c, i }) => {
+        const dotY = Y(c.share);
+        const yv = putAbove ? dotY - (r + 5) : dotY + r + 5 + fs * 0.78;
+        labelSpec[p + i] = { x: X(i), y: yv, anchor: "middle" };
+      });
+    });
+  }
   INS.PARTIES.forEach(p => {
     data[p].forEach((c, i) => {
       const sp = labelSpec[p + i];
