@@ -22,9 +22,10 @@ const CAVEATS = {
     long: w => `${w} includes sites that use the phrase only as part of “Working Families Tax Cut,” a bill’s name.` },
 };
 const caveat = ti => CAVEATS[INS.D.terms[ti].term];
-/* A word's mark applies where its note is true of what is drawn: always, or for a dagger, where a drawn value carries it. */
-const markApplies = ti => { const cv = caveat(ti); return !!cv && (!cv.dagger || YEARS.some(y => INS.PARTIES.some(p => { const c = INS.cell(ti, y, p); return c.n && cv.dagger(c); }))); };
-const markFor = ti => (markApplies(ti) ? `<sup class="fn" aria-label="Note">${caveat(ti).mark}</sup>` : "");
+/* Marks on the chart face were removed: the pre-registered patterns carve out false positives in the regex itself.
+   caveat() stays available for future use; markApplies and markFor are hard-wired empty so nothing renders. */
+const markApplies = () => false;
+const markFor = () => "";
 
 /* A change the reader makes to the view (cycle, sort, grouping, filters, possible range) is a step in the history, so
    Back undoes it and stays on the view. Anything else replaces the address; the drawer's own entry keeps its mark
@@ -38,7 +39,8 @@ INS.commit = (o = {}) => {
 INS.go = addr => { if (location.hash === addr) INS.render(); else location.hash = addr; };
 
 /* ---------- small pieces ---------- */
-const glossLink = (id, text) => `<a class="gl-link" href="#/definitions/${id}">${text}</a>`;
+/* The glossary subsite was removed; definition links collapse to plain text. */
+const glossLink = (id, text) => text;
 const analyzedIn = (y, p) => INS.group(y, p).n;
 
 function yearSeg() {
@@ -115,29 +117,27 @@ function groupLine() {
   const c = chips();
   return c ? `<div class="scope">${c}</div>` : "";
 }
-/* The foot of a view: footnotes, each its own short paragraph, then the source. A mark in the view (a dagger, an
-   asterisk) points to its note; a note that holds for the whole view has no mark. Nothing that qualifies a view sits
-   above it or around its chart. */
+/* Footnotes with chart-face marks were removed. notebook() still collects plain `.add` lines, but `.mark` is a
+   no-op so every mark+footnote pair asks for nothing. */
 function notebook() {
-  const lines = [], marks = [];
+  const lines = [];
   return {
     add(html) { if (html && !lines.includes(html)) lines.push(html); },
-    mark(m, html) { if (!marks.some(x => x[0] === m)) marks.push([m, html]); },
+    mark() { /* no-op: marks are no longer rendered */ },
     html() {
-      marks.sort((a, b) => (/^\d$/.test(b[0]) ? 1 : 0) - (/^\d$/.test(a[0]) ? 1 : 0));   // the numbered notes first
-      return `<footer class="notes">${lines.map(x => `<p>${x}</p>`).join("")}${marks.map(([m, h]) => `<p><span class="fk">${m}</span>${h}</p>`).join("")}${sourceLine()}</footer>`;
+      return `<footer class="notes">${lines.map(x => `<p>${x}</p>`).join("")}${sourceLine()}</footer>`;
     },
   };
 }
 /* Every site's copy is the newest saved from January 1 through election day (for 2026, through the date its figures reach),
    and some analyzed 2024 sites have a newest copy saved on election day itself; one analyzed 2024 site has Wayback Machine copies
    only. The age of a copy runs from 0 days to months, so it is said as what can be, not as what always is. */
-const sourceLine = () => `<p class="src">Source: ${glossLink("common-crawl", "Common Crawl")} copies of campaign websites, each the newest saved from January 1 through election day or, for 2026, through ${INS.fmtDate(INS.through2026)}. Results are ${glossLink("exploratory", "exploratory")}. Method: METHODS.md.</p>`;
+const sourceLine = () => `<p class="src">Source: ${glossLink("common-crawl", "Common Crawl")} copies of campaign websites, each the newest saved from January 1 through election day or, for 2026, through ${INS.fmtDate(INS.through2026)}. Method: METHODS.md.</p>`;
 /* Notes 1 and 2 are marked on the Gap and Adjusted P-Value heads (and on a phone's labels), so a reader meets the key
    at the figure it explains. */
 const GAPMARK = "1", PMARK = "2";
 const gapNote = () => `${glossLink("gap", "Gap")} is Democratic minus Republican. <span class="pn D">D+</span>&nbsp;is higher Democratic, <span class="pn R">R+</span>&nbsp;higher Republican; a gap in italics may be chance.`;
-const noteMark = m => `<sup class="fn" aria-label="Note ${m}">${m}</sup>`;
+const noteMark = () => "";
 const changeDef = total => `Change is a party’s share minus its share in the previous cycle. A change in italics may be chance.${total ? ` <span class="tcnote">Total Change is the same figure for both parties’ candidates together.</span>` : ""}`;
 const pNote = () => `${glossLink("adjusted-p-value", "Adjusted P-Value")}: how much of a gap this strong could be chance, adjusted across all 57 terms. Smaller is stronger evidence.`;
 const rangeNote = () => `${glossLink("possible-range", "Possible Range")} is how low and how high the share could be if every candidate with a website but no analyzed text had, or had not, used the term. It is not an interval of chance.`;
@@ -168,18 +168,16 @@ const basisAll = () => {
 /* ---------- cells ---------- */
 const tipFor = (c, o = {}) => {
   const lo = Math.round(c.ci[0] * 100), hi = Math.round(c.ci[1] * 100);
-  const cv = CAVEATS[INS.D.terms[c.ti].term];
   return `${PNAME[c.p]}, ${yl(c.y)}\n${c.k} of ${c.n} analyzed candidates` + (c.n >= TINY ? `\n95% Interval ${lo} to ${hi}%` : "")
     + (o.range && c.range && c.n >= TINY ? `\nPossible Range ${c.rangePct[0]} to ${c.rangePct[1]}%` : "")
-    + (o.dagger && o.dagger(c) && cv ? `\n${cv.mark} ${cv.text}` : "") + "\nSelect to list the candidates";
+    + "\nSelect to list the candidates";
 };
 function shareBtn(c, o = {}) {
   if (!c || !c.n) return `<span class="na" role="img" aria-label="not analyzed">—</span>`;
-  const val = c.n < TINY ? `${c.k} of ${c.n}` : INS.pctOf(c.k, c.n), text = val + INS.starFor(c);
+  const val = c.n < TINY ? `${c.k} of ${c.n}` : INS.pctOf(c.k, c.n);
   const on = S.panel && S.panel.ti === c.ti && S.panel.y === c.y && S.panel.p === c.p ? " on" : "";
-  const dag = o.dagger && o.dagger(c) ? `<span class="dag">†</span>` : "";
-  const lab = `${PNAME[c.p]}, ${yl(c.y)}: ${c.n < TINY ? val : `${val} of ${c.n}`} analyzed candidates` + (INS.starFor(c) ? ", fewer than 30 analyzed" : "") + (c.n >= TINY ? `, 95% Interval ${Math.round(c.ci[0] * 100)} to ${Math.round(c.ci[1] * 100)}%` : "") + `. Show the candidates`;
-  return `<button type="button" class="share${c.n < SMALL ? " small" : ""}${on}" style="${o.style || ""}" data-panel="${INS.tslug(c.ti)}.${c.y}.${c.p}" data-tip="${esc(tipFor(c, o))}" aria-label="${esc(lab)}">${text}${dag}</button>`;
+  const lab = `${PNAME[c.p]}, ${yl(c.y)}: ${c.n < TINY ? val : `${val} of ${c.n}`} analyzed candidates` + (c.n >= TINY ? `, 95% Interval ${Math.round(c.ci[0] * 100)} to ${Math.round(c.ci[1] * 100)}%` : "") + `. Show the candidates`;
+  return `<button type="button" class="share${c.n < SMALL ? " small" : ""}${on}" style="${o.style || ""}" data-panel="${INS.tslug(c.ti)}.${c.y}.${c.p}" data-tip="${esc(tipFor(c, o))}" aria-label="${esc(lab)}">${val}</button>`;
 }
 /* A party's move from the previous cycle, as a percent, beside its share; set in italics where its interval includes zero. */
 function chgEl(ch) {
@@ -328,41 +326,89 @@ function trackW() {
 
 /* Every theme as a row of small charts, one per term, each drawing both parties across all four cycles. A reader
    takes in a theme at a glance and never chooses a cycle, because every chart draws all of them. */
+/* Simple chart for an extracted-candidate term the search box resolves to: 2 party lines across 4 cycles. */
+function searchChart(entry, W) {
+  const PAD = { t: 18, r: 92, b: 30, l: 42 }, H = 220;
+  const years = YEARS, byYP = {};
+  entry.shares.forEach(s => { byYP[s.year + s.party] = s; });
+  let max = 0;
+  years.forEach(y => INS.PARTIES.forEach(p => { const s = byYP[y + p]; if (s && s.n) max = Math.max(max, s.k / s.n); }));
+  max = Math.min(1, Math.max(0.1, Math.ceil(max * 10 + 0.001) / 10));
+  const xOf = i => PAD.l + (W - PAD.l - PAD.r) * i / (years.length - 1);
+  const yOf = v => PAD.t + (H - PAD.t - PAD.b) * (1 - v / max);
+  const path = p => years.map((y, i) => { const s = byYP[y + p]; return s && s.n ? `${i ? "L" : "M"}${xOf(i).toFixed(1)},${yOf(s.k / s.n).toFixed(1)}` : null; }).filter(Boolean).join(" ");
+  const dots = p => years.map((y, i) => { const s = byYP[y + p]; return s && s.n ? `<circle cx="${xOf(i).toFixed(1)}" cy="${yOf(s.k / s.n).toFixed(1)}" r="3.2" fill="${INS.PCOL[p]}"/>` : ""; }).join("");
+  const grid = [0, 0.25, 0.5, 0.75, 1].filter(v => v <= max + 0.001).map(v =>
+    `<line x1="${PAD.l}" x2="${W - PAD.r}" y1="${yOf(v).toFixed(1)}" y2="${yOf(v).toFixed(1)}" stroke="${INS.C.faint}"/>` +
+    `<text x="${PAD.l - 8}" y="${yOf(v).toFixed(1)}" text-anchor="end" font-size="11" fill="${INS.C.sec}" dominant-baseline="central">${Math.round(v * 100)}%</text>`
+  ).join("");
+  const xtk = years.map((y, i) => `<text x="${xOf(i).toFixed(1)}" y="${H - 10}" text-anchor="middle" font-size="12" fill="${INS.C.ink}">${yl(y)}</text>`).join("");
+  const endLab = p => { const s = byYP["2026" + p]; const yv = s && s.n ? yOf(s.k / s.n) : (p === "D" ? PAD.t + 10 : PAD.t + 26); return `<text x="${(W - PAD.r + 8).toFixed(1)}" y="${yv.toFixed(1)}" font-size="12" fill="${INS.PCOL[p]}" dominant-baseline="central">${INS.PNAME[p]}</text>`; };
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Share by party and cycle">${grid}<path d="${path("D")}" fill="none" stroke="${INS.PCOL.D}" stroke-width="2"/><path d="${path("R")}" fill="none" stroke="${INS.PCOL.R}" stroke-width="2"/>${dots("D")}${dots("R")}${xtk}${endLab("D")}${endLab("R")}</svg>`;
+}
+
+function searchChartBlock(entry) {
+  const vw = $("#view").clientWidth || innerWidth - 64;
+  const w = Math.min(640, Math.max(320, vw));
+  const total = YEARS.reduce((a, y) => a + INS.PARTIES.reduce((b, p) => { const s = entry.shares.find(x => x.year === y && x.party === p); return b + (s ? s.n : 0); }, 0), 0);
+  const title = entry.term.split(" ").map(w => w ? w[0].toUpperCase() + w.slice(1) : w).join(" ");
+  return `<figure class="searchCard"><figcaption>${esc(title)}</figcaption>${searchChart(entry, w)}<p class="src">Extracted candidate term, charted from the search index. ${total} analyzed candidate-years across the four cycles.</p></figure>`;
+}
+
+/* Topic chips group the grid into Carson's narrower categories. Multi-select: a chart shows if its
+   topics intersect the active set. Empty set means the All chip is on and every chart renders. */
+function topicsList() {
+  return INS.D.topics_list || [];
+}
+function topicChipsHTML() {
+  const picked = S.topics.size ? [...S.topics][0] : "";
+  const opts = topicsList().map(t => {
+    const s = INS.slug(t);
+    return `<option value="${esc(s)}"${picked === s ? " selected" : ""}>${esc(t)}</option>`;
+  }).join("");
+  return `<label class="cat-picker"><span class="cat-label">Category</span><select id="catPicker" aria-label="Category"><option value=""${picked ? "" : " selected"}>All</option>${opts}</select></label>`;
+}
+function termMatchesTopics(ti) {
+  if (S.topics.size === 0) return true;
+  const topics = (INS.D.terms[ti].topics || []).map(INS.slug);
+  return topics.some(t => S.topics.has(t));
+}
+
 function themesWithFoot() {
   const fn = notebook(), y = S.year;
   const q = query.trim().toLowerCase();
   const all = INS.D.terms.map((t, i) => i);
-  const shownIdx = q ? all.filter(ti => INS.dn(ti).toLowerCase().includes(q)) : all;
+  const scoped = q ? all.filter(ti => INS.dn(ti).toLowerCase().includes(q))
+                   : all.filter(termMatchesTopics);
+  const shownIdx = scoped;
   if (INS.PARTIES.every(p => !INS.group(y, p).n)) return emptyHTML(YEARS);
-  if (!shownIdx.length) return `<p class="nomatch">No term matches “${esc(query)}”.</p>`;
+  if (!shownIdx.length) {
+    const hit = INS.SEARCH && INS.SEARCH.get(q);
+    if (hit) return searchChartBlock(hit);
+    return `<p class="nomatch">No term matches “${esc(query)}”.</p>`;
+  }
   const vw = $("#view").clientWidth || innerWidth - 64;
   const cols = innerWidth <= 760 ? 1 : innerWidth <= 980 ? 2 : 3;
   const w = cols === 1 ? Math.max(260, vw) : Math.floor(vw / cols - 28);
   const mo = ti => ({ mini: true, range: false, ci: false, dagger: (caveat(ti) || {}).dagger });
   const drawnAll = shownIdx.filter(ti => INS.lineHasData(INS.lineData(ti)));
-  let flagged = 0;
   /* One layout for the page, so a value sits in the same place in every chart. */
   const oneLine = drawnAll.every(ti => INS.lineOneLine(ti, w, mo(ti)));
-  const card = (ti, hh) => {
+  /* One height for every chart on the page, so the grid reads evenly across themes. */
+  const hhAll = Math.max(0, ...drawnAll.map(ti => INS.lineChartHeight(ti, w, Object.assign(mo(ti), { oneLine }))));
+  const card = ti => {
     const has = INS.lineHasData(INS.lineData(ti));
     const cv = caveat(ti);
     if (cv && cv.dagger && has && YEARS.some(yy => INS.PARTIES.some(p => cv.dagger({ y: yy, p })))) fn.mark(cv.mark, cv.long(esc(INS.dn(ti))));
-    const flat = has && notDistinguishable(ti);
-    if (flat) flagged++;
     return `<figure class="multiple"><figcaption><a href="${INS.addressFor({ terms: [ti], panel: null })}">${esc(INS.dn(ti))}${has ? markFor(ti) : ""}</a></figcaption>
-      ${has ? INS.lineChart(ti, w, Object.assign(mo(ti), { h: hh, oneLine })) : `<p class="nochart">Fewer than ten analyzed candidates in every group</p>`}
-      ${flat ? `<p class="flat">Parties not distinguishable in ${yl(LASTY)}</p>` : ""}</figure>`;
+      ${has ? INS.lineChart(ti, w, Object.assign(mo(ti), { h: hhAll, oneLine })) : `<p class="nochart">Fewer than ten analyzed candidates in every group</p>`}</figure>`;
   };
-  /* The charts of one theme share a height, so that theme reads as a grid; a theme whose terms need less room
-     is not held to the tallest theme on the page. */
   const secs = INS.themesOf(shownIdx).map(t => {
-    const drawn = t.terms.filter(ti => INS.lineHasData(INS.lineData(ti)));
-    const hh = Math.max(0, ...drawn.map(ti => INS.lineChartHeight(ti, w, Object.assign(mo(ti), { oneLine }))));
-    return `<section class="themeblk"><h2>${esc(cap(t.theme))}</h2><div class="multiples">${t.terms.map(ti => card(ti, hh)).join("")}</div></section>`;
+    const sub = t.theme === "Endorsements" ? `<h3 class="theme-sub">Interest Groups</h3>` : "";
+    return `<section class="themeblk">${sub}<div class="multiples">${t.terms.map(card).join("")}</div></section>`;
   }).join("");
   fn.add(basisAll());
   fn.add(`Each chart is one term across the four cycles. Select a term for its figures, its ${glossLink("95-interval", "95% Interval")}, its gap and the candidates behind them.`);
-  if (flagged) fn.add(`${nf(flagged)} of the ${nf(drawnAll.length)} terms drawn are marked not distinguishable: in ${yl(LASTY)} a gap that size turns up by chance often enough that the study cannot tell the parties apart on that term.`);
   if (drawnAll.some(ti => YEARS.some(yy => INS.PARTIES.some(p => INS.starFor(INS.cell(ti, yy, p)))))) fn.mark("*", starNote());
   return secs + fn.html();
 }
@@ -377,8 +423,10 @@ function controlsTable(f, none) {
 function renderTable(host) {
   const f = tableFacts();
   const none = INS.PARTIES.every(p => !INS.group(S.year, p).n);
-  host.innerHTML = `<h1 class="title">Terms on Democratic and Republican Candidate Websites</h1>
+  const showTabs = !query.trim();
+  host.innerHTML = `<h1 class="title">How has the language of congressional campaigns shifted across cycles?</h1>
     ${none ? "" : `<p class="sub">${shareDef(f.counts ? "count" : smallCell(S.year) ? "mixed" : "share")}</p>`}
+    <div id="topicshost">${showTabs ? topicChipsHTML() : ""}</div>
     ${controlsTable(f, none)}
     <div id="groupline">${groupLine()}</div>
     <div id="tablehost">${themesWithFoot()}</div>`;
@@ -542,13 +590,13 @@ async function renderPanel(anchor = null) {
     const opens = sorted.filter(x => kind === "use" && ex[x.id]);
     const stop = (opens.find(x => x.id === S.cand) || opens[0] || {}).id;
     return `<details class="cgrp" data-k="${key}"${openGroups.has(key) ? " open" : ""}><summary><span>${label}</span>${key === "use" ? "" : `<span class="n">${nf(list.length)}</span>`}</summary>
-      ${key === "out" ? `<p class="gnote"><a class="gl-link" href="#/definitions/not-analyzed">Reasons for Not Analyzing</a></p>` : ""}<ul>${sorted.map(x => li(x, kind, x.id === stop)).join("")}</ul></details>`;
+      ${key === "out" ? `<p class="gnote">Reasons for Not Analyzing</p>` : ""}<ul>${sorted.map(x => li(x, kind, x.id === stop)).join("")}</ul></details>`;
   };
   const where = INS.GROUPS.flatMap(gr => [...S.f[gr.key]].map(v => (gr.key === "state" ? STATES[v] : gr.byV[v].label)));
   const miss = c.K - c.n;
-  const star = INS.starFor(c);
-  /* The word's own dagger travels with its share: the drawer states the same fact the table's mark stands for. */
-  const cv = caveat(ti), dag = !!(cv && cv.dagger && c.n && cv.dagger({ y, p }));
+  /* Marks (dagger, asterisk) were removed; the pre-registered patterns do the data cleaning in the regex itself. */
+  const star = "";
+  const dag = false;
   const facts = c.n >= TINY ? `<p class="facts">${glossLink("95-interval", "95% Interval")} ${Math.round(c.ci[0] * 100)} to ${Math.round(c.ci[1] * 100)}%</p>` : "";
   const ch = INS.changeOf(ti, y, p);
   const chgTxt = ch ? `<p class="facts">Change from ${yl(ch.from)} ${INS.diff(ch.a.k, ch.a.n, ch.b.k, ch.b.n).text}%</p>` : "";
@@ -656,6 +704,14 @@ function trapTab(e) {
   else if (!e.shiftKey && at === last) { e.preventDefault(); first.focus(); }
 }
 function setup() {
+  document.addEventListener("change", e => {
+    if (e.target && e.target.id === "catPicker") {
+      const slug = e.target.value;
+      S.topics = slug ? new Set([slug]) : new Set();
+      S.panel = null; S.cand = null;
+      INS.commit({ push: true, focus: "#catPicker" });
+    }
+  });
   document.addEventListener("click", e => {
     const t = e.target.closest("[data-year],[data-sort],[data-panel],[data-cand],[data-unfilter],[data-rm],#filtersBtn,#fDone,#fClear,#panelClose,#fscrim,#dscrim");
     if (!t) { return; }
@@ -715,10 +771,17 @@ function setup() {
       if (t.value) INS.go(INS.addressFor({ terms: S.terms.concat([+t.value]), panel: null }));
     }
   });
+  let searchT = null;
   document.addEventListener("input", e => {
     if (e.target.id !== "termQ") return;
-    query = e.target.value;
-    $("#tablehost").innerHTML = themesWithFoot();
+    const v = e.target.value;
+    clearTimeout(searchT);
+    searchT = setTimeout(() => {
+      query = v;
+      const host = $("#topicshost");
+      if (host) host.innerHTML = query.trim() ? "" : topicChipsHTML();
+      $("#tablehost").innerHTML = themesWithFoot();
+    }, 150);
   });
 }
 
@@ -737,33 +800,13 @@ INS.renderExplorer = (o = {}) => {
   if (o.focus) { const el = $(o.focus); if (el) el.focus(); }
 };
 
-/* ---------- the definitions ---------- */
-/* Every word the interface defines, in one view reached from the word itself. The definitions are built from the
-   tracked GLOSSARY.md, so they are written once and read in both places. */
-function renderDefs(host) {
-  const defs = INS.D.glossary || [];
-  const here = S.sub && defs.find(d => d.id === S.sub);
-  host.innerHTML = `<div class="crumb"><a class="back" href="${INS.addressFor({ tab: "explorer", terms: [], panel: null })}"><svg width="12" height="10" aria-hidden="true"><path d="M11 5 H2 M5.5 1 L1.5 5 L5.5 9" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>All Terms</a></div>
-    <h1 class="title">Definitions</h1>
-    <dl class="defs">${defs.map(d => `<div class="def${here && here.id === d.id ? " on" : ""}" id="d-${esc(d.id)}"><dt>${esc(d.name)}</dt><dd>${d.html}</dd></div>`).join("")}</dl>`;
-  if (here) requestAnimationFrame(() => { const el = document.getElementById("d-" + here.id); if (el) el.scrollIntoView({ block: "start" }); });
-}
-
 /* ---------- the shell ---------- */
-/* The site is the Explorer and the definitions its words link to; there is no navigation above the view. */
 function titleFocus() { const h = $("#view h1"); if (h) { h.tabIndex = -1; h.focus({ preventScroll: true }); } }
 
 INS.render = (o = {}) => {
-  const explorer = S.tab === "explorer";
   lastKey = INS.addressFor({ panel: null });
-  if (!explorer && filtersOpen) closeFilters(false);
-  document.title = (explorer && S.terms.length === 1 ? INS.dn(S.terms[0]).replace(/[“”]/g, "") + " · " : explorer ? "" : "Definitions · ") + "Campaign Website Language";
-  if (explorer) INS.renderExplorer(o);
-  else {
-    S.panel = null; S.cand = null;
-    renderPanel();
-    renderDefs($("#view"));
-  }
+  document.title = (S.terms.length === 1 ? INS.dn(S.terms[0]).replace(/[“”]/g, "") + " · " : "") + "Campaign Website Language";
+  INS.renderExplorer(o);
 };
 
 function wire() {

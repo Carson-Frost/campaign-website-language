@@ -72,7 +72,7 @@ h2 { margin: 0; font-size: 16px; line-height: 22px; font-weight: 600; }
 .seg button:disabled { color: var(--muted); cursor: not-allowed; background: none; }
 .find input { height: 36px; width: 150px; border: 1px solid var(--rule); border-radius: 0; padding: 0 12px; font-size: 16px; background: var(--page); -webkit-appearance: none; appearance: none; }
 .find input::placeholder { color: var(--muted); }
-.find input:focus-visible { outline-offset: 0; border-color: var(--focus); }
+.find input:focus-visible { outline-offset: 0; border-color: var(--muted); outline: 2px solid var(--muted); }
 .btn { height: 36px; padding: 0 14px; border: 1px solid var(--rule); font-size: 16px; display: inline-flex; align-items: center; gap: 8px; background: var(--page); }
 .btn:hover { border-color: var(--ink); }
 .btn.dark, .btn[aria-expanded="true"] { background: var(--ink); color: var(--page); border-color: var(--ink); }
@@ -160,14 +160,12 @@ th[aria-sort="descending"] .sorth .arr::after { bottom: 3.5px; }
 .asof { font-size: 13px; color: var(--sec); white-space: nowrap; }
 .rank.hc.nogap th.ph { width: 26%; }
 .rank .vlab .chg { display: none; }
-/* a phone has no heads: each gap, interval and p-value carries its own label, with the note's mark */
+/* a phone has no heads: each gap, interval and p-value carries its own label */
 .flab { display: none; }
-.flab sup.fn { color: inherit; }
 .chg { font-size: 13px; font-weight: 400; color: var(--sec); white-space: nowrap; cursor: default; }
 .chg.weak { font-style: italic; }
 .share.small { color: var(--sec); font-weight: 500; }
 .share.on { text-decoration: underline; text-decoration-color: var(--ink); text-underline-offset: 5px; }
-.dag { margin-left: 2px; }
 .gp { font-weight: 700; font-size: 16px; }
 button.gp { min-width: 56px; min-height: 34px; padding: 0 8px; }   /* shorter than its row, so the focus ring sits inside the row and clear of the sticky head */
 button.gp:hover { text-decoration: underline dotted; text-underline-offset: 4px; }
@@ -234,7 +232,7 @@ table.rank.cyc { table-layout: auto; }
   .multiple:nth-child(3n+1) { border-left: 1px dotted #BFC5CC; padding-left: 14px; }
   .multiple:nth-child(2n+1) { border-left: 0; padding-left: 0; }
 }
-.multiple figcaption { display: flex; justify-content: center; align-items: flex-start; position: relative; font-weight: 700; font-size: 16px; line-height: 21px; text-align: center; padding: 0 24px; min-height: 42px; }
+.multiple figcaption { display: flex; justify-content: center; align-items: flex-start; position: relative; font-weight: 700; font-size: 16px; line-height: 21px; text-align: center; padding: 0 24px; margin-bottom: 8px; }
 .multiple figcaption a { text-decoration: none; }
 .multiple figcaption a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .multiple .rm { position: absolute; right: -6px; top: -4px; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; color: var(--muted); }
@@ -446,8 +444,6 @@ button.crow:hover { background: var(--faint); }
 }
 
 /* ---------- footnotes ---------- */
-/* A mark in the view is a symbol or a numeral at the size of the text it follows, lifted above the line. */
-sup.fn { font-size: 13px; line-height: 0; margin-left: 2px; position: relative; top: -0.55em; vertical-align: baseline; font-weight: 400; color: var(--ink); }
 .fk { margin-right: 6px; }
 .dfoot { position: sticky; bottom: 0; margin: auto -24px 0; padding: 10px 24px 14px; background: var(--page); border-top: 1px solid var(--rule); font-size: 13px; line-height: 19px; color: var(--sec); }
 .dfoot p { margin: 0; }
@@ -467,20 +463,14 @@ sup.fn { font-size: 13px; line-height: 0; margin-left: 2px; position: relative; 
 .themeblk h2 { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--sec);
   margin: 0 0 4px; padding-bottom: 9px; border-bottom: 1px solid var(--rule); }
 .themeblk .multiples { margin-top: 18px; }
+.theme-sub { margin: 24px 0 0; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--sec); border-top: 1px solid var(--rule); padding-top: 18px; }
+.theme-sub + .multiples { margin-top: 10px; }
 .nochart { color: var(--muted); font-size: 14px; text-align: center; margin: 24px 14px; }
-/* A term whose parties the study cannot tell apart in the newest cycle, marked where the chart would invite the
-   reader to read the difference anyway. */
-.multiple .flat { margin: 6px 0 0; text-align: center; font-size: 13px; line-height: 17px; color: var(--sec); }
-.multiple .flat::before { content: ""; display: inline-block; width: 13px; height: 13px; margin-right: 6px;
-  vertical-align: -2px; border: 1px solid #B3BAC2; border-radius: 50%;
-  background: repeating-linear-gradient(135deg, #B3BAC2 0 1px, transparent 1px 3px); }
 
-/* ---------- the definitions ---------- */
-/* Reached from the word it defines, never from a navigation bar. The entry asked for is marked. */
-.defs { margin: 26px 0 0; max-width: 680px; }
-.def { padding: 18px 0 16px; border-top: 1px solid var(--faint); }
-.def:first-child { border-top: 0; }
-.def dt { font-weight: 600; font-size: 17px; margin: 0 0 5px; }
-.def dd { margin: 0; color: var(--sec); line-height: 25px; }
-.def.on dt { color: var(--focus); }
-.def.on { scroll-margin-top: 18px; }
+/* Topic chips above the grid: plain text with a 2px underline on active chips. Multi-select; the All
+   chip is the default state when none of the others are on. No fills, no bright colors. */
+.cat-picker { display: inline-flex; align-items: center; gap: 10px; margin: 6px 0 14px; font-size: 15px; color: var(--sec); }
+.cat-picker .cat-label { font-weight: 500; color: var(--ink); }
+.cat-picker select { height: 36px; padding: 0 30px 0 10px; border: 1px solid var(--rule); background: var(--page) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1 L5 5 L9 1' stroke='%2356606B' stroke-width='1.4' fill='none'/%3E%3C/svg%3E") right 10px center / 10px 6px no-repeat; color: var(--ink); font: inherit; appearance: none; -webkit-appearance: none; cursor: pointer; }
+.cat-picker select:focus-visible { outline: 2px solid var(--muted); outline-offset: 2px; }
+

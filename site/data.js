@@ -70,6 +70,7 @@ const S = INS.S = {
   tab: "explorer", sub: null,
   terms: [], year: INS.DEFAULT_YEAR, f: {}, range: false,
   sort: "prom", dir: "desc", panel: null, cand: null,
+  topics: new Set(),  // selected topic slugs; empty set means the All chip is on
 };
 INS.D = null;
 INS.TERM_BY_SLUG = {};
@@ -113,8 +114,6 @@ INS.readAddress = () => {
   S.tab = "explorer"; S.sub = null; S.terms = [];
   if (seg[0] === "term" || seg[0] === "terms") {
     S.terms = (seg[1] || "").split(",").map(s => INS.TERM_BY_SLUG[s]).filter(i => i !== undefined);
-  } else if (seg[0] === "definitions") {
-    S.tab = "definitions"; S.sub = seg[1] || null;
   }
   FILTER_KEYS.forEach(k => {
     const g = INS.GROUPS.find(x => x.key === k);
@@ -130,6 +129,9 @@ INS.readAddress = () => {
   const pm = /^([a-z0-9-]+)\.(\d{4})\.([DR])$/.exec(q.get("panel") || "");
   S.panel = pm && INS.TERM_BY_SLUG[pm[1]] !== undefined && INS.YEARS.includes(+pm[2]) ? { ti: INS.TERM_BY_SLUG[pm[1]], y: +pm[2], p: pm[3] } : null;
   S.cand = S.panel ? q.get("cand") : null;
+  const topicsQ = (q.get("topics") || "").split(",").filter(Boolean);
+  const known = new Set((INS.D && INS.D.topics_list || []).map(INS.slug));
+  S.topics = new Set(topicsQ.filter(t => known.has(t)));
 };
 /* The top of the scale every chart shares: the highest share or interval drawn anywhere under the filters in force,
    rounded up to a tenth, so the charts stay comparable with one another while none is mostly empty. Recomputed
@@ -151,15 +153,13 @@ INS.scaleTop = () => scaleTop;
 INS.showRange = () => S.range;
 
 INS.addressFor = (o = {}) => {
-  const tab = o.tab || S.tab;
   const terms = o.terms !== undefined ? o.terms : S.terms;
   const q = new URLSearchParams();
   let path = "";
-  if (tab !== "explorer") path = "/definitions" + (o.sub ? "/" + o.sub : "");
-  else if (terms.length === 1) path = "/term/" + INS.tslug(terms[0]);
+  if (terms.length === 1) path = "/term/" + INS.tslug(terms[0]);
   else if (terms.length > 1) path = "/terms/" + terms.map(INS.tslug).join(",");
   else path = "/";
-  if (tab === "explorer") {
+  {
     const f = o.f || S.f;
     FILTER_KEYS.forEach(k => { if (f[k].size) q.set(k, [...f[k]].join(",")); });
     const y = o.year || S.year;
@@ -174,6 +174,8 @@ INS.addressFor = (o = {}) => {
       const cand = o.cand !== undefined ? o.cand : S.cand;
       if (cand) q.set("cand", cand);
     }
+    const topics = o.topics !== undefined ? o.topics : S.topics;
+    if (topics && topics.size) q.set("topics", [...topics].join(","));
   }
   const s = q.toString().replace(/%2C/g, ",");
   return "#" + path + (s ? "?" + s : "");
@@ -267,6 +269,8 @@ INS.init = async () => {
   INS.through2026 = site.candidates.filter(c => c.year === 2026 && c.status === "analyzed").reduce((m, c) => (c.latest > m ? c.latest : m), "");
   site.terms.forEach((t, i) => { INS.TERM_BY_SLUG[INS.slug(t.term)] = i; });
   site.gaps.forEach(g => { GAPQ[g.term + "|" + g.year] = g.q_benjamini_hochberg_exact; });
+  /* Lookup for the extracted-candidates search pool: a typed term that resolves here draws its own chart. */
+  INS.SEARCH = new Map((site.search_index || []).map(e => [e.term.toLowerCase(), e]));
   INS.buildGroups();
 };
 })();

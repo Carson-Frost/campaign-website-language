@@ -1,0 +1,140 @@
+[
+  {
+    "name": "Trump",
+    "theme": "Opponents / Politics",
+    "lean": "neutral",
+    "patterns": [
+      "\\btrump(?:'s)?\\b"
+    ],
+    "members": [
+      "trump",
+      "president trump",
+      "donald trump",
+      "president donald trump",
+      "donald j trump",
+      "trump administration"
+    ]
+  },
+  {
+    "name": "Biden",
+    "theme": "Opponents / Politics",
+    "lean": "neutral",
+    "patterns": [
+      "\\bbiden(?:'s)?\\b"
+    ],
+    "members": [
+      "biden",
+      "joe biden",
+      "biden administration"
+    ]
+  },
+  {
+    "name": "Second Amendment",
+    "theme": "Rights / Values",
+    "lean": "R",
+    "patterns": [
+      "\\b(?:second|2nd) amendment\\b"
+    ],
+    "members": [
+      "second amendment",
+      "2nd amendment"
+    ]
+  },
+  {
+    "name": "Minimum wage",
+    "theme": "Economy / Class",
+    "lean": "D",
+    "patterns": [
+      "\\b(?:federal )?minimum wage\\b"
+    ],
+    "members": [
+      "minimum wage",
+      "federal minimum wage"
+    ]
+  },
+  {
+    "name": "Health care",
+    "theme": "Programs / Policy",
+    "lean": "neutral",
+    "patterns": [
+      "\\bhealth[- ]?care\\b"
+    ],
+    "members": [
+      "health care",
+      "healthcare"
+    ]
+  },
+  {
+    "name": "Prescription drugs",
+    "theme": "Programs / Policy",
+    "lean": "D",
+    "patterns": [
+      "\\bprescription drugs?\\b"
+    ],
+    "members": [
+      "prescription drug",
+      "prescription drugs"
+    ]
+  },
+  {
+    "name": "Climate change",
+    "theme": "Programs / Policy",
+    "lean": "D",
+    "patterns": [
+      "\\bclimate(?: change)?\\b"
+    ],
+    "members": [
+      "climate",
+      "climate change"
+    ]
+  },
+  {
+    "name": "Rural communities",
+    "theme": "Programs / Policy",
+    "lean": "R",
+    "patterns": [
+      "\\brural(?: communities)?\\b"
+    ],
+    "members": [
+      "rural",
+      "rural communities"
+    ]
+  },
+  {
+    "name": "Republican Party",
+    "theme": "Opponents / Politics",
+    "lean": "R",
+    "patterns": [
+      "\\brepublican(?:s|\\s+party)?\\b"
+    ],
+    "members": [
+      "republican",
+      "republican party"
+    ]
+  },
+  {
+    "name": "Democratic Party",
+    "theme": "Opponents / Politics",
+    "lean": "D",
+    "patterns": [
+      "\\bdemocrat(?:s|ic(?:\\s+party)?)?\\b"
+    ],
+    "members": [
+      "democratic",
+      "democratic party",
+      "democrats"
+    ]
+  },
+  {
+    "name": "Small business",
+    "theme": "Economy / Class",
+    "lean": "neutral",
+    "patterns": [
+      "\\bsmall business(?:es)?\\b"
+    ],
+    "members": [
+      "small business",
+      "small businesses"
+    ]
+  }
+]

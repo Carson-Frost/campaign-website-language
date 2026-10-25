@@ -1,0 +1,81 @@
+# Office / legislature variants
+congressional district
+state representative
+state senator
+state senate
+state house
+state assembly
+state legislature
+state legislator
+u s senate
+u s house
+u s department
+u s government
+u s representative
+member of congress
+members of congress
+house of representatives
+senate and house
+house and senate
+state of the
+
+# Geographic self-references (states, cities, DC)
+new york
+north carolina
+south carolina
+new jersey
+new mexico
+new hampshire
+west virginia
+north dakota
+south dakota
+rhode island
+washington d c
+los angeles
+san francisco
+san diego
+san antonio
+new orleans
+las vegas
+
+# Biographical scaffolding
+high school
+hard work
+make sure
+born and raised
+running for congress
+running for office
+proud to endorse
+proud to serve
+small business owner
+signed into law
+security and medicare
+men and women
+grew up
+best of
+best interests
+
+# Process / meta scaffolding
+h r
+rates may apply
+data rates may
+across the country
+around the world
+across the state
+make a difference
+state and local
+get things done
+every day
+chamber of commerce
+business owner
+city council
+city councilmember
+air force
+parenthood action fund
+planned parenthood action
+league of conservation
+https t co
+skip to content
+released the following
+issues that matter
+access to quality

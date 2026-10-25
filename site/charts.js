@@ -18,7 +18,8 @@ INS.lineData = ti => {
 INS.lineHasData = data => INS.PARTIES.some(p => data[p].some(drawn));
 
 /* A share from a group of 10 to 29 analyzed candidates carries an asterisk wherever its value is printed. */
-INS.starFor = c => (c && c.n >= TINY && c.n < SMALL ? "*" : "");
+/* Marks on the chart face were removed; the pre-registered patterns carry the data cleaning. */
+INS.starFor = () => "";
 
 /* The size of a mark's target: 44 px, cut at the midpoint toward the other party's mark when that mark is closer. */
 INS.TARGET = 44;
@@ -42,7 +43,7 @@ const buildChart = (ti, W, o, H, small = false, edges = true, oneLine = true) =>
   const showCI = o.ci !== false;
   const narrow = W < 560;
   let bad = 0, soft = 0, far = 0;   // soft: a label on its own interval outline; far: how far a last value sits from its marker
-  const valText = c => INS.pctOf(c.k, c.n) + INS.starFor(c) + (o.dagger && o.dagger(c) ? "†" : "");
+  const valText = c => INS.pctOf(c.k, c.n);
   const nfs = 13;   // the party's name
   // the last value of each series is set with the party's name in the right margin, on one line, the value first. Where
   // the margin that line needs would leave the cycles too close, the name goes over its value, set apart from the other's.
