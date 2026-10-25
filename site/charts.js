@@ -394,12 +394,6 @@ const buildChart = (ti, W, o, H, small = false, edges = true, oneLine = true) =>
     const dm = Y(data.D[i].share) - Y(data.R[i].share);
     if (Math.abs(dm) >= 1.5 && Math.sign(ctr["D" + i] - ctr["R" + i]) !== Math.sign(dm)) wrong++;
   });
-  if (mini) {
-    INS.PARTIES.forEach(p => data[p].forEach((c, i) => {
-      if (!drawn(c)) return;
-      labelSpec[p + i] = { x: X(i) + r + 5, y: Y(c.share) + fs * 0.31, anchor: "start" };
-    }));
-  }
   INS.PARTIES.forEach(p => {
     data[p].forEach((c, i) => {
       const sp = labelSpec[p + i];
