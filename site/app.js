@@ -356,7 +356,7 @@ function topicsList() {
   return INS.D.topics_list || [];
 }
 function sortPickerHTML() {
-  const opts = [["theme", "By Theme"], ["alpha", "Alphabetical"]];
+  const opts = [["category", "By Category"], ["alpha", "Alphabetical"], ["prom", "Most Used (2026)"], ["change", "Biggest Change"]];
   const current = opts.find(([k]) => k === S.gridSort) || opts[0];
   const items = opts.map(([k, lab]) => {
     const on = k === S.gridSort;
@@ -423,18 +423,37 @@ function themesWithFoot() {
       ${has ? INS.lineChart(ti, w, Object.assign(mo(ti), { h: hhAll, oneLine })) : `<p class="nochart">Fewer than ten analyzed candidates in every group</p>`}</figure>`;
   };
   let secs;
+  const byName = (a, b) => INS.dn(a).localeCompare(INS.dn(b));
+  const flat = sorted => `<section class="themeblk"><div class="multiples">${sorted.map(card).join("")}</div></section>`;
   if (S.gridSort === "alpha") {
-    const sorted = shownIdx.slice().sort((a, b) => INS.dn(a).localeCompare(INS.dn(b)));
-    secs = `<section class="themeblk"><div class="multiples">${sorted.map(card).join("")}</div></section>`;
+    secs = flat(shownIdx.slice().sort(byName));
+  } else if (S.gridSort === "prom") {
+    const prom = ti => Math.max(0, ...INS.PARTIES.map(p => { const c = INS.cell(ti, 2026, p); return c && c.n >= INS.TINY ? c.share : 0; }));
+    secs = flat(shownIdx.slice().sort((a, b) => prom(b) - prom(a) || byName(a, b)));
+  } else if (S.gridSort === "change") {
+    const change = ti => Math.max(0, ...INS.PARTIES.map(p => {
+      const c0 = INS.cell(ti, 2020, p), c6 = INS.cell(ti, 2026, p);
+      if (!c0 || !c6 || c0.n < INS.TINY || c6.n < INS.TINY) return 0;
+      return Math.abs(c6.share - c0.share);
+    }));
+    secs = flat(shownIdx.slice().sort((a, b) => change(b) - change(a) || byName(a, b)));
   } else {
-    const themeOrder = {};
-    shownIdx.forEach(ti => { const th = INS.D.terms[ti].theme; if (!(th in themeOrder)) themeOrder[th] = Object.keys(themeOrder).length; });
-    const byTheme = shownIdx.slice().sort((a, b) => themeOrder[INS.D.terms[a].theme] - themeOrder[INS.D.terms[b].theme]);
-    secs = INS.themesOf(byTheme).map(t => {
-      const head = t.theme === "Endorsements"
-        ? `<h3 class="theme-head">Interest Groups</h3>`
-        : `<h3 class="theme-head">${esc(t.theme)}</h3>`;
-      return `<section class="themeblk">${head}<div class="multiples">${t.terms.map(card).join("")}</div></section>`;
+    const firstTopic = ti => {
+      const ts = INS.D.terms[ti].topics;
+      return (ts && ts[0]) || "Other";
+    };
+    const topicIdx = (INS.D.topics_list || []).reduce((m, t, i) => { m[t] = i; return m; }, {});
+    const byTopic = {};
+    shownIdx.forEach(ti => { const t = firstTopic(ti); (byTopic[t] = byTopic[t] || []).push(ti); });
+    const topics = Object.keys(byTopic).sort((a, b) => (topicIdx[a] ?? 999) - (topicIdx[b] ?? 999));
+    secs = topics.map(topic => {
+      const main = byTopic[topic].filter(ti => INS.D.terms[ti].theme !== "Endorsements").sort(byName);
+      const groups = byTopic[topic].filter(ti => INS.D.terms[ti].theme === "Endorsements").sort(byName);
+      return `<section class="themeblk">
+        <h3 class="theme-head">${esc(topic)}</h3>
+        ${main.length ? `<div class="multiples">${main.map(card).join("")}</div>` : ""}
+        ${groups.length ? `<h3 class="theme-sub">Interest Groups</h3><div class="multiples">${groups.map(card).join("")}</div>` : ""}
+      </section>`;
     }).join("");
   }
   if (drawnAll.some(ti => YEARS.some(yy => INS.PARTIES.some(p => INS.starFor(INS.cell(ti, yy, p)))))) fn.mark("*", starNote());
