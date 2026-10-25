@@ -120,7 +120,7 @@ function notebook() {
     add(html) { if (html && !lines.includes(html)) lines.push(html); },
     mark() { /* no-op: marks are no longer rendered */ },
     html() {
-      return `<footer class="notes">${lines.map(x => `<p>${x}</p>`).join("")}${sourceLine()}</footer>`;
+      return `<footer class="notes">${lines.map(x => `<p>${x}</p>`).join("")}</footer>`;
     },
   };
 }
@@ -356,7 +356,7 @@ function topicsList() {
   return INS.D.topics_list || [];
 }
 function sortPickerHTML() {
-  const opts = [["category", "By Category"], ["alpha", "Alphabetical"], ["prom", "Most Used (2026)"], ["change", "Biggest Change"]];
+  const opts = [["category", "By Category"], ["alpha", "Alphabetical"], ["prom", "Most Used (2026)"], ["change", "Largest Change (2026)"]];
   const current = opts.find(([k]) => k === S.gridSort) || opts[0];
   const items = opts.map(([k, lab]) => {
     const on = k === S.gridSort;
@@ -463,7 +463,6 @@ function themesWithFoot() {
 function controlsTable(f, none) {
   return `<div class="controls">
     <div class="find"><label class="vh" for="termQ">Term Search</label><input id="termQ" type="search" placeholder="Term Search" autocomplete="off" value="${esc(query)}"></div>
-    ${filtersButton()}
   </div>`;
 }
 
@@ -844,12 +843,6 @@ function setup() {
       if (S.sort === k) S.dir = S.dir === "desc" ? "asc" : "desc"; else { S.sort = k; S.dir = k === "name" ? "asc" : "desc"; }
       INS.commit({ push: true, focus: `[data-sort="${k}"]` });
     }
-    else if (t.dataset.panel) { e.preventDefault(); openPanel(t.dataset.panel, t); }
-    else if (t.dataset.cand) {
-      const id = t.dataset.cand, top = t.getBoundingClientRect().top;
-      S.cand = S.cand === id ? null : id; history.replaceState(history.state, "", INS.addressFor());
-      renderPanel({ id, top }).then(() => { const b = $(`#panel [data-cand="${id}"]`); if (b) { b.tabIndex = 0; b.focus({ preventScroll: true }); } });
-    }
     else if (t.dataset.unfilter) { const [k, v] = t.dataset.unfilter.split(":"); S.f[k].delete(v); S.panel = null; S.cand = null; INS.commit({ push: true }); }
     else if (t.dataset.rm) { const terms = S.terms.filter(i => i !== +t.dataset.rm); INS.go(INS.addressFor({ terms, panel: null })); }
     else if (t.id === "filtersBtn") { filtersOpen ? closeFilters() : openFilters(t); }
@@ -858,7 +851,6 @@ function setup() {
     else if (t.id === "panelClose" || t.id === "dscrim") closePanel();
   });
   document.addEventListener("keydown", e => {
-    if ((e.key === "Enter" || e.key === " ") && e.target.matches("g.pt")) { e.preventDefault(); openPanel(e.target.dataset.panel, e.target); return; }
     if (e.key === "Tab") { trapTab(e); return; }
     if (["ArrowDown", "ArrowUp", "Home", "End"].includes(e.key) && e.target.matches("#panel button.crow.can")) {
       const names = $$("button.crow.can", e.target.closest("ul")), i = names.indexOf(e.target);

@@ -49,7 +49,7 @@ const buildChart = (ti, W, o, H, small = false, edges = true, oneLine = true) =>
   // the margin that line needs would leave the cycles too close, the name goes over its value, set apart from the other's.
   let inline = oneLine && !mini && W >= 640;
   const inset = mini ? 14 : W < 310 ? 14 : narrow ? 24 : 26;
-  let m = mini ? { l: 44, r: 28, t: 22, b: 44 } : inline ? { l: 56, r: 148, t: 28, b: 52 } : narrow ? { l: 44, r: 84, t: 28, b: 52 } : { l: 56, r: 84, t: 28, b: 52 };
+  let m = mini ? { l: 44, r: 32, t: 22, b: 44 } : inline ? { l: 56, r: 148, t: 28, b: 52 } : narrow ? { l: 44, r: 84, t: 28, b: 52 } : { l: 56, r: 84, t: 28, b: 52 };
   if (oneLine && !inline && !mini) {
     const lastCells = INS.PARTIES.map(p => { const ds = data[p].filter(drawn); return ds[ds.length - 1]; }).filter(Boolean);
     const need = lastCells.length ? Math.ceil(7 + 6.5 + 6 + Math.max(...lastCells.map(c => textWidth(valText(c), 13) + textWidth(" " + PNAME[c.p], nfs)))) : 0;
@@ -340,7 +340,7 @@ const buildChart = (ti, W, o, H, small = false, edges = true, oneLine = true) =>
     const lower = drawn(oc) && (oc.share > c.share || (oc.share === c.share && p === "R"));
     const up = y - (r + 4), down = y + r + 4 + fs * 0.78;
     // every row from well above the marker to just below it, in the order of nearness to the place this party's label belongs
-    const ideal = lower ? down : up, cands = [];
+    const ideal = y, cands = [];
     for (let yb = up - 7 * (fs + 3); yb <= down + 2 * (fs + 3); yb += 2) {
       const wrong = lower ? yb < y : yb > y;
       const band = yb > Y(c.ci[1]) - 4 && yb < Y(c.ci[0]) + 4 + fs * 0.78;   // inside its own interval: a last resort
@@ -394,6 +394,12 @@ const buildChart = (ti, W, o, H, small = false, edges = true, oneLine = true) =>
     const dm = Y(data.D[i].share) - Y(data.R[i].share);
     if (Math.abs(dm) >= 1.5 && Math.sign(ctr["D" + i] - ctr["R" + i]) !== Math.sign(dm)) wrong++;
   });
+  if (mini) {
+    INS.PARTIES.forEach(p => data[p].forEach((c, i) => {
+      if (!drawn(c)) return;
+      labelSpec[p + i] = { x: X(i) + r + 5, y: Y(c.share) + fs * 0.31, anchor: "start" };
+    }));
+  }
   INS.PARTIES.forEach(p => {
     data[p].forEach((c, i) => {
       const sp = labelSpec[p + i];
@@ -424,7 +430,7 @@ const buildChart = (ti, W, o, H, small = false, edges = true, oneLine = true) =>
         if (oy > y) { bot = y + half; top = bot - INS.TARGET; } else { top = y - half; bot = top + INS.TARGET; }
       }
       top = Math.max(0, top); bot = Math.min(H, bot);
-      s += `<g class="pt${on ? " on" : ""}" role="button" tabindex="0" data-panel="${INS.tslug(ti)}.${c.y}.${p}" data-tip="${esc(tip)}" aria-label="${esc(lab)}">
+      s += `<g class="pt${on ? " on" : ""}" role="img" data-tip="${esc(tip)}" aria-label="${esc(lab)}">
         <rect class="hitc" x="${(x - T).toFixed(1)}" y="${top.toFixed(1)}" width="${INS.TARGET}" height="${(bot - top).toFixed(1)}" fill="transparent"/>
         <circle class="ring" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r + 6}" fill="transparent"/>
         <circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r}" fill="#fff" stroke="${PCOL[p]}" stroke-width="${mini ? 2.8 : 3.4}"/></g>`;
