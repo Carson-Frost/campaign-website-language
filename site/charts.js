@@ -50,7 +50,7 @@ const buildChart = (ti, W, o, H, small = false, edges = true, oneLine = true) =>
   let inline = oneLine && !mini && W >= 640;
   const inset = mini ? 14 : W < 310 ? 14 : narrow ? 24 : 26;
   let m = mini ? { l: 44, r: 14, t: 22, b: 44 } : inline ? { l: 56, r: 148, t: 28, b: 52 } : narrow ? { l: 44, r: 84, t: 28, b: 52 } : { l: 56, r: 84, t: 28, b: 52 };
-  if (oneLine && !inline) {
+  if (oneLine && !inline && !mini) {
     const lastCells = INS.PARTIES.map(p => { const ds = data[p].filter(drawn); return ds[ds.length - 1]; }).filter(Boolean);
     const need = lastCells.length ? Math.ceil(7 + 6.5 + 6 + Math.max(...lastCells.map(c => textWidth(valText(c), 13) + textWidth(" " + PNAME[c.p], nfs)))) : 0;
     const m2 = Object.assign({}, m, { r: Math.max(m.r, need) });
