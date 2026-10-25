@@ -415,8 +415,9 @@ const buildChart = (ti, W, o, H, small = false, edges = true, oneLine = true) =>
       const spD = labelSpec["D" + i], spR = labelSpec["R" + i];
       if (!spD || !spR) return;
       if (Math.abs(spD.y - spR.y) <= fs + 2) {
-        spD.x = X(i) - 2; spD.anchor = "end";
-        spR.x = X(i) + 2; spR.anchor = "start";
+        const sharedY = Math.min(spD.y, spR.y);
+        spD.x = X(i) - 3; spD.anchor = "end"; spD.y = sharedY;
+        spR.x = X(i) + 3; spR.anchor = "start"; spR.y = sharedY;
       }
     });
   }
