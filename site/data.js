@@ -1,4 +1,4 @@
-/* Instrument: data, state, address and statistics. Every figure is computed from /data/site.json. */
+/* Instrument: data, state, address and statistics. Every figure is computed from data/site.json. */
 (() => {
 "use strict";
 const INS = window.INS = {};
@@ -267,7 +267,7 @@ INS.changeTotal = (ti, y) => {
 };
 
 INS.init = async () => {
-  const [site, disp] = await Promise.all([fetch("/data/site.json").then(r => r.json()), fetch("terms-display.json").then(r => r.json())]);
+  const [site, disp] = await Promise.all([fetch("data/site.json").then(r => r.json()), fetch("terms-display.json").then(r => r.json())]);
   INS.D = site;
   INS.DN = disp.terms;
   /* The newest saved copy among the 2026 sites analyzed is how far the 2026 figures reach. */

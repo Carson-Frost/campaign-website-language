@@ -622,7 +622,7 @@ async function renderPanel(anchor = null) {
   const an = g.an, users = an.filter(c => c.terms.includes(ti)), non = an.filter(c => !c.terms.includes(ti));
   const out = g.all.filter(c => c.status !== "analyzed");
   if (!excerptCache[ti]) {
-    try { excerptCache[ti] = await (await fetch(`/data/excerpts/${ti}.json`)).json(); } catch (e) { excerptCache[ti] = {}; }
+    try { excerptCache[ti] = await (await fetch(`data/excerpts/${ti}.json`)).json(); } catch (e) { excerptCache[ti] = {}; }
   }
   if (!S.panel || S.panel.ti !== ti || S.panel.y !== y || S.panel.p !== p) return;
   const ex = excerptCache[ti], c = INS.cell(ti, y, p);
