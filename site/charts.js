@@ -408,7 +408,7 @@ const buildChart = (ti, W, o, H, small = false, edges = true, oneLine = true) =>
       if (!drawn(d) || !drawn(R)) return;
       const spD = labelSpec["D" + i], spR = labelSpec["R" + i];
       if (!spD || !spR) return;
-      if (Math.abs(spD.y - spR.y) >= fs + 4) return;
+      if (Math.abs(spD.y - spR.y) >= fs * 2) return;
       const lowerP = d.share <= R.share ? "D" : "R";
       const lowerC = lowerP === "D" ? d : R;
       const belowY = Y(lowerC.share) + r + 5 + fs * 0.78;
@@ -416,8 +416,8 @@ const buildChart = (ti, W, o, H, small = false, edges = true, oneLine = true) =>
         labelSpec[lowerP + i] = { x: X(i), y: belowY, anchor: "middle" };
       } else {
         const sharedY = Math.min(spD.y, spR.y);
-        spD.x = X(i) - 3; spD.anchor = "end"; spD.y = sharedY;
-        spR.x = X(i) + 3; spR.anchor = "start"; spR.y = sharedY;
+        spD.x = X(i) - 5; spD.anchor = "end"; spD.y = sharedY;
+        spR.x = X(i) + 5; spR.anchor = "start"; spR.y = sharedY;
       }
     });
   }
