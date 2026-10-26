@@ -440,7 +440,7 @@ const buildChart = (ti, W, o, H, small = false, edges = true, oneLine = true) =>
     data[p].forEach((c, i) => {
       if (!drawn(c)) return;
       const x = X(i), y = Y(c.share), star = INS.starFor(c);
-      const tip = `${PNAME[p]}, ${yl(c.y)}\n${c.k} of ${c.n} analyzed candidates\n95% Interval ${Math.round(c.ci[0] * 100)} to ${Math.round(c.ci[1] * 100)}%` + (range && c.range ? `\nPossible Range ${c.rangePct[0]} to ${c.rangePct[1]}%` : "") + "\nSelect to list the candidates";
+      const tip = `${PNAME[p]}, ${yl(c.y)}\n${c.k} of ${c.n} analyzed candidates\n95% Interval ${Math.round(c.ci[0] * 100)} to ${Math.round(c.ci[1] * 100)}%` + (range && c.range ? `\nPossible Range ${c.rangePct[0]} to ${c.rangePct[1]}%` : "");
       const lab = `${PNAME[p]}, ${yl(c.y)}: ${INS.pctOf(c.k, c.n)} of ${c.n} analyzed candidates${star ? ", fewer than 30" : ""}. Show the candidates`;
       const on = S.panel && S.panel.ti === ti && S.panel.y === c.y && S.panel.p === p;
       const oc = data[INS.PARTIES.find(z => z !== p)][i], oy = drawn(oc) ? Y(oc.share) : null;

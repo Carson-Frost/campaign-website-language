@@ -164,8 +164,7 @@ const basisAll = () => {
 const tipFor = (c, o = {}) => {
   const lo = Math.round(c.ci[0] * 100), hi = Math.round(c.ci[1] * 100);
   return `${PNAME[c.p]}, ${yl(c.y)}\n${c.k} of ${c.n} analyzed candidates` + (c.n >= TINY ? `\n95% Interval ${lo} to ${hi}%` : "")
-    + (o.range && c.range && c.n >= TINY ? `\nPossible Range ${c.rangePct[0]} to ${c.rangePct[1]}%` : "")
-    + "\nSelect to list the candidates";
+    + (o.range && c.range && c.n >= TINY ? `\nPossible Range ${c.rangePct[0]} to ${c.rangePct[1]}%` : "");
 };
 function shareBtn(c, o = {}) {
   if (!c || !c.n) return `<span class="na" role="img" aria-label="not analyzed">—</span>`;
