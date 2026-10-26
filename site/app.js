@@ -125,7 +125,7 @@ function notebook() {
 /* Every site's copy is the newest saved from January 1 through election day (for 2026, through the date its figures reach),
    and some analyzed 2024 sites have a newest copy saved on election day itself; one analyzed 2024 site has Wayback Machine copies
    only. The age of a copy runs from 0 days to months, so it is said as what can be, not as what always is. */
-const sourceLine = () => `<p class="src">Source: Common Crawl copies of campaign websites, each the newest saved from January 1 through election day or, for 2026, through ${INS.fmtDate(INS.through2026)}. Method: METHODS.md.</p>`;
+const sourceLine = () => `<p class="src">Source: Common Crawl copies of campaign websites, each the newest saved from January 1 through election day or, for 2026, through ${INS.fmtDate(INS.through2026)}.</p>`;
 /* Notes 1 and 2 are marked on the Gap and Adjusted P-Value heads (and on a phone's labels), so a reader meets the key
    at the figure it explains. */
 const GAPMARK = "1", PMARK = "2";

@@ -22,7 +22,6 @@ The project is three things:
 
 | | |
 | --- | --- |
-| [METHODS.md](METHODS.md) | The full method of record: every step, every standard it meets, every stated limitation. |
 | [TABLES.md](TABLES.md) | What each result table in `results/` holds, and what every column name means. |
 | [RELATED-WORK.md](RELATED-WORK.md) | The five studies closest to this one, how this one differs, and the full reference list. |
 
@@ -117,4 +116,3 @@ Coverage is 66% to 77% of the ballot depending on year and party, and the missin
 not missing at random, since smaller campaigns are archived less. One text source means one source's
 crawl schedule.
 
-`METHODS.md` is the full method of record.
