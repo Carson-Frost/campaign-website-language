@@ -25,8 +25,7 @@ from pathlib import Path
 
 SITE = Path(__file__).resolve().parent
 PROJECT = SITE.parent
-ROUTES = {"/data/": PROJECT / "artifacts" / "site-data",
-          "/files/": PROJECT / "results"}
+ROUTES = {"/files/": PROJECT / "results"}
 
 
 class Handler(http.server.SimpleHTTPRequestHandler):
@@ -74,7 +73,7 @@ def answers(url):
 
 
 if __name__ == "__main__":
-    if not (ROUTES["/data/"] / "site.json").exists():
+    if not (SITE / "data" / "site.json").exists():
         sys.exit("Build the data first: build_data.py (see its docstring).")
     args = [a for a in sys.argv[1:] if a != "--detach"]
     port = int(args[0]) if args else 8765

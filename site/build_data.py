@@ -21,7 +21,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 PROJECT = Path(__file__).resolve().parents[1]
-OUT = PROJECT / "artifacts" / "site-data"
+OUT = PROJECT / "site" / "data"
 sys.path.insert(0, str(PROJECT / "tools"))
 
 import analyze  # noqa: E402
