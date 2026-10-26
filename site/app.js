@@ -355,6 +355,26 @@ function searchChartBlock(entry) {
 function topicsList() {
   return INS.D.topics_list || [];
 }
+function termPickerHTML() {
+  const picked = query.trim();
+  const names = INS.D.terms.map(t => INS.DN[t.term]).slice().sort((a, b) => a.localeCompare(b));
+  const allItem = `<li role="option" aria-selected="${!picked}" data-term="" tabindex="-1" class="cat-opt term-opt${!picked ? " on" : ""}">All Terms${!picked ? `<svg width="12" height="12" aria-hidden="true" class="cat-check"><path d="M1 6 L5 10 L11 2" stroke="currentColor" stroke-width="2" fill="none"/></svg>` : ""}</li>`;
+  const items = [allItem].concat(names.map(nm => {
+    const on = nm === picked;
+    return `<li role="option" aria-selected="${on}" data-term="${esc(nm)}" tabindex="-1" class="cat-opt term-opt${on ? " on" : ""}">${esc(nm)}${on ? `<svg width="12" height="12" aria-hidden="true" class="cat-check"><path d="M1 6 L5 10 L11 2" stroke="currentColor" stroke-width="2" fill="none"/></svg>` : ""}</li>`;
+  })).join("");
+  const label = picked || "All Terms";
+  return `<div class="cat-picker term-picker">
+    <button type="button" class="cat-btn" id="termBtn" aria-haspopup="listbox" aria-expanded="false" aria-controls="termMenu">
+      <span class="cat-prefix">Term:</span><span class="cat-current">${esc(label)}</span>
+      <svg width="12" height="8" aria-hidden="true" class="cat-caret"><path d="M1 1 L6 7 L11 1" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+    </button>
+    <div class="cat-menu term-menu" id="termMenu" hidden>
+      <input type="search" id="termFilterInput" class="term-filter" placeholder="Search terms" autocomplete="off">
+      <ul class="term-list" role="listbox" aria-label="Term">${items}</ul>
+    </div>
+  </div>`;
+}
 function sortPickerHTML() {
   const opts = [["category", "By Category"], ["alpha", "Alphabetical"], ["prom", "Most Used (2026)"], ["change", "Largest Change (2026)"]];
   const current = opts.find(([k]) => k === S.gridSort) || opts[0];
@@ -403,8 +423,6 @@ function themesWithFoot() {
   const shownIdx = scoped;
   if (INS.PARTIES.every(p => !INS.group(y, p).n)) return emptyHTML(YEARS);
   if (!shownIdx.length) {
-    const hit = INS.SEARCH && INS.SEARCH.get(q);
-    if (hit) return searchChartBlock(hit);
     return `<p class="nomatch">No term matches “${esc(query)}”.</p>`;
   }
   const vw = $("#view").clientWidth || innerWidth - 64;
@@ -463,9 +481,7 @@ function themesWithFoot() {
 }
 
 function controlsTable(f, none) {
-  return `<div class="controls">
-    <div class="find"><label class="vh" for="termQ">Term Search</label><input id="termQ" type="search" placeholder="Term Search" autocomplete="off" value="${esc(query)}"></div>
-  </div>`;
+  return `<div class="controls">${termPickerHTML()}</div>`;
 }
 
 function renderTable(host) {
@@ -776,6 +792,17 @@ function setup() {
       }
       return;
     }
+    const tbtn = e.target.closest("#termBtn");
+    if (tbtn) {
+      e.preventDefault();
+      const m = $("#termMenu");
+      if (!m) return;
+      const open = !m.hidden;
+      m.hidden = open;
+      tbtn.setAttribute("aria-expanded", String(!open));
+      if (!open) { const inp = $("#termFilterInput"); if (inp) inp.focus(); }
+      return;
+    }
     const sbtn = e.target.closest("#sortBtn");
     if (sbtn) {
       e.preventDefault();
@@ -800,6 +827,15 @@ function setup() {
         if (m) m.hidden = true;
         if (b) b.setAttribute("aria-expanded", "false");
         INS.commit({ push: true, focus: "#sortBtn" });
+        return;
+      }
+      if (opt.dataset.term !== undefined) {
+        query = opt.dataset.term;
+        S.panel = null; S.cand = null;
+        const m = $("#termMenu"), b = $("#termBtn");
+        if (m) m.hidden = true;
+        if (b) b.setAttribute("aria-expanded", "false");
+        INS.commit({ push: true, focus: "#termBtn" });
         return;
       }
       const slug = opt.dataset.cat;
@@ -888,17 +924,15 @@ function setup() {
       if (t.value) INS.go(INS.addressFor({ terms: S.terms.concat([+t.value]), panel: null }));
     }
   });
-  let searchT = null;
   document.addEventListener("input", e => {
-    if (e.target.id !== "termQ") return;
-    const v = e.target.value;
-    clearTimeout(searchT);
-    searchT = setTimeout(() => {
-      query = v;
-      const host = $("#topicshost");
-      if (host) host.innerHTML = query.trim() ? "" : topicChipsHTML();
-      $("#tablehost").innerHTML = themesWithFoot();
-    }, 150);
+    if (e.target.id !== "termFilterInput") return;
+    const v = e.target.value.trim().toLowerCase();
+    const list = $("#termMenu .term-list");
+    if (!list) return;
+    [...list.querySelectorAll(".term-opt")].forEach(li => {
+      const label = li.textContent.toLowerCase();
+      li.hidden = !!v && !label.includes(v);
+    });
   });
 }
 
