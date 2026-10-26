@@ -71,7 +71,7 @@ const S = INS.S = {
   terms: [], year: INS.DEFAULT_YEAR, f: {}, range: false,
   sort: "prom", dir: "desc", panel: null, cand: null,
   topics: new Set(),  // selected topic slugs; empty set means the All chip is on
-  gridSort: "category",  // "category" groups by user-facing topic; "alpha" flat A-Z; "prom" most used in 2026; "change" biggest 2020→2026 shift
+  gridSort: "prom",  // "prom" most used in 2026 (default); "category" groups by user-facing topic; "alpha" flat A-Z; "change" biggest 2020→2026 shift
 };
 INS.D = null;
 INS.TERM_BY_SLUG = {};
@@ -134,7 +134,7 @@ INS.readAddress = () => {
   const known = new Set((INS.D && INS.D.topics_list || []).map(INS.slug));
   S.topics = new Set(topicsQ.filter(t => known.has(t)));
   const gs = q.get("gridSort");
-  S.gridSort = ["category", "alpha", "prom", "change"].includes(gs) ? gs : "category";
+  S.gridSort = ["category", "alpha", "prom", "change"].includes(gs) ? gs : "prom";
 };
 /* The top of the scale every chart shares: the highest share or interval drawn anywhere under the filters in force,
    rounded up to a tenth, so the charts stay comparable with one another while none is mostly empty. Recomputed
@@ -180,7 +180,7 @@ INS.addressFor = (o = {}) => {
     const topics = o.topics !== undefined ? o.topics : S.topics;
     if (topics && topics.size) q.set("topics", [...topics].join(","));
     const gs = o.gridSort !== undefined ? o.gridSort : S.gridSort;
-    if (gs && gs !== "category") q.set("gridSort", gs);
+    if (gs && gs !== "prom") q.set("gridSort", gs);
   }
   const s = q.toString().replace(/%2C/g, ",");
   return "#" + path + (s ? "?" + s : "");
