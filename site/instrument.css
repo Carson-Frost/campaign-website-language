@@ -36,9 +36,6 @@ a { color: inherit; }
 svg { display: block; }
 .pg { display: inline-block; flex: none; }
 .muted { color: var(--muted); }
-.gl-link { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: var(--muted); }
-.gl-link:hover { text-decoration-color: var(--ink); }
-.drawer a.gl-link { display: inline-block; padding: 12px; margin: -12px; }   /* the tab fills the bar, so its ring is drawn inside it */
 .tab[aria-current="page"] { color: var(--ink); font-weight: 500; }
 @media (max-width: 1060px) { }
 /* below 860 px the tabs fold into a menu, so the top bar never crowds; its button names the section on screen */
@@ -250,9 +247,6 @@ table.rank.cyc { table-layout: auto; }
 .fgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 28px; }
 .fgrp { border: 0; margin: 0; padding: 0; min-width: 0; }
 .fgrp legend { padding: 0; font-size: 13px; font-weight: 600; margin-bottom: 4px; }
-/* a legend that links to its definition is set like the others and underlines on hover and focus */
-.fgrp legend a.gl-link { text-decoration-color: transparent; }
-.fgrp legend a.gl-link:hover, .fgrp legend a.gl-link:focus-visible { text-decoration-color: var(--ink); }
 .fgrp:disabled legend { color: var(--muted); }
 .opt { display: grid; grid-template-columns: 20px 1fr auto; align-items: center; gap: 0 10px; min-height: 36px; cursor: pointer; font-size: 16px; border-bottom: 1px solid var(--faint); }
 .opt input { position: absolute; opacity: 0; width: 1px; height: 1px; }
@@ -349,7 +343,6 @@ button.crow:hover { background: var(--faint); }
   .seg button, .find input, .btn, .sortsel select, .addword select, .fstate select { height: 44px; }
   .controls .find input, .controls .sortsel select, .controls .addword select { height: 44px; }
   .back { padding: 11px 0; margin-bottom: 0; }
-  .page a.gl-link { display: inline-block; padding: 13px 12px; margin: -13px -12px; }
   .empty .textbtn, .ffoot .textbtn { display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; }
   button.gp { min-height: 44px; min-width: 44px; }
 
@@ -412,7 +405,6 @@ button.crow:hover { background: var(--faint); }
   .share { padding: 12px 4px; margin: -12px -4px; min-width: 44px; }
   .theme-row { display: block; }
   .theme-row th { display: block; border-bottom: 1px solid var(--ink); padding: 22px 0 8px; }
-  .page .scope a.gl-link { display: inline-block; padding: 12px 10px; margin: -12px -10px; }
   .rank.counts tbody tr { grid-template-columns: 1fr; }
   .multiple { border-left: 0; padding: 0; }
   .multiple figcaption { align-items: center; min-height: 44px; }
@@ -441,14 +433,11 @@ button.crow:hover { background: var(--faint); }
   .plain.sel td.r { padding-left: 0; }
   .plain.sel .r.i { padding-right: 8px; }
   .plain.sel th.r { overflow-wrap: normal; padding-left: 0; }
-  .page .plain.sel th .gl-link { padding: 14px 6px; margin: -14px -6px; }
   .plain.win th.r, .plain.win td.r { padding-left: 6px; }
   .plain.win th[scope=row] { width: auto; }
   .plain.win .pre { padding-right: 6px; }
   .plain.win .sep { padding-left: 8px; }
-  /* tab text: a 24 px line pitch under 44 px link boxes, so no link's center sits under its neighbor's box */
   #view .step .what p, #view .step .basis, #view .lede, #view .lim dd, #view .colnames dd, #view .work p, #view .ref { line-height: 24px; }
-  #view .step a.gl-link, #view .lede a.gl-link, #view .foot a.gl-link, #view .lim a.gl-link, #view .colnames a.gl-link, #view .work a.gl-link, #view .ref a.gl-link { padding: 10px 12px; margin: -10px -12px; }
 }
 
 /* ---------- footnotes ---------- */
@@ -461,7 +450,6 @@ button.crow:hover { background: var(--faint); }
 .notes { margin: 22px 0 0; max-width: 780px; font-size: 13px; line-height: 19px; color: var(--sec); }
 .notes p { margin: 0 0 6px; }
 .notes .src { margin: 12px 0 0; }
-.notes a.gl-link { white-space: nowrap; }
 .cycles { margin-top: 28px; }
 
 /* ---------- the themes, the opening view ---------- */

@@ -7,7 +7,7 @@ a chart for any typed term that resolves to one). Candidate and excerpt tables a
 the drawer.
 
 Writes into the ignored artifacts/site-data/:
-site.json (terms, candidates, shares, gaps, glossary, search_index, and empty arrays for the
+site.json (terms, candidates, shares, gaps, search_index, and empty arrays for the
 tracked tables the old UI consumed) and excerpts/<n>.json (one short excerpt per candidate-year
 using term n). Also writes site/terms-display.json so display names are regenerated from the live
 TERMS list.

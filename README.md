@@ -23,7 +23,6 @@ The project is three things:
 | | |
 | --- | --- |
 | [METHODS.md](METHODS.md) | The full method of record: every step, every standard it meets, every stated limitation. |
-| [GLOSSARY.md](GLOSSARY.md) | Plain-language definitions of every term the project uses. The site's own definitions are built from this file. |
 | [TABLES.md](TABLES.md) | What each result table in `results/` holds, and what every column name means. |
 | [RELATED-WORK.md](RELATED-WORK.md) | The five studies closest to this one, how this one differs, and the full reference list. |
 

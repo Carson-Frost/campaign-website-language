@@ -39,8 +39,6 @@ INS.commit = (o = {}) => {
 INS.go = addr => { if (location.hash === addr) INS.render(); else location.hash = addr; };
 
 /* ---------- small pieces ---------- */
-/* The glossary subsite was removed; definition links collapse to plain text. */
-const glossLink = (id, text) => text;
 const analyzedIn = (y, p) => INS.group(y, p).n;
 
 function yearSeg() {
@@ -76,7 +74,7 @@ function renderFilters() {
   if (!filtersOpen) { el.innerHTML = ""; return; }
   const keep = $(".fscroll", el), at = keep ? keep.scrollTop : 0;   // a choice redraws the list; it stays where the reader was
   const group = g => {
-    return `<fieldset class="fgrp"><legend>${g.key === "seat" ? glossLink("close-or-safe-seat", g.label) : g.label}</legend>${g.opts.map(o => `<label class="opt">
+    return `<fieldset class="fgrp"><legend>${g.label}</legend>${g.opts.map(o => `<label class="opt">
       <input type="checkbox" data-g="${g.key}" value="${o.v}"${S.f[g.key].has(o.v) ? " checked" : ""}><span class="box" aria-hidden="true"></span>
       <span class="lab">${esc(o.label)}</span></label>`).join("")}</fieldset>`;
   };
@@ -127,15 +125,15 @@ function notebook() {
 /* Every site's copy is the newest saved from January 1 through election day (for 2026, through the date its figures reach),
    and some analyzed 2024 sites have a newest copy saved on election day itself; one analyzed 2024 site has Wayback Machine copies
    only. The age of a copy runs from 0 days to months, so it is said as what can be, not as what always is. */
-const sourceLine = () => `<p class="src">Source: ${glossLink("common-crawl", "Common Crawl")} copies of campaign websites, each the newest saved from January 1 through election day or, for 2026, through ${INS.fmtDate(INS.through2026)}. Method: METHODS.md.</p>`;
+const sourceLine = () => `<p class="src">Source: Common Crawl copies of campaign websites, each the newest saved from January 1 through election day or, for 2026, through ${INS.fmtDate(INS.through2026)}. Method: METHODS.md.</p>`;
 /* Notes 1 and 2 are marked on the Gap and Adjusted P-Value heads (and on a phone's labels), so a reader meets the key
    at the figure it explains. */
 const GAPMARK = "1", PMARK = "2";
-const gapNote = () => `${glossLink("gap", "Gap")} is Democratic minus Republican. <span class="pn D">D+</span>&nbsp;is higher Democratic, <span class="pn R">R+</span>&nbsp;higher Republican; a gap in italics may be chance.`;
+const gapNote = () => `Gap is Democratic minus Republican. <span class="pn D">D+</span>&nbsp;is higher Democratic, <span class="pn R">R+</span>&nbsp;higher Republican; a gap in italics may be chance.`;
 const noteMark = () => "";
 const changeDef = total => `Change is a party’s share minus its share in the previous cycle. A change in italics may be chance.${total ? ` <span class="tcnote">Total Change is the same figure for both parties’ candidates together.</span>` : ""}`;
-const pNote = () => `${glossLink("adjusted-p-value", "Adjusted P-Value")}: how much of a gap this strong could be chance, adjusted across all 57 terms. Smaller is stronger evidence.`;
-const rangeNote = () => `${glossLink("possible-range", "Possible Range")} is how low and how high the share could be if every candidate with a website but no analyzed text had, or had not, used the term. It is not an interval of chance.`;
+const pNote = () => `Adjusted P-Value: how much of a gap this strong could be chance, adjusted across all 57 terms. Smaller is stronger evidence.`;
+const rangeNote = () => `Possible Range is how low and how high the share could be if every candidate with a website but no analyzed text had, or had not, used the term. It is not an interval of chance.`;
 const starNote = () => "Fewer than 30 analyzed candidates, so one candidate moves a share by 3% or more.";
 /* What a share is, for the offices in view: a filter on one office narrows the candidates named. A group of under ten
    analyzed candidates shows a count in place of a share, so the line says which each view shows. */
@@ -148,7 +146,7 @@ const asOf = () => `As of ${INS.fmtDate(INS.through2026)}`;
 /* What the shares rest on: the analyzed candidates of each party and those left out. */
 const basisNote = y => {
   const g = INS.PARTIES.map(p => INS.group(y, p)), lost = g.map(x => x.B - x.n);
-  const out = lost[0] + lost[1] > 0 ? ` Not analyzed: ${nf(lost[0])} Democratic and ${nf(lost[1])} Republican. ${glossLink("not-analyzed", "Reasons for Not Analyzing")}.` : "";
+  const out = lost[0] + lost[1] > 0 ? ` Not analyzed: ${nf(lost[0])} Democratic and ${nf(lost[1])} Republican. Reasons for Not Analyzing.` : "";
   return `Analyzed: ${nf(g[0].n)} Democratic and ${nf(g[1].n)} Republican ${g[1].n === 1 ? "candidate" : "candidates"}.${out}`;
 };
 /* The basis of a view that draws every cycle: the four cycles summed, since no one cycle is the view's subject. */
@@ -156,7 +154,7 @@ const basisAll = () => {
   const n = p => YEARS.reduce((a, y) => a + INS.group(y, p).n, 0);
   const lost = p => YEARS.reduce((a, y) => { const g = INS.group(y, p); return a + g.B - g.n; }, 0);
   const d = n("D"), r = n("R"), ld = lost("D"), lr = lost("R");
-  const out = ld + lr > 0 ? ` Not analyzed: ${nf(ld)} Democratic and ${nf(lr)} Republican. ${glossLink("not-analyzed", "Reasons for Not Analyzing")}.` : "";
+  const out = ld + lr > 0 ? ` Not analyzed: ${nf(ld)} Democratic and ${nf(lr)} Republican. Reasons for Not Analyzing.` : "";
   return `Analyzed across the four cycles: ${nf(d)} Democratic and ${nf(r)} Republican candidate-years.${out}`;
 };
 
@@ -542,7 +540,7 @@ function renderTerm(host) {
   const has = INS.lineHasData(data);
   const any = YEARS.some(y => INS.PARTIES.some(p => INS.group(y, p).n));
   const chartHTML = has ? INS.lineChart(ti, w, { range: INS.showRange(), dagger: cv && cv.dagger, asof: INS.PARTIES.some(p => INS.group(2026, p).n >= INS.TINY) ? asOf() : "" }) : "";
-  const key = `<div class="chartkey"><span><i class="band" aria-hidden="true"></i>${glossLink("95-interval", "95% Interval")}</span>${toggle("rangeTg", `${INS.showRange() ? `<i class="band wide" aria-hidden="true"></i>` : ""}Possible Range`, INS.showRange())}</div>`;
+  const key = `<div class="chartkey"><span><i class="band" aria-hidden="true"></i>95% Interval</span>${toggle("rangeTg", `${INS.showRange() ? `<i class="band wide" aria-hidden="true"></i>` : ""}Possible Range`, INS.showRange())}</div>`;
   const undrawn = INS.PARTIES.map(p => ({ p, ys: YEARS.filter(y => { const c = INS.cell(ti, y, p); return c.n > 0 && c.n < TINY; }) })).filter(x => x.ys.length);
   const ct = any ? cycleTable(ti, has) : null;
   /* The word's own mark follows its title; a word whose note is set on a value shows it only where that value is drawn. */
@@ -639,7 +637,7 @@ async function renderPanel(anchor = null) {
     const before = trimText(e[0], 100, true), after = trimText(e[2], 100, false);
     const lead = before.startsWith("…") ? before : "…" + before, tail = after.endsWith("…") ? after : after + "…";
     return `<div class="exc" id="exc"><p class="ex">${esc(lead)}<mark>${esc(e[1])}</mark>${esc(tail)}</p>
-      <p class="src">Saved ${e[3] ? INS.fmtDate(e[3], true) + " " : ""}from ${esc(x.site)}${e[4] === "archived" ? ` by the ${glossLink("wayback-machine", "Wayback Machine")}` : ""}</p></div>`;
+      <p class="src">Saved ${e[3] ? INS.fmtDate(e[3], true) + " " : ""}from ${esc(x.site)}${e[4] === "archived" ? ` by the Wayback Machine` : ""}</p></div>`;
   };
   /* A name that opens a sentence has a chevron; the names in the other lists are plain text. */
   /* The names that open a passage are one stop in the Tab order and are walked with the arrow keys, so a list of
@@ -664,10 +662,10 @@ async function renderPanel(anchor = null) {
   /* Marks (dagger, asterisk) were removed; the pre-registered patterns do the data cleaning in the regex itself. */
   const star = "";
   const dag = false;
-  const facts = c.n >= TINY ? `<p class="facts">${glossLink("95-interval", "95% Interval")} ${Math.round(c.ci[0] * 100)} to ${Math.round(c.ci[1] * 100)}%</p>` : "";
+  const facts = c.n >= TINY ? `<p class="facts">95% Interval ${Math.round(c.ci[0] * 100)} to ${Math.round(c.ci[1] * 100)}%</p>` : "";
   const ch = INS.changeOf(ti, y, p);
   const chgTxt = ch ? `<p class="facts">Change from ${yl(ch.from)} ${INS.diff(ch.a.k, ch.a.n, ch.b.k, ch.b.n).text}%</p>` : "";
-  const rangeTxt = c.range && c.n >= TINY && miss > 0 ? `<p class="facts">${glossLink("possible-range", "Possible Range")} ${c.rangePct[0]} to ${c.rangePct[1]}%</p>` : "";
+  const rangeTxt = c.range && c.n >= TINY && miss > 0 ? `<p class="facts">Possible Range ${c.rangePct[0]} to ${c.rangePct[1]}%</p>` : "";
   const noneTxt = c.n ? "" : `<p class="facts">No candidates were analyzed in this group${where.length ? " with these filters" : ""}.</p>`;
   /* The drawer's footnotes are pinned to its foot, so they are in view however far the lists run. */
   const foot = [dag ? [cv.mark, esc(cv.text)] : null, star ? ["*", starNote()] : null].filter(Boolean);
@@ -678,7 +676,7 @@ async function renderPanel(anchor = null) {
     <div class="clist">
       ${section("use", "Using the Term", users, "use")}
       ${section("no", "Not Using the Term", non, "no")}${section("out", "Not Analyzed", out, "out")}
-    </div><div class="dfoot">${foot.map(([m, h]) => `<p><span class="fk">${m}</span>${h}</p>`).join("")}${an.length || out.length ? `<p>${glossLink("seat-code", "Seat Code")} and ${glossLink("challenger", "Challenger")} Definitions</p>` : ""}</div>`;
+    </div><div class="dfoot">${foot.map(([m, h]) => `<p><span class="fk">${m}</span>${h}</p>`).join("")}${an.length || out.length ? `<p>Seat Code and Challenger Definitions</p>` : ""}</div>`;
   el.hidden = false; sc.hidden = false; el.classList.add("open");
   if (!document.body.classList.contains("drawer-open")) {
     document.documentElement.style.setProperty("--sbw", (innerWidth - document.documentElement.clientWidth) + "px");
