@@ -395,26 +395,26 @@ const buildChart = (ti, W, o, H, small = false, edges = true, oneLine = true) =>
     if (Math.abs(dm) >= 1.5 && Math.sign(ctr["D" + i] - ctr["R" + i]) !== Math.sign(dm)) wrong++;
   });
   if (mini) {
-    INS.PARTIES.forEach(p => {
-      const cells = data[p].map((c, i) => ({ c, i })).filter(({ c }) => drawn(c));
-      if (!cells.length) return;
-      const maxShare = Math.max(...cells.map(({ c }) => c.share));
-      const topRoom = Y(maxShare) - (r + 5) - fs - m.t;
-      const putAbove = topRoom >= 0;
-      cells.forEach(({ c, i }) => {
-        const dotY = Y(c.share);
-        const yv = putAbove ? dotY - (r + 5) : dotY + r + 5 + fs * 0.78;
-        labelSpec[p + i] = { x: X(i), y: yv, anchor: "middle" };
-      });
-    });
-    // Per-year collision: when both parties' labels at a year sit within one line of each other,
-    // shift them horizontally so they read side by side. Y stays, so the uniform-side choice holds.
+    const baseY = m.t + ph;
+    INS.PARTIES.forEach(p => data[p].forEach((c, i) => {
+      if (!drawn(c)) return;
+      const dotY = Y(c.share);
+      const aboveY = dotY - (r + 5);
+      const yv = (aboveY - fs < m.t) ? dotY + r + 5 + fs * 0.78 : aboveY;
+      labelSpec[p + i] = { x: X(i), y: yv, anchor: "middle" };
+    }));
     YEARS.forEach((yy, i) => {
       const d = data.D[i], R = data.R[i];
       if (!drawn(d) || !drawn(R)) return;
       const spD = labelSpec["D" + i], spR = labelSpec["R" + i];
       if (!spD || !spR) return;
-      if (Math.abs(spD.y - spR.y) <= fs + 2) {
+      if (Math.abs(spD.y - spR.y) >= fs + 4) return;
+      const lowerP = d.share <= R.share ? "D" : "R";
+      const lowerC = lowerP === "D" ? d : R;
+      const belowY = Y(lowerC.share) + r + 5 + fs * 0.78;
+      if (belowY <= baseY - 2) {
+        labelSpec[lowerP + i] = { x: X(i), y: belowY, anchor: "middle" };
+      } else {
         const sharedY = Math.min(spD.y, spR.y);
         spD.x = X(i) - 3; spD.anchor = "end"; spD.y = sharedY;
         spR.x = X(i) + 3; spR.anchor = "start"; spR.y = sharedY;
