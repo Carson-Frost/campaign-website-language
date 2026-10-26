@@ -222,11 +222,7 @@ table.rank.cyc { table-layout: auto; }
 .linechart .vl.D, .linechart .pl.D { fill: var(--dem); }
 .linechart .vl.R, .linechart .pl.R { fill: var(--rep); }
 .linechart.mini .vl, .linechart.mini .pl, .linechart.sm .vl { font-size: 13px; }
-.linechart .pt { cursor: pointer; }
-.linechart .pt:focus-visible { outline: none; }
-.linechart .pt:focus-visible .ring { stroke: var(--focus); stroke-width: 2; }
-.linechart .pt:hover .ring { fill: rgba(21, 25, 30, .07); }
-.linechart .pt.on .ring { fill: rgba(21, 25, 30, .1); }
+.linechart .pt { cursor: default; }
 
 .multiples { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 34px 0; margin-top: 8px; }
 .multiple { margin: 0; padding: 0 14px; border-left: 1px dotted #BFC5CC; }
