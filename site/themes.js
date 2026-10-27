@@ -107,7 +107,7 @@ INS.themeChartHeight = n => Math.max(250, Math.min(460, 70 + n * LGAP));
 
 /* The themes in the order the term list gives them, each with its own term indexes. */
 INS.themesOf = idx => {
-  const ids = idx || INS.D.terms.map((t, i) => i);
+  const ids = idx || INS.visibleTermIds();
   const out = [];
   ids.forEach(ti => {
     const th = INS.D.terms[ti].theme;

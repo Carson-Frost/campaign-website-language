@@ -214,7 +214,7 @@ function gapEl(g, d, r) {
 /* ---------- the ranked table ---------- */
 function modelRows(termIdx) {
   const y = S.year;
-  const ids = termIdx || INS.D.terms.map((t, i) => i);
+  const ids = termIdx || INS.visibleTermIds();
   return ids.map(ti => {
     const d = INS.cell(ti, y, "D"), r = INS.cell(ti, y, "R");
     const k = d.k + r.k, n = d.n + r.n;
@@ -354,7 +354,7 @@ function topicsList() {
 }
 function termPickerHTML() {
   const picked = query.trim();
-  const names = INS.D.terms.map(t => INS.DN[t.term]).slice().sort((a, b) => a.localeCompare(b));
+  const names = INS.D.terms.filter(t => !INS.HIDE.has(t.term)).map(t => INS.DN[t.term]).slice().sort((a, b) => a.localeCompare(b));
   const allItem = `<li role="option" aria-selected="${!picked}" data-term="" tabindex="-1" class="cat-opt term-opt${!picked ? " on" : ""}">All Terms${!picked ? `<svg width="12" height="12" aria-hidden="true" class="cat-check"><path d="M1 6 L5 10 L11 2" stroke="currentColor" stroke-width="2" fill="none"/></svg>` : ""}</li>`;
   const items = [allItem].concat(names.map(nm => {
     const on = nm === picked;
@@ -414,7 +414,7 @@ function termMatchesTopics(ti) {
 function themesWithFoot() {
   const fn = notebook(), y = S.year;
   const q = query.trim().toLowerCase();
-  const all = INS.D.terms.map((t, i) => i);
+  const all = INS.visibleTermIds();
   const scoped = q ? all.filter(ti => INS.dn(ti).toLowerCase().includes(q))
                    : all.filter(termMatchesTopics);
   const shownIdx = scoped;
@@ -502,7 +502,7 @@ const backLink = href => `<a class="back" href="${href}"><svg width="12" height=
 function compareSelect(exclude) {
   const themes = [...new Set(INS.D.terms.map(t => t.theme))];
   return `<div class="addword"><label class="vh" for="addSel">Compare with Another Term</label><select class="addsel" id="addSel"><option value="">Compare with Another Term</option>
-    ${themes.map(th => `<optgroup label="${esc(cap(th))}">${INS.D.terms.map((t, i) => (t.theme === th && !exclude.includes(i) ? `<option value="${i}">${esc(INS.dn(i).replace(/[“”]/g, ""))}</option>` : "")).join("")}</optgroup>`).join("")}</select></div>`;
+    ${themes.map(th => `<optgroup label="${esc(cap(th))}">${INS.D.terms.map((t, i) => (t.theme === th && !exclude.includes(i) && !INS.HIDE.has(t.term) ? `<option value="${i}">${esc(INS.dn(i).replace(/[“”]/g, ""))}</option>` : "")).join("")}</optgroup>`).join("")}</select></div>`;
 }
 const ofN = c => (c && c.n >= TINY ? `<span class="of">${nf(c.n)} Analyzed Candidates</span>` : "");
 function cycleTable(ti, has) {

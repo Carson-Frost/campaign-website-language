@@ -141,14 +141,22 @@ INS.readAddress = () => {
    whenever the cells are rebuilt, which is whenever a filter changes. The possible range is left out, because it is
    off by default and reaches far above the shares; a chart drawing it uses the full scale instead. */
 let scaleTop = 1;
+/* Terms removed from the interface. Their indices remain so pre-computed per-term rows stay aligned,
+   but every render path and the shared Y-axis skip them. */
+INS.HIDE = new Set(["pro-abortion", "partial-birth / late-term abortion", "Susan B. Anthony List"]);
+INS.hidden = ti => INS.HIDE.has(INS.D.terms[ti].term);
+INS.visibleTermIds = () => { const out = []; INS.D.terms.forEach((t, i) => { if (!INS.HIDE.has(t.term)) out.push(i); }); return out; };
 INS.setScaleTop = () => {
   let m = 0;
-  INS.D.terms.forEach((t, ti) => INS.YEARS.forEach(y => INS.PARTIES.forEach(p => {
-    const c = INS.cell(ti, y, p);
-    if (c.n < INS.TINY) return;
-    if (c.share > m) m = c.share;
-    if (c.ci && c.ci[1] > m) m = c.ci[1];
-  })));
+  INS.D.terms.forEach((t, ti) => {
+    if (INS.HIDE.has(t.term)) return;
+    INS.YEARS.forEach(y => INS.PARTIES.forEach(p => {
+      const c = INS.cell(ti, y, p);
+      if (c.n < INS.TINY) return;
+      if (c.share > m) m = c.share;
+      if (c.ci && c.ci[1] > m) m = c.ci[1];
+    }));
+  });
   scaleTop = Math.min(1, Math.max(0.5, Math.ceil(m * 10 + 0.001) / 10));
 };
 INS.scaleTop = () => scaleTop;
@@ -272,7 +280,7 @@ INS.init = async () => {
   INS.DN = disp.terms;
   /* The newest saved copy among the 2026 sites analyzed is how far the 2026 figures reach. */
   INS.through2026 = site.candidates.filter(c => c.year === 2026 && c.status === "analyzed").reduce((m, c) => (c.latest > m ? c.latest : m), "");
-  site.terms.forEach((t, i) => { INS.TERM_BY_SLUG[INS.slug(t.term)] = i; });
+  site.terms.forEach((t, i) => { if (!INS.HIDE.has(t.term)) INS.TERM_BY_SLUG[INS.slug(t.term)] = i; });
   site.gaps.forEach(g => { GAPQ[g.term + "|" + g.year] = g.q_benjamini_hochberg_exact; });
   /* Lookup for the extracted-candidates search pool: a typed term that resolves here draws its own chart. */
   INS.SEARCH = new Map((site.search_index || []).map(e => [e.term.toLowerCase(), e]));
